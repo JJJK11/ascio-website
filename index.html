@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ascio - Technology Governance, Inspection & Assessment Readiness</title>
-    <link rel="icon" type="image/png" href="ascio_Favicon.png">
+    <title>ascio - Technology Governance, Inspection & Assessment Readiness</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -265,11 +265,14 @@
 
         .service-card {
             display: grid;
-            grid-template-columns: 5rem 1fr auto;
+            grid-template-columns: 5rem 1fr auto 1.5rem;
             align-items: baseline;
             gap: 1.5rem;
             padding: 1.25rem 0;
             border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            border-left: 3px solid transparent;
+            transition: border-left-color 0.15s ease;
         }
 
         .service-card:first-child {
@@ -345,6 +348,11 @@
             margin-bottom: 1rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .standards-list {
@@ -360,12 +368,14 @@
             padding: 1rem 1.25rem;
             background: var(--bg-raised);
             border: 1px solid var(--border);
+            border-left: 3px solid transparent;
             border-radius: 6px;
             transition: all 0.15s;
         }
 
         .standard-item:hover {
             border-color: var(--border-light);
+            border-left-color: var(--accent);
         }
 
         .standard-code {
@@ -488,50 +498,107 @@
             gap: 4rem;
         }
 
-        .process-list {
+        .process-timeline {
+            position: relative;
+            padding-left: 3.5rem;
+        }
+
+        .timeline-track {
+            position: absolute;
+            left: 11px;
+            top: 12px;
+            bottom: 12px;
+            width: 2px;
+            background: var(--border);
+            overflow: hidden;
+        }
+
+        .timeline-progress {
+            width: 100%;
+            height: 0;
+            background: var(--accent);
+            transition: height 0.4s ease-out;
+        }
+
+        .process-step {
+            position: relative;
+            padding-bottom: 2.5rem;
+        }
+
+        .process-step:last-child {
+            padding-bottom: 0;
+        }
+
+        .step-node {
+            position: absolute;
+            left: -3.5rem;
+            top: 4px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--bg);
+            border: 2px solid var(--border);
             display: flex;
-            flex-direction: column;
-            gap: 0;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            transition: all 0.4s ease;
         }
 
-        .process-item {
-            display: grid;
-            grid-template-columns: 80px 1fr;
-            gap: 2rem;
-            padding: 2rem 0;
-            border-bottom: 1px solid var(--border);
+        .step-node::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border);
+            transition: all 0.4s ease;
         }
 
-        .process-item:last-child {
-            border-bottom: none;
+        .process-step.reached .step-node {
+            border-color: var(--accent);
         }
 
-        .process-num {
+        .process-step.reached .step-node::after {
+            background: var(--accent);
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+        }
+
+        .step-phase {
             font-family: var(--mono);
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 600;
             color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.35rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
         }
 
-        .process-num span {
-            display: block;
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--accent);
-            letter-spacing: -0.02em;
-            opacity: 0.2;
+        .process-step.reached .step-phase {
+            opacity: 1;
         }
 
-        .process-content h3 {
+        .step-content h3 {
             font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
             color: var(--text);
+            margin-bottom: 0.4rem;
         }
 
-        .process-content p {
+        .step-content p {
             font-size: 0.9rem;
             color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .process-step:hover .step-node {
+            border-color: var(--accent);
+            transform: scale(1.15);
+        }
+
+        .process-step:hover .step-node::after {
+            background: var(--accent);
         }
 
         /* Contact */
@@ -1075,6 +1142,153 @@
                 right: 1rem;
             }
         }
+        /* === Interactive enhancements === */
+
+        /* Scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Active nav link */
+        .nav-links a.active {
+            color: var(--text);
+            border-bottom: 2px solid var(--accent);
+        }
+
+        /* Standards group toggle */
+        .standards-group h3 .toggle-icon {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+
+        .standards-group h3:hover {
+            color: var(--accent);
+        }
+
+        .standards-group h3:hover .toggle-icon {
+            color: var(--accent);
+        }
+
+        .standards-group .standards-list {
+            overflow: hidden;
+            max-height: 800px;
+            transition: max-height 0.4s ease;
+        }
+
+        .standards-group.collapsed .standards-list {
+            max-height: 0;
+            margin-top: -1rem;
+        }
+
+        .standards-group.collapsed h3 {
+            margin-bottom: 0;
+        }
+
+        /* Service card expand */
+        .service-card:hover {
+            border-left-color: var(--accent);
+        }
+
+        .service-chevron {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            transition: transform 0.3s ease, color 0.2s;
+        }
+
+        .service-card:hover .service-chevron {
+            color: var(--accent);
+        }
+
+        .service-card.expanded .service-chevron {
+            transform: rotate(180deg);
+            color: var(--accent);
+        }
+
+        .service-detail {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .service-detail.expanded {
+            max-height: 500px;
+        }
+
+        .service-detail-inner {
+            padding: 0.5rem 0 1.5rem 6.5rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .service-detail-inner strong {
+            color: var(--text);
+        }
+
+        .service-detail-inner ul {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .service-detail-inner ul li {
+            padding: 0.15rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+            font-family: var(--mono);
+            font-size: 0.75rem;
+        }
+
+        .service-detail-inner ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Responsive adjustments for interactive elements */
+        @media (max-width: 900px) {
+            .standards-list {
+                grid-template-columns: 1fr;
+            }
+
+            .process-timeline {
+                padding-left: 2.5rem;
+            }
+
+            .step-node {
+                left: -2.5rem;
+                width: 20px;
+                height: 20px;
+            }
+
+            .timeline-track {
+                left: 9px;
+            }
+
+            .service-detail-inner {
+                padding-left: 0;
+            }
+
+            .service-card {
+                grid-template-columns: 4rem 1fr 1.5rem;
+            }
+
+            .service-card .service-list {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1124,7 +1338,7 @@
                             </div>
 
                             <div class="services-list">
-                                <div class="service-card">
+                                <div class="service-card reveal">
                                     <div class="service-id">SVC_IR</div>
                                     <div class="service-info">
                                         <h3>Inspection Readiness</h3>
@@ -1135,9 +1349,20 @@
                                         <li>Internal simulations</li>
                                         <li>Gap analysis</li>
                                     </ul>
+                                    <div class="service-chevron">&#9662;</div>
+                                </div>
+                                <div class="service-detail">
+                                    <div class="service-detail-inner">
+                                        <strong>Focus:</strong> Preparing for third-party inspections where an inspector validates evidence against defined criteria. The work centres on evidence validation and operational proof — confirming controls are implemented, records exist and are complete, and responsibilities and escalation paths are clear.
+                                        <ul>
+                                            <li>Inspection evidence pack</li>
+                                            <li>Validated control-to-evidence map</li>
+                                            <li>Remediation actions for identified gaps</li>
+                                        </ul>
+                                    </div>
                                 </div>
 
-                                <div class="service-card">
+                                <div class="service-card reveal">
                                     <div class="service-id">SVC_AR</div>
                                     <div class="service-info">
                                         <h3>Assessment Readiness</h3>
@@ -1148,9 +1373,20 @@
                                         <li>Policy development</li>
                                         <li>Pre-assessment support</li>
                                     </ul>
+                                    <div class="service-chevron">&#9662;</div>
+                                </div>
+                                <div class="service-detail">
+                                    <div class="service-detail-inner">
+                                        <strong>Focus:</strong> Internal or pre-external evaluation of how well the organization aligns with management system requirements. Work includes control maturity reviews, policy and procedure development, role clarity, and management system structuring.
+                                        <ul>
+                                            <li>Gap assessment report</li>
+                                            <li>Prioritized remediation plan</li>
+                                            <li>Draft management system with supporting documentation</li>
+                                        </ul>
+                                    </div>
                                 </div>
 
-                                <div class="service-card">
+                                <div class="service-card reveal">
                                     <div class="service-id">SVC_IA</div>
                                     <div class="service-info">
                                         <h3>Internal Audit Support</h3>
@@ -1161,9 +1397,22 @@
                                         <li>Auditor training</li>
                                         <li>Audit scheduling frameworks</li>
                                     </ul>
+                                    <div class="service-chevron">&#9662;</div>
+                                </div>
+                                <div class="service-detail">
+                                    <div class="service-detail-inner">
+                                        <strong>Focus:</strong> Building and running the internal audit program required before certification body engagement. Certification bodies look for evidence of a functioning internal audit program at Stage 1 — without it, you are not ready for Stage 2.
+                                        <ul>
+                                            <li>Audit program design — scope, frequency, criteria</li>
+                                            <li>Auditor competency development</li>
+                                            <li>Annual audit plans and resource allocation</li>
+                                            <li>Findings management and corrective action tracking</li>
+                                            <li>Management review input for leadership reporting</li>
+                                        </ul>
+                                    </div>
                                 </div>
 
-                                <div class="service-card">
+                                <div class="service-card reveal">
                                     <div class="service-id">SVC_CR</div>
                                     <div class="service-info">
                                         <h3>Certification Readiness</h3>
@@ -1174,9 +1423,21 @@
                                         <li>Evidence traceability</li>
                                         <li>CB selection (17021-1 aware)</li>
                                     </ul>
+                                    <div class="service-chevron">&#9662;</div>
+                                </div>
+                                <div class="service-detail">
+                                    <div class="service-detail-inner">
+                                        <strong>Focus:</strong> Structured preparation for independent certification audits, aligned to Stage 1 and Stage 2 expectations. Stage 1 focuses on documentation completeness; Stage 2 focuses on operational effectiveness and evidence that the system is working in practice.
+                                        <ul>
+                                            <li>Stage 1 documentation pack</li>
+                                            <li>Stage 2 evidence set</li>
+                                            <li>Audit interview preparation and readiness simulations</li>
+                                            <li>CB selection support (ISO/IEC 17021-1 aware)</li>
+                                        </ul>
+                                    </div>
                                 </div>
 
-                                <div class="service-card">
+                                <div class="service-card reveal">
                                     <div class="service-id">SVC_GR</div>
                                     <div class="service-info">
                                         <h3>Governance & Risk</h3>
@@ -1187,6 +1448,19 @@
                                         <li>Risk frameworks</li>
                                         <li>Accountability structures</li>
                                     </ul>
+                                    <div class="service-chevron">&#9662;</div>
+                                </div>
+                                <div class="service-detail">
+                                    <div class="service-detail-inner">
+                                        <strong>Focus:</strong> Establishing who is accountable for technology decisions, how risk is identified and managed, and how oversight is performed at leadership level. Connects operational technology controls to leadership accountability and regulatory expectations.
+                                        <ul>
+                                            <li>Governance operating model</li>
+                                            <li>Risk framework and tolerance definition</li>
+                                            <li>Committee terms of reference</li>
+                                            <li>Role accountability matrix</li>
+                                            <li>Executive dashboards for ongoing oversight</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1207,8 +1481,8 @@
                                 <p class="section-desc">Readiness support aligned with international standards and Canadian regulatory frameworks.</p>
                             </div>
 
-                            <div class="standards-group">
-                                <h3>Cybersecurity & Information Security</h3>
+                            <div class="standards-group reveal">
+                                <h3>Cybersecurity & Information Security <span class="toggle-icon">−</span></h3>
                                 <div class="standards-list">
                                     <div class="standard-item">
                                         <span class="standard-code">ISO/IEC 27001</span>
@@ -1249,8 +1523,8 @@
                                 </div>
                             </div>
 
-                            <div class="standards-group">
-                                <h3>IT Service & Digital Operations</h3>
+                            <div class="standards-group reveal">
+                                <h3>IT Service & Digital Operations <span class="toggle-icon">−</span></h3>
                                 <div class="standards-list">
                                     <div class="standard-item">
                                         <span class="standard-code">ISO/IEC 20000-1</span>
@@ -1267,8 +1541,8 @@
                                 </div>
                             </div>
 
-                            <div class="standards-group">
-                                <h3>Business Continuity & Organizational Resilience</h3>
+                            <div class="standards-group reveal">
+                                <h3>Business Continuity & Organizational Resilience <span class="toggle-icon">−</span></h3>
                                 <div class="standards-list">
                                     <div class="standard-item">
                                         <span class="standard-code">ISO 22301</span>
@@ -1285,8 +1559,8 @@
                                 </div>
                             </div>
 
-                            <div class="standards-group">
-                                <h3>Compliance & Integrated Management Systems</h3>
+                            <div class="standards-group reveal">
+                                <h3>Compliance & Integrated Management Systems <span class="toggle-icon">−</span></h3>
                                 <div class="standards-list">
                                     <div class="standard-item">
                                         <span class="standard-code">ISO 37301</span>
@@ -1303,8 +1577,8 @@
                                 </div>
                             </div>
 
-                            <div class="standards-group">
-                                <h3>Canadian Programs</h3>
+                            <div class="standards-group reveal">
+                                <h3>Canadian Programs <span class="toggle-icon">−</span></h3>
                                 <div class="standards-list">
                                     <div class="standard-item">
                                         <span class="standard-code">CyberSecure Canada</span>
@@ -1321,8 +1595,8 @@
                                 </div>
                             </div>
 
-                            <div class="standards-group">
-                                <h3>Framework Interoperability</h3>
+                            <div class="standards-group reveal">
+                                <h3>Framework Interoperability <span class="toggle-icon">−</span></h3>
                                 <div class="standards-list">
                                     <div class="standard-item">
                                         <span class="standard-code">NIST CSF</span>
@@ -1335,7 +1609,7 @@
                                 </div>
                             </div>
 
-                            <div class="ai-section">
+                            <div class="ai-section reveal">
                                 <div class="ai-header">
                                     <div class="ai-header-content">
                                         <h3>AI Governance & Canadian Regulation</h3>
@@ -1428,53 +1702,49 @@
                                 <p class="section-desc">A systematic, phase-based methodology for successful assessment outcomes.</p>
                             </div>
 
-                            <div class="process-list">
-                                <div class="process-item">
-                                    <div class="process-num">
-                                        PHASE
-                                        <span>01</span>
-                                    </div>
-                                    <div class="process-content">
+                            <div class="process-timeline" id="processTimeline">
+                                <div class="timeline-track"><div class="timeline-progress" id="timelineProgress"></div></div>
+
+                                <div class="process-step reveal">
+                                    <div class="step-node"></div>
+                                    <div class="step-phase">Phase 01</div>
+                                    <div class="step-content">
                                         <h3>Discovery & Scoping</h3>
                                         <p>Technology landscape review, regulatory exposure identification, and target inspection or certification objectives.</p>
                                     </div>
                                 </div>
-                                <div class="process-item">
-                                    <div class="process-num">
-                                        PHASE
-                                        <span>02</span>
-                                    </div>
-                                    <div class="process-content">
+
+                                <div class="process-step reveal">
+                                    <div class="step-node"></div>
+                                    <div class="step-phase">Phase 02</div>
+                                    <div class="step-content">
                                         <h3>Gap & Risk Analysis</h3>
                                         <p>Control maturity assessment, evidence gap identification, and governance accountability review.</p>
                                     </div>
                                 </div>
-                                <div class="process-item">
-                                    <div class="process-num">
-                                        PHASE
-                                        <span>03</span>
-                                    </div>
-                                    <div class="process-content">
+
+                                <div class="process-step reveal">
+                                    <div class="step-node"></div>
+                                    <div class="step-phase">Phase 03</div>
+                                    <div class="step-content">
                                         <h3>Design & Remediation</h3>
                                         <p>Policy and control development, governance model implementation, and workflow optimization.</p>
                                     </div>
                                 </div>
-                                <div class="process-item">
-                                    <div class="process-num">
-                                        PHASE
-                                        <span>04</span>
-                                    </div>
-                                    <div class="process-content">
+
+                                <div class="process-step reveal">
+                                    <div class="step-node"></div>
+                                    <div class="step-phase">Phase 04</div>
+                                    <div class="step-content">
                                         <h3>Readiness Validation</h3>
                                         <p>Internal assessments, evidence traceability testing, and management sign-off preparation.</p>
                                     </div>
                                 </div>
-                                <div class="process-item">
-                                    <div class="process-num">
-                                        PHASE
-                                        <span>05</span>
-                                    </div>
-                                    <div class="process-content">
+
+                                <div class="process-step reveal">
+                                    <div class="step-node"></div>
+                                    <div class="step-phase">Phase 05</div>
+                                    <div class="step-content">
                                         <h3>External Engagement</h3>
                                         <p>Preparation for third-party inspection or audit, leadership briefing, and post-assessment remediation.</p>
                                     </div>
@@ -1521,7 +1791,7 @@
                                 <p>We'll review your requirements and schedule a consultation.</p>
                             </div>
 
-                            <form id="contactForm" action="https://formsubmit.co/kal@ascio.ca,jason@ascio.ca" method="POST">
+                            <form id="contactForm" action="https://formsubmit.co/hello@ascio.ca" method="POST">
                                 <input type="hidden" name="_subject" value="New Inquiry from Ascio Website">
                                 <input type="hidden" name="_captcha" value="false">
                                 <input type="hidden" name="_template" value="table">
@@ -1605,14 +1875,16 @@
             </div>
             <div class="chat-messages" id="chatMessages">
                 <div class="chat-message bot">
-                    Welcome to Ascio. I can help you learn about our governance, readiness, and standards expertise. What would you like to know?
+                    Welcome to Ascio.<br>We support organizations preparing for technology inspections, ISO management system assessments, and AI governance readiness in Canada.<br><br>How can I assist you today?
                 </div>
             </div>
             <div class="chat-suggestions" id="chatSuggestions">
-                <button class="chat-suggestion" data-query="What services do you offer?">Services</button>
-                <button class="chat-suggestion" data-query="What standards do you support?">Standards</button>
+                <button class="chat-suggestion" data-query="What is inspection readiness?">Inspection Readiness</button>
+                <button class="chat-suggestion" data-query="How do we prepare for ISO certification?">ISO Certification</button>
                 <button class="chat-suggestion" data-query="Tell me about AI governance">AI Governance</button>
-                <button class="chat-suggestion" data-query="What is your process?">Process</button>
+                <button class="chat-suggestion" data-query="What is CPCSC?">CPCSC</button>
+                <button class="chat-suggestion" data-query="Do we need internal audits?">Internal Audits</button>
+                <button class="chat-suggestion" data-query="What is your process?">Our Process</button>
                 <button class="chat-suggestion" data-query="How do I get started?">Get Started</button>
             </div>
             <div class="chat-input-area">
@@ -1646,241 +1918,254 @@
 
         // Knowledge base
         const knowledge = {
-            // --- Readiness & Preparation ---
-            readiness: {
-                keywords: ['readiness', 'preparation', 'what is readiness'],
-                response: `<strong>Readiness & Preparation</strong>\n\nThis is the practical work that gets an organization ready for external scrutiny. It includes preparing evidence, validating what exists versus what is claimed, closing gaps, and ensuring teams can demonstrate consistent operational control.\n\nThe objective is to reduce audit or inspection risk by making requirements tangible and traceable across policies, processes, tools, and records.\n\nOur readiness services:\n• <strong>SVC_IR</strong> — Inspection Readiness\n• <strong>SVC_AR</strong> — Assessment Readiness\n• <strong>SVC_IA</strong> — Internal Audit Support\n• <strong>SVC_CR</strong> — Certification Readiness\n• <strong>SVC_GR</strong> — Governance & Risk\n\nAsk about any service for a detailed explanation.`
+            // --- Services ---
+            svc_ir: {
+                keywords: ['inspection readiness', 'svc_ir', 'prepare for inspection', 'technology inspection', 'inspection coming'],
+                response: `<strong>Inspection Readiness (SVC_IR)</strong>\n\nInspection readiness prepares your organization for third-party validation of operational evidence against defined criteria.\n\nInspectors evaluate whether:\n• Controls are implemented\n• Evidence exists and is complete\n• Responsibilities are defined\n• Escalation paths are documented\n\nWe support through:\n• Evidence validation\n• Control-to-evidence mapping\n• Gap remediation\n• Internal simulations\n\n<strong>Deliverables:</strong>\n• Inspection evidence pack\n• Validated control-to-evidence map\n• Remediation action register\n\nIf you know your inspection framework, we can scope readiness immediately.`
+            },
+            svc_ar: {
+                keywords: ['assessment readiness', 'svc_ar', 'gap analysis', 'meet iso requirements', 'do we meet'],
+                response: `<strong>Assessment Readiness (SVC_AR)</strong>\n\nAssessment readiness evaluates alignment with management system requirements before external engagement.\n\n<strong>Focus areas:</strong>\n• Control maturity\n• Policy and procedure structure\n• Role clarity\n• Management system architecture\n\n<strong>Deliverables:</strong>\n• Gap assessment report\n• Prioritized remediation roadmap\n• Draft management system documentation\n\nThis ensures you enter external audits prepared and structured.`
+            },
+            svc_ia: {
+                keywords: ['internal audit', 'audit program', 'auditor training', 'svc_ia', 'need internal audit', 'build an audit program'],
+                response: `<strong>Internal Audit Support (SVC_IA)</strong>\n\nCertification bodies expect evidence of a functioning internal audit program before Stage 2.\n\nWe support:\n• Audit program design (scope, criteria, frequency)\n• Auditor competency development\n• Annual audit planning\n• Findings tracking\n• Management review reporting\n\nWithout internal audit evidence, you are not certification ready.`
+            },
+            svc_cr: {
+                keywords: ['certification readiness', 'svc_cr', 'prepare for certification', 'iso certification', 'prepare for iso'],
+                response: `<strong>Certification Readiness (SVC_CR)</strong>\n\nWe prepare organizations for independent certification audits.\n\n<strong>Stage 1:</strong> Documentation completeness.\n<strong>Stage 2:</strong> Operational effectiveness and evidence in practice.\n\nWe support:\n• Stage 1 documentation pack\n• Stage 2 evidence preparation\n• Interview simulations\n• Certification body selection (ISO/IEC 17021-1 aware)\n\nWe do not certify. We prepare you for certification.`
+            },
+            svc_gr: {
+                keywords: ['governance & risk', 'governance and risk', 'svc_gr', 'governance framework', 'technology governance', 'leadership accountability', 'governance model'],
+                response: `<strong>Governance & Risk (SVC_GR)</strong>\n\nTechnology governance defines:\n• Decision authority\n• Risk ownership\n• Oversight mechanisms\n• Leadership accountability\n\nWe design:\n• Governance operating models\n• Risk frameworks and tolerance definitions\n• Committee terms of reference\n• Accountability matrices\n• Executive oversight dashboards\n\nGovernance connects operational controls to board-level responsibility.`
             },
             services: {
-                keywords: ['service', 'offer', 'provide', 'help', 'what do you do'],
-                response: `We provide five core readiness services:\n\n<strong>Inspection Readiness (SVC_IR)</strong> — Prepare for third-party inspections with evidence validation and gap remediation.\n\n<strong>Assessment Readiness (SVC_AR)</strong> — Internal or pre-external evaluation against management system requirements.\n\n<strong>Internal Audit Support (SVC_IA)</strong> — Establish and execute internal audit programs required before certification.\n\n<strong>Certification Readiness (SVC_CR)</strong> — Structured preparation for independent certification audits.\n\n<strong>Governance & Risk (SVC_GR)</strong> — Technology governance frameworks aligned with regulatory requirements.\n\nAsk about any service for a detailed explanation.`
-            },
-            svcia: {
-                keywords: ['internal audit', 'audit program', 'auditor training', 'svc_ia'],
-                response: `<strong>Internal Audit Support (SVC_IA)</strong>\n\nMost ISO certification pathways require a functioning internal audit program before you can engage a certification body. We help you build and run it.\n\n<strong>What we deliver:</strong>\n• <strong>Audit program design</strong> — scope, frequency, criteria aligned to your management system\n• <strong>Auditor training</strong> — competency development for internal audit teams\n• <strong>Audit scheduling frameworks</strong> — annual plans, resource allocation, rotation\n• <strong>Audit execution support</strong> — first-party audit facilitation\n• <strong>Findings management</strong> — nonconformity tracking, corrective action follow-up\n• <strong>Management review input</strong> — audit results packaged for leadership reporting\n\n<strong>Why it matters:</strong> Certification bodies will look for evidence of a functioning internal audit program at Stage 1. Without it, you are not ready for Stage 2. This is one of the most common gaps we see.`
-            },
-            svcir: {
-                keywords: ['inspection readiness', 'svc_ir', 'inspection'],
-                response: `<strong>Inspection Readiness (SVC_IR)</strong>\n\nInspection readiness focuses on preparing for a third-party inspection where an inspector validates evidence against a defined set of criteria.\n\nThe work centres on evidence validation and operational proof. This includes confirming that required controls are implemented, that records exist and are complete, and that responsibilities and escalation paths are clear.\n\n<strong>Typical outcomes:</strong>\n• Inspection evidence pack\n• Validated control-to-evidence map\n• Remediation actions to address gaps before inspection`
-            },
-            svcar: {
-                keywords: ['assessment readiness', 'svc_ar'],
-                response: `<strong>Assessment Readiness (SVC_AR)</strong>\n\nAssessment readiness is an internal or pre-external evaluation of how well the organization aligns with management system requirements. It is used to identify gaps, improve maturity, and build the foundation needed to pass a formal audit.\n\nWork commonly includes control maturity reviews, policy and procedure development, role clarity, and management system structuring.\n\n<strong>Typical outcomes:</strong>\n• Gap assessment report\n• Prioritized remediation plan\n• Draft management system with supporting documentation`
-            },
-            svccr: {
-                keywords: ['certification readiness', 'svc_cr', 'stage 1', 'stage 2'],
-                response: `<strong>Certification Readiness (SVC_CR)</strong>\n\nCertification readiness is structured preparation for an independent certification audit, usually delivered in phases aligned to Stage 1 and Stage 2 expectations.\n\n<strong>Stage 1</strong> readiness focuses on documentation completeness and management system design.\n<strong>Stage 2</strong> readiness focuses on operational effectiveness and evidence that the system is working in practice.\n\nWork includes evidence traceability, audit interview preparation, readiness simulations, and support for selecting the right certification body (informed by ISO/IEC 17021-1 awareness).\n\n<strong>Typical outcomes:</strong>\n• Stage 1 documentation pack\n• Stage 2 evidence set\n• Audit plan\n• Clear line of sight from requirements to proof`
-            },
-            svcgr: {
-                keywords: ['governance & risk', 'governance and risk', 'svc_gr', 'governance framework'],
-                response: `<strong>Governance & Risk (SVC_GR)</strong>\n\nGovernance and risk establishes who is accountable for technology decisions, how risk is identified and managed, and how oversight is performed at leadership level.\n\nThis includes defining governance structures, decision rights, risk tolerance, escalation processes, and executive reporting. It connects operational technology controls to leadership accountability and regulatory expectations.\n\n<strong>Typical outcomes:</strong>\n• Governance operating model\n• Risk framework\n• Committee terms of reference\n• Role accountability matrix\n• Executive dashboards for ongoing oversight`
+                keywords: ['service', 'offer', 'provide', 'what do you do'],
+                response: `We provide five core readiness services:\n\n• <strong>SVC_IR</strong> — Inspection Readiness\n• <strong>SVC_AR</strong> — Assessment Readiness\n• <strong>SVC_IA</strong> — Internal Audit Support\n• <strong>SVC_CR</strong> — Certification Readiness\n• <strong>SVC_GR</strong> — Governance & Risk\n\nEach is structured around governance, evidence, and operational discipline.\n\nWhich area is most relevant to your organization?`
             },
 
-            // --- Standards Overview ---
+            // --- Standards ---
             standards: {
-                keywords: ['standard', 'iso', 'all standards', 'what standards', 'which standards'],
-                response: `<strong>Standards</strong>\n\nThese are the frameworks and management systems we use to structure readiness, assessments, and audit preparation. Each standard provides a formal set of requirements or guidance for building repeatable, auditable technology governance practices.\n\n<strong>Cybersecurity & Information Security:</strong>\nISO/IEC 27001, 27002, 27701, 27017, 27018, 27035, 27005, 27031, 27036\n\n<strong>IT Service & Digital Operations:</strong>\nISO/IEC 20000-1, 19770-1, 38500\n\n<strong>Business Continuity & Resilience:</strong>\nISO 22301, 22316, 31000\n\n<strong>Compliance & Integrated Management:</strong>\nISO 37301, IMS advisory, multi-standard harmonization\n\n<strong>AI Governance (Emerging):</strong>\nISO/IEC 42001, 23894, 38507, 22989, 23053, AIDA, CPCSC\n\n<strong>Canadian Programs:</strong>\nCyberSecure Canada, ITSG-33\n\n<strong>Framework Interoperability:</strong>\nNIST CSF, NIST AI RMF\n\nAsk about any specific standard or category for details.`
-            },
-            managementsystems: {
-                keywords: ['management system', 'what is a management system', 'technology management'],
-                response: `<strong>Technology Management Systems</strong>\n\nA technology management system is a formal, documented way of running technology governance so that security, privacy, resilience, compliance, and emerging technology risks are controlled consistently.\n\nA management system is not just policies. It includes governance, roles, processes, training, monitoring, corrective actions, and leadership review.\n\nThe benefit is that the organization can demonstrate <strong>repeatable control</strong>, not one-off effort, and can maintain compliance over time.\n\nWe structure readiness support around these management systems aligned with international standards and Canadian regulatory frameworks.`
-            },
-
-            // --- Category: Cybersecurity & Information Security ---
-            cybersecurity: {
-                keywords: ['cybersecurity', 'information security', 'cyber security', 'infosec'],
-                response: `<strong>Cybersecurity & Information Security</strong>\n\nThis category covers the standards used to build and operate an information security program that protects confidentiality, integrity, and availability.\n\nIt includes how security is governed, how risk is managed, what controls are implemented, and how incidents are handled. It is the foundation for organizations pursuing ISO certification and for those aligning to Canadian and global cybersecurity expectations.\n\nStandards in this domain:\n• <strong>ISO/IEC 27001</strong> — Information Security Management\n• <strong>ISO/IEC 27002</strong> — Information Security Controls\n• <strong>ISO/IEC 27701</strong> — Privacy Information Management\n• <strong>ISO/IEC 27017</strong> — Cloud Services Security\n• <strong>ISO/IEC 27018</strong> — PII Protection in Public Cloud\n• <strong>ISO/IEC 27035</strong> — Incident Management\n• <strong>ISO/IEC 27005</strong> — Information Security Risk Management\n• <strong>ISO/IEC 27031</strong> — ICT Readiness for Business Continuity\n• <strong>ISO/IEC 27036</strong> — Supplier Relationship Security\n\nAsk about any specific standard for details.`
-            },
-
-            // --- Category: IT Service & Digital Operations ---
-            itservice: {
-                keywords: ['it service', 'digital operations', 'service management'],
-                response: `<strong>IT Service & Digital Operations</strong>\n\nThis category covers the standards that structure how IT services are delivered, governed, and improved. It focuses on service quality, operational consistency, technology asset accountability, and leadership oversight of IT as a business capability.\n\nStandards in this domain:\n• <strong>ISO/IEC 20000-1</strong> — IT Service Management\n• <strong>ISO/IEC 19770-1</strong> — IT Asset Management\n• <strong>ISO/IEC 38500</strong> — Governance of IT\n\nAsk about any specific standard for details.`
-            },
-
-            // --- Category: Business Continuity & Resilience ---
-            continuity: {
-                keywords: ['business continuity', 'resilience', 'crisis', 'disaster recovery'],
-                response: `<strong>Business Continuity & Organizational Resilience</strong>\n\nThis category covers standards that ensure the organization can continue operating during disruption and can recover within defined timeframes. It addresses resilience planning, crisis governance, and integration of technology recovery with business needs.\n\nStandards in this domain:\n• <strong>ISO 22301</strong> — Business Continuity Management\n• <strong>ISO 22316</strong> — Organizational Resilience\n• <strong>ISO 31000</strong> — Enterprise Risk Management\n\nAsk about any specific standard for details.`
-            },
-
-            // --- Category: Compliance & IMS ---
-            compliance: {
-                keywords: ['compliance', 'integrated management', 'ims', 'harmoniz'],
-                response: `<strong>Compliance & Integrated Management Systems</strong>\n\nThis category covers standards and methods for building compliance programs and integrating multiple management systems into one coherent operating model. It is designed for organizations pursuing more than one certification or needing a unified governance structure that avoids duplicated work.\n\nThis domain covers:\n• <strong>ISO 37301</strong> — Compliance Management\n• <strong>IMS Advisory</strong> — Integrated Management System\n• <strong>Multi-Standard Harmonization</strong> — Unified certification approach\n\nAsk about any specific area for details.`
-            },
-
-            // --- Category: AI Governance (Emerging) ---
-            ai: {
-                keywords: ['ai', 'artificial intelligence', 'ai governance', 'machine learning'],
-                response: `<strong>AI Governance & Canadian Regulation</strong> <em>(Emerging)</em>\n\nThis category covers standards and readiness work for governing AI systems, ensuring ethical use, managing AI risk, and preparing for Canadian regulatory expectations. It focuses on formal governance structures, lifecycle controls, documentation, and accountability that can stand up to audit and evolving legal requirements.\n\nStandards in this domain:\n• <strong>ISO/IEC 42001</strong> — AI Management System (AIMS)\n• <strong>ISO/IEC 23894</strong> — AI Risk Management\n• <strong>ISO/IEC 38507</strong> — Governance of AI\n• <strong>ISO/IEC 22989</strong> — AI Concepts & Terminology\n• <strong>ISO/IEC 23053</strong> — AI System Lifecycle\n• <strong>AIDA</strong> — Canada's Artificial Intelligence and Data Act\n• <strong>CPCSC</strong> — Canadian Program for Cyber Security Certification\n\nAsk about any specific standard for details.`
-            },
-
-            // --- Category: Canadian Programs ---
-            canadian: {
-                keywords: ['canadian program', 'canadian framework'],
-                response: `<strong>Canadian Programs</strong>\n\nThis category covers Canadian government-aligned cybersecurity programs and frameworks. These are relevant when organizations need to demonstrate controls for Canadian clients, government contracts, or supply chain compliance.\n\n• <strong>CyberSecure Canada</strong> — Baseline cybersecurity certification for SMEs demonstrating foundational controls and cyber hygiene\n• <strong>CPCSC</strong> — Higher assurance federal cybersecurity certification for regulated supply chains and government contracts\n• <strong>ITSG-33</strong> — Federal IT security control framework\n\n<strong>Key distinctions:</strong>\n• ITSG-33 is a <strong>control framework</strong> — it defines security controls\n• CyberSecure Canada is a <strong>baseline certification</strong> aligned to ITSG-33\n• CPCSC is a <strong>higher assurance certification</strong> aligned to ITSG-33 with different scope and rigor\n\nAsk about any specific program for details.`
-            },
-
-            // --- Category: Framework Interoperability ---
-            interoperability: {
-                keywords: ['interoperability', 'framework mapping', 'nist'],
-                response: `<strong>Framework Interoperability</strong>\n\nThis category explains how we support organizations that need to map between ISO standards and other widely used frameworks. The intent is to reduce duplication and ensure the organization can speak the language required by clients, regulators, and auditors.\n\n• <strong>NIST CSF</strong> — Cybersecurity Framework alignment\n• <strong>NIST AI RMF</strong> — AI Risk Management Framework mapping\n\nAsk about either framework for details.`
-            },
-
-            // --- Individual ISO Standards ---
-            iso27001: {
-                keywords: ['27001'],
-                response: `<strong>ISO/IEC 27001 — Information Security Management</strong>\n\nISO/IEC 27001 is the certifiable standard for building an Information Security Management System. It defines the requirements for governing security, managing risk, implementing controls, monitoring effectiveness, and continuously improving.\n\nIt is used to demonstrate that security is managed systematically across people, process, and technology — not ad hoc.`
-            },
-            iso27701: {
-                keywords: ['27701'],
-                response: `<strong>ISO/IEC 27701 — Privacy Information Management</strong>\n\nISO/IEC 27701 extends ISO/IEC 27001 to create a Privacy Information Management System. It adds privacy-specific requirements such as governance of personal information, privacy risk management, data subject rights, third-party privacy controls, and privacy-by-design practices.\n\nIt is often used when organizations want a structured privacy program that can be audited and demonstrated.`
-            },
-            iso27017: {
-                keywords: ['27017'],
-                response: `<strong>ISO/IEC 27017 — Cloud Services Security</strong>\n\nISO/IEC 27017 provides cloud-specific security guidance. It clarifies responsibilities between cloud customer and cloud provider, addresses cloud-specific risks such as shared responsibility, virtualized environments, and configuration management, and provides guidance for control implementation in cloud platforms.`
-            },
-            iso27018: {
-                keywords: ['27018'],
-                response: `<strong>ISO/IEC 27018 — PII Protection in Public Cloud</strong>\n\nISO/IEC 27018 focuses on protecting personally identifiable information in public cloud environments. It provides privacy-oriented controls and guidance for cloud service providers processing PII, including limitations on data use, transparency, breach notification expectations, and data handling practices relevant to privacy compliance.`
-            },
-            iso27035: {
-                keywords: ['27035'],
-                response: `<strong>ISO/IEC 27035 — Incident Management</strong>\n\nISO/IEC 27035 provides guidance for managing security incidents. It covers planning, detection, triage, response, communication, evidence handling, and post-incident learning. It ensures incidents are handled consistently and in a way that supports regulatory expectations and operational continuity.`
-            },
-            iso27005: {
-                keywords: ['27005'],
-                response: `<strong>ISO/IEC 27005 — Information Security Risk Management</strong>\n\nISO/IEC 27005 provides guidance for identifying, analyzing, evaluating, and treating information security risk. It supports ISO/IEC 27001 by describing methods for risk assessment and risk treatment planning, ensuring the security program is risk-driven and justifiable.`
-            },
-            iso27031: {
-                keywords: ['27031'],
-                response: `<strong>ISO/IEC 27031 — ICT Readiness for Business Continuity</strong>\n\nISO/IEC 27031 focuses on ensuring ICT services can support business continuity needs. It bridges information security and continuity planning by addressing ICT resilience, recovery objectives, recovery planning, and the capability to maintain or restore technology services during disruptions.`
-            },
-            iso27002: {
-                keywords: ['27002'],
-                response: `<strong>ISO/IEC 27002 — Information Security Controls</strong>\n\nISO/IEC 27002 is the primary control catalogue used to select and implement security controls for ISO/IEC 27001. It provides detailed guidance on control intent, implementation considerations, and how controls should operate.\n\nIt is not certifiable by itself but is commonly used as the baseline for control design and audit evidence.`
-            },
-            iso27036: {
-                keywords: ['27036', 'supplier security', 'supply chain security'],
-                response: `<strong>ISO/IEC 27036 — Supplier Relationship Security</strong>\n\nISO/IEC 27036 focuses on managing information security risk in supplier and third-party relationships. It covers due diligence, contracting, control requirements, performance monitoring, and exit management.\n\nIt is highly relevant for organizations with outsourced technology services or supply chain exposure.`
-            },
-            iso20000: {
-                keywords: ['20000'],
-                response: `<strong>ISO/IEC 20000-1 — IT Service Management</strong>\n\nISO/IEC 20000-1 is the certifiable standard for an IT Service Management System. It sets requirements for managing IT services end to end, including service delivery, incident management, change control, service levels, continual improvement, and governance.\n\nIt is used by organizations that want measurable, reliable service operations.`
-            },
-            iso19770: {
-                keywords: ['19770'],
-                response: `<strong>ISO/IEC 19770-1 — IT Asset Management</strong>\n\nISO/IEC 19770-1 is the standard for an IT Asset Management System. It focuses on governing hardware, software, licenses, and digital assets across their lifecycle.\n\nIt strengthens cost control, risk reduction, compliance with licensing obligations, and operational visibility.`
-            },
-            iso38500: {
-                keywords: ['38500'],
-                response: `<strong>ISO/IEC 38500 — Governance of IT</strong>\n\nISO/IEC 38500 provides principles for governing IT at the board and executive level. It clarifies how leadership should evaluate, direct, and monitor IT to ensure it supports strategy, manages risk, and delivers value.\n\nIt is used to design accountability structures and executive oversight models.`
-            },
-            iso22301: {
-                keywords: ['22301'],
-                response: `<strong>ISO 22301 — Business Continuity Management</strong>\n\nISO 22301 is the certifiable standard for a Business Continuity Management System. It covers business impact analysis, continuity strategies, incident response, continuity planning, exercises, and continuous improvement.\n\nIt is used to demonstrate that the organization can sustain critical operations during disruptions.`
-            },
-            iso22316: {
-                keywords: ['22316'],
-                response: `<strong>ISO 22316 — Organizational Resilience</strong>\n\nISO 22316 provides guidance on building organizational resilience more broadly than continuity planning. It focuses on adaptive capacity, leadership, culture, and the ability to anticipate and respond to change.\n\nIt supports long-term resilience beyond specific continuity events.`
-            },
-            iso31000: {
-                keywords: ['31000'],
-                response: `<strong>ISO 31000 — Enterprise Risk Management</strong>\n\nISO 31000 provides principles and guidance for risk management across the enterprise. It is used to establish consistent risk language, assessment methods, governance, and decision-making.\n\nIt integrates technology risk with broader business risk so leaders can prioritize effectively.`
-            },
-            iso37301: {
-                keywords: ['37301'],
-                response: `<strong>ISO 37301 — Compliance Management</strong>\n\nISO 37301 is the certifiable standard for a Compliance Management System. It covers governance, compliance obligations, risk-based planning, training, monitoring, reporting, investigations, corrective actions, and continuous improvement.\n\nIt is useful when organizations need defensible compliance capability that stands up to regulatory scrutiny.`
+                keywords: ['standard', 'all standards', 'what standards', 'which standards'],
+                response: `We structure readiness around the following standards:\n\n<strong>Cybersecurity:</strong> ISO/IEC 27001, 27002, 27701, 27017, 27018, 27035, 27005, 27031, 27036\n<strong>IT Service:</strong> ISO/IEC 20000-1, 19770-1, 38500\n<strong>Continuity:</strong> ISO 22301, 22316, 31000\n<strong>Compliance:</strong> ISO 37301, IMS, multi-standard harmonization\n<strong>AI Governance:</strong> ISO/IEC 42001, 23894, 38507, 22989, 23053\n<strong>Canadian:</strong> CyberSecure Canada, CPCSC, ITSG-33\n<strong>Frameworks:</strong> NIST CSF, NIST AI RMF\n\nAsk about any specific standard by number.`
             },
             iso42001: {
                 keywords: ['42001'],
-                response: `<strong>ISO/IEC 42001 — AI Management System (AIMS)</strong>\n\nISO/IEC 42001 is the certifiable management system standard for AI. It defines how an organization governs AI across policy, risk management, lifecycle controls, roles, monitoring, and continual improvement.\n\nReadiness includes defining AI scope, establishing governance and control structures, building AI documentation, and preparing evidence that AI is managed systematically.`
+                response: `<strong>ISO/IEC 42001 — AI Management System</strong>\n\nThe first certifiable AI management system standard.\n\nCovers:\n• AI lifecycle governance\n• Risk classification\n• Responsible AI controls\n• Documentation discipline\n\nISO/IEC 42001 applies if your organization develops or deploys AI systems and requires structured governance, lifecycle control, and risk management.\n\nAre you currently operating AI systems in production?`
             },
             iso23894: {
                 keywords: ['23894'],
-                response: `<strong>ISO/IEC 23894 — AI Risk Management</strong>\n\nISO/IEC 23894 provides guidance on identifying and managing AI-specific risks including bias, model drift, explainability, privacy impacts, safety, and misuse.\n\nReadiness includes establishing risk classification, performing AI risk assessments, defining mitigation controls, and building monitoring practices.`
+                response: `<strong>ISO/IEC 23894 — AI Risk Management</strong>\n\nAI risk management guidance.\n\nFocus:\n• Risk identification\n• Algorithmic impact assessments\n• Bias and fairness evaluation\n• Model governance\n\nSupports ISO/IEC 42001 implementation.`
             },
             iso38507: {
                 keywords: ['38507'],
-                response: `<strong>ISO/IEC 38507 — Governance of AI</strong>\n\nISO/IEC 38507 provides guidance for leaders on governing AI. It focuses on oversight, accountability, human involvement, ethics, stakeholder impacts, and decision-making controls.\n\nReadiness work includes establishing AI governance committees, decision rights, human oversight models, and executive reporting.`
+                response: `<strong>ISO/IEC 38507 — Governance of AI</strong>\n\nAI governance implications for boards and executives.\n\nFocus:\n• Ethical oversight\n• Human supervision\n• Accountability frameworks\n• Stakeholder impact assessment`
             },
             iso22989: {
                 keywords: ['22989'],
-                response: `<strong>ISO/IEC 22989 — AI Concepts and Terminology</strong>\n\nISO/IEC 22989 provides common AI terminology and foundational concepts. It supports organizational AI literacy and consistent communication across business, technology, legal, and risk teams.\n\nReadiness includes building shared taxonomy, training content, and cross-functional alignment.`
+                response: `<strong>ISO/IEC 22989 — AI Concepts and Terminology</strong>\n\nAI terminology and foundational concepts.\n\nSupports enterprise AI literacy and consistent communication across business, technology, legal, and risk teams.`
             },
             iso23053: {
                 keywords: ['23053', 'ai lifecycle', 'ai system lifecycle'],
-                response: `<strong>ISO/IEC 23053 — AI System Lifecycle</strong>\n\nISO/IEC 23053 provides a framework for governing the AI system lifecycle from design to deployment, monitoring, and decommissioning.\n\nReadiness includes defining lifecycle gates, documentation requirements, model training and validation controls, monitoring protocols, and change management for AI systems.`
+                response: `<strong>ISO/IEC 23053 — AI System Lifecycle</strong>\n\nAI lifecycle framework.\n\nCovers:\n• Design\n• Training\n• Validation\n• Deployment\n• Monitoring\n• Decommissioning`
             },
-            aida: {
-                keywords: ['aida', 'artificial intelligence and data act'],
-                response: `<strong>AIDA — Canada's Artificial Intelligence and Data Act</strong>\n\nAIDA readiness refers to preparing for Canada's Artificial Intelligence and Data Act requirements. This includes identifying whether AI use cases may be high impact, implementing transparency and governance measures, defining accountability, and planning for compliance reporting.\n\nIt is designed to ensure organizations can respond quickly as legal obligations are clarified.`
+            iso27001: {
+                keywords: ['27001'],
+                response: `<strong>ISO/IEC 27001 — Information Security Management</strong>\n\nThe certifiable standard for an Information Security Management System.\n\nDefines requirements for:\n• Security governance\n• Risk management\n• Control implementation\n• Monitoring and measurement\n• Continual improvement\n\nDemonstrates systematic security management across people, process, and technology.\n\nAre you pursuing initial certification or maintaining an existing one?`
             },
-            cpcsc: {
-                keywords: ['cpcsc', 'canadian program for cyber'],
-                response: `<strong>Canadian Program for Cyber Security Certification (CPCSC)</strong>\n\nThe CPCSC is a higher assurance federal cybersecurity certification program aligned to ITSG-33, intended for organizations operating within regulated supply chains or pursuing Government of Canada contracts requiring structured control implementation and formal certification.\n\nReadiness work includes mapping controls to ITSG-33, identifying gaps, building control implementation statements, and preparing evidence aligned to federal certification expectations.\n\n<strong>Distinction from CyberSecure Canada:</strong>\n• <strong>CyberSecure Canada</strong> — baseline certification for foundational security controls and cyber hygiene\n• <strong>CPCSC</strong> — higher assurance certification for regulated supply chains and federal contracts\n• Both align to <strong>ITSG-33</strong> but at different assurance levels`
+            iso27701: {
+                keywords: ['27701', 'privacy'],
+                response: `<strong>ISO/IEC 27701 — Privacy Information Management</strong>\n\nExtends ISO/IEC 27001 to create a Privacy Information Management System.\n\nAdds:\n• Governance of personal information\n• Privacy risk management\n• Data subject rights\n• Third-party privacy controls\n• Privacy-by-design practices`
             },
-            cybersecure: {
-                keywords: ['cybersecure', 'cyber secure'],
-                response: `<strong>CyberSecure Canada — Baseline Cybersecurity Certification</strong>\n\nThe CyberSecure Canada Certification Program is a Government of Canada baseline cybersecurity certification designed primarily for small and medium organizations to demonstrate foundational security controls and cyber hygiene aligned to federal expectations.\n\nReadiness work typically includes mapping existing practices to program requirements, implementing missing controls, building evidence, and preparing for assessment.\n\n<strong>Distinction from CPCSC:</strong>\n• <strong>CyberSecure Canada</strong> — baseline certification for foundational controls and cyber hygiene\n• <strong>CPCSC</strong> — higher assurance certification for regulated supply chains and federal contracts\n• Both align to <strong>ITSG-33</strong> but at different scopes and assurance levels`
+            iso27017: {
+                keywords: ['27017'],
+                response: `<strong>ISO/IEC 27017 — Cloud Services Security</strong>\n\nCloud-specific security guidance clarifying responsibilities between cloud customer and provider.\n\nAddresses shared responsibility, virtualized environments, and configuration management.`
             },
-            itsg33: {
-                keywords: ['itsg-33', 'itsg33', 'itsg'],
-                response: `<strong>ITSG-33 — Federal IT Security Control Framework</strong>\n\nITSG-33 is the Canadian federal security control framework used to structure security controls and risk management in federal environments.\n\nReadiness work includes mapping controls, establishing security categorization, building control implementation statements, and ensuring evidence aligns with expected federal control outcomes.\n\n<strong>Key distinction:</strong> ITSG-33 is a control framework, not a certification. CyberSecure Canada and CPCSC are certification programs built on ITSG-33 controls.`
+            iso27018: {
+                keywords: ['27018'],
+                response: `<strong>ISO/IEC 27018 — PII Protection in Public Cloud</strong>\n\nPrivacy-oriented controls for cloud service providers processing PII.\n\nCovers data use limitations, transparency, breach notification, and data handling practices.`
             },
-            nistcsf: {
-                keywords: ['nist csf', 'nist cybersecurity', 'cybersecurity framework'],
-                response: `<strong>NIST CSF — Cybersecurity Framework Alignment</strong>\n\nNIST CSF is a widely adopted cybersecurity framework organized around core functions: Identify, Protect, Detect, Respond, and Recover.\n\nMapping ISO and Canadian frameworks to NIST CSF helps organizations structure programs in a way that is easily understood by North American stakeholders and supports maturity-based planning.\n\nWe provide interoperability alignment and control mapping — not certification, but strategic positioning for government and cross-border clients.`
+            iso27035: {
+                keywords: ['27035', 'incident'],
+                response: `<strong>ISO/IEC 27035 — Incident Management</strong>\n\nGuidance for managing security incidents.\n\nCovers planning, detection, triage, response, communication, evidence handling, and post-incident learning.`
             },
-            nistai: {
-                keywords: ['nist ai', 'nist ai rmf', 'ai risk management framework'],
-                response: `<strong>NIST AI RMF — AI Risk Management Framework Mapping</strong>\n\nNIST AI RMF provides a structured approach for managing AI risks across governance, mapping, measurement, and management functions.\n\nAligning ISO/IEC 42001 and ISO AI standards to NIST AI RMF helps organizations demonstrate AI risk rigor and communicate with stakeholders familiar with NIST.\n\nWe provide interoperability alignment — ensuring your AI governance speaks to both Canadian and international audiences.`
+            iso27005: {
+                keywords: ['27005', 'risk management'],
+                response: `<strong>ISO/IEC 27005 — Information Security Risk Management</strong>\n\nGuidance for identifying, analyzing, evaluating, and treating information security risk.\n\nSupports ISO/IEC 27001 risk assessment and treatment planning.`
             },
-            ims: {
-                keywords: ['integrated management system'],
-                response: `<strong>Integrated Management System (IMS) Advisory</strong>\n\nAn Integrated Management System is a structured approach to combining multiple management systems — such as security, privacy, continuity, IT service management, and compliance — into one governance framework.\n\nThe focus is on shared processes, shared evidence, and unified leadership oversight. It reduces duplication and makes certification and audit readiness more efficient.`
+            iso27031: {
+                keywords: ['27031'],
+                response: `<strong>ISO/IEC 27031 — ICT Readiness for Business Continuity</strong>\n\nEnsures ICT services support business continuity needs.\n\nBridges information security and continuity planning through ICT resilience, recovery objectives, and service restoration capability.`
             },
-            multistandard: {
-                keywords: ['multi-standard', 'multi standard', 'harmonization'],
-                response: `<strong>Multi-Standard Harmonization & Certification</strong>\n\nThis refers to the practical work of mapping and aligning requirements across multiple standards and frameworks. It includes building a single control library, a shared evidence model, and a combined audit approach so the organization can support multiple certifications without separate disconnected programs.`
+            iso27002: {
+                keywords: ['27002'],
+                response: `<strong>ISO/IEC 27002 — Information Security Controls</strong>\n\nThe primary control catalogue for ISO/IEC 27001.\n\nProvides detailed guidance on control intent, implementation, and operation. Not certifiable independently but foundational for control design and audit evidence.`
+            },
+            iso27036: {
+                keywords: ['27036', 'supplier security', 'supply chain security'],
+                response: `<strong>ISO/IEC 27036 — Supplier Relationship Security</strong>\n\nManaging information security risk in supplier and third-party relationships.\n\nCovers due diligence, contracting, control requirements, performance monitoring, and exit management.`
+            },
+            iso20000: {
+                keywords: ['20000'],
+                response: `<strong>ISO/IEC 20000-1 — IT Service Management</strong>\n\nCertifiable standard for IT Service Management.\n\nCovers service delivery, incident management, change control, service levels, continual improvement, and governance.`
+            },
+            iso19770: {
+                keywords: ['19770'],
+                response: `<strong>ISO/IEC 19770-1 — IT Asset Management</strong>\n\nIT Asset Management System standard.\n\nGoverns hardware, software, licenses, and digital assets across their lifecycle. Strengthens cost control, risk reduction, and licensing compliance.`
+            },
+            iso38500: {
+                keywords: ['38500'],
+                response: `<strong>ISO/IEC 38500 — Governance of IT</strong>\n\nPrinciples for governing IT at board and executive level.\n\nClarifies how leadership should evaluate, direct, and monitor IT to support strategy, manage risk, and deliver value.`
+            },
+            iso22301: {
+                keywords: ['22301'],
+                response: `<strong>ISO 22301 — Business Continuity Management</strong>\n\nCertifiable standard for a Business Continuity Management System.\n\nCovers business impact analysis, continuity strategies, incident response, planning, exercises, and continuous improvement.`
+            },
+            iso22316: {
+                keywords: ['22316'],
+                response: `<strong>ISO 22316 — Organizational Resilience</strong>\n\nGuidance on building organizational resilience.\n\nFocuses on adaptive capacity, leadership, culture, and the ability to anticipate and respond to change.`
+            },
+            iso31000: {
+                keywords: ['31000'],
+                response: `<strong>ISO 31000 — Enterprise Risk Management</strong>\n\nPrinciples and guidance for enterprise risk management.\n\nEstablishes consistent risk language, assessment methods, governance, and decision-making across technology and business risk.`
+            },
+            iso37301: {
+                keywords: ['37301'],
+                response: `<strong>ISO 37301 — Compliance Management</strong>\n\nCertifiable standard for a Compliance Management System.\n\nCovers governance, compliance obligations, risk-based planning, training, monitoring, reporting, and corrective actions.`
             },
             iso17021: {
                 keywords: ['17021', 'certification body', 'cb selection', 'accreditation'],
-                response: `<strong>ISO/IEC 17021-1 — Conformity Assessment for Certification Bodies</strong>\n\nThis standard defines the requirements for bodies providing audit and certification of management systems. We are <strong>not</strong> a certification body — but our methodology reflects awareness of 17021-1.\n\n<strong>Why this matters:</strong>\n• Informs how we help you select the right CB — accreditation scope, competence, industry experience\n• Ensures our readiness work aligns with what auditors will actually look for\n• Stage 1 and Stage 2 preparation is structured around 17021-1 audit methodology\n• Evidence packages are built to satisfy CB documentation expectations\n\nWe prepare you. The CB certifies you.`
+                response: `<strong>ISO/IEC 17021-1 — Conformity Assessment</strong>\n\nDefines requirements for certification bodies. We are <strong>not</strong> a certification body.\n\nOur methodology reflects 17021-1 awareness:\n• CB selection guidance (accreditation scope, competence)\n• Readiness aligned to auditor expectations\n• Stage 1 and Stage 2 structured around audit methodology\n\nWe prepare you. The CB certifies you.`
+            },
+
+            // --- Categories ---
+            cybersecurity: {
+                keywords: ['cybersecurity', 'information security', 'cyber security', 'infosec'],
+                response: `<strong>Cybersecurity & Information Security</strong>\n\nStandards for building and operating a security program protecting confidentiality, integrity, and availability.\n\n• ISO/IEC 27001 — Information Security Management\n• ISO/IEC 27002 — Security Controls\n• ISO/IEC 27701 — Privacy Management\n• ISO/IEC 27017 — Cloud Security\n• ISO/IEC 27018 — PII in Public Cloud\n• ISO/IEC 27035 — Incident Management\n• ISO/IEC 27005 — Risk Management\n• ISO/IEC 27031 — ICT Continuity\n• ISO/IEC 27036 — Supplier Security\n\nWhich standard is most relevant to your organization?`
+            },
+            itservice: {
+                keywords: ['it service', 'digital operations', 'service management'],
+                response: `<strong>IT Service & Digital Operations</strong>\n\nStandards for IT service delivery, governance, and improvement.\n\n• ISO/IEC 20000-1 — IT Service Management\n• ISO/IEC 19770-1 — IT Asset Management\n• ISO/IEC 38500 — Governance of IT`
+            },
+            continuity: {
+                keywords: ['business continuity', 'resilience', 'crisis', 'disaster recovery'],
+                response: `<strong>Business Continuity & Resilience</strong>\n\nStandards for operational continuity during disruption.\n\n• ISO 22301 — Business Continuity Management\n• ISO 22316 — Organizational Resilience\n• ISO 31000 — Enterprise Risk Management`
+            },
+            compliance: {
+                keywords: ['compliance', 'integrated management', 'ims', 'harmoniz'],
+                response: `<strong>Compliance & Integrated Management</strong>\n\nBuilding compliance programs and integrating multiple management systems.\n\n• ISO 37301 — Compliance Management\n• IMS Advisory — Integrated Management System\n• Multi-Standard Harmonization`
+            },
+            ai: {
+                keywords: ['ai governance', 'artificial intelligence', 'machine learning', 'ai standard'],
+                response: `<strong>AI Governance & Canadian Regulation</strong>\n\nStandards and readiness for governing AI systems.\n\n• <strong>ISO/IEC 42001</strong> — AI Management System (certifiable)\n• <strong>ISO/IEC 23894</strong> — AI Risk Management\n• <strong>ISO/IEC 38507</strong> — Governance of AI\n• <strong>ISO/IEC 22989</strong> — AI Concepts & Terminology\n• <strong>ISO/IEC 23053</strong> — AI System Lifecycle\n• <strong>AIDA</strong> — Canada's Artificial Intelligence and Data Act\n\nISO/IEC 42001 applies if you develop or deploy AI and require structured governance.\n\nAre you currently operating AI systems in production?`
+            },
+            aida: {
+                keywords: ['aida', 'artificial intelligence and data act'],
+                response: `<strong>AIDA — Canada's Artificial Intelligence and Data Act</strong>\n\nFocus:\n• High-impact AI systems\n• Risk classification\n• Transparency requirements\n• Documentation and monitoring expectations\n\nOrganizations must prepare before enforcement. We support readiness planning to ensure you can respond as legal obligations are clarified.\n\nAre you deploying AI systems that could be classified as high-impact?`
+            },
+            cpcsc: {
+                keywords: ['cpcsc', 'canadian program for cyber', 'defense contractor', 'defence contractor', 'defense supplier', 'defence supplier'],
+                response: `<strong>Canadian Program for Cyber Security Certification (CPCSC)</strong>\n\nFederal certification pathway for defense-related suppliers.\n\nWe support:\n• Control mapping to ITSG-33\n• Gap analysis\n• Certification pathway planning\n• Federal readiness alignment\n\n<strong>Distinction:</strong>\n• <strong>CyberSecure Canada</strong> — baseline certification for foundational controls\n• <strong>CPCSC</strong> — higher assurance for regulated supply chains and federal contracts\n• Both align to ITSG-33 at different assurance levels\n\nAre you currently registered in the federal supplier system?`
+            },
+            cybersecure: {
+                keywords: ['cybersecure', 'cyber secure'],
+                response: `<strong>CyberSecure Canada</strong>\n\nGovernment of Canada baseline cybersecurity certification for SMEs.\n\nDemonstrates foundational controls and cyber hygiene aligned to federal expectations.\n\nReadiness includes mapping practices to requirements, implementing controls, building evidence, and preparing for assessment.`
+            },
+            itsg33: {
+                keywords: ['itsg-33', 'itsg33', 'itsg'],
+                response: `<strong>ITSG-33 — Federal IT Security Control Framework</strong>\n\nCanadian federal security control framework.\n\nITSG-33 is a <strong>control framework</strong>, not a certification. CyberSecure Canada and CPCSC are certification programs built on ITSG-33 controls.\n\nReadiness includes control mapping, security categorization, and evidence alignment.`
+            },
+            nistcsf: {
+                keywords: ['nist csf', 'nist cybersecurity', 'cybersecurity framework'],
+                response: `<strong>NIST CSF — Cybersecurity Framework</strong>\n\nOrganized around: Identify, Protect, Detect, Respond, Recover.\n\nWe provide interoperability alignment — mapping ISO and Canadian frameworks to NIST CSF for North American stakeholder communication.\n\nNot certification. Strategic positioning.`
+            },
+            nistai: {
+                keywords: ['nist ai', 'nist ai rmf', 'ai risk management framework'],
+                response: `<strong>NIST AI RMF — AI Risk Management Framework</strong>\n\nStructured approach for managing AI risks across governance, mapping, measurement, and management.\n\nWe align ISO/IEC 42001 and AI standards to NIST AI RMF — ensuring your AI governance speaks to both Canadian and international audiences.`
+            },
+
+            // --- Process ---
+            process: {
+                keywords: ['process', 'methodology', 'approach', 'how does it work', 'how do engagements work', 'engagement'],
+                response: `We follow a structured five-phase approach:\n\n<strong>Phase 1 — Discovery & Scoping</strong>\nTechnology review and regulatory exposure identification.\n\n<strong>Phase 2 — Gap & Risk Analysis</strong>\nControl maturity and governance review.\n\n<strong>Phase 3 — Design & Remediation</strong>\nPolicy, controls, governance implementation.\n\n<strong>Phase 4 — Readiness Validation</strong>\nInternal assessments and evidence testing.\n\n<strong>Phase 5 — External Engagement</strong>\nPreparation for third-party inspection or audit.\n\nEngagements are structured, documented, and accountability-driven.`
+            },
+            stage1: {
+                keywords: ['stage 1', 'stage one', 'what happens in stage'],
+                response: `<strong>Stage 1</strong> reviews documentation completeness.\n\nAuditors assess:\n• Policy structure\n• Scope definition\n• Risk assessment process\n• Internal audit program evidence\n\nWithout this foundation, Stage 2 cannot proceed.\n\nDo you have an existing management system documented?`
+            },
+            stage2: {
+                keywords: ['stage 2', 'stage two'],
+                response: `<strong>Stage 2</strong> evaluates operational effectiveness.\n\nAuditors verify:\n• Controls are implemented and working\n• Evidence exists in practice\n• Personnel understand their responsibilities\n• Nonconformities from Stage 1 are addressed\n\nStage 2 requires a functioning internal audit program and completed management review.`
             },
 
             // --- General ---
-            process: {
-                keywords: ['process', 'methodology', 'approach', 'phase', 'step', 'how does it work'],
-                response: `Our structured readiness approach follows 5 phases:\n\n<strong>Phase 01: Discovery & Scoping</strong>\nTechnology landscape review and certification objectives.\n\n<strong>Phase 02: Gap & Risk Analysis</strong>\nControl maturity assessment and evidence gap identification.\n\n<strong>Phase 03: Design & Remediation</strong>\nPolicy development and governance implementation.\n\n<strong>Phase 04: Readiness Validation</strong>\nInternal assessments and evidence traceability testing.\n\n<strong>Phase 05: External Engagement</strong>\nPreparation for third-party audit and leadership briefing.`
-            },
             contact: {
-                keywords: ['contact', 'email', 'reach', 'get started', 'start', 'begin', 'talk', 'connect', 'call', 'meeting', 'schedule'],
-                response: `Ready to get started?\n\n<a href="#contact">Fill out our contact form</a> and we'll schedule a discovery call within 24 hours.\n\nIn the form, you can tell us about your organization and select the service you're interested in (Certification Readiness, AI Governance, CPCSC, etc.).\n\nOr email us directly at <a href="mailto:hello@ascio.ca">hello@ascio.ca</a>`
-            },
-            location: {
-                keywords: ['where', 'location', 'based', 'canada', 'office'],
-                response: `Ascio is based in Canada. We provide technology governance, inspection, and assessment readiness advisory services to organizations across the country.`
+                keywords: ['contact', 'email', 'reach', 'get started', 'start', 'begin', 'talk', 'connect', 'call', 'meeting', 'schedule', 'discovery call'],
+                response: `If you would like structured readiness support, we can schedule a discovery call.\n\nYou can:\n• <a href="#contact">Submit the Request a Discovery Call form</a>\n• Email <a href="mailto:hello@ascio.ca">hello@ascio.ca</a>\n\nWe typically respond within 24 hours.`
             },
             about: {
-                keywords: ['about', 'who', 'company', 'ascio', 'history', 'founded', 'started'],
-                response: `<strong>Ascio Consultancy Inc.</strong> was founded in 2017 and is based in Canada.\n\nWe're an independent advisory firm specializing in technology governance, inspection, and assessment readiness.\n\nWe prepare organizations for independent inspections, assessments, and certifications through governance frameworks, evidence planning, and operational discipline.\n\nWe focus on readiness — the actual certifications are conducted by independent, accredited third parties.`
+                keywords: ['about', 'who', 'company', 'ascio', 'history', 'founded'],
+                response: `<strong>Ascio Consultancy Inc.</strong>\n\nFounded 2017. Based in Canada.\n\nIndependent advisory firm specializing in technology governance, inspection, and assessment readiness.\n\nWe prepare organizations for independent inspections, assessments, and certifications through governance frameworks, evidence planning, and operational discipline.\n\nWe do not certify. We prepare you for certification.`
+            },
+            location: {
+                keywords: ['where', 'location', 'based', 'office'],
+                response: `Ascio is based in Canada. We provide technology governance and assessment readiness advisory services nationally.`
+            },
+            readiness: {
+                keywords: ['readiness', 'preparation', 'what is readiness'],
+                response: `Readiness is the work that gets an organization prepared for external scrutiny.\n\nIt includes:\n• Evidence preparation and validation\n• Gap identification and remediation\n• Governance and accountability alignment\n• Operational discipline across policies, processes, and records\n\nThe objective: reduce audit or inspection risk by making requirements tangible and traceable.\n\nAre you preparing for inspection, assessment, or certification?`
+            },
+            managementsystems: {
+                keywords: ['management system', 'what is a management system'],
+                response: `A technology management system is a formal, documented framework for governing security, privacy, resilience, compliance, and technology risks consistently.\n\nIt includes governance, roles, processes, training, monitoring, corrective actions, and leadership review.\n\nThe benefit: <strong>repeatable control</strong>, not one-off effort. Maintainable compliance over time.`
+            },
+            ims: {
+                keywords: ['integrated management system'],
+                response: `<strong>Integrated Management System (IMS)</strong>\n\nCombines multiple management systems into one governance framework.\n\nShared processes, shared evidence, unified oversight. Reduces duplication and improves audit efficiency.`
             }
         };
 
         function findResponse(query) {
             const lowerQuery = query.toLowerCase();
 
-            for (const [key, data] of Object.entries(knowledge)) {
-                for (const keyword of data.keywords) {
-                    if (lowerQuery.includes(keyword)) {
-                        return data.response;
-                    }
+            // Guardrails — redirect detailed implementation requests
+            const guardrailPatterns = ['step by step', 'implementation plan', 'detailed plan', 'give me a plan', 'template', 'specific steps', 'how exactly do'];
+            for (const pattern of guardrailPatterns) {
+                if (lowerQuery.includes(pattern)) {
+                    return `That level of implementation planning requires formal engagement to ensure accuracy and accountability.\n\nWe would recommend <a href="#contact">scheduling a discovery call</a> to scope your specific requirements.`;
                 }
             }
 
-            return `I don't have specific information on that topic. Here's what I can help with:\n\n• <strong>Services</strong> — inspection, assessment, internal audit, certification readiness, governance & risk\n• <strong>Standards</strong> — ask about any ISO by number (e.g. "27001", "42001", "22301")\n• <strong>Categories</strong> — cybersecurity, IT service, business continuity, compliance, AI governance\n• <strong>Canadian programs</strong> — CyberSecure Canada, ITSG-33, CPCSC, AIDA\n• <strong>Frameworks</strong> — NIST CSF, NIST AI RMF\n• <strong>Process</strong> — 5-phase engagement methodology\n• <strong>Get started</strong> — contact and next steps\n\nOr email us at <a href="mailto:hello@ascio.ca">hello@ascio.ca</a> for specific inquiries.`;
+            // Guardrails — legal questions
+            const legalPatterns = ['legal advice', 'legally required', 'is it law', 'do we have to by law', 'sue', 'liability'];
+            for (const pattern of legalPatterns) {
+                if (lowerQuery.includes(pattern)) {
+                    return `We do not provide legal advice. For legal interpretation of regulatory obligations, consult qualified legal counsel.\n\nWe can support readiness alignment to standards and regulatory frameworks from an operational governance perspective.`;
+                }
+            }
+
+            // Score-based matching — longer keyword matches score higher
+            let bestMatch = null;
+            let bestScore = 0;
+
+            for (const [key, data] of Object.entries(knowledge)) {
+                let score = 0;
+                for (const keyword of data.keywords) {
+                    if (lowerQuery.includes(keyword)) {
+                        score += keyword.length;
+                    }
+                }
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestMatch = data;
+                }
+            }
+
+            if (bestMatch) {
+                return bestMatch.response;
+            }
+
+            return `I can assist with the following:\n\n• <strong>Services</strong> — inspection, assessment, internal audit, certification readiness, governance\n• <strong>Standards</strong> — ask by number (e.g. "27001", "42001", "22301")\n• <strong>AI Governance</strong> — ISO/IEC 42001, AIDA, CPCSC\n• <strong>Canadian Programs</strong> — CyberSecure Canada, ITSG-33\n• <strong>Process</strong> — five-phase engagement methodology\n• <strong>Get Started</strong> — discovery call and next steps\n\nOr email <a href="mailto:hello@ascio.ca">hello@ascio.ca</a> directly.`;
         }
 
         function addMessage(text, isUser = false) {
@@ -1977,6 +2262,95 @@
                 submitBtn.disabled = false;
             }
         });
+        // === Interactive Enhancements ===
+
+        // 1. Scroll-triggered fade-in animations
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // 2. Collapsible standards categories
+        document.querySelectorAll('.standards-group h3').forEach(header => {
+            header.addEventListener('click', () => {
+                const group = header.closest('.standards-group');
+                const icon = header.querySelector('.toggle-icon');
+                group.classList.toggle('collapsed');
+                icon.textContent = group.classList.contains('collapsed') ? '+' : '−';
+            });
+        });
+
+        // 3. Expandable service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const detail = card.nextElementSibling;
+                if (!detail || !detail.classList.contains('service-detail')) return;
+
+                const wasExpanded = card.classList.contains('expanded');
+                // Close all other expanded cards
+                document.querySelectorAll('.service-card.expanded').forEach(other => {
+                    if (other !== card) {
+                        other.classList.remove('expanded');
+                        other.nextElementSibling.classList.remove('expanded');
+                    }
+                });
+
+                card.classList.toggle('expanded', !wasExpanded);
+                detail.classList.toggle('expanded', !wasExpanded);
+            });
+        });
+
+        // 4. Timeline scroll progress
+        const timeline = document.getElementById('processTimeline');
+        const timelineProgress = document.getElementById('timelineProgress');
+        const steps = document.querySelectorAll('.process-step');
+
+        const stepObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reached');
+                }
+            });
+        }, { threshold: 0.3, rootMargin: '0px 0px -10% 0px' });
+
+        steps.forEach(step => stepObserver.observe(step));
+
+        function updateTimelineProgress() {
+            if (!timeline) return;
+            const rect = timeline.getBoundingClientRect();
+            const timelineTop = rect.top;
+            const timelineHeight = rect.height;
+            const viewportMiddle = window.innerHeight * 0.6;
+            const progress = Math.min(Math.max((viewportMiddle - timelineTop) / timelineHeight, 0), 1);
+            timelineProgress.style.height = (progress * 100) + '%';
+        }
+
+        window.addEventListener('scroll', updateTimelineProgress, { passive: true });
+        updateTimelineProgress();
+
+        // 5. Active nav highlighting on scroll
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('section[id]');
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+                    });
+                }
+            });
+        }, { threshold: 0.3, rootMargin: '-64px 0px -40% 0px' });
+
+        sections.forEach(section => navObserver.observe(section));
     </script>
 </body>
 </html>
+
