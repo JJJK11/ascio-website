@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N7K1X6GV2R"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N7K1X6GV2R');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Governance &amp; Compliance Review &#8212; ascio</title>
+    <meta name="description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta property="og:title" content="Governance &amp; Compliance Review &#8212; ascio">
+    <meta property="og:description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta property="og:image" content="https://ascio.ca/ascio_Logo.png">
+    <meta property="og:url" content="https://ascio.ca/review/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Governance &amp; Compliance Review &#8212; ascio">
+    <meta name="twitter:description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta name="twitter:image" content="https://ascio.ca/ascio_Logo.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #09090b;
+            --bg-raised: #18181b;
+            --bg-elevated: #27272a;
+            --border: #27272a;
+            --border-light: #3f3f46;
+            --text: #fafafa;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --accent: #06b6d4;
+            --accent-dim: rgba(6, 182, 212, 0.15);
+            --accent-border: rgba(6, 182, 212, 0.3);
+            --green: #22c55e;
+            --mono: 'JetBrains Mono', monospace;
+            --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 15px; -webkit-font-smoothing: antialiased; line-height: 1.7; overflow-x: hidden; }
+        ::selection { background: var(--accent); color: var(--bg); }
+        a { color: inherit; text-decoration: none; }
+        .w { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        /* ══════════════ HEADER ══════════════ */
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(9, 9, 11, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+        header .w { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+        .logo { font-family: var(--mono); font-size: 2rem; font-weight: 600; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+        .nav-links { display: flex; gap: 0.5rem; list-style: none; align-items: center; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.15s; }
+        .nav-links a:hover { color: var(--text); background: var(--bg-raised); }
+        .nav-links a.active { color: var(--text); }
+        .nav-cta { background: var(--text) !important; color: var(--bg) !important; font-weight: 600 !important; padding: 0.5rem 1.25rem !important; border-radius: 6px !important; transition: all 0.15s !important; }
+        .nav-cta:hover { background: var(--accent) !important; }
+        .mobile-toggle { display: none; background: none; border: none; color: var(--text); cursor: pointer; padding: 6px; }
+        .mobile-nav { position: fixed; top: 64px; left: 0; right: 0; background: var(--bg); z-index: 199; display: flex; flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); border-bottom: 1px solid var(--border); }
+        .mobile-nav.open { max-height: 400px; }
+        .mobile-nav a { font-size: 0.88rem; color: var(--text-secondary); font-weight: 500; padding: 0.75rem 2rem; transition: color 0.2s, background 0.2s; }
+        .mobile-nav a:hover { color: var(--text); background: var(--bg-raised); }
+
+        /* ══════════════ GRID BG ══════════════ */
+        .grid-bg { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(39, 39, 42, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(39, 39, 42, 0.3) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+
+        /* ══════════════ HERO ══════════════ */
+        .hero { padding: 140px 0 80px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%); pointer-events: none; }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .hero-tag { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; gap: 1rem; }
+        .hero-tag::before, .hero-tag::after { content: ''; width: 40px; height: 1px; background: var(--accent); }
+        .hero h1 { font-family: var(--sans); font-weight: 700; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 1.5rem; color: var(--text); }
+        .hero h1 span { color: var(--text-muted); }
+        .hero p { font-size: 1.05rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.8; }
+        .hero-date { margin-top: 2rem; font-family: var(--mono); font-size: 0.6rem; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; }
+        .hero-rule { width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.4; }
+
+        /* ══════════════ MAIN ══════════════ */
+        .main { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 60px 2rem; }
+        .section-title { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); margin-bottom: 32px; display: flex; align-items: center; gap: 1rem; }
+        .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+        /* ══════════════ TAGS ══════════════ */
+        .tag { display: inline-block; padding: 0.2rem 0.6rem; font-family: var(--mono); font-size: 0.55rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; width: fit-content; border-radius: 3px; }
+        .tag-governance { color: var(--bg); background: var(--accent); }
+        .tag-iso { color: #a78bfa; background: rgba(167, 139, 250, 0.12); }
+        .tag-cyber { color: #fb7185; background: rgba(244, 63, 94, 0.12); }
+        .tag-regulation { color: #fbbf24; background: rgba(251, 191, 36, 0.12); }
+        .tag-privacy { color: #34d399; background: rgba(16, 185, 129, 0.12); }
+        .tag-ai { color: #60a5fa; background: rgba(96, 165, 250, 0.12); }
+        .tag-canada { color: #f87171; background: rgba(248, 113, 113, 0.12); }
+        .tag-audit { color: #c084fc; background: rgba(192, 132, 252, 0.12); }
+
+        /* ══════════════ FEATURED ══════════════ */
+        .featured { margin-bottom: 64px; background: var(--bg-raised); border: 1px solid var(--border); overflow: hidden; border-top: 3px solid var(--accent); border-radius: 6px; }
+        .featured-body { padding: 3rem; }
+        .featured-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .featured-meta { font-family: var(--mono); font-size: 0.58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .featured-body h2 { font-size: 1.75rem; font-weight: 700; color: var(--text); margin-bottom: 1.25rem; line-height: 1.3; max-width: 800px; letter-spacing: -0.02em; }
+        .featured-body .lead { font-size: 1rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 1rem; max-width: 860px; }
+        .featured-body .detail { font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.75rem; max-width: 860px; }
+        .source-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--mono); font-size: 0.62rem; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 1rem; transition: gap 0.3s var(--ease), color 0.2s; text-decoration: none; border-bottom: 1px solid var(--accent-border); padding-bottom: 2px; }
+        .source-link:hover { gap: 0.65rem; color: #22d3ee; }
+        .source-link svg { width: 10px; height: 10px; }
+
+        /* ══════════════ ARTICLES ══════════════ */
+        .articles { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 64px; }
+        .article { background: var(--bg-raised); border: 1px solid var(--border); border-left: 3px solid transparent; padding: 2rem 2.5rem; transition: all 0.3s var(--ease); border-radius: 6px; }
+        .article:hover { border-left-color: var(--accent); background: var(--bg-elevated); }
+        .article-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .article-header .article-date { font-family: var(--mono); font-size: 0.58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .article h3 { font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; line-height: 1.35; letter-spacing: -0.01em; }
+        .article .summary { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 0.5rem; }
+        .article .detail { font-size: 0.82rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.5rem; }
+        .article .key-points { margin: 1rem 0 0.75rem; padding-left: 1.25rem; }
+        .article .key-points li { font-size: 0.82rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0.35rem; }
+        .article .key-points li::marker { color: var(--accent); }
+
+        /* ══════════════ NEWSLETTER ══════════════ */
+        .newsletter { background: var(--bg-raised); border: 1px solid var(--border); padding: 48px; text-align: center; margin-bottom: 64px; border-top: 2px solid var(--accent); border-radius: 6px; }
+        .newsletter h3 { font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: 12px; letter-spacing: -0.02em; }
+        .newsletter p { color: var(--text-secondary); margin-bottom: 28px; font-size: 0.92rem; }
+        .newsletter-form { display: flex; max-width: 480px; margin: 0 auto; gap: 12px; }
+        .newsletter-form input { flex: 1; padding: 0.8rem 1.25rem; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 0.85rem; border-radius: 6px; outline: none; transition: border-color 0.25s; }
+        .newsletter-form input::placeholder { color: var(--text-muted); }
+        .newsletter-form input:focus { border-color: var(--accent); }
+        .newsletter-form button { padding: 0.8rem 2rem; background: var(--text); color: var(--bg); font-family: var(--sans); font-weight: 600; font-size: 0.82rem; border: none; border-radius: 6px; cursor: pointer; transition: all 0.15s; }
+        .newsletter-form button:hover { background: var(--accent); }
+
+        /* ══════════════ FOOTER ══════════════ */
+        footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 1.5rem 0; }
+        .ft { display: flex; justify-content: space-between; align-items: center; }
+        .ft-brand { font-size: 0.7rem; color: var(--text-muted); }
+        .ft-brand strong { font-family: var(--mono); color: var(--text-secondary); }
+        .ft-copy { font-size: 0.62rem; color: var(--text-muted); }
+
+        /* ══════════════ RESPONSIVE ══════════════ */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: clamp(2rem, 5vw, 3rem); }
+            .featured-body { padding: 2rem; }
+            .article { padding: 1.5rem; }
+            .newsletter { padding: 2rem; }
+        }
+        @media (max-width: 720px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; }
+            .ft { flex-direction: column; gap: 0.35rem; text-align: center; }
+            .newsletter-form { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-bg"></div>
+
+    <header><div class="w">
+        <a href="../index.html" class="logo">ascio</a>
+        <ul class="nav-links">
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#standards">Standards</a></li>
+            <li><a href="../index.html#process">Process</a></li>
+            <li><a href="./" class="active">Weekly Review</a></li>
+            <li><a href="../index.html#contact" class="nav-cta">Request Advisory</a></li>
+        </ul>
+        <button class="mobile-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+    </div></header>
+    <div class="mobile-nav">
+        <a href="../index.html#services" onclick="this.parentElement.classList.remove('open')">Services</a>
+        <a href="../index.html#standards" onclick="this.parentElement.classList.remove('open')">Standards</a>
+        <a href="../index.html#process" onclick="this.parentElement.classList.remove('open')">Process</a>
+        <a href="./" onclick="this.parentElement.classList.remove('open')">Weekly Review</a>
+        <a href="../index.html#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">Weekly Review</div>
+            <h1>Governance &amp; Compliance <span>Review</span></h1>
+            <p>Developments in technology governance, cybersecurity standards, and regulatory compliance.</p>
+            <div class="hero-date">Week of February 17 &#8211; 23, 2026</div>
+        </div>
+    </section>
+    <div class="hero-rule"></div>
+
+    <!-- Main -->
+    <div class="main">
+
+        <!-- ════════ FEATURED ════════ -->
+        <div class="section-title">Lead Story</div>
+        <div class="featured" data-tags="canada,cyber">
+            <div class="featured-body">
+                <div class="featured-header">
+                    <span class="tag tag-canada">Canada</span>
+                    <span class="tag tag-cyber">CPCSC</span>
+                    <span class="featured-meta">21 Feb 2026</span>
+                </div>
+                <h2>CPCSC Certification Framework Enters Mandatory Phase &#8212; Federal Contractors Face Compliance Deadline</h2>
+                <p class="lead">The Canadian Program for Cyber Security Certification (CPCSC) has officially entered its mandatory compliance phase, requiring all federal defence contractors to achieve certification against designated control baselines before contract award. The deadline for Level 1 self-assessment is now tied to active procurement cycles beginning Q2 2026.</p>
+                <p class="detail">CPCSC draws heavily from NIST SP 800-171 and aligns with the U.S. CMMC framework, but includes Canada-specific requirements around PIPEDA obligations, data residency, and bilingual documentation. Level 1 covers 15 foundational practices (comparable to CMMC Level 1), while Level 2 requires a third-party assessment against 110 security controls covering access management, incident response, audit logging, and media protection.</p>
+                <p class="detail">For organizations in the Canadian defence industrial base, the practical impact is immediate: contracts issued through Public Services and Procurement Canada (PSPC) will include CPCSC compliance as a mandatory evaluation criterion. Companies without certification &#8212; or a documented plan to achieve it &#8212; will be ineligible to bid.</p>
+                <p class="detail">The readiness gap is significant. A recent ISED survey found that fewer than 30% of eligible contractors have completed even a preliminary gap assessment. Organizations should be conducting control mapping against CPCSC requirements now, with particular attention to evidence documentation that auditors will verify during third-party assessments.</p>
+                <a href="https://ised-isde.canada.ca/site/cybersecurity-certification-program/en" target="_blank" rel="noopener" class="source-link">Source: ISED Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <!-- ════════ CYBERSECURE CANADA ════════ -->
+        <div class="section-title" id="cybersecure">CyberSecure Canada</div>
+        <div class="articles">
+            <div class="article" data-tags="canada,cyber">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-governance">CyberSecure</span><span class="article-date">20 Feb 2026</span></div>
+                <h3>CyberSecure Canada Program Reports 40% Increase in Certified SMEs &#8212; Procurement Language Driving Adoption</h3>
+                <p class="summary">Innovation, Science and Economic Development Canada (ISED) reported a 40% year-over-year increase in small and medium enterprises achieving CyberSecure Canada certification. The program, based on 13 baseline security controls, is increasingly being referenced as a mandatory or preferred qualification in federal and provincial procurement.</p>
+                <p class="detail">The growth is driven by two factors: procurement language that now explicitly references CyberSecure Canada as a bid evaluation criterion, and increased awareness following high-profile supply chain attacks targeting Canadian SMEs. The 13 controls cover incident response planning, patching, access control, secure configuration, employee awareness training, and encryption of data in transit and at rest.</p>
+                <ul class="key-points">
+                    <li>Federal procurement solicitations are increasingly listing CyberSecure Canada as a mandatory or desirable qualification</li>
+                    <li>Provincial governments in Ontario, British Columbia, and Quebec are referencing the program in their own procurement frameworks</li>
+                    <li>Approximately 70% of CyberSecure Canada controls map directly to ISO 27001 Annex A, making it an effective stepping stone to full ISMS certification</li>
+                    <li>ISED is piloting an accelerated certification pathway for organizations that already hold ISO 27001 or SOC 2 reports</li>
+                </ul>
+                <p class="detail">For SMEs in the federal supply chain, CyberSecure Canada certification is no longer optional positioning &#8212; it is becoming a market access requirement. Organizations should treat the 13 controls as a minimum baseline and begin documenting evidence of implementation now.</p>
+                <a href="https://ised-isde.canada.ca/site/cybersecure-canada/en" target="_blank" rel="noopener" class="source-link">Source: ISED Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="canada,cyber">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">18 Feb 2026</span></div>
+                <h3>CyberSecure Canada Control Deep Dive &#8212; Incident Response Plans Remain the Most Common Gap</h3>
+                <p class="summary">Analysis of recent CyberSecure Canada assessment outcomes shows that Control 13 (Incident Response Plan) remains the most frequently failed requirement. Over 60% of organizations attempting certification lack a documented, tested incident response procedure that meets program expectations.</p>
+                <p class="detail">The program requires more than a written policy. Organizations must demonstrate that the incident response plan has been communicated to relevant personnel, that roles and escalation paths are defined, and that the plan has been tested through a tabletop exercise or simulated incident. Simply having a document on file is insufficient &#8212; assessors are looking for evidence of operationalization.</p>
+                <p class="detail">Other commonly cited gaps include Control 3 (Automatic Patching) where organizations cannot demonstrate patch deployment within the required timeframe, and Control 6 (Secure Configuration of Devices) where default credentials and unnecessary services remain enabled on production systems. Organizations preparing for assessment should prioritize these three controls in their readiness planning.</p>
+                <a href="https://ised-isde.canada.ca/site/cybersecure-canada/en" target="_blank" rel="noopener" class="source-link">Source: ISED Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="canada,cyber">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-audit">Audit</span><span class="article-date">17 Feb 2026</span></div>
+                <h3>CyberSecure Canada to ISO 27001 &#8212; Mapping the Transition Pathway for Growing Organizations</h3>
+                <p class="summary">For organizations that have achieved CyberSecure Canada certification and are considering ISO 27001, the transition pathway is more efficient than starting from scratch. The overlap between the 13 CyberSecure controls and ISO 27001 Annex A provides a foundation that reduces the gap analysis and remediation effort.</p>
+                <p class="detail">Key areas where CyberSecure Canada provides direct coverage include access control (mapping to A.8.3&#8211;A.8.5), patch management (A.8.8), encryption (A.8.24), incident response (A.5.24&#8211;A.5.28), and security awareness (A.6.3). The incremental work for ISO 27001 centres on management system requirements &#8212; risk assessment methodology, Statement of Applicability, internal audit program, management review, and continuous improvement processes.</p>
+                <p class="detail">Organizations making this transition should plan for 6&#8211;12 months of implementation work, depending on organizational size and complexity. The most efficient approach is to treat the existing CyberSecure Canada evidence as the starting point for the ISO 27001 risk treatment plan, extending coverage to the full Annex A control set rather than rebuilding from the ground up.</p>
+                <a href="https://www.iso.org/standard/27001" target="_blank" rel="noopener" class="source-link">Source: ISO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <!-- ════════ CPCSC ════════ -->
+        <div class="section-title" id="cpcsc">CPCSC &#8212; Canadian Cyber Security Certification</div>
+        <div class="articles">
+            <div class="article" data-tags="canada,cyber">
+                <div class="article-header"><span class="tag tag-canada">CPCSC</span><span class="tag tag-regulation">Regulation</span><span class="article-date">21 Feb 2026</span></div>
+                <h3>CPCSC Level 2 Third-Party Assessment Requirements &#8212; What Defence Contractors Need to Prepare</h3>
+                <p class="summary">With CPCSC Level 1 self-assessment now mandatory for new federal defence procurements, attention is turning to Level 2 requirements. Level 2 demands a third-party assessment against 110 security controls derived from NIST SP 800-171, covering 14 control families including Access Control, Audit &amp; Accountability, Incident Response, and System &amp; Communications Protection.</p>
+                <p class="detail">The assessment will be conducted by accredited third-party assessment organizations (C3PAOs), modelled on the U.S. CMMC ecosystem. Canada is currently standing up its own accreditation body and assessor training program. Organizations expecting to require Level 2 certification should not wait for the assessor ecosystem to mature &#8212; the control implementation work is substantial and should begin immediately.</p>
+                <ul class="key-points">
+                    <li>Level 2 maps to 110 controls from NIST SP 800-171 Rev 2, organized across 14 families</li>
+                    <li>Key areas: multi-factor authentication, encrypted CUI storage, continuous monitoring, and supply chain risk management</li>
+                    <li>Organizations must maintain a System Security Plan (SSP) documenting how each control is implemented</li>
+                    <li>Plan of Action &amp; Milestones (POA&amp;M) will be accepted for a limited number of controls during initial assessments</li>
+                    <li>Cross-border alignment with U.S. CMMC Level 2 is intentional &#8212; organizations pursuing both certifications can leverage shared evidence</li>
+                </ul>
+                <a href="https://ised-isde.canada.ca/site/cybersecurity-certification-program/en" target="_blank" rel="noopener" class="source-link">Source: ISED Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="canada,cyber">
+                <div class="article-header"><span class="tag tag-canada">CPCSC</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">19 Feb 2026</span></div>
+                <h3>CPCSC and CMMC Alignment &#8212; Canadian Companies Serving U.S. Defence Can Pursue Dual Certification</h3>
+                <p class="summary">The deliberate alignment between Canada&#8217;s CPCSC and the U.S. CMMC framework creates an opportunity for Canadian defence contractors operating in both markets. Both programs draw from NIST SP 800-171, and the overlap in control requirements means that a single implementation effort can support certification under both programs.</p>
+                <p class="detail">Key differences remain: CPCSC includes Canada-specific requirements around PIPEDA compliance, bilingual documentation obligations, and data residency considerations for Controlled Unclassified Information (CUI) processed by Canadian entities. CMMC adds requirements around Federal Contract Information (FCI) handling and leverages the NIST SP 800-172 enhanced controls at Level 3.</p>
+                <p class="detail">For organizations in the Canadian defence supply chain that also hold U.S. DoD contracts, the recommended approach is to build a unified System Security Plan that addresses both frameworks, with an appendix mapping Canada-specific requirements. This avoids duplicate evidence management and presents a consistent security posture to assessors from both programs.</p>
+                <a href="https://dodcio.defense.gov/CMMC/" target="_blank" rel="noopener" class="source-link">Source: DoD CIO / ISED <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="canada">
+                <div class="article-header"><span class="tag tag-canada">CPCSC</span><span class="tag tag-governance">Governance</span><span class="article-date">17 Feb 2026</span></div>
+                <h3>Building a CPCSC-Ready Evidence Package &#8212; Lessons from Early Adopter Assessments</h3>
+                <p class="summary">Early CPCSC Level 1 self-assessments are revealing a consistent pattern: organizations that treat the self-assessment as a checkbox exercise are failing to produce evidence that would withstand a future Level 2 third-party review. The gap between &#8220;we do this&#8221; and &#8220;here is the documented proof&#8221; remains the primary readiness challenge.</p>
+                <p class="detail">Effective evidence packages include: configuration screenshots with timestamps, access control lists tied to named roles, patch deployment logs showing compliance timelines, incident response plan with documented test results, and employee training completion records. Generic policy documents without implementation evidence are insufficient.</p>
+                <p class="detail">Organizations should approach Level 1 self-assessment with Level 2 rigour. The evidence standards are the same &#8212; the only difference is who reviews it. Building robust evidence documentation now avoids a costly remediation effort when third-party assessment becomes mandatory for your contract tier.</p>
+                <a href="https://ised-isde.canada.ca/site/cybersecurity-certification-program/en" target="_blank" rel="noopener" class="source-link">Source: ISED Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <!-- ════════ AIDA & AI GOVERNANCE ════════ -->
+        <div class="section-title" id="ai-governance">AIDA &amp; AI Governance</div>
+        <div class="articles">
+            <div class="article" data-tags="ai,canada">
+                <div class="article-header"><span class="tag tag-ai">AIDA</span><span class="tag tag-canada">Canada</span><span class="article-date">22 Feb 2026</span></div>
+                <h3>Canada&#8217;s Artificial Intelligence and Data Act (AIDA) &#8212; Updated Framework Advances Through Parliamentary Review</h3>
+                <p class="summary">The Artificial Intelligence and Data Act (AIDA), originally introduced as Part 3 of Bill C-27, continues to advance through parliamentary committee review with significant amendments. The updated framework establishes obligations for organizations designing, developing, and deploying &#8220;high-impact&#8221; AI systems in Canada, with enforcement powers assigned to a new AI and Data Commissioner.</p>
+                <p class="detail">AIDA&#8217;s high-impact classification covers AI systems used in employment decisions, access to services, biometric identification, content moderation, health care, law enforcement, and critical infrastructure. Organizations deploying high-impact systems will be required to conduct impact assessments, implement risk mitigation measures, maintain human oversight mechanisms, and provide transparency to affected individuals.</p>
+                <ul class="key-points">
+                    <li>High-impact AI systems require mandatory impact assessments before deployment</li>
+                    <li>Organizations must establish measures to identify, assess, and mitigate risks of harm and biased output</li>
+                    <li>Transparency obligations include notifying individuals when AI is used in decisions that affect them</li>
+                    <li>The AI and Data Commissioner will have authority to order compliance audits and issue administrative penalties</li>
+                    <li>Alignment with the EU AI Act risk-based approach is intentional, though AIDA&#8217;s scope and penalties differ</li>
+                </ul>
+                <p class="detail">Organizations should not wait for royal assent to begin preparation. The core requirements &#8212; AI system inventory, impact assessment methodology, risk mitigation documentation, and human oversight procedures &#8212; are consistent across AIDA, the EU AI Act, and ISO 42001. Building governance structures now creates readiness across all three frameworks.</p>
+                <a href="https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act" target="_blank" rel="noopener" class="source-link">Source: ISED Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="ai,iso">
+                <div class="article-header"><span class="tag tag-ai">AI Governance</span><span class="tag tag-iso">ISO 42001</span><span class="article-date">20 Feb 2026</span></div>
+                <h3>ISO/IEC 42001 as the Governance Foundation for AIDA Compliance &#8212; Practical Implementation Approach</h3>
+                <p class="summary">With AIDA advancing and the EU AI Act now enforcing, ISO/IEC 42001 (AI Management Systems) is emerging as the primary governance framework for organizations that need to demonstrate AI accountability across multiple jurisdictions. The standard provides the management system structure that both AIDA and the EU AI Act reference as a recognized compliance pathway.</p>
+                <p class="detail">ISO 42001 requires organizations to establish an AI policy, conduct AI-specific risk assessments, maintain an inventory of AI systems with risk classifications, implement data governance controls for training and operational data, define human oversight mechanisms, and establish transparency and explainability procedures. These requirements map directly to AIDA&#8217;s obligations for high-impact systems.</p>
+                <ul class="key-points">
+                    <li>ISO 42001 Clause 6.1 (Actions to Address Risks) maps to AIDA&#8217;s mandatory impact assessment requirements</li>
+                    <li>Annex A controls for data governance (A.7) address AIDA&#8217;s requirements for training data documentation and bias monitoring</li>
+                    <li>Human oversight controls (A.9) satisfy both AIDA and EU AI Act human-in-the-loop mandates</li>
+                    <li>Organizations with existing ISO 27001 certification can integrate 42001 using shared management system clauses 4&#8211;10</li>
+                </ul>
+                <p class="detail">Certification body accreditation for ISO 42001 has expanded rapidly. BSI, Bureau Veritas, and SGS all now offer accredited certification. For organizations preparing for AIDA compliance, achieving ISO 42001 certification provides documented, auditable evidence of AI governance that regulators and customers can independently verify.</p>
+                <a href="https://www.iso.org/standard/81230.html" target="_blank" rel="noopener" class="source-link">Source: ISO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="ai,regulation">
+                <div class="article-header"><span class="tag tag-ai">AI Governance</span><span class="tag tag-regulation">Regulation</span><span class="article-date">19 Feb 2026</span></div>
+                <h3>EU AI Act Enforcement Begins &#8212; Lessons for Canadian Organizations Preparing for AIDA</h3>
+                <p class="summary">The European Commission issued its first penalties under the EU AI Act this week, fining two organizations for deploying high-risk AI systems without meeting transparency, human oversight, and documentation requirements. The enforcement actions provide a preview of what AIDA compliance will look like when Canada&#8217;s framework becomes operational.</p>
+                <p class="detail">The fines &#8212; in the &#8364;15&#8211;30 million range &#8212; specifically cited failures in algorithmic impact assessments, absence of meaningful human-in-the-loop review, and inadequate documentation of training data provenance. For Canadian organizations, the enforcement signals that AI governance is shifting from voluntary best practice to regulated obligation with real financial consequences.</p>
+                <ul class="key-points">
+                    <li>Both AIDA and the EU AI Act use risk-based classification to determine compliance obligations</li>
+                    <li>Impact assessments, human oversight, and transparency are common requirements across both frameworks</li>
+                    <li>Canadian organizations with EU market exposure must comply with the AI Act now, regardless of AIDA&#8217;s timeline</li>
+                    <li>ISO 42001 and NIST AI RMF are being accepted by EU auditors as recognized governance frameworks</li>
+                </ul>
+                <p class="detail">The strategic approach for Canadian organizations is to build AI governance structures that satisfy both AIDA and the EU AI Act simultaneously. The overlap is substantial, and organizations that invest in a unified governance framework now will avoid duplicating effort when AIDA becomes enforceable.</p>
+                <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener" class="source-link">Source: European Commission <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="ai,cyber">
+                <div class="article-header"><span class="tag tag-ai">AI Governance</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">16 Feb 2026</span></div>
+                <h3>AI-Generated Phishing Surge Highlights the Intersection of AI Governance and Cybersecurity</h3>
+                <p class="summary">A 400% increase in AI-generated phishing campaigns documented by CrowdStrike, Mandiant, and Palo Alto Networks is accelerating the convergence of AI governance and cybersecurity programs. Organizations are being forced to address AI as both a governance subject and a threat vector simultaneously.</p>
+                <p class="detail">From a governance perspective, organizations deploying AI systems must now account for adversarial use of AI in their risk assessments. ISO 42001 Annex A.6 (AI System Lifecycle) and A.10 (Third-Party and Stakeholder Relations) both require consideration of how AI-related threats affect the organization&#8217;s risk posture. Similarly, ISO 27001 controls A.5.7 (Threat Intelligence) and A.6.3 (Awareness Training) must be updated to address AI-augmented social engineering.</p>
+                <p class="detail">For organizations pursuing both ISO 27001 and ISO 42001, this convergence is an opportunity to build integrated risk treatment plans that address AI governance and cybersecurity under a unified management system. Auditors are increasingly expecting to see evidence that these two domains are connected, not siloed.</p>
+                <a href="https://www.nist.gov/cybersecurity" target="_blank" rel="noopener" class="source-link">Source: NIST / CrowdStrike <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter" id="newsletter">
+            <h3>Get the Weekly Briefing</h3>
+            <p>Governance, compliance, and cybersecurity developments delivered to your inbox every Monday. No noise &#8212; just what matters.</p>
+            <form class="newsletter-form" action="https://formsubmit.co/hello@ascio.ca" method="POST">
+                <input type="hidden" name="_subject" value="New Governance Review Subscriber">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://ascio.ca/review/">
+                <input type="text" name="_honey" style="display:none">
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer><div class="w"><div class="ft">
+        <div class="ft-brand"><strong>ascio</strong> &#8212; Technology Governance, Inspection &amp; Assessment Readiness / Canada</div>
+        <div class="ft-copy">&copy; 2017&#8211;2026 ascio</div>
+    </div></div></footer>
+
+</body>
+</html>
