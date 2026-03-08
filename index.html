@@ -245,7 +245,7 @@
         .standards-group .standards-list { overflow: hidden; max-height: 1200px; transition: max-height 0.5s var(--ease); }
         .standards-group.collapsed .standards-list { max-height: 0; margin-top: -1rem; }
         .standards-group.collapsed h3 { margin-bottom: 0; }
-        .standards-group.filter-hidden { display: none; }
+        .standards-group.filter-hidden, .ai-section.filter-hidden { display: none; }
         .standards-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0.75rem; }
         .standard-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; background: var(--bg-raised); border: 1px solid var(--border); border-left: 3px solid transparent; border-radius: 6px; transition: all var(--motion-medium) var(--ease); }
         .standard-item:hover { border-color: var(--border-light); border-left-color: var(--accent); transform: translateX(4px); background: var(--bg-elevated); }
@@ -615,7 +615,7 @@
                     <div class="standard-item reveal"><span class="standard-code">SOC 2</span><span class="standard-name">Service Organization Controls — Trust Services</span><span class="standard-badge attestation">Attestation</span></div>
                 </div></div>
 
-                <div class="standards-group reveal collapsed" id="standards-privacy" data-categories="privacy canadian" tabindex="0" role="button"><h3 aria-expanded="false" aria-controls="stdlist-priv">Privacy & Data Protection<span class="std-count">6 items</span><span class="std-proves">Proves compliance with privacy legislation and data protection requirements</span> <span class="toggle-icon">+</span></h3><div class="standards-list stagger-children" id="stdlist-priv">
+                <div class="standards-group reveal collapsed" id="standards-privacy" data-categories="privacy canadian certifiable" tabindex="0" role="button"><h3 aria-expanded="false" aria-controls="stdlist-priv">Privacy & Data Protection<span class="std-count">6 items</span><span class="std-proves">Proves compliance with privacy legislation and data protection requirements</span> <span class="toggle-icon">+</span></h3><div class="standards-list stagger-children" id="stdlist-priv">
                     <div class="standard-item reveal"><span class="standard-code">PIPEDA</span><span class="standard-name">Personal Information Protection and Electronic Documents Act</span><span class="standard-badge regulation">Regulation</span></div>
                     <div class="standard-item reveal"><span class="standard-code">Privacy Act</span><span class="standard-name">Federal Public Sector Privacy Legislation</span><span class="standard-badge regulation">Regulation</span></div>
                     <div class="standard-item reveal"><span class="standard-code">BC PIPA</span><span class="standard-name">British Columbia Personal Information Protection Act</span><span class="standard-badge regulation">Regulation</span></div>
@@ -624,7 +624,7 @@
                     <div class="standard-item reveal"><span class="standard-code">PCI DSS</span><span class="standard-name">Payment Card Industry Data Security Standard</span><span class="standard-badge certifiable">Certifiable</span></div>
                 </div></div>
 
-                <div class="standards-group reveal collapsed" id="standards-sector" data-categories="cybersecurity governance" tabindex="0" role="button"><h3 aria-expanded="false" aria-controls="stdlist-sector">Sector-Specific & Supply Chain<span class="std-count">3 items</span><span class="std-proves">Proves compliance with industry-specific security and supply chain requirements</span> <span class="toggle-icon">+</span></h3><div class="standards-list stagger-children" id="stdlist-sector">
+                <div class="standards-group reveal collapsed" id="standards-sector" data-categories="cybersecurity governance certifiable" tabindex="0" role="button"><h3 aria-expanded="false" aria-controls="stdlist-sector">Sector-Specific & Supply Chain<span class="std-count">3 items</span><span class="std-proves">Proves compliance with industry-specific security and supply chain requirements</span> <span class="toggle-icon">+</span></h3><div class="standards-list stagger-children" id="stdlist-sector">
                     <div class="standard-item reveal"><span class="standard-code">NERC CIP</span><span class="standard-name">North American Electric Reliability Critical Infrastructure Protection</span><span class="standard-badge regulation">Regulation</span></div>
                     <div class="standard-item reveal"><span class="standard-code">TISAX</span><span class="standard-name">Trusted Information Security Assessment Exchange (Automotive)</span><span class="standard-badge certifiable">Certifiable</span></div>
                     <div class="standard-item reveal"><span class="standard-code">SWIFT CSP</span><span class="standard-name">SWIFT Customer Security Programme</span><span class="standard-badge program">Program</span></div>
