@@ -121,6 +121,11 @@
         .article .key-points li { font-size: 0.82rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0.35rem; }
         .article .key-points li::marker { color: var(--accent); }
 
+        /* ══════════════ IMPLICATIONS ══════════════ */
+        .implications { margin-top: 1rem; padding: 1.25rem 1.5rem; background: var(--accent-dim); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; }
+        .implications h4 { font-family: var(--mono); font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.5rem; }
+        .implications p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.85; }
+
         /* ══════════════ PREVIOUS REVIEWS ══════════════ */
         .prev-reviews { margin-bottom: 64px; }
         .prev-reviews-list { display: flex; flex-direction: column; gap: 0.75rem; }
@@ -200,7 +205,7 @@
             <div class="hero-tag">Weekly Review</div>
             <h1>Governance &amp; Compliance <span>Review</span></h1>
             <p>Developments in technology governance, cybersecurity standards, and regulatory compliance.</p>
-            <div class="hero-date">Week of February 23 &#8211; March 1, 2026</div>
+            <div class="hero-date">Week of March 2 to 8, 2026</div>
         </div>
     </section>
     <div class="hero-rule"></div>
@@ -214,15 +219,18 @@
             <div class="featured-body">
                 <div class="featured-header">
                     <span class="tag tag-canada">Canada</span>
-                    <span class="tag tag-cyber">CPCSC</span>
-                    <span class="featured-meta">26 Feb 2026</span>
+                    <span class="tag tag-cyber">Cybersecurity</span>
+                    <span class="featured-meta">03 Mar 2026</span>
                 </div>
-                <h2>CPCSC Level 1 Self-Assessment Deadline Confirmed for April 2026 &#8212; Compliance Kit Publication Imminent</h2>
-                <p class="lead">The Canadian Program for Cyber Security Certification (CPCSC) is on track to make Level 1 self-assessment mandatory for all new DND-related procurements starting April 2026. Canada will publish the official Level 1 compliance kit by March 31, 2026, giving contractors the definitive control mapping and evidence requirements needed to complete their self-assessments.</p>
-                <p class="detail">The requirement applies to both prime contractors and subcontractors handling controlled unclassified information (CUI) in the defence supply chain. Cloud infrastructure used to process CUI must be hosted in Canada &#8212; a divergence from the U.S. CMMC framework that organizations serving both markets must account for in their system security plans.</p>
-                <p class="detail">Level 2 certification, requiring a third-party assessment by an accredited certification body, becomes mandatory in April 2027. The Standards Council of Canada (SCC) is actively accrediting inspection bodies for Level 2 assessments, building out the Canadian assessor ecosystem. Organizations should not wait for Level 2 timelines &#8212; the control implementation work is substantial and the evidence standards are the same across both levels.</p>
-                <p class="detail">The program is based on NIST SP 800-171 Rev 3 and maintains deliberate alignment with U.S. CMMC, allowing Canadian defence contractors operating in both markets to build unified compliance documentation. Organizations that have not begun gap assessments should treat this as an urgent priority.</p>
-                <a href="https://ised-isde.canada.ca/site/cybersecurity-certification-program/en" target="_blank" rel="noopener" class="source-link">Source: ISED Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <h2>Canadian Centre for Cyber Security Warns of Iranian Cyber Threats Targeting Canadian Infrastructure</h2>
+                <p class="lead">The Canadian Centre for Cyber Security (CCCS) issued a bulletin on March 3 warning that Iranian state sponsored threat actors and affiliated hacktivists are likely to conduct cyberattacks against Canadian organizations. The warning follows escalating U.S. and Israeli military action in the Middle East, with Canada identified as a target due to its support for the coalition.</p>
+                <p class="detail">The threat assessment identifies multiple attack vectors: cyberattacks on energy grids and government networks, cyberespionage against political activists, journalists, and human rights advocates, and online harassment of military personnel and diaspora communities. The Globe and Mail reported that pro Iran hacktivists could target Canadian critical infrastructure operators specifically.</p>
+                <p class="detail">The CCCS National Cyber Threat Assessment 2025 to 2026 previously listed Iran alongside China and Russia as the greatest strategic cyber threats to Canada. This latest bulletin elevates the immediacy of the Iranian threat from strategic to operational, meaning organizations should be reviewing their incident response procedures and threat intelligence feeds now.</p>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Organizations operating critical infrastructure, energy, government services, or defence supply chains should immediately review their threat detection capabilities and incident response plans. CyberSecure Canada Control 13 (Incident Response Plan) and CPCSC controls both require documented, tested response procedures. Organizations should verify that their security operations teams are monitoring for indicators of compromise associated with Iranian threat actors and ensure that CCCS advisories are integrated into their threat intelligence workflows.</p>
+                </div>
+                <a href="https://www.theglobeandmail.com/business/economy/article-pro-iran-hacktivists-could-target-canadian-organizations-cybersecurity/" target="_blank" rel="noopener" class="source-link">Source: The Globe and Mail <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
@@ -230,103 +238,163 @@
         <div class="section-title" id="cybersecure">CyberSecure Canada &amp; Cyber Threats</div>
         <div class="articles">
             <div class="article" data-tags="canada,cyber">
-                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">26 Feb 2026</span></div>
-                <h3>Canada Computers Data Breach Exposes 1,284 Customers &#8212; Magecart Skimmer Active for 24 Days Before Detection</h3>
-                <p class="summary">Canada Computers &amp; Electronics confirmed a Magecart-style card skimmer attack on its retail website that compromised names, billing addresses, email addresses, phone numbers, credit card numbers, expiry dates, and CVV codes for 1,284 guest-checkout customers between December 29, 2025 and January 22, 2026.</p>
-                <p class="detail">A customer reported the suspicious script twice via support tickets, both of which were closed without investigation. The retailer has offered two years of complimentary credit monitoring. The incident underscores a recurring pattern: organizations without continuous web application monitoring and formal incident triage procedures fail to detect supply chain injection attacks until external parties escalate.</p>
-                <ul class="key-points">
-                    <li>CyberSecure Canada Control 13 (Incident Response Plan) requires documented triage procedures &#8212; closing customer reports without investigation fails this control</li>
-                    <li>PCI DSS 4.0 Requirement 6.4.3 mandates integrity monitoring of payment page scripts, which would have detected the skimmer</li>
-                    <li>Organizations processing card data should implement Content Security Policy headers and Subresource Integrity checks as baseline defences</li>
-                </ul>
-                <a href="https://www.cbc.ca/news/business/canada-computers-data-breach-scope-9.7074605" target="_blank" rel="noopener" class="source-link">Source: CBC News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Data Breach</span><span class="article-date">04 Mar 2026</span></div>
+                <h3>Canadian Tire Data Breach Confirmed at 38 Million Accounts: Largest Canadian Retail Breach on Record</h3>
+                <p class="summary">The Canadian Tire Corporation data breach, first identified on October 2, 2025, has now been confirmed as impacting over 38 million unique email addresses and 42 million total records. The breach notification site Have I Been Pwned added the dataset in early March 2026, revealing the full scale of the compromise.</p>
+                <p class="detail">Exposed data includes names, addresses, email addresses, dates of birth, encrypted passwords, phone numbers, and gender information. Less than 150,000 accounts had full dates of birth exposed. Canadian Tire confirmed that in store systems, Canadian Tire Bank, and Triangle Rewards were not affected. The company has offered credit monitoring services to impacted customers.</p>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>This breach underscores the scale of risk in retail e commerce platforms. Organizations should review their own breach notification timelines against PIPEDA requirements, which mandate reporting to the Privacy Commissioner and affected individuals as soon as feasible. The five month gap between breach identification and full public disclosure raises questions about notification adequacy. Organizations pursuing CyberSecure Canada certification should ensure their incident response plans include documented notification procedures with defined timelines.</p>
+                </div>
+                <a href="https://www.securityweek.com/canadian-tire-data-breach-impacts-38-million-accounts/" target="_blank" rel="noopener" class="source-link">Source: SecurityWeek <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
             <div class="article" data-tags="canada,cyber">
-                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-governance">CCCS</span><span class="article-date">24 Feb 2026</span></div>
-                <h3>CCCS Issues Advisory on Microsoft February Patch Tuesday &#8212; Six Zero-Days Actively Exploited</h3>
-                <p class="summary">The Canadian Centre for Cyber Security published advisory AV26-111 covering the Microsoft February 2026 Patch Tuesday rollup. Six CVEs were confirmed as actively exploited in the wild, including vulnerabilities in Windows Shell, MSHTML, Office Word, Windows RDP Services, and the Windows kernel.</p>
-                <p class="detail">CISA added all six to its Known Exploited Vulnerabilities (KEV) database on the same day. The Cyber Centre urged all Canadian administrators to apply patches immediately. For organizations pursuing CyberSecure Canada certification, Control 3 (Automatic Patching) requires demonstrated patch deployment within defined timeframes &#8212; these actively exploited vulnerabilities should be treated as emergency patches with a 48-hour deployment target.</p>
-                <p class="detail">Organizations should verify that their patch management tooling covers all six affected components and that deployment evidence is captured for audit purposes. The RDP Services vulnerability is particularly concerning for organizations with internet-exposed Remote Desktop infrastructure.</p>
-                <a href="https://www.cyber.gc.ca/en/alerts-advisories/microsoft-security-advisory-february-2026-monthly-rollup-av26-111" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">05 Mar 2026</span></div>
+                <h3>Ransomware Identified as Top Cybercrime Threat to Canadian Critical Infrastructure</h3>
+                <p class="summary">The CCCS National Cyber Threat Assessment 2025 to 2026 confirms that ransomware remains the most significant cybercrime threat to Canadian critical infrastructure. The assessment warns that ransomware actors will almost certainly escalate extortion tactics and refine capabilities using AI enhanced tools and ransomware as a service platforms.</p>
+                <p class="detail">Canada&#8217;s critical infrastructure sectors, including energy, water, food, transportation, and health systems, face increasingly sophisticated attacks. State sponsored threat actors are becoming bolder and more aggressive in targeting these systems, with attacks growing in both frequency and complexity.</p>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Organizations in critical infrastructure must treat ransomware resilience as a board level priority. NIST CSF 2.0&#8217;s Recover function and CyberSecure Canada Controls 1 (Incident Response Plan) and 2 (Automatic Patching) provide the baseline controls. Organizations should also validate their backup and recovery procedures through tabletop exercises, ensuring that recovery time objectives are documented and achievable.</p>
+                </div>
+                <a href="https://www.cyber.gc.ca/en/guidance/national-cyber-threat-assessment-2025-2026" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
             <div class="article" data-tags="canada,cyber">
-                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">25 Feb 2026</span></div>
-                <h3>Policy Options: Canada&#8217;s Cybersecurity Enforcement Framework Is Inadequate &#8212; Structural Reforms Needed</h3>
-                <p class="summary">A major policy analysis published by the Institute for Research on Public Policy (IRPP) argued that Canada&#8217;s cybersecurity enforcement apparatus is fundamentally under-resourced. The piece highlighted that the CCCS Aventail blocklist &#8212; shared with critical infrastructure operators &#8212; carries a liability disclaimer that prevents telecom providers from acting on the intelligence.</p>
-                <p class="detail">The analysis called for transforming the RCMP into a high-tech national police service capable of tackling cross-border cybercrime, noting that Canada faces justified international criticism for enforcement gaps. For organizations in regulated industries, the implication is clear: reliance on government-led cyber defence is insufficient. Private-sector organizations must maintain their own detection, response, and recovery capabilities aligned to frameworks such as CyberSecure Canada, ISO 27001, or NIST CSF 2.0.</p>
-                <a href="https://policyoptions.irpp.org/" target="_blank" rel="noopener" class="source-link">Source: Policy Options (IRPP) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-governance">CCCS</span><span class="article-date">03 Mar 2026</span></div>
+                <h3>CCCS Issues Qualcomm Security Advisory: March 2026 Monthly Rollup (AV26 190)</h3>
+                <p class="summary">The Canadian Centre for Cyber Security published advisory AV26 190 covering the Qualcomm March 2026 monthly security rollup. CISA has added CVE 2026 21385 to its Known Exploited Vulnerabilities (KEV) database, confirming active exploitation in the wild.</p>
+                <p class="detail">Organizations using Qualcomm chipsets in mobile devices, IoT infrastructure, or embedded systems should prioritize patching. For organizations pursuing CyberSecure Canada certification, Control 3 (Automatic Patching) requires demonstrated evidence that security updates are applied within defined timeframes, particularly for actively exploited vulnerabilities.</p>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Mobile device management and IoT security are expanding attack surfaces. Organizations should ensure that firmware and chipset level vulnerabilities are covered by their patch management programs, not just operating system and application patches. This is a common gap identified during CyberSecure Canada and ISO 27001 audits.</p>
+                </div>
+                <a href="https://www.cyber.gc.ca/en/alerts-advisories/qualcomm-security-advisory-march-2026-monthly-rollup-av26-190" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
         <!-- ════════ CPCSC ════════ -->
-        <div class="section-title" id="cpcsc">CPCSC &#8212; Canadian Cyber Security Certification</div>
+        <div class="section-title" id="cpcsc">CPCSC: Canadian Program for Cyber Security Certification</div>
         <div class="articles">
             <div class="article" data-tags="canada,cyber">
-                <div class="article-header"><span class="tag tag-canada">CPCSC</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">25 Feb 2026</span></div>
-                <h3>VIQ Solutions Breach Highlights Supply Chain Risk &#8212; Third-Party Vendor Controls Under Scrutiny</h3>
-                <p class="summary">VIQ Solutions, a provider of legal transcription services to Canadian courts, suffered a breach when an Indian subcontractor gained unauthorized access to sensitive court transcripts containing security-critical data. Internal staff had flagged the vendor risk as early as August 2025, but those warnings were not acted upon.</p>
-                <p class="detail">The incident is a case study in failed supply chain risk management &#8212; a control area that both CPCSC and ISO 27001 address explicitly. CPCSC Level 2 requires organizations to assess and monitor the security posture of subcontractors handling CUI. ISO 27001 Annex A control A.5.19 (Information Security in Supplier Relationships) mandates documented supplier assessment processes and ongoing monitoring.</p>
-                <p class="detail">For organizations in the defence supply chain, this incident reinforces that CPCSC compliance is not limited to internal controls. Third-party and subcontractor risk management must be documented, monitored, and evidenced as part of the overall security posture.</p>
-                <a href="https://securitdata.ca/blog/data-breaches-canada-2026/" target="_blank" rel="noopener" class="source-link">Source: Secur-IT Data <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <div class="article-header"><span class="tag tag-canada">CPCSC</span><span class="tag tag-cyber">Certification</span><span class="article-date">06 Mar 2026</span></div>
+                <h3>CPCSC Level 1 Mandatory in April 2026: Final Countdown for Defence Supply Chain Organizations</h3>
+                <p class="summary">With less than 30 days until CPCSC Level 1 self assessment becomes mandatory for all new DND related procurements, organizations in the Canadian defence supply chain face an imminent compliance deadline. The official Level 1 compliance kit is expected by March 31, 2026, giving contractors the definitive control mapping and evidence requirements.</p>
+                <p class="detail">The requirement applies to both prime contractors and subcontractors handling controlled unclassified information (CUI). Companies must complete their self assessment and upload certification to their BuyandSell.gc.ca profile. The program is based on NIST SP 800 171 Rev 3 and maintains alignment with the U.S. CMMC framework, allowing organizations operating in both markets to build unified compliance documentation.</p>
+                <ul class="key-points">
+                    <li>Level 1 requires annual self assessment against NIST SP 800 171 Rev 3 controls</li>
+                    <li>Cloud infrastructure processing CUI must be hosted in Canada</li>
+                    <li>Level 2, requiring third party assessment by an accredited certification body, becomes mandatory April 2027</li>
+                    <li>The Standards Council of Canada is actively accrediting inspection bodies for Level 2 assessments</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Organizations that have not begun gap assessments should treat this as an emergency priority. The control implementation work for Level 1 is substantial, and organizations that rush their self assessments risk submitting inaccurate attestations. Companies should also begin planning for Level 2 now, as the control requirements are the same; only the assessment mechanism changes from self assessment to third party certification.</p>
+                </div>
+                <a href="https://www.canada.ca/en/public-services-procurement/services/industrial-security/security-requirements-contracting/cyber-security-certification-defence-suppliers-canada.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="canada,governance">
+                <div class="article-header"><span class="tag tag-canada">CPCSC</span><span class="tag tag-governance">Accreditation</span><span class="article-date">05 Mar 2026</span></div>
+                <h3>SCC Accreditation Scheme for CPCSC Inspection Bodies Now Active</h3>
+                <p class="summary">The Standards Council of Canada (SCC) has published its accreditation scheme for CPCSC inspection bodies, establishing the framework for organizations that will conduct Level 2 and Level 3 assessments. The accreditation program is built on ISO/IEC 17020 (Requirements for the operation of various types of bodies performing inspection) and includes CPCSC specific requirements for assessor competence and scope.</p>
+                <p class="detail">This development signals that the Canadian assessor ecosystem is being built in parallel with the certification requirements. Organizations planning for Level 2 certification in April 2027 should monitor the SCC website for the list of accredited inspection bodies as it develops, and begin preliminary engagement with prospective assessors early to secure assessment timelines.</p>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>The availability of accredited inspection bodies will determine how quickly the defence supply chain can achieve Level 2 compliance. Organizations should factor assessor availability into their planning timelines. Early engagement with accredited bodies provides the additional benefit of pre assessment readiness reviews that can identify gaps before the formal assessment.</p>
+                </div>
+                <a href="https://scc-ccn.ca/accreditation-scheme/inspection-bodies/canadian-program-cyber-security-certification" target="_blank" rel="noopener" class="source-link">Source: Standards Council of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
-        <!-- ════════ AIDA & AI GOVERNANCE ════════ -->
+        <!-- ════════ AI GOVERNANCE ════════ -->
         <div class="section-title" id="ai-governance">AI Governance &amp; Regulation</div>
         <div class="articles">
             <div class="article" data-tags="ai,canada">
-                <div class="article-header"><span class="tag tag-ai">AI Governance</span><span class="tag tag-canada">Canada</span><span class="article-date">27 Feb 2026</span></div>
-                <h3>Canada Still Lacks Binding AI Legislation &#8212; Voluntary Code of Conduct Draws Criticism</h3>
-                <p class="summary">The Canadian Centre for Policy Alternatives published a critique noting that with AIDA (the Artificial Intelligence and Data Act) having died on the order paper in January 2025, Canada still lacks binding federal AI legislation. The new Ministry of Artificial Intelligence and Digital Innovation is pursuing a voluntary code of conduct and sector-specific measures rather than comprehensive law.</p>
-                <p class="detail">The analysis contrasts Canada&#8217;s approach with the EU AI Act&#8217;s phased enforcement timeline, where penalties are already being issued. For Canadian organizations operating internationally, the practical reality is that the EU AI Act and equivalent frameworks in other jurisdictions create binding obligations regardless of Canada&#8217;s domestic timeline.</p>
-                <p class="detail">Organizations should not treat the absence of Canadian legislation as a reason to delay AI governance implementation. ISO/IEC 42001 provides the management system structure that satisfies both current international requirements and anticipated Canadian regulation. Building governance structures now avoids a costly retrofit when legislation eventually arrives.</p>
-                <a href="https://www.policyalternatives.ca/news-research/canada-still-has-no-meaningful-ai-regulation/" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Policy Alternatives <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <div class="article-header"><span class="tag tag-ai">AI Governance</span><span class="tag tag-canada">Canada</span><span class="article-date">03 Mar 2026</span></div>
+                <h3>Canada&#8217;s AI Strategy Task Force Launches National Consultation Following ISED Sprint</h3>
+                <p class="summary">Innovation, Science and Economic Development Canada (ISED) released the results of its national sprint on AI strategy on February 3, 2026. An AI Strategy Task Force is now consulting on Canada&#8217;s next national AI strategy, signalling a shift from the abandoned legislative approach (AIDA) toward a policy and investment driven model.</p>
+                <p class="detail">The current federal government, under PM Mark Carney, has indicated it will regulate AI through privacy legislation, sector specific policy, and investment rather than comprehensive AI specific law. In May 2025, Canada appointed its first Minister responsible for Artificial Intelligence and Digital Innovation, Evan Solomon, underscoring that AI governance remains a federal priority despite the absence of binding legislation.</p>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Organizations should not wait for Canadian AI legislation to implement governance structures. ISO/IEC 42001 provides the management system framework that satisfies international requirements now and will align with anticipated Canadian regulation. The consultation period also presents an opportunity for organizations to submit their perspectives on standards based approaches to AI governance.</p>
+                </div>
+                <a href="https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act" target="_blank" rel="noopener" class="source-link">Source: ISED Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
             <div class="article" data-tags="ai,regulation">
-                <div class="article-header"><span class="tag tag-ai">AI Governance</span><span class="tag tag-regulation">Regulation</span><span class="article-date">26 Feb 2026</span></div>
-                <h3>Ontario&#8217;s AI Hiring Disclosure Requirement Now in Effect &#8212; First Binding AI Transparency Obligation in Canadian Employment Law</h3>
-                <p class="summary">Ontario&#8217;s Working for Workers legislation now requires employers with 25 or more employees to disclose in public job postings whether AI is used to screen, assess, or select applicants. The definition of AI is broad: any &#8220;machine-based system&#8221; that infers from input to generate predictions, recommendations, or decisions.</p>
-                <p class="detail">The regulator has not yet provided guidance on specific disclosure language, leaving employers to interpret the requirement. This is the first binding AI transparency obligation in Canadian employment law, and it signals the direction of travel for provincial and federal regulation.</p>
+                <div class="article-header"><span class="tag tag-ai">AI Governance</span><span class="tag tag-regulation">EU AI Act</span><span class="article-date">04 Mar 2026</span></div>
+                <h3>EU AI Act: August 2, 2026 Deadline for High Risk AI Systems Approaching</h3>
+                <p class="summary">The EU AI Act&#8217;s most significant enforcement milestone is now less than five months away. On August 2, 2026, comprehensive requirements for Annex III high risk AI systems become enforceable, covering biometrics, critical infrastructure, education, employment, essential services, law enforcement, and migration.</p>
+                <p class="detail">Key obligations include risk management systems, data governance, technical documentation, transparency requirements, human oversight mechanisms, and cybersecurity measures. Penalties for non compliance are severe: up to &#8364;35 million or 7% of worldwide turnover for prohibited practices, up to &#8364;15 million or 3% for other infringements.</p>
                 <ul class="key-points">
-                    <li>Applies to all employers with 25+ employees posting jobs in Ontario</li>
-                    <li>Covers AI used anywhere in the screening, assessment, or selection process</li>
-                    <li>No prescribed disclosure format &#8212; organizations should document their approach and rationale</li>
-                    <li>ISO 42001 Annex A transparency controls (A.8) provide a framework for building compliant disclosure processes</li>
+                    <li>Annex III high risk systems span eight regulated domains</li>
+                    <li>Conformity assessment procedures and post market monitoring become mandatory</li>
+                    <li>Member states must have designated national competent authorities</li>
+                    <li>The European Commission has missed its own deadline for guidance on high risk classification</li>
                 </ul>
-                <a href="https://www.ontario.ca/laws" target="_blank" rel="noopener" class="source-link">Source: Ontario Legislature <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Canadian organizations that deploy AI systems in EU markets or process EU resident data face binding obligations regardless of Canada&#8217;s domestic regulatory timeline. ISO/IEC 42001 implementation provides a structured path to EU AI Act compliance, as the standard&#8217;s risk management and governance controls map directly to the Act&#8217;s requirements. Organizations should conduct an AI system inventory and classify systems against Annex III categories now.</p>
+                </div>
+                <a href="https://www.orrick.com/en/Insights/2025/11/The-EU-AI-Act-6-Steps-to-Take-Before-2-August-2026" target="_blank" rel="noopener" class="source-link">Source: Orrick <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="ai,nist">
+                <div class="article-header"><span class="tag tag-ai">AI Governance</span><span class="tag tag-nist">NIST</span><span class="article-date">05 Mar 2026</span></div>
+                <h3>NIST Cyber AI Profile: Draft Framework for Securing AI Systems Advances</h3>
+                <p class="summary">The NIST National Cybersecurity Center of Excellence (NCCoE) is advancing its Cybersecurity Framework Profile for Artificial Intelligence (NISTIR 8596). The preliminary draft, published in December 2025, overlays three AI focus areas on CSF 2.0: Secure (protecting AI systems), Detect (AI enabled cyber defence), and Thwart (countering AI enabled attacks).</p>
+                <p class="detail">The Cyber AI Profile uses the existing voluntary CSF 2.0 and maps AI specific considerations to its Functions, Categories, and Subcategories. Following a January 2026 workshop and public comment period, NIST plans to release the initial public draft later in 2026. This framework complements ISO 42001 by focusing specifically on the cybersecurity dimensions of AI.</p>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Organizations implementing AI systems should monitor the Cyber AI Profile as it develops. The framework provides a practical crosswalk between AI governance (ISO 42001) and cybersecurity (ISO 27001, CSF 2.0), helping organizations build integrated control structures rather than managing AI and cybersecurity as separate domains. Early adopters who align their AI security practices with the draft profile will be well positioned when the final version is published.</p>
+                </div>
+                <a href="https://csrc.nist.gov/pubs/ir/8596/iprd" target="_blank" rel="noopener" class="source-link">Source: NIST <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
         <!-- ════════ FRAMEWORKS & STANDARDS ════════ -->
         <div class="section-title" id="frameworks">Frameworks &amp; Standards</div>
         <div class="articles">
-            <div class="article" data-tags="nist,governance">
-                <div class="article-header"><span class="tag tag-nist">NIST</span><span class="tag tag-governance">Frameworks</span><span class="article-date">24 Feb 2026</span></div>
-                <h3>NIST Marks Two Years of CSF 2.0 &#8212; AI Cybersecurity Profile in Development</h3>
-                <p class="summary">NIST celebrated the second anniversary of the Cybersecurity Framework 2.0, highlighting the Govern function addition, expanded supply-chain risk management guidance, and the growing suite of community profiles. Notably, NIST is developing a Cybersecurity Framework Profile for Artificial Intelligence, with a preliminary draft workshop held in January 2026.</p>
-                <p class="detail">The AI Cybersecurity Profile will map AI-specific risks to CSF 2.0 functions and categories, providing organizations with a structured approach to managing cybersecurity risks introduced by AI systems. This complements ISO 42001 by focusing specifically on the cybersecurity dimensions of AI &#8212; adversarial attacks, model integrity, data poisoning, and AI-augmented threats.</p>
-                <ul class="key-points">
-                    <li>CSF 2.0&#8217;s Govern function aligns directly with ISO 27001 Clause 5 (Leadership) and ISO 42001 Clause 5</li>
-                    <li>The Transit Cybersecurity Framework Profile (NIST IR 8576) public comment period closed February 23</li>
-                    <li>CSF 2.0 is widely referenced by Canadian organizations aligning to international cybersecurity best practices</li>
-                    <li>Organizations can use CSF 2.0 as a crosswalk between CyberSecure Canada, ISO 27001, and CPCSC requirements</li>
-                </ul>
-                <a href="https://www.nist.gov/blogs/cybersecurity-insights/celebrating-two-years-csf-20" target="_blank" rel="noopener" class="source-link">Source: NIST <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-            </div>
             <div class="article" data-tags="privacy,canada">
-                <div class="article-header"><span class="tag tag-privacy">Privacy</span><span class="tag tag-canada">Canada</span><span class="article-date">26 Feb 2026</span></div>
-                <h3>Fasken Privacy &amp; Cybersecurity Bulletin &#8212; February 2026 Cross-Border Developments</h3>
-                <p class="summary">Fasken&#8217;s February 2026 Privacy &amp; Cybersecurity bulletin covered key developments across Canada and the EU, including the OPC-CNIL cooperation declaration, Bill C-4 privacy implications, and evolving EU regulatory enforcement. The bulletin highlighted that cross-border privacy obligations are increasingly complex for Canadian organizations with European operations or customers.</p>
-                <p class="detail">The OPC-CNIL cooperation is significant for organizations subject to both PIPEDA and GDPR: coordinated investigations and shared enforcement approaches mean that privacy gaps identified in one jurisdiction may trigger scrutiny in the other. Organizations maintaining ISO 27701 (Privacy Information Management) certification should ensure their privacy impact assessments account for cross-jurisdictional requirements.</p>
-                <a href="https://www.fasken.com/en/knowledge/2026/02/faskens-noteworthy-news-privacy-cybersecurity-in-canada-and-the-eu-february-2026" target="_blank" rel="noopener" class="source-link">Source: Fasken <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <div class="article-header"><span class="tag tag-privacy">Privacy</span><span class="tag tag-canada">Canada</span><span class="article-date">03 Mar 2026</span></div>
+                <h3>Privacy Commissioner Finds Loblaw Violated PIPEDA on Data Retention Practices</h3>
+                <p class="summary">The Office of the Privacy Commissioner of Canada (OPC) released PIPEDA Findings #2026 001, concluding that Loblaw Companies Ltd. contravened PIPEDA Principle 4.10 in its handling of PC Optimum Loyalty Program data. The investigation found that Loblaw took an unreasonable amount of time to address deletion requests and failed to respond to some privacy related inquiries.</p>
+                <p class="detail">The investigation also raised concerns about Loblaw&#8217;s data anonymization practices. Upon account closure, Loblaw deletes personal identifiers but retains purchase transaction data, claiming it has been anonymized. The OPC found that Loblaw did not demonstrate sufficient steps to ensure the retained information could not be re identified, a critical distinction under PIPEDA&#8217;s retention principle.</p>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>This finding establishes important precedent on data retention and anonymization. Organizations relying on anonymization as a basis for retaining data after deletion requests must be able to demonstrate that re identification is not reasonably possible. ISO 27701 (Privacy Information Management) provides controls for managing data subject requests and retention policies. Organizations should audit their own deletion workflows and anonymization techniques against this finding.</p>
+                </div>
+                <a href="https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2026/pipeda-2026-001/" target="_blank" rel="noopener" class="source-link">Source: Office of the Privacy Commissioner of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
-            <div class="article" data-tags="audit,governance">
-                <div class="article-header"><span class="tag tag-audit">Audit</span><span class="tag tag-governance">SOC 2</span><span class="article-date">28 Feb 2026</span></div>
-                <h3>SOC 2 Industry Shift &#8212; Continuous Verification Replacing Point-in-Time Audits</h3>
-                <p class="summary">A 2026 Cloud Compliance &amp; Risk Analysis released this week found that 82% of enterprise buyers now demand live security data rather than traditional point-in-time SOC 2 audit reports. The report identifies a critical shift toward &#8220;Continuous Verification&#8221; and &#8220;Identity-Centric Compliance&#8221; in SOC 2 auditing.</p>
-                <p class="detail">Traditional SOC 2 assessment frameworks are being deemed insufficient without deep integration with cloud shared-responsibility models and Zero Trust architecture. For Canadian SaaS providers and their auditors, this trend signals that annual SOC 2 Type II reports will increasingly be supplemented by continuous monitoring dashboards and real-time compliance evidence.</p>
-                <p class="detail">Organizations considering SOC 2 alongside ISO 27001 should note that the continuous monitoring expectations align with ISO 27001&#8217;s Clause 9 (Performance Evaluation) and the emerging ISAE 3000 guidance for continuous assurance engagements. Building monitoring infrastructure once to serve both frameworks is the efficient approach.</p>
-                <a href="https://www.ustimesnow.com/statvix-launches-2026-guide-on-continuous-aws-soc-2-compliance-and-zero-trust-saas-risk-assessment/" target="_blank" rel="noopener" class="source-link">Source: Statvix / US Times Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            <div class="article" data-tags="iso,governance">
+                <div class="article-header"><span class="tag tag-iso">ISO 27001</span><span class="tag tag-governance">Standards</span><span class="article-date">04 Mar 2026</span></div>
+                <h3>ISO 27001:2022 Transition Complete: All Certifications Now Against the 2022 Edition</h3>
+                <p class="summary">The 36 month transition period for ISO 27001:2022 has concluded. All ISO 27001:2013 certifications expired by October 31, 2025, meaning every certification audit conducted in 2026 is against the 2022 edition. Auditors are now focusing on how effectively controls reduce risk, not merely their presence.</p>
+                <p class="detail">The 2022 edition introduced the climate action amendment (Amendment 1, published February 2024), which requires organizations to consider whether environmental changes, including extreme weather events, are relevant to their information security context. This acknowledges that floods, fires, and supply chain disruptions can affect data availability and fall within ISMS scope. ISO 27701 has also been updated to function as a standalone management system, meaning organizations no longer need ISO 27001 certification as a prerequisite.</p>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Organizations maintaining or pursuing ISO 27001 certification should ensure their risk assessments account for climate related threats to information availability, as this is now an auditable requirement. The move toward continuous compliance and evidence of control effectiveness signals that auditors will expect more than documented policies; they will want demonstrable risk reduction. Organizations should also evaluate whether the standalone ISO 27701 certification path simplifies their privacy compliance strategy.</p>
+                </div>
+                <a href="https://www.konfirmity.com/blog/iso-27001-what-changed-in-2026" target="_blank" rel="noopener" class="source-link">Source: Konfirmity <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="iso,ai">
+                <div class="article-header"><span class="tag tag-iso">ISO 42001</span><span class="tag tag-ai">AI Governance</span><span class="article-date">06 Mar 2026</span></div>
+                <h3>ISO 42001 Adoption Accelerating as EU AI Act Deadline Drives Demand</h3>
+                <p class="summary">ISO/IEC 42001, the international standard for AI Management Systems (AIMS), is seeing accelerating adoption as the EU AI Act&#8217;s August 2026 enforcement deadline approaches. As the only certifiable international management system standard for AI, ISO 42001 provides organizations with a structured, auditable framework for managing AI related risks and opportunities.</p>
+                <p class="detail">The standard includes 38 distinct controls covering risk management, AI system impact assessment, lifecycle management, and third party supplier oversight. Its Plan Do Check Act methodology aligns with ISO 27001 and ISO 9001, allowing organizations with existing management systems to integrate AI governance without building parallel structures.</p>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Organizations deploying AI in regulated sectors or international markets should evaluate ISO 42001 certification as a strategic investment. The standard provides demonstrable governance that satisfies EU AI Act requirements, addresses the anticipated Canadian regulatory direction, and builds stakeholder confidence. Organizations already certified to ISO 27001 can leverage their existing ISMS infrastructure to accelerate ISO 42001 implementation through an integrated management system approach.</p>
+                </div>
+                <a href="https://secureprivacy.ai/blog/iso-42001-implementation-guide-2026" target="_blank" rel="noopener" class="source-link">Source: SecurePrivacy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="privacy,regulation,canada">
+                <div class="article-header"><span class="tag tag-privacy">Privacy</span><span class="tag tag-regulation">Reform</span><span class="tag tag-canada">Canada</span><span class="article-date">05 Mar 2026</span></div>
+                <h3>Canada Privacy Reform Expected Spring 2026: Stronger Enforcement Powers Anticipated</h3>
+                <p class="summary">New federal privacy legislation is expected as early as spring 2026, replacing the failed Bill C 27 that died on the order paper when Parliament was prorogued in January 2025. Privacy reform is expected to emphasize rights based protections, stronger enforcement powers for the Privacy Commissioner, and modernized consent rules aligned with international standards.</p>
+                <p class="detail">The Privacy Commissioner has outlined seven key provisions for the next comprehensive privacy bill, including the power to issue binding orders, impose administrative monetary fines, and conduct proactive audits. The current PIPEDA enforcement model, limited to an ombudsman role, is widely regarded as insufficient for the scale of modern data processing. Data sovereignty, open banking regulation, and AI specific privacy requirements are also expected to feature in the new legislation.</p>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Organizations should prepare for a materially stronger enforcement regime. Administrative monetary penalties, binding orders, and proactive audits would bring Canada closer to the GDPR enforcement model. Organizations that have implemented ISO 27701 (Privacy Information Management) or maintain robust PIPEDA compliance programs will be better positioned for the transition. Those relying on minimal compliance should begin strengthening their privacy management systems now.</p>
+                </div>
+                <a href="https://iapp.org/news/a/what-2026-may-bring-for-canadas-privacy-reform-efforts" target="_blank" rel="noopener" class="source-link">Source: IAPP <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
@@ -334,6 +402,13 @@
         <div class="section-title">Previous Reviews</div>
         <div class="prev-reviews">
             <div class="prev-reviews-list">
+                <a href="feb-23-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of February 23 &#8211; March 1, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
                 <a href="feb-17-2026.html" class="prev-review-link">
                     <div>
                         <div class="prev-title">Governance &amp; Compliance Review</div>
@@ -347,7 +422,7 @@
         <!-- Newsletter -->
         <div class="newsletter" id="newsletter">
             <h3>Get the Weekly Briefing</h3>
-            <p>Governance, compliance, and cybersecurity developments delivered to your inbox every Monday. No noise &#8212; just what matters.</p>
+            <p>Governance, compliance, and cybersecurity developments delivered to your inbox every Monday. No noise, just what matters.</p>
             <form class="newsletter-form" action="https://formsubmit.co/hello@ascio.ca" method="POST">
                 <input type="hidden" name="_subject" value="New Governance Review Subscriber">
                 <input type="hidden" name="_captcha" value="false">
