@@ -1009,22 +1009,19 @@ const knowledge={svc_ir:{keywords:['inspection readiness','svc_ir','prepare for 
         btn.textContent = 'Sent!';
         chatLeadCaptured = true;
 
-        /* POST to Power Automate webhook (fire-and-forget) */
-        const WEBHOOK_URL = 'ASCIO_CHAT_WEBHOOK_URL';
-        if (WEBHOOK_URL !== 'ASCIO_CHAT_WEBHOOK_URL') {
-            fetch(WEBHOOK_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    company: company,
-                    brand: 'Ascio',
-                    source: 'Website Form',
-                    message: 'Chat widget lead capture'
-                })
-            }).catch(() => {});
-        }
+        /* POST lead to Vercel API → Dataverse */
+        fetch('https://ascio-leads-api.vercel.app/api/lead', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                organization: company,
+                brand: 'ascio',
+                interest: 'Chat Widget',
+                message: 'Chat widget lead capture'
+            })
+        }).catch(() => {});
 
         setTimeout(() => {
             addMsg('Thank you, ' + (name || 'there') + '. We\'ll be in touch within 24 hours.\n\nIn the meantime, feel free to keep asking questions.');
