@@ -569,23 +569,20 @@
         const industry = document.getElementById('aIndustry').value;
         const size = document.getElementById('aSize').value;
 
-        /* POST to Power Automate webhook */
-        const WEBHOOK_URL = 'PLACEHOLDER_ASSESSMENT_WEBHOOK_URL';
-        if (WEBHOOK_URL !== 'PLACEHOLDER_ASSESSMENT_WEBHOOK_URL') {
-            const answersStr = Object.entries(answers).map(([k, v]) => `${k}:${RATINGS[v]}`).join(', ');
-            fetch(WEBHOOK_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    company: company,
-                    brand: 'Ascio',
-                    source: 'Website Form',
-                    message: `Assessment: ${fw} | Industry: ${industry} | Size: ${size} | Responses: ${answersStr}`
-                })
-            }).catch(function() {});
-        }
+        /* POST lead to Vercel API → Dataverse */
+        const answersStr = Object.entries(answers).map(([k, v]) => `${k}:${RATINGS[v]}`).join(', ');
+        fetch('https://ascio-leads-api.vercel.app/api/lead', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                organization: company,
+                brand: 'ascio',
+                interest: 'Assessment',
+                message: `Assessment: ${fw} | Industry: ${industry} | Size: ${size} | Responses: ${answersStr}`
+            })
+        }).catch(function() {});
 
         /* Calculate and show results */
         calculateResults(fw, industry);
