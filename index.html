@@ -1197,12 +1197,7 @@ const knowledge={svc_ir:{keywords:['inspection readiness','svc_ir','prepare for 
             btn.innerHTML = 'Sending...';
             try {
                 const data = { name: contactForm.name.value, email: contactForm.email.value, organization: contactForm.organization.value, interest: contactForm.interest.value, message: contactForm.message.value, brand: 'ascio' };
-                const leadsApi = fetch('https://ascio-leads-api.vercel.app/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }).catch(function(){});
-                const fd = new FormData(contactForm);
-                fd.append('_subject', 'New Discovery Call Request from ascio.ca');
-                fd.append('_template', 'table');
-                const emailApi = fetch('https://formsubmit.co/ajax/hello@ascio.ca', { method: 'POST', body: fd }).catch(function(){});
-                await Promise.allSettled([leadsApi, emailApi]);
+                await fetch('https://ascio-leads-api.vercel.app/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
                 contactForm.style.display = 'none';
                 formSuccessEl.classList.add('show');
             } catch {
