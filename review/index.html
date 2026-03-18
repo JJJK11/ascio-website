@@ -412,7 +412,7 @@
         <div class="newsletter" id="newsletter">
             <h3>Get the Weekly Briefing</h3>
             <p>Governance, compliance, and cybersecurity developments delivered to your inbox every Monday. No noise, just what matters.</p>
-            <form class="newsletter-form" action="https://formsubmit.co/hello@ascio.ca" method="POST">
+            <form class="newsletter-form" id="newsletterForm" action="https://formsubmit.co/hello@ascio.ca" method="POST">
                 <input type="hidden" name="_subject" value="New Governance Review Subscriber">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://ascio.ca/review/">
@@ -420,6 +420,19 @@
                 <input type="email" name="email" placeholder="Enter your email address" required>
                 <button type="submit">Subscribe</button>
             </form>
+            <script>
+            document.getElementById('newsletterForm').addEventListener('submit', function() {
+                var email = this.querySelector('input[name="email"]').value;
+                var WEBHOOK_URL = 'PLACEHOLDER_NEWSLETTER_WEBHOOK_URL';
+                if (WEBHOOK_URL !== 'PLACEHOLDER_NEWSLETTER_WEBHOOK_URL') {
+                    fetch(WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: email, brand: 'Ascio', source: 'Newsletter Signup', message: 'Governance & Compliance Review subscriber' })
+                    }).catch(function() {});
+                }
+            });
+            </script>
         </div>
 
     </div>
