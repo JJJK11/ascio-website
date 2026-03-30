@@ -205,7 +205,7 @@
             <div class="hero-tag">Weekly Review</div>
             <h1>Governance &amp; Compliance <span>Review</span></h1>
             <p>Developments in technology governance, cybersecurity standards, and regulatory compliance.</p>
-            <div class="hero-date">Week of March 16 to 22, 2026</div>
+            <div class="hero-date">Week of March 23 to 29, 2026</div>
         </div>
     </section>
     <div class="hero-rule"></div>
@@ -215,147 +215,116 @@
 
         <!-- ════════ FEATURED ════════ -->
         <div class="section-title">Lead Story</div>
-        <div class="featured" data-tags="cyber,canada,privacy">
+        <div class="featured" data-tags="regulation,privacy,governance">
             <div class="featured-body">
                 <div class="featured-header">
-                    <span class="tag tag-cyber">Cybersecurity</span>
-                    <span class="tag tag-canada">Canada</span>
+                    <span class="tag tag-regulation">Regulation</span>
                     <span class="tag tag-privacy">Privacy</span>
-                    <span class="featured-meta">12 Mar 2026</span>
+                    <span class="tag tag-governance">Governance</span>
+                    <span class="featured-meta">24 Mar 2026</span>
                 </div>
-                <h2>Telus Digital Hit by Massive ShinyHunters Data Breach</h2>
-                <p class="lead">Telus Digital confirmed it is investigating a cybersecurity incident involving unauthorized access to a limited number of its systems. The extortion group ShinyHunters claims to have stolen upwards of one petabyte of data from both the company and its customers.</p>
-                <p class="detail">Security analyst Fritz Jean Louis characterized the breach as "abuse of legitimate access rather than overt technical exploitation," noting organizations struggle with detecting "abnormal trusted behavior." Recommendations include aggressive network segmentation, behavioral analytics, and prioritizing data theft preparedness alongside ransomware defenses.</p>
+                <h2>Meta Hit with $375M Child Safety Verdict; Landmark Addiction Trial Loss Follows</h2>
+                <p class="lead">A New Mexico jury ordered Meta to pay $375 million in civil penalties after finding the company misled consumers about the safety of its platforms and endangered children. The verdict, finding 75,000 violations of state consumer protection law, marks the first jury verdict against Meta over harm to young people. One day later, a California jury found Meta and YouTube liable in a landmark social media addiction trial, awarding $3 million in damages.</p>
+                <p class="detail">The New Mexico case grew out of a 2023 undercover investigation in which state investigators created a decoy profile of a 13 year old girl on Facebook and Instagram. Unredacted internal documents revealed what prosecutors described as a historical reluctance to implement child safety measures. Meta said it plans to appeal both verdicts. Bloomberg analysts noted the rulings could trigger a cascade of similar lawsuits across jurisdictions, drawing comparisons to the Big Tobacco litigation era.</p>
                 <ul class="key-points">
-                    <li>ShinyHunters specializes in targeting Salesforce and SaaS vendors and has used voice phishing tactics impersonating IT staff</li>
-                    <li>The breach highlights that perimeter defenses alone are insufficient against modern threat actors who exploit legitimate access paths</li>
-                    <li>Organizations should evaluate their behavioral analytics capabilities and incident response readiness for data exfiltration scenarios</li>
+                    <li>New Mexico jury found 75,000 violations of consumer protection law, awarding $5,000 per violation for a total of $375 million</li>
+                    <li>California jury found Meta and YouTube negligent in a separate addiction trial, awarding $3 million with Meta responsible for approximately 70%</li>
+                    <li>Analysts compare the trajectory to Big Tobacco litigation, with dozens of state attorneys general pursuing similar cases</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>This breach underscores that perimeter defenses alone are insufficient against modern threat actors who exploit legitimate access paths. Organizations should evaluate their behavioral analytics capabilities, network segmentation posture, and incident response readiness for data exfiltration scenarios. The involvement of a Canadian critical infrastructure provider raises questions about supply chain risk management for enterprises relying on outsourced digital services.</p>
+                    <p>These verdicts fundamentally shift the legal risk landscape for technology platforms. Organizations deploying AI driven content recommendation systems should evaluate whether their algorithms create similar liability exposure. The rulings signal that consumer protection frameworks can be applied to platform design decisions, not just data handling. Governance teams should assess whether their AI systems could face comparable scrutiny under provincial or federal consumer protection statutes in Canada.</p>
                 </div>
-                <a href="https://www.csoonline.com/article/4144560/telus-digital-hit-with-massive-data-breach.html" target="_blank" rel="noopener" class="source-link">Source: CSO Online <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://techcrunch.com/2026/03/24/new-mexico-just-handed-meta-its-first-courtroom-defeat-over-child-safety-and-the-rest-of-the-country-is-watching/" target="_blank" rel="noopener" class="source-link">Source: TechCrunch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
         <!-- ════════ CYBERSECURE CANADA ════════ -->
         <div class="section-title" id="cybersecure">CyberSecure Canada &amp; Cyber Threats</div>
         <div class="articles">
-            <div class="article" data-tags="cyber,canada,governance">
-                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-canada">Canada</span><span class="tag tag-governance">Governance</span><span class="article-date">09 Mar 2026</span></div>
-                <h3>Salt Typhoon Campaign Expands to Canadian Telecommunications</h3>
-                <p class="summary">TechCrunch published a comprehensive tracker documenting every known target of China&#8217;s Salt Typhoon espionage campaign, which has expanded to include Canadian telecommunications companies. The Canadian Centre for Cyber Security confirmed that PRC cyber actors compromised three network devices registered to an unnamed Canadian telecom firm.</p>
-                <p class="detail">The CCCS noted that PRC cyber actors exploited CVE 2023 20198 in Cisco devices to establish persistent access, configuring a GRE tunnel for traffic collection. Overlaps with malicious indicators suggest targeting extends beyond the telecommunications sector. Canadian cyber authorities assess PRC cyber actors will almost certainly continue targeting Canadian organizations over the next two years.</p>
+            <div class="article" data-tags="canada,cyber,governance">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">27 Mar 2026</span></div>
+                <h3>CCCS Issues Critical Alert on Actively Exploited SharePoint Vulnerability</h3>
+                <p class="summary">The Canadian Centre for Cyber Security issued alert AL26 005 warning of active exploitation of a critical vulnerability in Microsoft SharePoint Server (CVE 2026 20963). The deserialization of untrusted data flaw allows unauthenticated remote attackers to execute code over the network, and CISA has added it to its Known Exploited Vulnerabilities catalogue.</p>
+                <p class="detail">The vulnerability affects multiple versions of Microsoft SharePoint Server and has been confirmed as actively exploited in the wild. The CCCS updated its advisory on March 27 to include additional exploitation details. Organizations running SharePoint Server are urged to apply patches immediately and review network access controls.</p>
                 <ul class="key-points">
-                    <li>Salt Typhoon exploited CVE 2023 20198 in Cisco devices to establish persistent access to Canadian telecom infrastructure</li>
-                    <li>The CCCS noted overlaps with malicious indicators suggest targeting extends beyond the telecommunications sector</li>
-                    <li>Canadian cyber authorities assess PRC cyber actors will almost certainly continue targeting Canadian organizations over the next two years</li>
+                    <li>CVE 2026 20963 is a critical deserialization vulnerability allowing unauthenticated remote code execution</li>
+                    <li>Added to CISA&#8217;s Known Exploited Vulnerabilities catalogue, confirming active exploitation</li>
+                    <li>Affects multiple versions of Microsoft SharePoint Server deployed across Canadian organizations</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>This campaign represents a significant national security concern for Canadian organizations, particularly those in telecommunications and critical infrastructure. Organizations should audit Cisco device configurations, review network segmentation for telemetry collection points, and ensure their vulnerability management programs address known exploited CVEs.</p>
+                    <p>SharePoint is widely deployed across Canadian government, defence, and enterprise environments. Organizations should treat this as an emergency patching priority. Defence contractors preparing for CPCSC certification should ensure this CVE is addressed in their vulnerability management programs. The active exploitation status means organizations face immediate risk, not theoretical exposure.</p>
                 </div>
-                <a href="https://techcrunch.com/2026/03/09/salt-typhoon-china-who-has-been-hacked-global-telecom-giants/" target="_blank" rel="noopener" class="source-link">Source: TechCrunch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.cyber.gc.ca/en/alerts-advisories/al26-005-critical-vulnerability-impacting-microsoft-sharepoint-server-cve-2026-20963" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
-            <div class="article" data-tags="cyber,nist,governance">
-                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-nist">NIST</span><span class="tag tag-governance">Governance</span><span class="article-date">10 Mar 2026</span></div>
-                <h3>Microsoft Patch Tuesday: 77 Vulnerabilities Including AI Discovered Critical Flaw</h3>
-                <p class="summary">Microsoft addressed at least 77 vulnerabilities across Windows and other software in its March 2026 Patch Tuesday release. A landmark vulnerability in this batch was CVE 2026 21536, a 9.8 rated critical flaw discovered by an autonomous AI agent called XBOW, marking a significant shift toward AI driven vulnerability discovery.</p>
-                <p class="detail">CVE 2026 21262 (CVSS 8.8) allows authenticated attackers to escalate privileges to sysadmin on SQL Server 2016 and later editions. CVE 2026 26113 and CVE 2026 26110 enable remote code execution simply by viewing a compromised message in the Preview Pane.</p>
+            <div class="article" data-tags="canada,cyber,privacy">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-privacy">Privacy</span><span class="article-date">10 Mar 2026</span></div>
+                <h3>Loblaw Companies Discloses Customer Data Breach</h3>
+                <p class="summary">Canada&#8217;s largest food and pharmacy retailer disclosed unauthorized access to customer information including names, phone numbers, and email addresses. Loblaw characterized it as a low level breach in a contained, non critical section of its IT infrastructure, though a threat actor subsequently claimed access to 75 million Salesforce records.</p>
+                <p class="detail">PC Financial was not impacted. Loblaw forced logouts for all affected customers as a precautionary measure. The primary risk to customers is phishing and social engineering using exposed personally identifiable information. The discrepancy between Loblaw&#8217;s characterization and the threat actor&#8217;s claims remains unresolved.</p>
                 <ul class="key-points">
-                    <li>CVE 2026 21262 allows privilege escalation to sysadmin on SQL Server 2016 and later editions</li>
-                    <li>CVE 2026 26113 and CVE 2026 26110 enable remote code execution via the Preview Pane</li>
-                    <li>CVE 2026 21536 represents one of the first vulnerabilities identified by an autonomous AI agent</li>
+                    <li>Customer names, phone numbers, and email addresses were accessed; passwords, health data, and credit cards were not compromised</li>
+                    <li>A threat actor claimed access to 75 million records, though Loblaw characterized the breach as low level</li>
+                    <li>This follows the Telus Digital breach weeks earlier, marking a pattern of major Canadian enterprise breaches in early 2026</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Organizations running Microsoft infrastructure should prioritize patching SQL Server and Office products. The emergence of AI driven vulnerability discovery tools signals a paradigm shift: the volume and speed of vulnerability identification is likely to accelerate, compressing the window between disclosure and exploitation.</p>
+                    <p>Multiple major Canadian corporate breaches in quick succession highlight the accelerating threat landscape. Organizations must ensure PIPEDA mandatory breach reporting obligations are met within required timelines and that CRM platforms like Salesforce are included in security assessments. The pattern suggests Canadian enterprises are being systematically targeted.</p>
                 </div>
-                <a href="https://krebsonsecurity.com/2026/03/microsoft-patch-tuesday-march-2026-edition/" target="_blank" rel="noopener" class="source-link">Source: Krebs on Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.theglobeandmail.com/investing/markets/markets-news/GlobeNewswire/674763/loblaw-notifies-customers-of-a-low-level-data-breach/" target="_blank" rel="noopener" class="source-link">Source: Globe and Mail <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
-            <div class="article" data-tags="cyber,governance">
-                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">12 Mar 2026</span></div>
-                <h3>Veeam Patches Three Critical RCE Flaws in Backup and Replication</h3>
-                <p class="summary">Veeam published security advisories addressing five vulnerabilities in Veeam Backup and Replication, including three remote code execution bugs each carrying a CVSS score of 9.9 out of 10. The flaws allow authenticated domain users to execute code on backup infrastructure components.</p>
-                <p class="detail">CVE 2026 21668 allows attackers with repository access to manipulate arbitrary files on backup infrastructure. Fixed in Veeam Backup and Replication 12.3.2.4465; organizations running older builds should upgrade immediately.</p>
+            <div class="article" data-tags="cyber,regulation">
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-regulation">Regulation</span><span class="article-date">24 Mar 2026</span></div>
+                <h3>FCC Bans Import of Foreign Consumer Routers Citing National Security Risks</h3>
+                <p class="summary">The US Federal Communications Commission ordered a ban on the import of new consumer routers manufactured overseas, citing unacceptable risks to national security. China commands approximately 60% of the global consumer router market. The ban responds directly to the Salt Typhoon, Volt Typhoon, and Flax Typhoon campaigns that compromised telecommunications infrastructure.</p>
+                <p class="detail">The ban does not affect existing devices, and new imports may be granted exceptions if approved by the Departments of Defense or Homeland Security. An interagency committee found that reliance on foreign made routers introduces supply chain vulnerabilities threatening critical infrastructure and the US economy.</p>
                 <ul class="key-points">
-                    <li>Three RCE vulnerabilities each rated CVSS 9.9</li>
-                    <li>Affects Veeam Backup and Replication versions 12 and 13</li>
-                    <li>Backup infrastructure is a prime target for ransomware operators seeking to eliminate recovery options</li>
+                    <li>All new foreign manufactured consumer routers banned from import unless granted DoD or DHS exception</li>
+                    <li>Existing devices are not affected by the order</li>
+                    <li>Directly responds to Chinese state sponsored campaigns that compromised telecommunications in the US and Canada</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Backup infrastructure is a prime target for ransomware operators seeking to eliminate recovery options before encryption. Organizations relying on Veeam for business continuity should treat these patches as urgent and validate that backup environments are segmented from production networks.</p>
+                    <p>This signals technology supply chain controls expanding into consumer infrastructure. Canadian organizations should monitor whether similar measures emerge domestically, particularly given CCCS assessments of PRC cyber threats to Canadian critical infrastructure. The Salt Typhoon connection is directly relevant to Canadian telecom security.</p>
                 </div>
-                <a href="https://www.csoonline.com/article/4144882/veeam-warns-admins-to-patch-now-as-critical-rce-flaws-hit-backup-replication.html" target="_blank" rel="noopener" class="source-link">Source: CSO Online <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-            </div>
-            <div class="article" data-tags="cyber,governance">
-                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">19 Mar 2026</span></div>
-                <h3>FBI and CISA Warn Organizations to Harden Microsoft Intune After Iran Linked Attack on Stryker</h3>
-                <p class="summary">The FBI and CISA issued a joint advisory urging organizations to harden Microsoft Intune configurations after an Iran linked hacking group called Handala compromised the medical technology firm Stryker, remotely wiping more than 200,000 devices using legitimate Intune management commands.</p>
-                <p class="detail">The attackers did not deploy malware. Instead, they exploited Intune&#8217;s remote wipe capability to destroy data across factories in the United States, Ireland, India, and other countries. CISA recommends role based access controls, multi factor authentication, and policies requiring a second administrator&#8217;s approval for sensitive actions such as device wiping.</p>
-                <ul class="key-points">
-                    <li>Handala wiped over 200,000 devices using legitimate Intune remote wipe commands without deploying malware</li>
-                    <li>The FBI seized the group&#8217;s leak site, confirming it operated on behalf of a foreign state actor</li>
-                    <li>CISA urges organizations to require dual approval for sensitive endpoint management actions</li>
-                </ul>
-                <div class="implications">
-                    <h4>Implications</h4>
-                    <p>This attack demonstrates that endpoint management platforms are high value targets for nation state actors. Organizations using Microsoft Intune or similar MDM solutions should immediately review administrative access controls and implement dual approval workflows for destructive commands. The incident underscores that legitimate management tools can be weaponized when access controls are insufficient.</p>
-                </div>
-                <a href="https://therecord.media/fbi-cisa-warn-of-microsoft-intune-risks-stryker" target="_blank" rel="noopener" class="source-link">Source: The Record <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://therecord.media/fcc-routers-banned-security-china" target="_blank" rel="noopener" class="source-link">Source: The Record <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
             <div class="article" data-tags="cyber,privacy">
-                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-privacy">Privacy</span><span class="article-date">Mar 2026</span></div>
-                <h3>Bank Software Vendor Marquis Confirms Ransomware Attack Impacted 672,000 Individuals</h3>
-                <p class="summary">Marquis Software, a vendor providing communication platforms to financial institutions, disclosed that a ransomware attack exploiting a SonicWall firewall vulnerability impacted 672,075 individuals across at least 74 banks and credit unions. Stolen data includes Social Security numbers, financial account information, and taxpayer identification numbers.</p>
-                <p class="detail">The breach was traced to a vulnerability in a SonicWall firewall device. Marquis reportedly paid a ransom to the attackers, though no ransomware group has publicly claimed the attack. Multiple banks continue to notify affected customers months after the initial incident.</p>
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-privacy">Privacy</span><span class="article-date">27 Mar 2026</span></div>
+                <h3>European Commission Confirms Cyberattack on AWS Cloud Infrastructure</h3>
+                <p class="summary">The European Commission confirmed a cyberattack affecting its cloud infrastructure hosted on Amazon Web Services. Hackers allegedly accessed at least one AWS account and claimed to have stolen hundreds of gigabytes of data including multiple databases from the Europa.eu platform. Internal systems were not affected.</p>
+                <p class="detail">This is the second cyberattack disclosed by the Commission in 2026, following a January incident that exposed some staff details. The Commission stated it discovered the breach, took immediate containment steps, and implemented risk mitigation measures.</p>
                 <ul class="key-points">
-                    <li>At least 74 banks, credit unions, and financial institutions impacted through a single vendor compromise</li>
-                    <li>Stolen data includes Social Security numbers, dates of birth, and financial account details</li>
-                    <li>The attack exploited a known vulnerability in a SonicWall firewall device</li>
+                    <li>The breach targeted AWS hosted cloud infrastructure supporting the Commission&#8217;s public web presence</li>
+                    <li>Internal Commission systems were not affected by the cyberattack</li>
+                    <li>Second Commission breach disclosed in 2026, following a January incident</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>This breach illustrates the cascading risk of third party vendor compromises in the financial sector. A single vendor vulnerability affected dozens of institutions and hundreds of thousands of individuals. Organizations should ensure their third party risk management programs include validation of vendors&#8217; perimeter device patching and incident response capabilities.</p>
+                    <p>A breach of a major government institution&#8217;s cloud environment reinforces the shared responsibility model of cloud security. Organizations should review their own cloud IAM configurations, ensure least privilege access, and enable comprehensive audit logging. The incident strengthens the case for sovereign cloud deployments for government and regulated industries.</p>
                 </div>
-                <a href="https://therecord.media/marquis-bank-vendor-data-breach" target="_blank" rel="noopener" class="source-link">Source: The Record <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-            </div>
-            <div class="article" data-tags="cyber,privacy">
-                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-privacy">Privacy</span><span class="article-date">Mar 2026</span></div>
-                <h3>Aflac Confirms 22.7 Million Individuals Impacted by Data Breach</h3>
-                <p class="summary">Aflac disclosed to the SEC that a breach by a &#8220;sophisticated cybercrime group&#8221; compromised information belonging to 22.7 million individuals, including customers, beneficiaries, employees, and agents. Stolen documents contained insurance claims, health data, Social Security numbers, and other personal details.</p>
-                <p class="detail">The intrusion was identified on June 12 and stopped within hours, with no business functions affected by ransomware. The investigation concluded on December 4, and victims are being given access to two years of identity protection services with an enrollment deadline of April 18, 2026.</p>
-                <ul class="key-points">
-                    <li>22.7 million individuals had personal and health information stolen</li>
-                    <li>Stolen data includes insurance claims, health data, and Social Security numbers</li>
-                    <li>Victims offered two years of identity protection with enrollment deadline April 18, 2026</li>
-                </ul>
-                <div class="implications">
-                    <h4>Implications</h4>
-                    <p>The scale of this breach places it among the largest in the insurance sector. Organizations handling sensitive health and financial data should evaluate whether their incident detection and response capabilities can contain breaches within hours. The multi month gap between breach identification and victim notification raises questions about disclosure timelines under current regulatory frameworks.</p>
-                </div>
-                <a href="https://therecord.media/22-million-impacted-aflac-breach" target="_blank" rel="noopener" class="source-link">Source: The Record <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.bloomberg.com/news/articles/2026-03-27/european-commission-s-data-stolen-in-hack-on-aws-account" target="_blank" rel="noopener" class="source-link">Source: Bloomberg <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
         <!-- ════════ CPCSC ════════ -->
-        <div class="section-title" id="cpcsc">CPCSC: Canadian Program for Cyber Security Certification</div>
+        <div class="section-title" id="cpcsc">CPCSC</div>
         <div class="articles">
-            <div class="article" data-tags="governance,canada,cyber,audit">
-                <div class="article-header"><span class="tag tag-canada">CPCSC</span><span class="tag tag-cyber">Certification</span><span class="tag tag-audit">Audit</span><span class="article-date">Mar 2026</span></div>
-                <h3>CPCSC Phase 2 Launches April 2026: Level 1 Self Assessment Becomes Mandatory for Defence Contracts</h3>
-                <p class="summary">The Canadian Program for Cyber Security Certification enters Phase 2 in April 2026, marking a significant milestone as Level 1 cyber security self assessment requirements become mandatory for new defence contracts. Organizations bidding on National Defence RFPs will need to complete self assessments and provide attestations through Canada Buys.</p>
-                <p class="detail">Phase 2 (April 2026 to March 2027) makes Level 1 self attestation mandatory at contract award for qualifying defence procurement. The accreditation ecosystem opens for organizations seeking to become Level 2 certification bodies. Phase 3 (April 2027 onward) will introduce Level 3 requirements conducted by National Defence.</p>
+            <div class="article" data-tags="canada,governance,cyber">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-governance">Governance</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">Mar 2026</span></div>
+                <h3>CPCSC Level 1 Deadline Arrives: Defence Suppliers Face Compliance Crunch</h3>
+                <p class="summary">The CPCSC Level 1 self assessment deadline is now upon Canadian defence suppliers. Starting April 2026, new RFPs initiated in support of National Defence will require mandatory CPCSC cyber security certification. Suppliers without completed Level 1 self assessments in their BuyingCanada profiles risk exclusion from defence procurement.</p>
+                <p class="detail">Level 1 requires a self assessment against 97 controls drawn from ITSP.10.171, based on NIST 800 171 Rev 3. No equivalence exists between CPCSC and the US CMMC program due to a NIST revision gap (Canada uses Rev 3, the US uses Rev 2), creating a delta of 20 to 30 requirements. Level 2 third party assessments begin April 2027.</p>
                 <ul class="key-points">
-                    <li>Phase 2 makes Level 1 self attestation mandatory at contract award for qualifying defence procurement</li>
-                    <li>The accreditation ecosystem opens for Level 2 certification bodies</li>
-                    <li>Phase 3 will introduce Level 3 requirements conducted by National Defence</li>
+                    <li>New DND RFPs will require CPCSC Level 1 certification starting April 2026</li>
+                    <li>Suppliers must complete self assessment against 97 controls and register in BuyingCanada</li>
+                    <li>No reciprocity with US CMMC means Canadian suppliers serving both countries need dual certifications</li>
+                    <li>Level 2 third party assessment requirements begin April 2027</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Defence suppliers who have not yet completed their Level 1 self assessment face an immediate compliance deadline. The CPCSC represents Canada&#8217;s most significant mandatory cyber security certification requirement and signals a broader trend toward supply chain security requirements across government procurement.</p>
+                    <p>Defence supply chain contractors who have not completed Level 1 self assessment face immediate exclusion from new DND contracts. The lack of CMMC reciprocity means cross border defence contractors must budget for maintaining dual certification programs. Certification bodies and assessor organizations should be preparing for Level 2 assessment demand beginning in 2027.</p>
                 </div>
                 <a href="https://www.canada.ca/en/public-services-procurement/services/industrial-security/security-requirements-contracting/cyber-security-certification-defence-suppliers-canada.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
@@ -364,97 +333,88 @@
         <!-- ════════ AI GOVERNANCE ════════ -->
         <div class="section-title" id="ai-governance">AI Governance &amp; Regulation</div>
         <div class="articles">
-            <div class="article" data-tags="ai,canada,regulation">
-                <div class="article-header"><span class="tag tag-ai">AI Governance</span><span class="tag tag-canada">Canada</span><span class="tag tag-regulation">Regulation</span><span class="article-date">Mar 2026</span></div>
-                <h3>Canada&#8217;s AI Strategy and Regulatory Framework Take Shape Under Minister Solomon</h3>
-                <p class="summary">AI Minister Evan Solomon has confirmed the Carney government will not revive the previous government&#8217;s Artificial Intelligence and Data Act (AIDA) wholesale but is developing a new regulatory framework described as "light, tight, right." Experts warn Canada risks falling behind international peers, particularly the EU with its AI Act.</p>
-                <p class="detail">Solomon announced $8.5 million in federal investment for 40 AI adoption projects across Atlantic Canada in early March. Canada currently has no overarching AI legislation or specific rules for chatbots, unlike the EU which has implemented the AI Act.</p>
+            <div class="article" data-tags="ai,regulation,governance">
+                <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-regulation">Regulation</span><span class="tag tag-governance">Governance</span><span class="article-date">26 Mar 2026</span></div>
+                <h3>EU Parliament Approves AI Act Digital Omnibus Changes, Opens Trilogue</h3>
+                <p class="summary">The European Parliament approved changes to the EU AI Act under the Digital Omnibus package on March 26, following the Council&#8217;s agreement on its negotiating position on March 13. The package delays high risk AI system obligations and extends SME regulatory exemptions to small mid cap companies. Trilogue negotiations are now open.</p>
+                <p class="detail">Annex III high risk AI system obligations are delayed to December 2027 and Annex I obligations to August 2028. Expanded permissions for processing sensitive personal data for bias detection and mitigation were included. The AI Office&#8217;s enforcement powers are reinforced.</p>
                 <ul class="key-points">
-                    <li>AIDA from Bill C 27 will not be reintroduced as drafted</li>
-                    <li>Solomon&#8217;s approach prioritizes supporting innovation while avoiding a regulatory "Wild West"</li>
-                    <li>Canada currently has no overarching AI legislation</li>
+                    <li>High risk AI system obligations for Annex III delayed to December 2027; Annex I to August 2028</li>
+                    <li>SME exemptions extended to small mid cap companies</li>
+                    <li>Expanded permissions for sensitive data processing in bias detection and mitigation</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>The regulatory gap creates both opportunity and risk. Without enforceable AI legislation, companies lack clear compliance guardrails but face the prospect of retroactive requirements. Organizations should adopt voluntary frameworks such as ISO/IEC 42001 and the NIST AI Risk Management Framework now to establish governance maturity ahead of regulation.</p>
+                    <p>The timeline extensions give organizations more runway to prepare for EU AI Act high risk obligations, but the regulatory direction is clear. Canadian organizations with EU market exposure should use this window to establish ISO 42001 aligned AI management systems before the delayed deadlines arrive.</p>
                 </div>
-                <a href="https://betakit.com/evan-solomon-teases-new-ai-laws-as-experts-warn-canada-is-behind-international-peers/" target="_blank" rel="noopener" class="source-link">Source: BetaKit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://digital-strategy.ec.europa.eu/en/library/digital-omnibus-ai-regulation-proposal" target="_blank" rel="noopener" class="source-link">Source: European Commission <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
-            <div class="article" data-tags="ai,cyber,governance,audit">
-                <div class="article-header"><span class="tag tag-ai">AI Governance</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-audit">Audit</span><span class="article-date">19 Mar 2026</span></div>
-                <h3>RSAC 2026: AI Governance Dominates Cybersecurity Agenda</h3>
-                <p class="summary">With RSA Conference 2026 set for March 23 to 26, approximately 40% of the 450 plus sessions are AI weighted, marking the first time AI is not a conference track but the defining theme of the entire event.</p>
-                <p class="detail">Key priorities include securing the AI stack, AI governance policy frameworks, non human identity management, shadow AI risk, and SOC autonomous remediation. Non human identities now routinely outnumber human identities in enterprise environments.</p>
+            <div class="article" data-tags="ai,governance">
+                <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">Mar 2026</span></div>
+                <h3>AI Generated Code Reaches Critical Mass as Governance Questions Intensify</h3>
+                <p class="summary">Anthropic CEO Dario Amodei&#8217;s March 2025 prediction that AI would write 90% of code within six months is being tested against reality. Anthropic reports that 70% to 90% of its code is now AI generated, with some engineers no longer writing code themselves and instead focusing entirely on reviewing and editing AI output. The shift raises fundamental questions about software liability, quality assurance, and workforce governance.</p>
+                <p class="detail">The trend extends beyond Anthropic. Industry reports indicate that AI coding tools are now embedded across the software development lifecycle, from code generation to testing and deployment. However, not everyone is convinced that AI generated code meets the quality and security standards required for production systems, particularly in regulated industries.</p>
                 <ul class="key-points">
-                    <li>40% of sessions are AI focused, making it the defining theme</li>
-                    <li>Non human identities (AI agents, autonomous bots, service accounts) now outnumber human identities</li>
-                    <li>RAG workflows, LLM data pipelines, and vector databases have introduced attack surfaces most security teams are not yet equipped to defend</li>
+                    <li>Anthropic reports 70% to 90% of its code is now AI generated; some engineers focus entirely on review</li>
+                    <li>The shift raises questions about software liability: who is accountable when AI generated code causes failures?</li>
+                    <li>Regulated industries face particular scrutiny around audit trails and quality assurance for AI generated software</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>The convergence of cybersecurity and AI governance means compliance teams and security operations must coordinate more closely on policy, risk assessment, and audit readiness. Organizations should prioritize developing defensible AI governance frameworks and inventorying non human identities.</p>
+                    <p>Organizations deploying AI coding tools should establish governance frameworks addressing code provenance, liability, and quality assurance. Audit and compliance teams need updated controls for software development processes that rely heavily on AI generation. The rapid adoption rate means organizations that delay governance frameworks risk accumulating unmanaged technical and legal risk.</p>
                 </div>
-                <a href="https://www.csoonline.com/article/4146664/5-key-priorities-for-your-rsac-2026-agenda.html" target="_blank" rel="noopener" class="source-link">Source: CSO Online <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.technologyreview.com/2025/12/15/1128352/rise-of-ai-coding-developers-2026/" target="_blank" rel="noopener" class="source-link">Source: MIT Technology Review <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
-            <div class="article" data-tags="ai,canada,governance">
-                <div class="article-header"><span class="tag tag-ai">AI Governance</span><span class="tag tag-canada">Canada</span><span class="tag tag-governance">Governance</span><span class="article-date">18 Mar 2026</span></div>
-                <h3>Canada and Norway Sign Joint Statement on Sovereign Technology and AI Cooperation</h3>
-                <p class="summary">Canada and Norway issued a joint statement committing to deepen collaboration on artificial intelligence and digital technologies through the newly launched Sovereign Technology Alliance. The agreement builds on the AI Summit and emphasizes shared democratic values, rule of law, and sovereign AI capacity.</p>
-                <p class="detail">Norway is exploring participation in the Sovereign Technology Alliance to strengthen coordination with trusted partners and reduce strategic technology dependencies in key sectors. The statement follows Canada&#8217;s earlier joint declaration with Germany launching the Alliance in February 2026.</p>
+            <div class="article" data-tags="ai,regulation">
+                <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-regulation">Regulation</span><span class="article-date">20 Mar 2026</span></div>
+                <h3>White House Releases National AI Legislative Framework</h3>
+                <p class="summary">The White House published its National Policy Framework for Artificial Intelligence, a legislative blueprint calling for federal preemption of state AI laws and a sector specific regulatory approach using existing agencies. White House AI adviser David Sacks indicated Congress could pass bipartisan AI legislation within months.</p>
+                <p class="detail">The framework outlines seven pillars including protecting children, safeguarding communities, respecting intellectual property, and enabling innovation. It recommends Congress preempt state AI laws that impose undue burdens while preserving states&#8217; traditional police powers, and calls for regulatory sandboxes for AI applications.</p>
                 <ul class="key-points">
-                    <li>Norway exploring participation in the Sovereign Technology Alliance launched with Germany in February</li>
-                    <li>Focus on reducing strategic technology dependencies and strengthening sovereign AI capacity</li>
-                    <li>Built on cooperation through the OECD and Global Partnership for Artificial Intelligence</li>
+                    <li>Calls for federal preemption of state AI laws that impose undue burdens on AI development</li>
+                    <li>Relies on existing sector specific regulators rather than creating a new federal AI authority</li>
+                    <li>White House AI adviser indicated bipartisan legislation could pass within months</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Canada&#8217;s expanding network of bilateral AI agreements with democratic partners signals an emerging bloc approach to AI governance. The Sovereign Technology Alliance could establish interoperability requirements for AI systems deployed across member nations, creating both opportunities for aligned vendors and compliance considerations for multinational organizations.</p>
+                    <p>The framework will shape the global AI regulatory landscape. For Canadian organizations, the contrast with Canada&#8217;s current federal AI regulatory gap is significant. Companies serving US clients may need to align with this framework&#8217;s principles even before legislation passes. The preemption approach could simplify cross border compliance if adopted.</p>
                 </div>
-                <a href="https://www.canada.ca/en/innovation-science-economic-development/news/2026/03/canada-norway-joint-statement-on-sovereign-technology-and-ai-cooperation.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://techcrunch.com/2026/03/20/trumps-ai-framework-targets-state-laws-shifts-child-safety-burden-to-parents/" target="_blank" rel="noopener" class="source-link">Source: TechCrunch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
-        <!-- ════════ FRAMEWORKS & STANDARDS ════════ -->
+        <!-- ════════ FRAMEWORKS ════════ -->
         <div class="section-title" id="frameworks">Frameworks &amp; Standards</div>
         <div class="articles">
-            <div class="article" data-tags="privacy,canada,regulation,governance">
-                <div class="article-header"><span class="tag tag-privacy">Privacy</span><span class="tag tag-canada">Canada</span><span class="tag tag-regulation">Regulation</span><span class="article-date">13 Mar 2026</span></div>
-                <h3>OPC Closes Guidance Modernization Consultation as Privacy Enforcement Intensifies</h3>
-                <p class="summary">The Office of the Privacy Commissioner of Canada closed its public consultation on guidance modernization on March 13, 2026. The initiative aims to reshape how the OPC develops and communicates regulatory guidance under PIPEDA.</p>
-                <p class="detail">The consultation ran from December 2, 2025 to March 13, 2026 and was open to individuals, organizations, and industry associations. Results will shape the development of future OPC guidance documents.</p>
+            <div class="article" data-tags="canada,ai,governance">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">26 Mar 2026</span></div>
+                <h3>Cohere and Bell Canada Partner on Sovereign AI Infrastructure for Government</h3>
+                <p class="summary">Toronto based AI company Cohere announced a partnership with Bell Canada to deploy sovereign AI infrastructure for Canadian government and enterprise clients. Cohere&#8217;s large language models and North agentic AI platform will be integrated into Bell&#8217;s AI services, with all models trained and hosted on Canadian soil to maintain data residency compliance.</p>
+                <p class="detail">Bell will become Cohere&#8217;s preferred Canadian AI infrastructure provider through its Bell AI Fabric project. Separately, Bell announced a $1.7 billion investment in a purpose built AI data centre in Regina, Saskatchewan. Cohere also released Transcribe, an open source automatic speech recognition model supporting 14 languages, and surpassed $240 million USD in annual recurring revenue.</p>
                 <ul class="key-points">
-                    <li>Consultation sought feedback on challenges organizations face when complying with privacy obligations</li>
-                    <li>Results will shape future OPC guidance documents</li>
-                    <li>Signals the OPC&#8217;s intent to strengthen the practical utility of its guidance</li>
+                    <li>Cohere models will be trained and hosted on Canadian soil, maintaining data sovereignty and residency compliance</li>
+                    <li>Bell investing $1.7 billion in a purpose built AI data centre in Regina, Saskatchewan</li>
+                    <li>Cohere surpassed $240 million USD ARR, signaling a maturing Canadian enterprise AI supply chain</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Organizations should monitor outcomes closely, as modernized guidance may alter how PIPEDA requirements are interpreted and enforced. The initiative signals the OPC&#8217;s intent to make compliance obligations clearer but also more specific and enforceable.</p>
+                    <p>This partnership addresses one of the key gaps identified in Canada&#8217;s AI landscape: domestic compute capacity and data sovereignty. Organizations subject to Canadian data residency requirements now have a domestic AI infrastructure pathway. For government procurement, the Bell and Cohere partnership creates an alternative to US hyperscaler dependencies for AI workloads requiring Canadian data residency.</p>
                 </div>
-                <a href="https://www.priv.gc.ca/en/about-the-opc/what-we-do/consultations/consultation-guidance-process/" target="_blank" rel="noopener" class="source-link">Source: OPC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-            </div>
-            <div class="article" data-tags="governance,regulation,privacy,cyber">
-                <div class="article-header"><span class="tag tag-governance">Governance</span><span class="tag tag-regulation">Regulation</span><span class="tag tag-privacy">Privacy</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">17 Mar 2026</span></div>
-                <h3>Cybersecurity and Privacy Legal Risk Map for 2026 Highlights Expanding Enforcement</h3>
-                <p class="summary">CSO Online published a comprehensive legal risk map identifying five critical areas where regulatory enforcement is expanding: state sponsored threats triggering legal disputes, federal enforcement through the False Claims Act, state level regulatory coordination, third party risk management obligations, and whistleblower driven litigation.</p>
-                <p class="detail">California&#8217;s CCPA now mandates comprehensive annual cybersecurity audits covering 18 components. AI chatbots are an emerging privacy risk, with 5% of nearly 200 privacy related claims targeting chatbot technologies.</p>
-                <ul class="key-points">
-                    <li>California&#8217;s CCPA mandates comprehensive annual cybersecurity audits covering 18 components</li>
-                    <li>False Claims Act enforcement creates direct personal liability for executives making false compliance attestations</li>
-                    <li>A bipartisan "Consortium of Privacy Regulators" is coordinating enforcement across jurisdictions</li>
-                </ul>
-                <div class="implications">
-                    <h4>Implications</h4>
-                    <p>The legal risk environment for cybersecurity and privacy has become materially more complex. Organizations should ensure their compliance programs account for multi jurisdictional enforcement and the emerging legal liability associated with AI deployments. The expansion of False Claims Act enforcement elevates cybersecurity governance to board level fiduciary duty.</p>
-                </div>
-                <a href="https://www.csoonline.com/article/4146429/cybersecurity-and-privacy-priorities-for-2026-the-legal-risk-map.html" target="_blank" rel="noopener" class="source-link">Source: CSO Online <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://techcrunch.com/2026/03/26/cohere-launches-an-open-source-voice-model-specifically-for-transcription/" target="_blank" rel="noopener" class="source-link">Source: TechCrunch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
-        <!-- ════════ PREVIOUS REVIEWS ════════ -->
+<!-- ════════ PREVIOUS REVIEWS ════════ -->
         <div class="section-title">Previous Reviews</div>
         <div class="prev-reviews">
             <div class="prev-reviews-list">
+                <a href="mar-16-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of March 16 to 22, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
                 <a href="mar-2-2026.html" class="prev-review-link">
                     <div>
                         <div class="prev-title">Governance &amp; Compliance Review</div>
