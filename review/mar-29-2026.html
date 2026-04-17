@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N7K1X6GV2R"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N7K1X6GV2R');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Governance &amp; Compliance Review: Week of March 23 to 29, 2026 &#8212; ascio</title>
+    <meta name="description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta property="og:title" content="Governance &amp; Compliance Review &#8212; ascio">
+    <meta property="og:description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta property="og:image" content="https://ascio.ca/linkedin-cover.png">
+    <meta property="og:url" content="https://ascio.ca/review/mar-29-2026.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Governance &amp; Compliance Review &#8212; ascio">
+    <meta name="twitter:description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta name="twitter:image" content="https://ascio.ca/linkedin-cover.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #09090b;
+            --bg-raised: #18181b;
+            --bg-elevated: #27272a;
+            --border: #27272a;
+            --border-light: #3f3f46;
+            --text: #fafafa;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --accent: #06b6d4;
+            --accent-dim: rgba(6, 182, 212, 0.15);
+            --accent-border: rgba(6, 182, 212, 0.3);
+            --green: #22c55e;
+            --mono: 'JetBrains Mono', monospace;
+            --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 15px; -webkit-font-smoothing: antialiased; line-height: 1.7; overflow-x: hidden; }
+        ::selection { background: var(--accent); color: var(--bg); }
+        a { color: inherit; text-decoration: none; }
+        .w { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        /* ══════════════ HEADER ══════════════ */
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(9, 9, 11, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+        header .w { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+        .logo { font-family: var(--mono); font-size: 2rem; font-weight: 600; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+        .nav-links { display: flex; gap: 0.5rem; list-style: none; align-items: center; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.15s; }
+        .nav-links a:hover { color: var(--text); background: var(--bg-raised); }
+        .nav-links a.active { color: var(--text); }
+        .nav-cta { background: var(--text) !important; color: var(--bg) !important; font-weight: 600 !important; padding: 0.5rem 1.25rem !important; border-radius: 6px !important; transition: all 0.15s !important; }
+        .nav-cta:hover { background: var(--accent) !important; }
+        .mobile-toggle { display: none; background: none; border: none; color: var(--text); cursor: pointer; padding: 6px; }
+        .mobile-nav { position: fixed; top: 64px; left: 0; right: 0; background: var(--bg); z-index: 199; display: flex; flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); border-bottom: 1px solid var(--border); }
+        .mobile-nav.open { max-height: 400px; }
+        .mobile-nav a { font-size: 0.88rem; color: var(--text-secondary); font-weight: 500; padding: 0.75rem 2rem; transition: color 0.2s, background 0.2s; }
+        .mobile-nav a:hover { color: var(--text); background: var(--bg-raised); }
+
+        /* ══════════════ GRID BG ══════════════ */
+        .grid-bg { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(39, 39, 42, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(39, 39, 42, 0.3) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+
+        /* ══════════════ HERO ══════════════ */
+        .hero { padding: 140px 0 80px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%); pointer-events: none; }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .hero-tag { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; gap: 1rem; }
+        .hero-tag::before, .hero-tag::after { content: ''; width: 40px; height: 1px; background: var(--accent); }
+        .hero h1 { font-family: var(--sans); font-weight: 700; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 1.5rem; color: var(--text); }
+        .hero h1 span { color: var(--text-muted); }
+        .hero p { font-size: 1.05rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.8; }
+        .hero-date { margin-top: 2rem; font-family: var(--mono); font-size: 0.6rem; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; }
+        .hero-rule { width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.4; }
+
+        /* ══════════════ MAIN ══════════════ */
+        .main { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 60px 2rem; }
+        .section-title { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); margin-bottom: 32px; display: flex; align-items: center; gap: 1rem; }
+        .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+        /* ══════════════ TAGS ══════════════ */
+        .tag { display: inline-block; padding: 0.2rem 0.6rem; font-family: var(--mono); font-size: 0.55rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; width: fit-content; border-radius: 3px; }
+        .tag-governance { color: var(--bg); background: var(--accent); }
+        .tag-iso { color: #a78bfa; background: rgba(167, 139, 250, 0.12); }
+        .tag-cyber { color: #fb7185; background: rgba(244, 63, 94, 0.12); }
+        .tag-regulation { color: #fbbf24; background: rgba(251, 191, 36, 0.12); }
+        .tag-privacy { color: #34d399; background: rgba(16, 185, 129, 0.12); }
+        .tag-ai { color: #60a5fa; background: rgba(96, 165, 250, 0.12); }
+        .tag-canada { color: #f87171; background: rgba(248, 113, 113, 0.12); }
+        .tag-audit { color: #c084fc; background: rgba(192, 132, 252, 0.12); }
+        .tag-nist { color: #38bdf8; background: rgba(56, 189, 248, 0.12); }
+
+        /* ══════════════ FEATURED ══════════════ */
+        .featured { margin-bottom: 64px; background: var(--bg-raised); border: 1px solid var(--border); overflow: hidden; border-top: 3px solid var(--accent); border-radius: 6px; }
+        .featured-body { padding: 3rem; }
+        .featured-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .featured-meta { font-family: var(--mono); font-size: 0.58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .featured-body h2 { font-size: 1.75rem; font-weight: 700; color: var(--text); margin-bottom: 1.25rem; line-height: 1.3; max-width: 800px; letter-spacing: -0.02em; }
+        .featured-body .lead { font-size: 1rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 1rem; max-width: 860px; }
+        .featured-body .detail { font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.75rem; max-width: 860px; }
+        .source-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--mono); font-size: 0.62rem; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 1rem; transition: gap 0.3s var(--ease), color 0.2s; text-decoration: none; border-bottom: 1px solid var(--accent-border); padding-bottom: 2px; }
+        .source-link:hover { gap: 0.65rem; color: #22d3ee; }
+        .source-link svg { width: 10px; height: 10px; }
+
+        /* ══════════════ ARTICLES ══════════════ */
+        .articles { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 64px; }
+        .article { background: var(--bg-raised); border: 1px solid var(--border); border-left: 3px solid transparent; padding: 2rem 2.5rem; transition: all 0.3s var(--ease); border-radius: 6px; }
+        .article:hover { border-left-color: var(--accent); background: var(--bg-elevated); }
+        .article-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .article-header .article-date { font-family: var(--mono); font-size: 0.58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .article h3 { font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; line-height: 1.35; letter-spacing: -0.01em; }
+        .article .summary { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 0.5rem; }
+        .article .detail { font-size: 0.82rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.5rem; }
+        .article .key-points { margin: 1rem 0 0.75rem; padding-left: 1.25rem; }
+        .article .key-points li { font-size: 0.82rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0.35rem; }
+        .article .key-points li::marker { color: var(--accent); }
+
+        /* ══════════════ IMPLICATIONS ══════════════ */
+        .implications { margin-top: 1rem; padding: 1.25rem 1.5rem; background: var(--accent-dim); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; }
+        .implications h4 { font-family: var(--mono); font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.5rem; }
+        .implications p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.85; }
+
+        /* ══════════════ PREVIOUS REVIEWS ══════════════ */
+        .prev-reviews { margin-bottom: 64px; }
+        .prev-reviews-list { display: flex; flex-direction: column; gap: 0.75rem; }
+        .prev-review-link { display: flex; align-items: center; justify-content: space-between; background: var(--bg-raised); border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem 2rem; transition: all 0.3s var(--ease); text-decoration: none; }
+        .prev-review-link:hover { border-color: var(--accent-border); background: var(--bg-elevated); }
+        .prev-review-link .prev-title { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+        .prev-review-link .prev-date { font-family: var(--mono); font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .prev-review-link svg { color: var(--accent); width: 14px; height: 14px; flex-shrink: 0; transition: transform 0.3s var(--ease); }
+        .prev-review-link:hover svg { transform: translateX(3px); }
+
+        /* ══════════════ NEWSLETTER ══════════════ */
+        .newsletter { background: var(--bg-raised); border: 1px solid var(--border); padding: 48px; text-align: center; margin-bottom: 64px; border-top: 2px solid var(--accent); border-radius: 6px; }
+        .newsletter h3 { font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: 12px; letter-spacing: -0.02em; }
+        .newsletter p { color: var(--text-secondary); margin-bottom: 28px; font-size: 0.92rem; }
+        .newsletter-form { display: flex; max-width: 480px; margin: 0 auto; gap: 12px; }
+        .newsletter-form input { flex: 1; padding: 0.8rem 1.25rem; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 0.85rem; border-radius: 6px; outline: none; transition: border-color 0.25s; }
+        .newsletter-form input::placeholder { color: var(--text-muted); }
+        .newsletter-form input:focus { border-color: var(--accent); }
+        .newsletter-form button { padding: 0.8rem 2rem; background: var(--text); color: var(--bg); font-family: var(--sans); font-weight: 600; font-size: 0.82rem; border: none; border-radius: 6px; cursor: pointer; transition: all 0.15s; }
+        .newsletter-form button:hover { background: var(--accent); }
+
+        /* ══════════════ FOOTER ══════════════ */
+        footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 1.5rem 0; }
+        .ft { display: flex; justify-content: space-between; align-items: center; }
+        .ft-brand { font-size: 0.7rem; color: var(--text-muted); }
+        .ft-brand strong { font-family: var(--mono); color: var(--text-secondary); }
+        .ft-copy { font-size: 0.62rem; color: var(--text-muted); }
+        .ft-social { display: flex; align-items: center; gap: 1rem; }
+        .ft-social a { color: var(--text-muted); transition: color 0.15s; display: flex; align-items: center; }
+        .ft-social a:hover { color: var(--accent); }
+        .ft-social svg { width: 16px; height: 16px; }
+
+        .archive-banner { background: var(--accent-dim); border-bottom: 1px solid var(--accent-border); padding: 0.75rem 0; font-size: 0.8rem; color: var(--accent); text-align: center; position: relative; z-index: 1; }
+        .archive-banner a { color: var(--text); font-weight: 600; margin-left: 0.5rem; }
+
+        /* ══════════════ RESPONSIVE ══════════════ */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: clamp(2rem, 5vw, 3rem); }
+            .featured-body { padding: 2rem; }
+            .article { padding: 1.5rem; }
+            .newsletter { padding: 2rem; }
+        }
+        @media (max-width: 720px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; }
+            .ft { flex-direction: column; gap: 0.35rem; text-align: center; }
+            .newsletter-form { flex-direction: column; }
+            .prev-review-link { padding: 1rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-bg"></div>
+
+    <header><div class="w">
+        <a href="../index.html" class="logo">ascio</a>
+        <ul class="nav-links">
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#standards">Standards</a></li>
+            <li><a href="../index.html#process">Process</a></li>
+            <li><a href="./" class="active">Weekly Review</a></li>
+            <li><a href="../index.html#contact" class="nav-cta">Request Advisory</a></li>
+        </ul>
+        <button class="mobile-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+    </div></header>
+    <div class="mobile-nav">
+        <a href="../index.html#services" onclick="this.parentElement.classList.remove('open')">Services</a>
+        <a href="../index.html#standards" onclick="this.parentElement.classList.remove('open')">Standards</a>
+        <a href="../index.html#process" onclick="this.parentElement.classList.remove('open')">Process</a>
+        <a href="./" onclick="this.parentElement.classList.remove('open')">Weekly Review</a>
+        <a href="../index.html#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">Weekly Review</div>
+            <h1>Governance &amp; Compliance <span>Review</span></h1>
+            <p>Developments in technology governance, cybersecurity standards, and regulatory compliance.</p>
+            <div class="hero-date">Week of March 23 to 29, 2026</div>
+        </div>
+    </section>
+    <div class="hero-rule"></div>
+    <div class="archive-banner"><div class="w">This is an archived edition. <a href="./">View the latest review &rarr;</a></div></div>
+
+    <!-- Main -->
+    <div class="main">
+
+        <!-- ════════ FEATURED ════════ -->
+        <div class="section-title">Lead Story</div>
+        <div class="featured" data-tags="regulation,privacy,governance">
+            <div class="featured-body">
+                <div class="featured-header">
+                    <span class="tag tag-regulation">Regulation</span>
+                    <span class="tag tag-privacy">Privacy</span>
+                    <span class="tag tag-governance">Governance</span>
+                    <span class="featured-meta">24 Mar 2026</span>
+                </div>
+                <h2>Meta Hit with $375M Child Safety Verdict; Landmark Addiction Trial Loss Follows</h2>
+                <p class="lead">A New Mexico jury ordered Meta to pay $375 million in civil penalties after finding the company misled consumers about the safety of its platforms and endangered children. The verdict, finding 75,000 violations of state consumer protection law, marks the first jury verdict against Meta over harm to young people. One day later, a California jury found Meta and YouTube liable in a landmark social media addiction trial, awarding $3 million in damages.</p>
+                <p class="detail">The New Mexico case grew out of a 2023 undercover investigation in which state investigators created a decoy profile of a 13 year old girl on Facebook and Instagram. Unredacted internal documents revealed what prosecutors described as a historical reluctance to implement child safety measures. Meta said it plans to appeal both verdicts. Bloomberg analysts noted the rulings could trigger a cascade of similar lawsuits across jurisdictions, drawing comparisons to the Big Tobacco litigation era.</p>
+                <ul class="key-points">
+                    <li>New Mexico jury found 75,000 violations of consumer protection law, awarding $5,000 per violation for a total of $375 million</li>
+                    <li>California jury found Meta and YouTube negligent in a separate addiction trial, awarding $3 million with Meta responsible for approximately 70%</li>
+                    <li>Analysts compare the trajectory to Big Tobacco litigation, with dozens of state attorneys general pursuing similar cases</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>These verdicts fundamentally shift the legal risk landscape for technology platforms. Organizations deploying AI driven content recommendation systems should evaluate whether their algorithms create similar liability exposure. The rulings signal that consumer protection frameworks can be applied to platform design decisions, not just data handling. Governance teams should assess whether their AI systems could face comparable scrutiny under provincial or federal consumer protection statutes in Canada.</p>
+                </div>
+                <a href="https://techcrunch.com/2026/03/24/new-mexico-just-handed-meta-its-first-courtroom-defeat-over-child-safety-and-the-rest-of-the-country-is-watching/" target="_blank" rel="noopener" class="source-link">Source: TechCrunch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <!-- ════════ CYBERSECURE CANADA ════════ -->
+        <div class="section-title" id="cybersecure">CyberSecure Canada &amp; Cyber Threats</div>
+        <div class="articles">
+            <div class="article" data-tags="canada,cyber,governance">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">27 Mar 2026</span></div>
+                <h3>CCCS Issues Critical Alert on Actively Exploited SharePoint Vulnerability</h3>
+                <p class="summary">The Canadian Centre for Cyber Security issued alert AL26 005 warning of active exploitation of a critical vulnerability in Microsoft SharePoint Server (CVE 2026 20963). The deserialization of untrusted data flaw allows unauthenticated remote attackers to execute code over the network, and CISA has added it to its Known Exploited Vulnerabilities catalogue.</p>
+                <p class="detail">The vulnerability affects multiple versions of Microsoft SharePoint Server and has been confirmed as actively exploited in the wild. The CCCS updated its advisory on March 27 to include additional exploitation details. Organizations running SharePoint Server are urged to apply patches immediately and review network access controls.</p>
+                <ul class="key-points">
+                    <li>CVE 2026 20963 is a critical deserialization vulnerability allowing unauthenticated remote code execution</li>
+                    <li>Added to CISA&#8217;s Known Exploited Vulnerabilities catalogue, confirming active exploitation</li>
+                    <li>Affects multiple versions of Microsoft SharePoint Server deployed across Canadian organizations</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>SharePoint is widely deployed across Canadian government, defence, and enterprise environments. Organizations should treat this as an emergency patching priority. Defence contractors preparing for CPCSC certification should ensure this CVE is addressed in their vulnerability management programs. The active exploitation status means organizations face immediate risk, not theoretical exposure.</p>
+                </div>
+                <a href="https://www.cyber.gc.ca/en/alerts-advisories/al26-005-critical-vulnerability-impacting-microsoft-sharepoint-server-cve-2026-20963" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="canada,cyber,privacy">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-privacy">Privacy</span><span class="article-date">10 Mar 2026</span></div>
+                <h3>Loblaw Companies Discloses Customer Data Breach</h3>
+                <p class="summary">Canada&#8217;s largest food and pharmacy retailer disclosed unauthorized access to customer information including names, phone numbers, and email addresses. Loblaw characterized it as a low level breach in a contained, non critical section of its IT infrastructure, though a threat actor subsequently claimed access to 75 million Salesforce records.</p>
+                <p class="detail">PC Financial was not impacted. Loblaw forced logouts for all affected customers as a precautionary measure. The primary risk to customers is phishing and social engineering using exposed personally identifiable information. The discrepancy between Loblaw&#8217;s characterization and the threat actor&#8217;s claims remains unresolved.</p>
+                <ul class="key-points">
+                    <li>Customer names, phone numbers, and email addresses were accessed; passwords, health data, and credit cards were not compromised</li>
+                    <li>A threat actor claimed access to 75 million records, though Loblaw characterized the breach as low level</li>
+                    <li>This follows the Telus Digital breach weeks earlier, marking a pattern of major Canadian enterprise breaches in early 2026</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Multiple major Canadian corporate breaches in quick succession highlight the accelerating threat landscape. Organizations must ensure PIPEDA mandatory breach reporting obligations are met within required timelines and that CRM platforms like Salesforce are included in security assessments. The pattern suggests Canadian enterprises are being systematically targeted.</p>
+                </div>
+                <a href="https://www.theglobeandmail.com/investing/markets/markets-news/GlobeNewswire/674763/loblaw-notifies-customers-of-a-low-level-data-breach/" target="_blank" rel="noopener" class="source-link">Source: Globe and Mail <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="cyber,regulation">
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-regulation">Regulation</span><span class="article-date">24 Mar 2026</span></div>
+                <h3>FCC Bans Import of Foreign Consumer Routers Citing National Security Risks</h3>
+                <p class="summary">The US Federal Communications Commission ordered a ban on the import of new consumer routers manufactured overseas, citing unacceptable risks to national security. China commands approximately 60% of the global consumer router market. The ban responds directly to the Salt Typhoon, Volt Typhoon, and Flax Typhoon campaigns that compromised telecommunications infrastructure.</p>
+                <p class="detail">The ban does not affect existing devices, and new imports may be granted exceptions if approved by the Departments of Defense or Homeland Security. An interagency committee found that reliance on foreign made routers introduces supply chain vulnerabilities threatening critical infrastructure and the US economy.</p>
+                <ul class="key-points">
+                    <li>All new foreign manufactured consumer routers banned from import unless granted DoD or DHS exception</li>
+                    <li>Existing devices are not affected by the order</li>
+                    <li>Directly responds to Chinese state sponsored campaigns that compromised telecommunications in the US and Canada</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>This signals technology supply chain controls expanding into consumer infrastructure. Canadian organizations should monitor whether similar measures emerge domestically, particularly given CCCS assessments of PRC cyber threats to Canadian critical infrastructure. The Salt Typhoon connection is directly relevant to Canadian telecom security.</p>
+                </div>
+                <a href="https://therecord.media/fcc-routers-banned-security-china" target="_blank" rel="noopener" class="source-link">Source: The Record <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="cyber,privacy">
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-privacy">Privacy</span><span class="article-date">27 Mar 2026</span></div>
+                <h3>European Commission Confirms Cyberattack on AWS Cloud Infrastructure</h3>
+                <p class="summary">The European Commission confirmed a cyberattack affecting its cloud infrastructure hosted on Amazon Web Services. Hackers allegedly accessed at least one AWS account and claimed to have stolen hundreds of gigabytes of data including multiple databases from the Europa.eu platform. Internal systems were not affected.</p>
+                <p class="detail">This is the second cyberattack disclosed by the Commission in 2026, following a January incident that exposed some staff details. The Commission stated it discovered the breach, took immediate containment steps, and implemented risk mitigation measures.</p>
+                <ul class="key-points">
+                    <li>The breach targeted AWS hosted cloud infrastructure supporting the Commission&#8217;s public web presence</li>
+                    <li>Internal Commission systems were not affected by the cyberattack</li>
+                    <li>Second Commission breach disclosed in 2026, following a January incident</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>A breach of a major government institution&#8217;s cloud environment reinforces the shared responsibility model of cloud security. Organizations should review their own cloud IAM configurations, ensure least privilege access, and enable comprehensive audit logging. The incident strengthens the case for sovereign cloud deployments for government and regulated industries.</p>
+                </div>
+                <a href="https://www.bloomberg.com/news/articles/2026-03-27/european-commission-s-data-stolen-in-hack-on-aws-account" target="_blank" rel="noopener" class="source-link">Source: Bloomberg <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <!-- ════════ CPCSC ════════ -->
+        <div class="section-title" id="cpcsc">CPCSC</div>
+        <div class="articles">
+            <div class="article" data-tags="canada,governance,cyber">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-governance">Governance</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">Mar 2026</span></div>
+                <h3>CPCSC Level 1 Deadline Arrives: Defence Suppliers Face Compliance Crunch</h3>
+                <p class="summary">The CPCSC Level 1 self assessment deadline is now upon Canadian defence suppliers. Starting April 2026, new RFPs initiated in support of National Defence will require mandatory CPCSC cyber security certification. Suppliers without completed Level 1 self assessments in their BuyingCanada profiles risk exclusion from defence procurement.</p>
+                <p class="detail">Level 1 requires a self assessment against 97 controls drawn from ITSP.10.171, based on NIST 800 171 Rev 3. No equivalence exists between CPCSC and the US CMMC program due to a NIST revision gap (Canada uses Rev 3, the US uses Rev 2), creating a delta of 20 to 30 requirements. Level 2 third party assessments begin April 2027.</p>
+                <ul class="key-points">
+                    <li>New DND RFPs will require CPCSC Level 1 certification starting April 2026</li>
+                    <li>Suppliers must complete self assessment against 97 controls and register in BuyingCanada</li>
+                    <li>No reciprocity with US CMMC means Canadian suppliers serving both countries need dual certifications</li>
+                    <li>Level 2 third party assessment requirements begin April 2027</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Defence supply chain contractors who have not completed Level 1 self assessment face immediate exclusion from new DND contracts. The lack of CMMC reciprocity means cross border defence contractors must budget for maintaining dual certification programs. Certification bodies and assessor organizations should be preparing for Level 2 assessment demand beginning in 2027.</p>
+                </div>
+                <a href="https://www.canada.ca/en/public-services-procurement/services/industrial-security/security-requirements-contracting/cyber-security-certification-defence-suppliers-canada.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <!-- ════════ AI GOVERNANCE ════════ -->
+        <div class="section-title" id="ai-governance">AI Governance &amp; Regulation</div>
+        <div class="articles">
+            <div class="article" data-tags="ai,regulation,governance">
+                <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-regulation">Regulation</span><span class="tag tag-governance">Governance</span><span class="article-date">26 Mar 2026</span></div>
+                <h3>EU Parliament Approves AI Act Digital Omnibus Changes, Opens Trilogue</h3>
+                <p class="summary">The European Parliament approved changes to the EU AI Act under the Digital Omnibus package on March 26, following the Council&#8217;s agreement on its negotiating position on March 13. The package delays high risk AI system obligations and extends SME regulatory exemptions to small mid cap companies. Trilogue negotiations are now open.</p>
+                <p class="detail">Annex III high risk AI system obligations are delayed to December 2027 and Annex I obligations to August 2028. Expanded permissions for processing sensitive personal data for bias detection and mitigation were included. The AI Office&#8217;s enforcement powers are reinforced.</p>
+                <ul class="key-points">
+                    <li>High risk AI system obligations for Annex III delayed to December 2027; Annex I to August 2028</li>
+                    <li>SME exemptions extended to small mid cap companies</li>
+                    <li>Expanded permissions for sensitive data processing in bias detection and mitigation</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>The timeline extensions give organizations more runway to prepare for EU AI Act high risk obligations, but the regulatory direction is clear. Canadian organizations with EU market exposure should use this window to establish ISO 42001 aligned AI management systems before the delayed deadlines arrive.</p>
+                </div>
+                <a href="https://digital-strategy.ec.europa.eu/en/library/digital-omnibus-ai-regulation-proposal" target="_blank" rel="noopener" class="source-link">Source: European Commission <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="ai,governance">
+                <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">Mar 2026</span></div>
+                <h3>AI Generated Code Reaches Critical Mass as Governance Questions Intensify</h3>
+                <p class="summary">Anthropic CEO Dario Amodei&#8217;s March 2025 prediction that AI would write 90% of code within six months is being tested against reality. Anthropic reports that 70% to 90% of its code is now AI generated, with some engineers no longer writing code themselves and instead focusing entirely on reviewing and editing AI output. The shift raises fundamental questions about software liability, quality assurance, and workforce governance.</p>
+                <p class="detail">The trend extends beyond Anthropic. Industry reports indicate that AI coding tools are now embedded across the software development lifecycle, from code generation to testing and deployment. However, not everyone is convinced that AI generated code meets the quality and security standards required for production systems, particularly in regulated industries.</p>
+                <ul class="key-points">
+                    <li>Anthropic reports 70% to 90% of its code is now AI generated; some engineers focus entirely on review</li>
+                    <li>The shift raises questions about software liability: who is accountable when AI generated code causes failures?</li>
+                    <li>Regulated industries face particular scrutiny around audit trails and quality assurance for AI generated software</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Organizations deploying AI coding tools should establish governance frameworks addressing code provenance, liability, and quality assurance. Audit and compliance teams need updated controls for software development processes that rely heavily on AI generation. The rapid adoption rate means organizations that delay governance frameworks risk accumulating unmanaged technical and legal risk.</p>
+                </div>
+                <a href="https://www.technologyreview.com/2025/12/15/1128352/rise-of-ai-coding-developers-2026/" target="_blank" rel="noopener" class="source-link">Source: MIT Technology Review <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="ai,regulation">
+                <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-regulation">Regulation</span><span class="article-date">20 Mar 2026</span></div>
+                <h3>White House Releases National AI Legislative Framework</h3>
+                <p class="summary">The White House published its National Policy Framework for Artificial Intelligence, a legislative blueprint calling for federal preemption of state AI laws and a sector specific regulatory approach using existing agencies. White House AI adviser David Sacks indicated Congress could pass bipartisan AI legislation within months.</p>
+                <p class="detail">The framework outlines seven pillars including protecting children, safeguarding communities, respecting intellectual property, and enabling innovation. It recommends Congress preempt state AI laws that impose undue burdens while preserving states&#8217; traditional police powers, and calls for regulatory sandboxes for AI applications.</p>
+                <ul class="key-points">
+                    <li>Calls for federal preemption of state AI laws that impose undue burdens on AI development</li>
+                    <li>Relies on existing sector specific regulators rather than creating a new federal AI authority</li>
+                    <li>White House AI adviser indicated bipartisan legislation could pass within months</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>The framework will shape the global AI regulatory landscape. For Canadian organizations, the contrast with Canada&#8217;s current federal AI regulatory gap is significant. Companies serving US clients may need to align with this framework&#8217;s principles even before legislation passes. The preemption approach could simplify cross border compliance if adopted.</p>
+                </div>
+                <a href="https://techcrunch.com/2026/03/20/trumps-ai-framework-targets-state-laws-shifts-child-safety-burden-to-parents/" target="_blank" rel="noopener" class="source-link">Source: TechCrunch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <!-- ════════ FRAMEWORKS ════════ -->
+        <div class="section-title" id="frameworks">Frameworks &amp; Standards</div>
+        <div class="articles">
+            <div class="article" data-tags="canada,ai,governance">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">26 Mar 2026</span></div>
+                <h3>Cohere and Bell Canada Partner on Sovereign AI Infrastructure for Government</h3>
+                <p class="summary">Toronto based AI company Cohere announced a partnership with Bell Canada to deploy sovereign AI infrastructure for Canadian government and enterprise clients. Cohere&#8217;s large language models and North agentic AI platform will be integrated into Bell&#8217;s AI services, with all models trained and hosted on Canadian soil to maintain data residency compliance.</p>
+                <p class="detail">Bell will become Cohere&#8217;s preferred Canadian AI infrastructure provider through its Bell AI Fabric project. Separately, Bell announced a $1.7 billion investment in a purpose built AI data centre in Regina, Saskatchewan. Cohere also released Transcribe, an open source automatic speech recognition model supporting 14 languages, and surpassed $240 million USD in annual recurring revenue.</p>
+                <ul class="key-points">
+                    <li>Cohere models will be trained and hosted on Canadian soil, maintaining data sovereignty and residency compliance</li>
+                    <li>Bell investing $1.7 billion in a purpose built AI data centre in Regina, Saskatchewan</li>
+                    <li>Cohere surpassed $240 million USD ARR, signaling a maturing Canadian enterprise AI supply chain</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>This partnership addresses one of the key gaps identified in Canada&#8217;s AI landscape: domestic compute capacity and data sovereignty. Organizations subject to Canadian data residency requirements now have a domestic AI infrastructure pathway. For government procurement, the Bell and Cohere partnership creates an alternative to US hyperscaler dependencies for AI workloads requiring Canadian data residency.</p>
+                </div>
+                <a href="https://techcrunch.com/2026/03/26/cohere-launches-an-open-source-voice-model-specifically-for-transcription/" target="_blank" rel="noopener" class="source-link">Source: TechCrunch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+<!-- ════════ PREVIOUS REVIEWS ════════ -->
+        <div class="section-title">Previous Reviews</div>
+        <div class="prev-reviews">
+            <div class="prev-reviews-list">
+                <a href="mar-16-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of March 16 to 22, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="mar-2-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of March 2 to 8, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="feb-23-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of February 23 to March 1, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="feb-17-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of February 17 to 23, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter" id="newsletter">
+            <h3>Get the Weekly Briefing</h3>
+            <p>Governance, compliance, and cybersecurity developments delivered to your inbox every Monday. No noise, just what matters.</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <script>
+            document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var email = this.querySelector('input[name="email"]').value;
+                var btn = this.querySelector('button');
+                btn.disabled = true; btn.textContent = 'Subscribing...';
+                fetch('https://ascio-leads-api.vercel.app/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: 'Newsletter Subscriber', email: email, brand: 'ascio', interest: 'Newsletter', message: 'Governance & Compliance Review subscriber' })
+                }).then(function() {
+                    btn.textContent = 'Subscribed!';
+                }).catch(function() {
+                    btn.textContent = 'Subscribed!';
+                });
+            });
+            </script>
+        </div>
+
+    </div>
+
+    <footer><div class="w"><div class="ft">
+        <div class="ft-brand"><strong>ascio</strong> &#8212; Technology Governance, Inspection &amp; Assessment Readiness / Canada</div>
+        <div class="ft-social">
+            <a href="https://www.linkedin.com/company/ascio-advisory-services" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://x.com/ascio_tech" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+        <div class="ft-copy">&copy; 2017&#8211;2026 ascio</div>
+    </div></div></footer>
+
+</body>
+</html>
