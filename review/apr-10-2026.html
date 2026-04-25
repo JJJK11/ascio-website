@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N7K1X6GV2R"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N7K1X6GV2R');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Governance &amp; Compliance Review: Week of April 10 to 17, 2026 &#8212; ascio</title>
+    <meta name="description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta property="og:title" content="Governance &amp; Compliance Review &#8212; ascio">
+    <meta property="og:description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta property="og:image" content="https://ascio.ca/linkedin-cover.png">
+    <meta property="og:url" content="https://ascio.ca/review/apr-10-2026.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Governance &amp; Compliance Review &#8212; ascio">
+    <meta name="twitter:description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta name="twitter:image" content="https://ascio.ca/linkedin-cover.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #09090b;
+            --bg-raised: #18181b;
+            --bg-elevated: #27272a;
+            --border: #27272a;
+            --border-light: #3f3f46;
+            --text: #fafafa;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --accent: #06b6d4;
+            --accent-dim: rgba(6, 182, 212, 0.15);
+            --accent-border: rgba(6, 182, 212, 0.3);
+            --green: #22c55e;
+            --mono: 'JetBrains Mono', monospace;
+            --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 15px; -webkit-font-smoothing: antialiased; line-height: 1.7; overflow-x: hidden; }
+        ::selection { background: var(--accent); color: var(--bg); }
+        a { color: inherit; text-decoration: none; }
+        .w { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        /* ══════════════ HEADER ══════════════ */
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(9, 9, 11, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+        header .w { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+        .logo { font-family: var(--mono); font-size: 2rem; font-weight: 600; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+        .nav-links { display: flex; gap: 0.5rem; list-style: none; align-items: center; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.15s; }
+        .nav-links a:hover { color: var(--text); background: var(--bg-raised); }
+        .nav-links a.active { color: var(--text); }
+        .nav-cta { background: var(--text) !important; color: var(--bg) !important; font-weight: 600 !important; padding: 0.5rem 1.25rem !important; border-radius: 6px !important; transition: all 0.15s !important; }
+        .nav-cta:hover { background: var(--accent) !important; }
+        .mobile-toggle { display: none; background: none; border: none; color: var(--text); cursor: pointer; padding: 6px; }
+        .mobile-nav { position: fixed; top: 64px; left: 0; right: 0; background: var(--bg); z-index: 199; display: flex; flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); border-bottom: 1px solid var(--border); }
+        .mobile-nav.open { max-height: 400px; }
+        .mobile-nav a { font-size: 0.88rem; color: var(--text-secondary); font-weight: 500; padding: 0.75rem 2rem; transition: color 0.2s, background 0.2s; }
+        .mobile-nav a:hover { color: var(--text); background: var(--bg-raised); }
+
+        /* ══════════════ GRID BG ══════════════ */
+        .grid-bg { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(39, 39, 42, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(39, 39, 42, 0.3) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+
+        /* ══════════════ HERO ══════════════ */
+        .hero { padding: 140px 0 80px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%); pointer-events: none; }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .hero-tag { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; gap: 1rem; }
+        .hero-tag::before, .hero-tag::after { content: ''; width: 40px; height: 1px; background: var(--accent); }
+        .hero h1 { font-family: var(--sans); font-weight: 700; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 1.5rem; color: var(--text); }
+        .hero h1 span { color: var(--text-muted); }
+        .hero p { font-size: 1.05rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.8; }
+        .hero-date { margin-top: 2rem; font-family: var(--mono); font-size: 0.6rem; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; }
+        .hero-rule { width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.4; }
+
+        /* ══════════════ MAIN ══════════════ */
+        .main { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 60px 2rem; }
+        .section-title { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); margin-bottom: 32px; display: flex; align-items: center; gap: 1rem; }
+        .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+        /* ══════════════ TAGS ══════════════ */
+        .tag { display: inline-block; padding: 0.2rem 0.6rem; font-family: var(--mono); font-size: 0.55rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; width: fit-content; border-radius: 3px; }
+        .tag-governance { color: var(--bg); background: var(--accent); }
+        .tag-iso { color: #a78bfa; background: rgba(167, 139, 250, 0.12); }
+        .tag-cyber { color: #fb7185; background: rgba(244, 63, 94, 0.12); }
+        .tag-regulation { color: #fbbf24; background: rgba(251, 191, 36, 0.12); }
+        .tag-privacy { color: #34d399; background: rgba(16, 185, 129, 0.12); }
+        .tag-ai { color: #60a5fa; background: rgba(96, 165, 250, 0.12); }
+        .tag-canada { color: #f87171; background: rgba(248, 113, 113, 0.12); }
+        .tag-audit { color: #c084fc; background: rgba(192, 132, 252, 0.12); }
+        .tag-nist { color: #38bdf8; background: rgba(56, 189, 248, 0.12); }
+
+        /* ══════════════ FEATURED ══════════════ */
+        .featured { margin-bottom: 64px; background: var(--bg-raised); border: 1px solid var(--border); overflow: hidden; border-top: 3px solid var(--accent); border-radius: 6px; }
+        .featured-body { padding: 3rem; }
+        .featured-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .featured-meta { font-family: var(--mono); font-size: 0.58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .featured-body h2 { font-size: 1.75rem; font-weight: 700; color: var(--text); margin-bottom: 1.25rem; line-height: 1.3; max-width: 800px; letter-spacing: -0.02em; }
+        .featured-body .lead { font-size: 1rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 1rem; max-width: 860px; }
+        .featured-body .detail { font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.75rem; max-width: 860px; }
+        .source-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--mono); font-size: 0.62rem; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 1rem; transition: gap 0.3s var(--ease), color 0.2s; text-decoration: none; border-bottom: 1px solid var(--accent-border); padding-bottom: 2px; }
+        .source-link:hover { gap: 0.65rem; color: #22d3ee; }
+        .source-link svg { width: 10px; height: 10px; }
+
+        /* ══════════════ ARTICLES ══════════════ */
+        .articles { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 64px; }
+        .article { background: var(--bg-raised); border: 1px solid var(--border); border-left: 3px solid transparent; padding: 2rem 2.5rem; transition: all 0.3s var(--ease); border-radius: 6px; }
+        .article:hover { border-left-color: var(--accent); background: var(--bg-elevated); }
+        .article-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .article-header .article-date { font-family: var(--mono); font-size: 0.58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .article h3 { font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; line-height: 1.35; letter-spacing: -0.01em; }
+        .article .summary { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 0.5rem; }
+        .article .detail { font-size: 0.82rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.5rem; }
+        .article .key-points { margin: 1rem 0 0.75rem; padding-left: 1.25rem; }
+        .article .key-points li { font-size: 0.82rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0.35rem; }
+        .article .key-points li::marker { color: var(--accent); }
+
+        /* ══════════════ IMPLICATIONS ══════════════ */
+        .implications { margin-top: 1rem; padding: 1.25rem 1.5rem; background: var(--accent-dim); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; }
+        .implications h4 { font-family: var(--mono); font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.5rem; }
+        .implications p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.85; }
+
+        /* ══════════════ PREVIOUS REVIEWS ══════════════ */
+        .prev-reviews { margin-bottom: 64px; }
+        .prev-reviews-list { display: flex; flex-direction: column; gap: 0.75rem; }
+        .prev-review-link { display: flex; align-items: center; justify-content: space-between; background: var(--bg-raised); border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem 2rem; transition: all 0.3s var(--ease); text-decoration: none; }
+        .prev-review-link:hover { border-color: var(--accent-border); background: var(--bg-elevated); }
+        .prev-review-link .prev-title { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+        .prev-review-link .prev-date { font-family: var(--mono); font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .prev-review-link svg { color: var(--accent); width: 14px; height: 14px; flex-shrink: 0; transition: transform 0.3s var(--ease); }
+        .prev-review-link:hover svg { transform: translateX(3px); }
+
+        /* ══════════════ NEWSLETTER ══════════════ */
+        .newsletter { background: var(--bg-raised); border: 1px solid var(--border); padding: 48px; text-align: center; margin-bottom: 64px; border-top: 2px solid var(--accent); border-radius: 6px; }
+        .newsletter h3 { font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: 12px; letter-spacing: -0.02em; }
+        .newsletter p { color: var(--text-secondary); margin-bottom: 28px; font-size: 0.92rem; }
+        .newsletter-form { display: flex; max-width: 480px; margin: 0 auto; gap: 12px; }
+        .newsletter-form input { flex: 1; padding: 0.8rem 1.25rem; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 0.85rem; border-radius: 6px; outline: none; transition: border-color 0.25s; }
+        .newsletter-form input::placeholder { color: var(--text-muted); }
+        .newsletter-form input:focus { border-color: var(--accent); }
+        .newsletter-form button { padding: 0.8rem 2rem; background: var(--text); color: var(--bg); font-family: var(--sans); font-weight: 600; font-size: 0.82rem; border: none; border-radius: 6px; cursor: pointer; transition: all 0.15s; }
+        .newsletter-form button:hover { background: var(--accent); }
+
+        /* ══════════════ FOOTER ══════════════ */
+        footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 1.5rem 0; }
+        .ft { display: flex; justify-content: space-between; align-items: center; }
+        .ft-brand { font-size: 0.7rem; color: var(--text-muted); }
+        .ft-brand strong { font-family: var(--mono); color: var(--text-secondary); }
+        .ft-copy { font-size: 0.62rem; color: var(--text-muted); }
+        .ft-social { display: flex; align-items: center; gap: 1rem; }
+        .ft-social a { color: var(--text-muted); transition: color 0.15s; display: flex; align-items: center; }
+        .ft-social a:hover { color: var(--accent); }
+        .ft-social svg { width: 16px; height: 16px; }
+
+        .archive-banner { background: var(--accent-dim); border-bottom: 1px solid var(--accent-border); padding: 0.75rem 0; font-size: 0.8rem; color: var(--accent); text-align: center; position: relative; z-index: 1; }
+        .archive-banner a { color: var(--text); font-weight: 600; margin-left: 0.5rem; }
+
+        /* ══════════════ RESPONSIVE ══════════════ */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: clamp(2rem, 5vw, 3rem); }
+            .featured-body { padding: 2rem; }
+            .article { padding: 1.5rem; }
+            .newsletter { padding: 2rem; }
+        }
+        @media (max-width: 720px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; }
+            .ft { flex-direction: column; gap: 0.35rem; text-align: center; }
+            .newsletter-form { flex-direction: column; }
+            .prev-review-link { padding: 1rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-bg"></div>
+
+    <header><div class="w">
+        <a href="../index.html" class="logo">ascio</a>
+        <ul class="nav-links">
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#standards">Standards</a></li>
+            <li><a href="../index.html#process">Process</a></li>
+            <li><a href="./" class="active">Weekly Review</a></li>
+            <li><a href="../index.html#contact" class="nav-cta">Request Advisory</a></li>
+        </ul>
+        <button class="mobile-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+    </div></header>
+    <div class="mobile-nav">
+        <a href="../index.html#services" onclick="this.parentElement.classList.remove('open')">Services</a>
+        <a href="../index.html#standards" onclick="this.parentElement.classList.remove('open')">Standards</a>
+        <a href="../index.html#process" onclick="this.parentElement.classList.remove('open')">Process</a>
+        <a href="./" onclick="this.parentElement.classList.remove('open')">Weekly Review</a>
+        <a href="../index.html#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">Weekly Review</div>
+            <h1>Governance &amp; Compliance <span>Review</span></h1>
+            <p>Developments in technology governance, cybersecurity standards, and regulatory compliance.</p>
+            <div class="hero-date">Week of April 10 to 17, 2026</div>
+        </div>
+    </section>
+    <div class="hero-rule"></div>
+    <div class="archive-banner"><div class="w">This is an archived edition. <a href="./">View the latest review &rarr;</a></div></div>
+
+    <!-- Main -->
+    <div class="main">
+
+        <!-- ════════ FEATURED ════════ -->
+        <div class="section-title">Lead Story</div>
+        <div class="featured" data-tags="canada,governance,cyber">
+            <div class="featured-body">
+                <div class="featured-header">
+                    <span class="tag tag-canada">Canada</span>
+                    <span class="tag tag-governance">Governance</span>
+                    <span class="tag tag-cyber">Cybersecurity</span>
+                    <span class="featured-meta">14 Apr 2026</span>
+                </div>
+                <h2>Government of Canada Introduces Level 1 of the Canadian Program for Cyber Security Certification</h2>
+                <p class="lead">Public Services and Procurement Canada announced on April 14 that Level 1 of the Canadian Program for Cyber Security Certification (CPCSC) is now available to suppliers and will be required in select defence contracts beginning Summer 2026. Level 1 requires an annual cyber security self assessment against 13 security requirements and controls, with an online self assessment tool now live.</p>
+                <p class="detail">Level 1 became available to suppliers on April 1, 2026, and is the first of three certification levels to be introduced in phases. Level 2, requiring an external assessment every three years by an accredited certification body, will be added to select defence contracts beginning spring 2027. Level 3 will require an assessment conducted by National Defence. The program uses the same underlying technical controls as the United States Cybersecurity Maturity Model Certification, with Canadian industrial cyber security standards technically identical to the 172 controls in NIST Special Publications 800 171 and 800 172.</p>
+                <ul class="key-points">
+                    <li>Level 1 self assessment covers 13 security requirements and becomes a prerequisite for select defence contracts starting Summer 2026</li>
+                    <li>Level 2 third party assessments by accredited certification bodies begin in spring 2027 for select contracts</li>
+                    <li>Canadian controls align with NIST 800 171 and 800 172, providing a technical baseline compatible with United States CMMC</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Defence suppliers who have not completed the Level 1 self assessment face exclusion from targeted procurements within months. Cyber security programs should map existing controls to the 13 Level 1 requirements now and identify gaps before the summer enforcement window opens. Organizations in the defence supply chain should also begin preparing for Level 2 external assessments in 2027, which will require independent evaluation against the full control set. Certification bodies, assessors, and compliance service providers should scale capacity in advance of 2027 demand.</p>
+                </div>
+                <a href="https://www.canada.ca/en/public-services-procurement/news/2026/04/government-of-canada-introduces-level-1-of-canadian-program-for-cyber-security-certification.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <!-- ════════ CYBERSECURE CANADA ════════ -->
+        <div class="section-title" id="cybersecure">CyberSecure Canada &amp; Cyber Threats</div>
+        <div class="articles">
+            <div class="article" data-tags="canada,cyber,governance">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">14 Apr 2026</span></div>
+                <h3>CCCS Publishes Multi Vendor Patch Tuesday Rollup Covering Microsoft, SAP, Fortinet, and Tenable</h3>
+                <p class="summary">The Canadian Centre for Cyber Security released its monthly April rollup on April 14, coordinating disclosures from multiple major vendors on the same day. Advisories AV26 349 (SAP), AV26 351 (Fortinet), AV26 352 (Microsoft), and AV26 354 (Tenable Identity Exposure) were all published together, with Tenable urging upgrades beyond version 3.77.17 to remediate critical vulnerabilities.</p>
+                <p class="detail">The concurrent release gives Canadian enterprises a single monthly window to coordinate vulnerability management across Microsoft, SAP, Fortinet perimeter devices, and identity infrastructure. The Cyber Centre continues to act as the primary Canadian clearinghouse for vendor security advisories, with supporting alerts throughout the week for HPE, Apache ActiveMQ, CUPS, and Qualcomm.</p>
+                <ul class="key-points">
+                    <li>Four high impact advisories released on April 14 covering operating systems, ERP, perimeter security, and identity platforms</li>
+                    <li>Tenable Identity Exposure critical vulnerabilities require upgrade to 3.77.17 or later</li>
+                    <li>Cyber Centre remains the consolidated Canadian reference for vulnerability response across major vendors</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Vulnerability management programs should incorporate the Cyber Centre rollup cadence into monthly patching and risk acceptance processes. Organizations subject to CPCSC Level 1 self assessment should document timely remediation of these advisories as evidence of security requirement 3.11 and 3.14 implementation. Identity and perimeter infrastructure vulnerabilities carry the highest blast radius and should be prioritized for same week remediation.</p>
+                </div>
+                <a href="https://www.cyber.gc.ca/en/alerts-advisories/microsoft-security-advisory-april-2026-monthly-rollup-av26-352" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="cyber,governance">
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">10 Apr 2026</span></div>
+                <h3>Nginx UI Critical Vulnerability Exploited in the Wild, CCCS Issues Advisory AV26 360</h3>
+                <p class="summary">The Canadian Centre for Cyber Security issued advisory AV26 360 on April 10 warning that CVE 2026 33032, a critical vulnerability in Nginx UI, is being actively exploited. Nginx UI is widely deployed as a management layer over production Nginx reverse proxy and load balancer deployments, placing web tier infrastructure at direct risk.</p>
+                <p class="detail">Active exploitation status means the vulnerability is not theoretical. Organizations running Nginx UI are advised to apply vendor patches immediately, audit management interface exposure to the internet, and review logs for indicators of compromise. The advisory sits alongside several other web infrastructure alerts issued in the same week.</p>
+                <ul class="key-points">
+                    <li>CVE 2026 33032 confirmed actively exploited, elevating remediation priority</li>
+                    <li>Nginx UI is a common management layer for production Nginx deployments across Canadian web estates</li>
+                    <li>Cyber Centre recommends patching, reducing management interface exposure, and compromise assessment</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Web tier management interfaces are a recurring attack surface and often fall outside standard vulnerability scanning scope. Organizations should extend asset inventories to include management tooling associated with production web infrastructure. Exposure of management planes to the public internet should be reviewed against ISO/IEC 27001 Annex A controls 8.20 (network security) and 8.22 (segregation of networks).</p>
+                </div>
+                <a href="https://www.cyber.gc.ca/en/alerts-advisories/nginx-ui-security-advisory-av26-360" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="canada,privacy,cyber">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-privacy">Privacy</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">12 Apr 2026</span></div>
+                <h3>Booking.com Breach Affects Canadian Customers, Regulator Imposes Late Reporting Fine</h3>
+                <p class="summary">Booking.com notified customers on April 12 that reservation details were compromised, leading to a wave of phishing attempts known as reservation hijacking. The exposed data includes full names, addresses, booking dates and details, email addresses, phone numbers, and notes made to hotels. Canadian customers were among those impacted.</p>
+                <p class="detail">The Dutch privacy regulator fined Booking.com nearly $770,000 CAD for reporting the breach 22 days late, underscoring global trend toward stricter enforcement of mandatory breach notification timelines. Canadian consumers are exposed to targeted phishing using specific reservation context, increasing social engineering success rates.</p>
+                <ul class="key-points">
+                    <li>Reservation details including contact data and special request notes exposed to a third party</li>
+                    <li>Booking.com fined for reporting the breach 22 days past the regulatory deadline</li>
+                    <li>Canadian customers targeted with reservation hijacking phishing using real booking context</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Canadian organizations should reinforce employee awareness of targeted phishing that uses legitimate booking or travel context. PIPEDA mandatory breach reporting obligations have finite windows; the Booking.com fine demonstrates that late reporting is increasingly penalized internationally and is a live enforcement priority. Vendors that hold customer context data should be assessed under ISO/IEC 27001 Annex A control 5.19 (supplier relationships) and 5.34 (privacy and protection of personal data).</p>
+                </div>
+                <a href="https://www.cbc.ca/news/canada/manitoba/bookingcom-data-breach-cybercrime-9.7165174" target="_blank" rel="noopener" class="source-link">Source: CBC News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <!-- ════════ CPCSC ════════ -->
+        <div class="section-title" id="cpcsc">CPCSC</div>
+        <div class="articles">
+            <div class="article" data-tags="canada,governance,cyber">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-governance">Governance</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">14 Apr 2026</span></div>
+                <h3>CPCSC Level 1 Self Assessment Tool Available Ahead of Summer 2026 Defence Contract Window</h3>
+                <p class="summary">With Level 1 of the Canadian Program for Cyber Security Certification active from April 1, the Government of Canada has published the self assessment tool that suppliers will use to evaluate implementation status against the 13 Level 1 security requirements. Suppliers must complete the annual self assessment and publish attestation before the Summer 2026 window opens for designated defence contracts.</p>
+                <p class="detail">Level 1 controls align with the foundational controls in NIST Special Publication 800 171, giving organizations already aligned with NIST a strong starting position. The self assessment is an annual requirement, and suppliers should integrate it into an existing Information Security Management System rather than treating it as a standalone exercise. Phased rollout means Level 2, which requires an external assessment every three years by an accredited certification body, is on a spring 2027 timeline.</p>
+                <ul class="key-points">
+                    <li>Annual self assessment against 13 controls, submitted through the Government of Canada supplier portal</li>
+                    <li>Organizations aligned with NIST 800 171 or ISO/IEC 27001 have a strong baseline for Level 1</li>
+                    <li>Level 2 external assessments begin spring 2027, requiring accredited certification bodies</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Organizations should treat Level 1 as the on ramp to a multi year compliance program, not a one time deliverable. Integrating the self assessment into an ISO/IEC 27001 aligned ISMS reduces duplicate evidence collection and positions the organization for Level 2 external assessment with minimal rework. Procurement, legal, and cyber teams should jointly review bid eligibility gates to ensure Level 1 attestation status is tracked alongside other supplier qualification data.</p>
+                </div>
+                <a href="https://www.canada.ca/en/public-services-procurement/news/2026/04/canadian-program-for-cyber-security-certification-level-1.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <!-- ════════ AI GOVERNANCE ════════ -->
+        <div class="section-title" id="ai-governance">AI Governance &amp; Regulation</div>
+        <div class="articles">
+            <div class="article" data-tags="canada,privacy,regulation">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-privacy">Privacy</span><span class="tag tag-regulation">Regulation</span><span class="article-date">16 Apr 2026</span></div>
+                <h3>Privacy Commissioner Calls for Order Making Power and Fines as Gap in Canadian Framework</h3>
+                <p class="summary">Privacy Commissioner of Canada Philippe Dufresne, speaking to the House of Commons Standing Committee on Science and Research on April 16, said Canada remains almost alone among peer jurisdictions in lacking the ability to issue orders or fines for privacy violations. His testimony, focused on connected vehicles and Chinese electric vehicle entry to the Canadian market, called for stronger enforcement powers and strengthened consent and information sharing frameworks.</p>
+                <p class="detail">The statement coincides with the Treasury Board of Canada Secretariat review of the Privacy Act launched April 8, the first substantive modernization in over four decades. The consultation deadline is July 10, 2026. Proposed changes include granting the Commissioner binding order making powers for corrective action plans and discretion to discontinue or decline complaints.</p>
+                <ul class="key-points">
+                    <li>Commissioner states absence of order making and fine issuance is a notable enforcement gap</li>
+                    <li>Privacy Act modernization consultation open until July 10, 2026</li>
+                    <li>Testimony anchored in connected vehicle data flows, extending privacy concerns into emerging technology procurement</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Canadian organizations should monitor the Privacy Act modernization consultation closely. A shift toward order making and fine issuance powers would align Canada with European and recent provincial enforcement regimes, and would elevate privacy governance from reputational to financial risk. Privacy Impact Assessments should be maintained as living documents, not one time artefacts, in anticipation of a more active enforcement posture.</p>
+                </div>
+                <a href="https://www.priv.gc.ca/en/opc-actions-and-decisions/advice-to-parliament/2026/parl_260416/" target="_blank" rel="noopener" class="source-link">Source: Office of the Privacy Commissioner of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="canada,regulation,privacy">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-regulation">Regulation</span><span class="tag tag-privacy">Privacy</span><span class="article-date">8 Apr 2026</span></div>
+                <h3>Treasury Board Launches Review of Privacy Act: First Update in Forty Three Years</h3>
+                <p class="summary">The Treasury Board of Canada Secretariat launched a formal review of the Privacy Act on April 8, publishing a comprehensive policy paper outlining potential modernization approaches. The review addresses rights, obligations, enforcement, and cross border data flows, and is the first substantive reconsideration of the Act since 1983. The consultation runs until July 10, 2026.</p>
+                <p class="detail">Policy approaches under consideration include expanded rights of access and correction, stronger consent frameworks, modernized definitions aligned with international standards, enforcement changes that would grant binding order making powers, and treatment of public sector AI systems. The paper explicitly contemplates alignment with international frameworks including the GDPR and the OECD privacy guidelines.</p>
+                <ul class="key-points">
+                    <li>First meaningful Privacy Act review since the Act came into force in 1983</li>
+                    <li>Policy paper canvasses enforcement, rights, cross border data flows, and public sector AI</li>
+                    <li>Consultation period closes July 10, 2026 with wide stakeholder engagement expected</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Federal institutions and their suppliers should expect material changes to privacy obligations over the next 18 to 24 months. Procurement requirements for Privacy Impact Assessments, data sharing agreements, and public sector AI deployments will evolve with the legislative direction. Organizations should participate in the consultation to shape the outcomes and begin assessing current practices against the directions signalled in the policy paper.</p>
+                </div>
+                <a href="https://www.canada.ca/en/treasury-board-secretariat/services/access-information-privacy/access-information/privacy-act-modernization-policy-approaches/2026-review-privacy-act-policy-approaches.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="ai,regulation,governance">
+                <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-regulation">Regulation</span><span class="tag tag-governance">Governance</span><span class="article-date">16 Apr 2026</span></div>
+                <h3>EU AI Act High Risk Wave Heads for Delay as Digital Omnibus Negotiations Advance</h3>
+                <p class="summary">Reporting on April 16 confirmed that the third major wave of EU AI Act obligations, covering high risk AI systems, is being formally delayed through the Digital Omnibus on AI, currently in trilogue negotiations. The original implementation date of August 2, 2026 covered conformity assessments, quality management systems, risk management documentation, EU AI Database registration, and human oversight mechanisms for Annex III systems.</p>
+                <p class="detail">Enforcement infrastructure remains uneven: only 8 of 27 member states designated national competent authorities by the August 2025 deadline, leaving ground level enforcement thin across the European Union. AI literacy and prohibited practice obligations have been in force since February 2025, and governance rules for general purpose AI models since August 2025.</p>
+                <ul class="key-points">
+                    <li>High risk Annex III obligations expected to shift beyond the original August 2026 date through the Digital Omnibus</li>
+                    <li>Member state enforcement capacity remains uneven with most national competent authorities still unassigned</li>
+                    <li>AI literacy, prohibited practices, and general purpose AI governance obligations are in force today</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>The delay gives Canadian organizations with European exposure additional runway to operationalize ISO/IEC 42001 aligned AI management systems. Treating conformity assessment, risk management, and post market monitoring as foundational capabilities rather than deadline driven compliance exercises positions organizations to respond rapidly once the revised timelines are confirmed. Enterprises operating across both Canadian and European markets should align AI governance to the more stringent regime, treating the EU obligations as the baseline.</p>
+                </div>
+                <a href="https://www.helpnetsecurity.com/2026/04/16/eu-ai-act-logging-requirements/" target="_blank" rel="noopener" class="source-link">Source: Help Net Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <!-- ════════ FRAMEWORKS ════════ -->
+        <div class="section-title" id="frameworks">Frameworks &amp; Standards</div>
+        <div class="articles">
+            <div class="article" data-tags="iso,ai,governance">
+                <div class="article-header"><span class="tag tag-iso">ISO</span><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">14 Apr 2026</span></div>
+                <h3>ISO/IEC 42001 Certification Wave Continues Across Legal, Consulting, and Technology Sectors</h3>
+                <p class="summary">April brought a concentrated wave of ISO/IEC 42001 certification announcements: ibex certified April 8, Willkie certified April 14 as among the first global law firms, and Intetics certified April 14. Earlier in the month, Palindrome Technologies became an accredited certification body for ISO/IEC 42001, expanding the supply of qualified assessors. The trend reflects AI governance shifting from voluntary best practice to contractual requirement.</p>
+                <p class="detail">Market analysts have observed that ISO/IEC 42001 is increasingly cited in procurement documents as a qualification prerequisite for AI service providers. The Colorado AI Act recognizes ISO/IEC 42001 as a legal safe harbour, and reporting cites Gartner estimates that 83 percent of Fortune 500 procurement teams plan to require ISO/IEC 42001 alignment from vendors by 2027.</p>
+                <ul class="key-points">
+                    <li>Multiple April certifications across law, consulting, and technology sectors signal broadening adoption</li>
+                    <li>Colorado AI Act recognizes ISO/IEC 42001 as legal safe harbour, anchoring US state level reliance</li>
+                    <li>Certification body capacity expanding with new accreditations, supporting projected 2027 procurement demand</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Organizations providing AI products or services to regulated industries should plan ISO/IEC 42001 certification on a 12 to 18 month horizon. Enterprise buyers should update vendor qualification questionnaires to include AI management system certification status. The standard provides a durable bridge across multiple regulatory regimes including the EU AI Act, state level US laws, and expected Canadian requirements.</p>
+                </div>
+                <a href="https://www.globenewswire.com/news-release/2026/04/08/3270173/0/en/ibex-Earns-ISO-IEC-42001-Certification-Setting-the-Standard-for-Responsible-AI-in-Customer-Experience.html" target="_blank" rel="noopener" class="source-link">Source: GlobeNewswire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="nist,governance">
+                <div class="article-header"><span class="tag tag-nist">NIST</span><span class="tag tag-governance">Governance</span><span class="article-date">Apr 2026</span></div>
+                <h3>NIST Publishes Final CSF 2.0 Quick Start Guide for Cybersecurity, Enterprise Risk, and Workforce Integration</h3>
+                <p class="summary">NIST released the final version of the Cybersecurity Framework 2.0 Quick Start Guide SP 1308, covering integration across cybersecurity, enterprise risk management, and workforce management. The guide is the latest in a series that has accompanied CSF 2.0 since February 2024, targeting specific adoption pathways across roles and functions. NIST has also confirmed an initial public draft of the Cybersecurity Framework Profile for Artificial Intelligence (NISTIR 8596) is planned for 2026.</p>
+                <p class="detail">CSF 2.0 is now organized around six core functions: Govern, Identify, Protect, Detect, Respond, and Recover. The addition of the Govern function reflects the framework&#8217;s maturation from technical practice guide to organizational risk management reference. Quick Start Guides are intended to reduce the cost of operationalizing the framework in mid size and large organizations.</p>
+                <ul class="key-points">
+                    <li>SP 1308 Quick Start Guide targets integration with enterprise risk management and workforce management functions</li>
+                    <li>AI focused profile NISTIR 8596 progressing toward initial public draft in 2026</li>
+                    <li>Govern function in CSF 2.0 anchors cybersecurity within enterprise risk management</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Canadian organizations aligning to NIST CSF 2.0 should integrate the Govern function outcomes with their existing enterprise risk management and internal audit processes. The forthcoming AI profile will provide a practical bridge between CSF 2.0 and ISO/IEC 42001, reducing duplicate effort for organizations building AI governance on top of existing cybersecurity programs.</p>
+                </div>
+                <a href="https://industrialcyber.co/nist/nist-releases-updated-csf-2-0-quick-start-guide-to-strengthen-cyber-erm-and-workforce-integration/" target="_blank" rel="noopener" class="source-link">Source: Industrial Cyber <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="iso,audit">
+                <div class="article-header"><span class="tag tag-iso">ISO</span><span class="tag tag-audit">Audit</span><span class="article-date">Apr 2026</span></div>
+                <h3>ISO/IEC 27001:2013 Transition Period Closed: All 2026 Certifications Against the 2022 Edition</h3>
+                <p class="summary">The transition window from ISO/IEC 27001:2013 to the 2022 edition has closed. Certifications issued against the 2013 version expired on October 31, 2025, and every certification audit conducted in 2026 is now against the 2022 edition. Organizations completing fresh certifications in April, including Master of Code Global and Inde, have done so against the current standard.</p>
+                <p class="detail">The 2022 edition reorganized Annex A into four themes (Organizational, People, Physical, and Technological) and introduced 11 new controls reflecting threats that emerged over the previous decade, including cloud services, data leakage prevention, and threat intelligence. The 2024 environmental amendment added climate considerations to risk assessment activities.</p>
+                <ul class="key-points">
+                    <li>Certifications against ISO/IEC 27001:2013 ceased to be valid after October 31, 2025</li>
+                    <li>All 2026 certifications are against ISO/IEC 27001:2022 with the 2024 environmental amendment</li>
+                    <li>New Annex A controls include threat intelligence, cloud services security, and data leakage prevention</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Organizations still referencing the 2013 edition in internal policy documents, vendor contracts, or procurement language should update references to the 2022 edition with the 2024 environmental amendment. Suppliers claiming ISO/IEC 27001 certification should be asked to confirm the certificate version; certificates issued before the transition deadline are no longer valid evidence of conformance.</p>
+                </div>
+                <a href="https://markets.financialcontent.com/stocks/article/abnewswire-2026-4-3-master-of-code-global-achieves-updated-iso-27001-certification" target="_blank" rel="noopener" class="source-link">Source: FinancialContent <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+<!-- ════════ PREVIOUS REVIEWS ════════ -->
+        <div class="section-title">Previous Reviews</div>
+        <div class="prev-reviews">
+            <div class="prev-reviews-list">
+                <a href="mar-29-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of March 23 to 29, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="mar-16-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of March 16 to 22, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="mar-2-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of March 2 to 8, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="feb-23-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of February 23 to March 1, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="feb-17-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of February 17 to 23, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter" id="newsletter">
+            <h3>Get the Weekly Briefing</h3>
+            <p>Governance, compliance, and cybersecurity developments delivered to your inbox every Monday. No noise, just what matters.</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <script>
+            document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var email = this.querySelector('input[name="email"]').value;
+                var btn = this.querySelector('button');
+                btn.disabled = true; btn.textContent = 'Subscribing...';
+                fetch('https://ascio-leads-api.vercel.app/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: 'Newsletter Subscriber', email: email, brand: 'ascio', interest: 'Newsletter', message: 'Governance & Compliance Review subscriber' })
+                }).then(function() {
+                    btn.textContent = 'Subscribed!';
+                }).catch(function() {
+                    btn.textContent = 'Subscribed!';
+                });
+            });
+            </script>
+        </div>
+
+    </div>
+
+    <footer><div class="w"><div class="ft">
+        <div class="ft-brand"><strong>ascio</strong> &#8212; Technology Governance, Inspection &amp; Assessment Readiness / Canada</div>
+        <div class="ft-social">
+            <a href="https://www.linkedin.com/company/ascio-advisory-services" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://x.com/ascio_tech" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+        <div class="ft-copy">&copy; 2017&#8211;2026 ascio</div>
+    </div></div></footer>
+
+</body>
+</html>

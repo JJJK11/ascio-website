@@ -48,7 +48,6 @@
         a { color: inherit; text-decoration: none; }
         .w { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-        /* ══════════════ HEADER ══════════════ */
         header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(9, 9, 11, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
         header .w { display: flex; justify-content: space-between; align-items: center; height: 64px; }
         .logo { font-family: var(--mono); font-size: 2rem; font-weight: 600; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
@@ -64,10 +63,8 @@
         .mobile-nav a { font-size: 0.88rem; color: var(--text-secondary); font-weight: 500; padding: 0.75rem 2rem; transition: color 0.2s, background 0.2s; }
         .mobile-nav a:hover { color: var(--text); background: var(--bg-raised); }
 
-        /* ══════════════ GRID BG ══════════════ */
         .grid-bg { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(39, 39, 42, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(39, 39, 42, 0.3) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
 
-        /* ══════════════ HERO ══════════════ */
         .hero { padding: 140px 0 80px; text-align: center; position: relative; overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%); pointer-events: none; }
         .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
@@ -79,12 +76,10 @@
         .hero-date { margin-top: 2rem; font-family: var(--mono); font-size: 0.6rem; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; }
         .hero-rule { width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.4; }
 
-        /* ══════════════ MAIN ══════════════ */
         .main { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 60px 2rem; }
         .section-title { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); margin-bottom: 32px; display: flex; align-items: center; gap: 1rem; }
         .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-        /* ══════════════ TAGS ══════════════ */
         .tag { display: inline-block; padding: 0.2rem 0.6rem; font-family: var(--mono); font-size: 0.55rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; width: fit-content; border-radius: 3px; }
         .tag-governance { color: var(--bg); background: var(--accent); }
         .tag-iso { color: #a78bfa; background: rgba(167, 139, 250, 0.12); }
@@ -96,7 +91,6 @@
         .tag-audit { color: #c084fc; background: rgba(192, 132, 252, 0.12); }
         .tag-nist { color: #38bdf8; background: rgba(56, 189, 248, 0.12); }
 
-        /* ══════════════ FEATURED ══════════════ */
         .featured { margin-bottom: 64px; background: var(--bg-raised); border: 1px solid var(--border); overflow: hidden; border-top: 3px solid var(--accent); border-radius: 6px; }
         .featured-body { padding: 3rem; }
         .featured-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
@@ -108,7 +102,6 @@
         .source-link:hover { gap: 0.65rem; color: #22d3ee; }
         .source-link svg { width: 10px; height: 10px; }
 
-        /* ══════════════ ARTICLES ══════════════ */
         .articles { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 64px; }
         .article { background: var(--bg-raised); border: 1px solid var(--border); border-left: 3px solid transparent; padding: 2rem 2.5rem; transition: all 0.3s var(--ease); border-radius: 6px; }
         .article:hover { border-left-color: var(--accent); background: var(--bg-elevated); }
@@ -121,12 +114,10 @@
         .article .key-points li { font-size: 0.82rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0.35rem; }
         .article .key-points li::marker { color: var(--accent); }
 
-        /* ══════════════ IMPLICATIONS ══════════════ */
         .implications { margin-top: 1rem; padding: 1.25rem 1.5rem; background: var(--accent-dim); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; }
         .implications h4 { font-family: var(--mono); font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.5rem; }
         .implications p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.85; }
 
-        /* ══════════════ PREVIOUS REVIEWS ══════════════ */
         .prev-reviews { margin-bottom: 64px; }
         .prev-reviews-list { display: flex; flex-direction: column; gap: 0.75rem; }
         .prev-review-link { display: flex; align-items: center; justify-content: space-between; background: var(--bg-raised); border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem 2rem; transition: all 0.3s var(--ease); text-decoration: none; }
@@ -136,7 +127,6 @@
         .prev-review-link svg { color: var(--accent); width: 14px; height: 14px; flex-shrink: 0; transition: transform 0.3s var(--ease); }
         .prev-review-link:hover svg { transform: translateX(3px); }
 
-        /* ══════════════ NEWSLETTER ══════════════ */
         .newsletter { background: var(--bg-raised); border: 1px solid var(--border); padding: 48px; text-align: center; margin-bottom: 64px; border-top: 2px solid var(--accent); border-radius: 6px; }
         .newsletter h3 { font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: 12px; letter-spacing: -0.02em; }
         .newsletter p { color: var(--text-secondary); margin-bottom: 28px; font-size: 0.92rem; }
@@ -147,7 +137,6 @@
         .newsletter-form button { padding: 0.8rem 2rem; background: var(--text); color: var(--bg); font-family: var(--sans); font-weight: 600; font-size: 0.82rem; border: none; border-radius: 6px; cursor: pointer; transition: all 0.15s; }
         .newsletter-form button:hover { background: var(--accent); }
 
-        /* ══════════════ FOOTER ══════════════ */
         footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 1.5rem 0; }
         .ft { display: flex; justify-content: space-between; align-items: center; }
         .ft-brand { font-size: 0.7rem; color: var(--text-muted); }
@@ -158,7 +147,6 @@
         .ft-social a:hover { color: var(--accent); }
         .ft-social svg { width: 16px; height: 16px; }
 
-        /* ══════════════ RESPONSIVE ══════════════ */
         @media (max-width: 900px) {
             .hero h1 { font-size: clamp(2rem, 5vw, 3rem); }
             .featured-body { padding: 2rem; }
@@ -199,223 +187,216 @@
         <a href="../index.html#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
     </div>
 
-    <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-tag">Weekly Review</div>
             <h1>Governance &amp; Compliance <span>Review</span></h1>
             <p>Developments in technology governance, cybersecurity standards, and regulatory compliance.</p>
-            <div class="hero-date">Week of April 10 to 17, 2026</div>
+            <div class="hero-date">Week of April 18 to 24, 2026</div>
         </div>
     </section>
     <div class="hero-rule"></div>
 
-    <!-- Main -->
     <div class="main">
 
-        <!-- ════════ FEATURED ════════ -->
         <div class="section-title">Lead Story</div>
-        <div class="featured" data-tags="canada,governance,cyber">
+        <div class="featured" data-tags="canada,privacy,cyber">
             <div class="featured-body">
                 <div class="featured-header">
                     <span class="tag tag-canada">Canada</span>
-                    <span class="tag tag-governance">Governance</span>
+                    <span class="tag tag-privacy">Privacy</span>
                     <span class="tag tag-cyber">Cybersecurity</span>
-                    <span class="featured-meta">14 Apr 2026</span>
+                    <span class="featured-meta">17 Apr 2026</span>
                 </div>
-                <h2>Government of Canada Introduces Level 1 of the Canadian Program for Cyber Security Certification</h2>
-                <p class="lead">Public Services and Procurement Canada announced on April 14 that Level 1 of the Canadian Program for Cyber Security Certification (CPCSC) is now available to suppliers and will be required in select defence contracts beginning Summer 2026. Level 1 requires an annual cyber security self assessment against 13 security requirements and controls, with an online self assessment tool now live.</p>
-                <p class="detail">Level 1 became available to suppliers on April 1, 2026, and is the first of three certification levels to be introduced in phases. Level 2, requiring an external assessment every three years by an accredited certification body, will be added to select defence contracts beginning spring 2027. Level 3 will require an assessment conducted by National Defence. The program uses the same underlying technical controls as the United States Cybersecurity Maturity Model Certification, with Canadian industrial cyber security standards technically identical to the 172 controls in NIST Special Publications 800 171 and 800 172.</p>
+                <h2>Canada Life Confirms Breach Affecting up to 70,000 Customers as ShinyHunters Campaign Targets Salesforce Estates</h2>
+                <p class="lead">The Canada Life Assurance Company confirmed on April 17 that personal information of up to 70,000 customers was accessed through a compromised employee account, exposing names, dates of birth, mailing addresses, gender, and annual income data. The disclosure is part of a broader ShinyHunters campaign that compromised at least nine major brands by pivoting through Salesforce environments, with attackers issuing extortion deadlines and threatening to leak the data publicly.</p>
+                <p class="detail">The Canada Life incident sits inside a ransomware threat outlook the Canadian Centre for Cyber Security has flagged as significant through 2027, with attacker tradecraft becoming faster, cheaper, and harder to detect. Where prior years emphasized perimeter compromise, the April 2026 wave confirmed that identity is now the primary control plane: a single employee credential with overly broad SaaS access produced the largest Canadian financial services data exposure of the quarter. Mandatory breach notification under PIPEDA applies, and class action interest is expected to follow.</p>
                 <ul class="key-points">
-                    <li>Level 1 self assessment covers 13 security requirements and becomes a prerequisite for select defence contracts starting Summer 2026</li>
-                    <li>Level 2 third party assessments by accredited certification bodies begin in spring 2027 for select contracts</li>
-                    <li>Canadian controls align with NIST 800 171 and 800 172, providing a technical baseline compatible with United States CMMC</li>
+                    <li>Up to 70,000 customers affected, with names, dates of birth, addresses, gender, and income data exposed</li>
+                    <li>Initial access through a Canada Life employee account, then lateral pivot through connected Salesforce data</li>
+                    <li>Part of a wider ShinyHunters operation hitting at least nine global brands, with extortion deadlines published</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Defence suppliers who have not completed the Level 1 self assessment face exclusion from targeted procurements within months. Cyber security programs should map existing controls to the 13 Level 1 requirements now and identify gaps before the summer enforcement window opens. Organizations in the defence supply chain should also begin preparing for Level 2 external assessments in 2027, which will require independent evaluation against the full control set. Certification bodies, assessors, and compliance service providers should scale capacity in advance of 2027 demand.</p>
+                    <p>Identity is now the cyber perimeter for Canadian regulated industries. Boards and risk committees should require evidence that least privilege, conditional access, and SaaS to SaaS data flow controls are operating effectively, not just documented. PIPEDA mandatory breach reporting timelines are short and tightening internationally; legal, privacy, and security functions need a single tested response runbook. ISO/IEC 27001 Annex A controls 5.15 (access control), 5.16 (identity management), 5.18 (access rights), and 8.2 (privileged access rights) should be reviewed against current SaaS exposure rather than infrastructure exposure. Suppliers holding Canadian customer PII through Salesforce or similar platforms should be reassessed under Annex A 5.19 supplier relationships and 5.34 privacy and protection of personal data.</p>
                 </div>
-                <a href="https://www.canada.ca/en/public-services-procurement/news/2026/04/government-of-canada-introduces-level-1-of-canadian-program-for-cyber-security-certification.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.theglobeandmail.com/business/article-hackers-personal-information-70000-people-canada-life-data-breach/" target="_blank" rel="noopener" class="source-link">Source: The Globe and Mail <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
-        <!-- ════════ CYBERSECURE CANADA ════════ -->
         <div class="section-title" id="cybersecure">CyberSecure Canada &amp; Cyber Threats</div>
         <div class="articles">
+            <div class="article" data-tags="canada,governance,cyber">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-governance">Governance</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">17 Apr 2026</span></div>
+                <h3>Cyber Centre Launches CIREN to Help Canadian Critical Infrastructure Prepare for Severe Cyber Incidents</h3>
+                <p class="summary">The Canadian Centre for Cyber Security launched the Critical Infrastructure Resilience and Escalated Threat Navigation initiative, known as CIREN, on April 17. CIREN helps critical infrastructure organizations understand, prepare for, and exercise responses to severe cyber incidents, with the explicit objective of maintaining essential services through prolonged, widespread disruption scenarios.</p>
+                <p class="detail">The initiative addresses a gap that the National Cyber Threat Assessment 2025 to 2026 has flagged repeatedly: most Canadian critical infrastructure operators are prepared for routine incidents but have not exercised severe, sustained, multi sector scenarios. CIREN provides scenario libraries, exercise frameworks, and information sharing pathways focused on worst case operational continuity rather than incident response in isolation.</p>
+                <ul class="key-points">
+                    <li>Initiative scope covers severe and prolonged incidents that threaten essential services, not routine breaches</li>
+                    <li>Provides exercise frameworks, scenario libraries, and information sharing pathways for critical infrastructure operators</li>
+                    <li>Aligns with the National Cyber Threat Assessment 2025 to 2026 emphasis on resilience over containment</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Critical infrastructure operators across energy, water, telecommunications, finance, and health should incorporate CIREN scenarios into their existing business continuity and crisis management programs. ISO/IEC 22301 business continuity management and ISO/IEC 27031 ICT readiness programs are the natural integration points. Board level cyber oversight should request evidence that severe scenario exercises have been conducted in the past twelve months. Suppliers to critical infrastructure operators should expect downstream contractual requirements for participation in or attestation against CIREN exercises.</p>
+                </div>
+                <a href="https://www.canada.ca/en/communications-security/news/2026/04/cyber-centre-launches-new-initiative-to-help-canadas-critical-infrastructure-prepare-for-severe-cyber-threats.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
             <div class="article" data-tags="canada,cyber,governance">
-                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">14 Apr 2026</span></div>
-                <h3>CCCS Publishes Multi Vendor Patch Tuesday Rollup Covering Microsoft, SAP, Fortinet, and Tenable</h3>
-                <p class="summary">The Canadian Centre for Cyber Security released its monthly April rollup on April 14, coordinating disclosures from multiple major vendors on the same day. Advisories AV26 349 (SAP), AV26 351 (Fortinet), AV26 352 (Microsoft), and AV26 354 (Tenable Identity Exposure) were all published together, with Tenable urging upgrades beyond version 3.77.17 to remediate critical vulnerabilities.</p>
-                <p class="detail">The concurrent release gives Canadian enterprises a single monthly window to coordinate vulnerability management across Microsoft, SAP, Fortinet perimeter devices, and identity infrastructure. The Cyber Centre continues to act as the primary Canadian clearinghouse for vendor security advisories, with supporting alerts throughout the week for HPE, Apache ActiveMQ, CUPS, and Qualcomm.</p>
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">20 Apr 2026</span></div>
+                <h3>CCCS Issues Heavy Multi Vendor Advisory Week Covering Progress, Moxa, Splunk, Tenable, Spring, and CrowdStrike</h3>
+                <p class="summary">The Canadian Centre for Cyber Security published a concentrated wave of advisories between April 20 and April 23. AV26 370 (Moxa) and AV26 371 (Progress, covering Kemp LoadMaster and MOVEit Web Application Firewall) landed on April 20, alongside AV26 356 (Splunk Operator for Kubernetes). Tenable, Spring, and CrowdStrike advisories followed on April 23, with control system and identity infrastructure exposures dominating the cycle.</p>
+                <p class="detail">Progress MOVEit and Kemp LoadMaster are perimeter and load balancing infrastructure with broad Canadian deployment, while Moxa industrial networking and Splunk for Kubernetes touch operational technology and observability stacks. The combination of these vendor footprints across a single week elevates the patch cadence demand on Canadian enterprise security teams and underscores the dependency of Canadian governance regimes on coordinated upstream advisory disclosure.</p>
                 <ul class="key-points">
-                    <li>Four high impact advisories released on April 14 covering operating systems, ERP, perimeter security, and identity platforms</li>
-                    <li>Tenable Identity Exposure critical vulnerabilities require upgrade to 3.77.17 or later</li>
-                    <li>Cyber Centre remains the consolidated Canadian reference for vulnerability response across major vendors</li>
+                    <li>Progress AV26 371 covers Kemp LoadMaster and MOVEit WAF, both widely deployed in Canadian enterprise estates</li>
+                    <li>Moxa control system advisory targets operational technology environments with potentially long patch windows</li>
+                    <li>Tenable, Spring Framework, and CrowdStrike advisories on April 23 hit identity, application, and endpoint stacks simultaneously</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Vulnerability management programs should incorporate the Cyber Centre rollup cadence into monthly patching and risk acceptance processes. Organizations subject to CPCSC Level 1 self assessment should document timely remediation of these advisories as evidence of security requirement 3.11 and 3.14 implementation. Identity and perimeter infrastructure vulnerabilities carry the highest blast radius and should be prioritized for same week remediation.</p>
+                    <p>Vulnerability management programs should treat multi vendor advisory weeks as a structural feature rather than an exception. Control system patching windows often exceed 90 days; organizations should document compensating controls in the interim and review network segmentation against ISO/IEC 62443 and ISO/IEC 27019. CPCSC Level 1 attestations should reference the specific advisories addressed against requirements covering vulnerability management and configuration. Boards should ask whether the organization can demonstrate same week remediation for advisories on internet exposed perimeter infrastructure.</p>
                 </div>
-                <a href="https://www.cyber.gc.ca/en/alerts-advisories/microsoft-security-advisory-april-2026-monthly-rollup-av26-352" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.cyber.gc.ca/en/alerts-advisories" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
-            <div class="article" data-tags="cyber,governance">
-                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">10 Apr 2026</span></div>
-                <h3>Nginx UI Critical Vulnerability Exploited in the Wild, CCCS Issues Advisory AV26 360</h3>
-                <p class="summary">The Canadian Centre for Cyber Security issued advisory AV26 360 on April 10 warning that CVE 2026 33032, a critical vulnerability in Nginx UI, is being actively exploited. Nginx UI is widely deployed as a management layer over production Nginx reverse proxy and load balancer deployments, placing web tier infrastructure at direct risk.</p>
-                <p class="detail">Active exploitation status means the vulnerability is not theoretical. Organizations running Nginx UI are advised to apply vendor patches immediately, audit management interface exposure to the internet, and review logs for indicators of compromise. The advisory sits alongside several other web infrastructure alerts issued in the same week.</p>
+            <div class="article" data-tags="nist,cyber,governance">
+                <div class="article-header"><span class="tag tag-nist">NIST</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">15 Apr 2026</span></div>
+                <h3>NIST Shifts to Risk Based Triage of CVEs as the National Vulnerability Database Catalogue Expands</h3>
+                <p class="summary">Effective April 15, NIST began applying a risk based approach to the way CVEs are enriched in the National Vulnerability Database. All submitted CVEs continue to be added, but only a subset receive full analysis and severity scoring. The change is a response to the volume of disclosures outpacing the analytical capacity of the NVD program over the past two years.</p>
+                <p class="detail">For Canadian organizations that depend on the NVD for downstream tooling, scoring, and prioritization, the change means that the absence of NVD enrichment is no longer a reliable signal of low criticality. Vendor advisories, exploit telemetry, and independent analysis must increasingly fill the gap. The Cyber Centre advisory program continues to function as a Canadian aggregation layer, with country specific prioritization that is independent of NVD enrichment status.</p>
                 <ul class="key-points">
-                    <li>CVE 2026 33032 confirmed actively exploited, elevating remediation priority</li>
-                    <li>Nginx UI is a common management layer for production Nginx deployments across Canadian web estates</li>
-                    <li>Cyber Centre recommends patching, reducing management interface exposure, and compromise assessment</li>
+                    <li>All CVEs continue to enter the NVD; only a subset now receive full analysis and CVSS scoring</li>
+                    <li>Tooling that relies on NVD severity for prioritization needs additional context to remain effective</li>
+                    <li>Vendor advisories and Cyber Centre alerts retain their role as authoritative Canadian prioritization sources</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Web tier management interfaces are a recurring attack surface and often fall outside standard vulnerability scanning scope. Organizations should extend asset inventories to include management tooling associated with production web infrastructure. Exposure of management planes to the public internet should be reviewed against ISO/IEC 27001 Annex A controls 8.20 (network security) and 8.22 (segregation of networks).</p>
+                    <p>Vulnerability management programs should not rely solely on NVD enrichment for prioritization decisions. Programs aligned to ISO/IEC 27001 Annex A 8.8 (management of technical vulnerabilities) should incorporate vendor advisories, exploit intelligence feeds, and asset criticality directly into the prioritization workflow. Procurement language for security tooling should require multi source vulnerability intelligence rather than NVD only feeds.</p>
                 </div>
-                <a href="https://www.cyber.gc.ca/en/alerts-advisories/nginx-ui-security-advisory-av26-360" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-            </div>
-            <div class="article" data-tags="canada,privacy,cyber">
-                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-privacy">Privacy</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">12 Apr 2026</span></div>
-                <h3>Booking.com Breach Affects Canadian Customers, Regulator Imposes Late Reporting Fine</h3>
-                <p class="summary">Booking.com notified customers on April 12 that reservation details were compromised, leading to a wave of phishing attempts known as reservation hijacking. The exposed data includes full names, addresses, booking dates and details, email addresses, phone numbers, and notes made to hotels. Canadian customers were among those impacted.</p>
-                <p class="detail">The Dutch privacy regulator fined Booking.com nearly $770,000 CAD for reporting the breach 22 days late, underscoring global trend toward stricter enforcement of mandatory breach notification timelines. Canadian consumers are exposed to targeted phishing using specific reservation context, increasing social engineering success rates.</p>
-                <ul class="key-points">
-                    <li>Reservation details including contact data and special request notes exposed to a third party</li>
-                    <li>Booking.com fined for reporting the breach 22 days past the regulatory deadline</li>
-                    <li>Canadian customers targeted with reservation hijacking phishing using real booking context</li>
-                </ul>
-                <div class="implications">
-                    <h4>Implications</h4>
-                    <p>Canadian organizations should reinforce employee awareness of targeted phishing that uses legitimate booking or travel context. PIPEDA mandatory breach reporting obligations have finite windows; the Booking.com fine demonstrates that late reporting is increasingly penalized internationally and is a live enforcement priority. Vendors that hold customer context data should be assessed under ISO/IEC 27001 Annex A control 5.19 (supplier relationships) and 5.34 (privacy and protection of personal data).</p>
-                </div>
-                <a href="https://www.cbc.ca/news/canada/manitoba/bookingcom-data-breach-cybercrime-9.7165174" target="_blank" rel="noopener" class="source-link">Source: CBC News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.darkreading.com/vulnerabilities-threats/nist-revamps-cve-framework-to-focus-on-high-impact-vulnerabilities" target="_blank" rel="noopener" class="source-link">Source: Dark Reading <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
-        <!-- ════════ CPCSC ════════ -->
         <div class="section-title" id="cpcsc">CPCSC</div>
         <div class="articles">
             <div class="article" data-tags="canada,governance,cyber">
-                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-governance">Governance</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">14 Apr 2026</span></div>
-                <h3>CPCSC Level 1 Self Assessment Tool Available Ahead of Summer 2026 Defence Contract Window</h3>
-                <p class="summary">With Level 1 of the Canadian Program for Cyber Security Certification active from April 1, the Government of Canada has published the self assessment tool that suppliers will use to evaluate implementation status against the 13 Level 1 security requirements. Suppliers must complete the annual self assessment and publish attestation before the Summer 2026 window opens for designated defence contracts.</p>
-                <p class="detail">Level 1 controls align with the foundational controls in NIST Special Publication 800 171, giving organizations already aligned with NIST a strong starting position. The self assessment is an annual requirement, and suppliers should integrate it into an existing Information Security Management System rather than treating it as a standalone exercise. Phased rollout means Level 2, which requires an external assessment every three years by an accredited certification body, is on a spring 2027 timeline.</p>
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-governance">Governance</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">22 Apr 2026</span></div>
+                <h3>CPCSC Level 1 Three Weeks In: Defence Suppliers Race the Summer 2026 Self Assessment Window</h3>
+                <p class="summary">Three weeks after Level 1 of the Canadian Program for Cyber Security Certification went live on April 1, defence supplier reporting indicates wide variation in readiness across the supplier base. Suppliers currently active in select procurements have until the Summer 2026 enforcement window to publish a Level 1 self attestation against the 13 security requirements, and several industry advisory firms have flagged the alignment work as more substantive than the self assessment label suggests.</p>
+                <p class="detail">The 13 Level 1 controls track to NIST Special Publication 800 171 foundational controls, giving organizations with existing NIST or ISO/IEC 27001 alignment a strong baseline. Suppliers in the small and mid sized tier are reporting compressed timelines as they work to demonstrate not only policy presence but also operational evidence of control implementation. Level 2 external assessment by accredited certification bodies is on a spring 2027 timeline, raising the medium term need for accredited assessor capacity in the Canadian market.</p>
                 <ul class="key-points">
-                    <li>Annual self assessment against 13 controls, submitted through the Government of Canada supplier portal</li>
-                    <li>Organizations aligned with NIST 800 171 or ISO/IEC 27001 have a strong baseline for Level 1</li>
-                    <li>Level 2 external assessments begin spring 2027, requiring accredited certification bodies</li>
+                    <li>Self attestation must be published before the Summer 2026 enforcement window for designated defence contracts</li>
+                    <li>Level 1 controls align with NIST 800 171 foundational controls, giving existing NIST and ISO/IEC 27001 adopters a head start</li>
+                    <li>Level 2 external assessment scheduled for spring 2027 will require accredited certification body capacity</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Organizations should treat Level 1 as the on ramp to a multi year compliance program, not a one time deliverable. Integrating the self assessment into an ISO/IEC 27001 aligned ISMS reduces duplicate evidence collection and positions the organization for Level 2 external assessment with minimal rework. Procurement, legal, and cyber teams should jointly review bid eligibility gates to ensure Level 1 attestation status is tracked alongside other supplier qualification data.</p>
+                    <p>Suppliers should treat the Level 1 self assessment as a control evidence exercise rather than a policy review. Mapping existing ISO/IEC 27001 Annex A controls and NIST 800 171 implementations to the 13 Level 1 requirements reduces duplicate effort. Procurement teams should expect Level 1 attestation status to become a standing supplier qualification field and should align internal supplier onboarding accordingly. Organizations targeting Level 2 in 2027 should begin gap assessments now while internal and assessor capacity is available.</p>
                 </div>
-                <a href="https://www.canada.ca/en/public-services-procurement/news/2026/04/canadian-program-for-cyber-security-certification-level-1.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.canada.ca/en/public-services-procurement/services/industrial-security/security-requirements-contracting/cyber-security-certification-defence-suppliers-canada.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
-        <!-- ════════ AI GOVERNANCE ════════ -->
         <div class="section-title" id="ai-governance">AI Governance &amp; Regulation</div>
         <div class="articles">
-            <div class="article" data-tags="canada,privacy,regulation">
-                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-privacy">Privacy</span><span class="tag tag-regulation">Regulation</span><span class="article-date">16 Apr 2026</span></div>
-                <h3>Privacy Commissioner Calls for Order Making Power and Fines as Gap in Canadian Framework</h3>
-                <p class="summary">Privacy Commissioner of Canada Philippe Dufresne, speaking to the House of Commons Standing Committee on Science and Research on April 16, said Canada remains almost alone among peer jurisdictions in lacking the ability to issue orders or fines for privacy violations. His testimony, focused on connected vehicles and Chinese electric vehicle entry to the Canadian market, called for stronger enforcement powers and strengthened consent and information sharing frameworks.</p>
-                <p class="detail">The statement coincides with the Treasury Board of Canada Secretariat review of the Privacy Act launched April 8, the first substantive modernization in over four decades. The consultation deadline is July 10, 2026. Proposed changes include granting the Commissioner binding order making powers for corrective action plans and discretion to discontinue or decline complaints.</p>
-                <ul class="key-points">
-                    <li>Commissioner states absence of order making and fine issuance is a notable enforcement gap</li>
-                    <li>Privacy Act modernization consultation open until July 10, 2026</li>
-                    <li>Testimony anchored in connected vehicle data flows, extending privacy concerns into emerging technology procurement</li>
-                </ul>
-                <div class="implications">
-                    <h4>Implications</h4>
-                    <p>Canadian organizations should monitor the Privacy Act modernization consultation closely. A shift toward order making and fine issuance powers would align Canada with European and recent provincial enforcement regimes, and would elevate privacy governance from reputational to financial risk. Privacy Impact Assessments should be maintained as living documents, not one time artefacts, in anticipation of a more active enforcement posture.</p>
-                </div>
-                <a href="https://www.priv.gc.ca/en/opc-actions-and-decisions/advice-to-parliament/2026/parl_260416/" target="_blank" rel="noopener" class="source-link">Source: Office of the Privacy Commissioner of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-            </div>
-            <div class="article" data-tags="canada,regulation,privacy">
-                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-regulation">Regulation</span><span class="tag tag-privacy">Privacy</span><span class="article-date">8 Apr 2026</span></div>
-                <h3>Treasury Board Launches Review of Privacy Act: First Update in Forty Three Years</h3>
-                <p class="summary">The Treasury Board of Canada Secretariat launched a formal review of the Privacy Act on April 8, publishing a comprehensive policy paper outlining potential modernization approaches. The review addresses rights, obligations, enforcement, and cross border data flows, and is the first substantive reconsideration of the Act since 1983. The consultation runs until July 10, 2026.</p>
-                <p class="detail">Policy approaches under consideration include expanded rights of access and correction, stronger consent frameworks, modernized definitions aligned with international standards, enforcement changes that would grant binding order making powers, and treatment of public sector AI systems. The paper explicitly contemplates alignment with international frameworks including the GDPR and the OECD privacy guidelines.</p>
-                <ul class="key-points">
-                    <li>First meaningful Privacy Act review since the Act came into force in 1983</li>
-                    <li>Policy paper canvasses enforcement, rights, cross border data flows, and public sector AI</li>
-                    <li>Consultation period closes July 10, 2026 with wide stakeholder engagement expected</li>
-                </ul>
-                <div class="implications">
-                    <h4>Implications</h4>
-                    <p>Federal institutions and their suppliers should expect material changes to privacy obligations over the next 18 to 24 months. Procurement requirements for Privacy Impact Assessments, data sharing agreements, and public sector AI deployments will evolve with the legislative direction. Organizations should participate in the consultation to shape the outcomes and begin assessing current practices against the directions signalled in the policy paper.</p>
-                </div>
-                <a href="https://www.canada.ca/en/treasury-board-secretariat/services/access-information-privacy/access-information/privacy-act-modernization-policy-approaches/2026-review-privacy-act-policy-approaches.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-            </div>
             <div class="article" data-tags="ai,regulation,governance">
                 <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-regulation">Regulation</span><span class="tag tag-governance">Governance</span><span class="article-date">16 Apr 2026</span></div>
-                <h3>EU AI Act High Risk Wave Heads for Delay as Digital Omnibus Negotiations Advance</h3>
-                <p class="summary">Reporting on April 16 confirmed that the third major wave of EU AI Act obligations, covering high risk AI systems, is being formally delayed through the Digital Omnibus on AI, currently in trilogue negotiations. The original implementation date of August 2, 2026 covered conformity assessments, quality management systems, risk management documentation, EU AI Database registration, and human oversight mechanisms for Annex III systems.</p>
-                <p class="detail">Enforcement infrastructure remains uneven: only 8 of 27 member states designated national competent authorities by the August 2025 deadline, leaving ground level enforcement thin across the European Union. AI literacy and prohibited practice obligations have been in force since February 2025, and governance rules for general purpose AI models since August 2025.</p>
+                <h3>EU AI Act Logging Requirements Come Into Focus as Agent Architectures Scale</h3>
+                <p class="summary">Reporting on April 16 unpacked the EU AI Act logging obligations applicable to high risk and general purpose AI systems, particularly as agentic architectures move toward production. Article 12 requires automatic event recording for high risk systems, and the Code of Practice for general purpose AI models adds expectations around incident logging, model lifecycle records, and training data documentation. Organizations operating AI agents in EU markets need an evidence trail durable enough to support post market monitoring and regulatory inquiry.</p>
+                <p class="detail">The reporting follows the August 2025 governance milestone for general purpose AI obligations and precedes the August 2026 Annex III high risk wave, which is reportedly subject to delay through the Digital Omnibus. Even with potential delay, the logging architecture is foundational and should be designed in once rather than retrofitted. ISO/IEC 42001 clauses on AI system lifecycle management and ISO/IEC 23894 risk management practice align directly with the logging expectation.</p>
                 <ul class="key-points">
-                    <li>High risk Annex III obligations expected to shift beyond the original August 2026 date through the Digital Omnibus</li>
-                    <li>Member state enforcement capacity remains uneven with most national competent authorities still unassigned</li>
-                    <li>AI literacy, prohibited practices, and general purpose AI governance obligations are in force today</li>
+                    <li>Article 12 mandates automatic event logging for high risk AI systems sufficient to support traceability</li>
+                    <li>General purpose AI Code of Practice extends logging into incident, lifecycle, and training data documentation</li>
+                    <li>Logging architecture aligns with ISO/IEC 42001 AI management system requirements regardless of EU enforcement timing</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>The delay gives Canadian organizations with European exposure additional runway to operationalize ISO/IEC 42001 aligned AI management systems. Treating conformity assessment, risk management, and post market monitoring as foundational capabilities rather than deadline driven compliance exercises positions organizations to respond rapidly once the revised timelines are confirmed. Enterprises operating across both Canadian and European markets should align AI governance to the more stringent regime, treating the EU obligations as the baseline.</p>
+                    <p>Canadian organizations deploying AI agents into EU markets should treat logging as a near term design decision, not a post deployment compliance task. Establishing the logging architecture against ISO/IEC 42001 and the EU Code of Practice yields a single technical foundation that satisfies multiple regimes. Boards should request evidence that AI agent decisions are reconstructable, auditable, and retained for the period required by the most stringent regulator the organization touches.</p>
                 </div>
                 <a href="https://www.helpnetsecurity.com/2026/04/16/eu-ai-act-logging-requirements/" target="_blank" rel="noopener" class="source-link">Source: Help Net Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
+            <div class="article" data-tags="canada,privacy,regulation">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-privacy">Privacy</span><span class="tag tag-regulation">Regulation</span><span class="article-date">22 Apr 2026</span></div>
+                <h3>Privacy Commissioner Returns to Parliament Twice in One Week on Connected Vehicles and Bill S-5</h3>
+                <p class="summary">Privacy Commissioner Philippe Dufresne appeared before the House Standing Committee on Science and Research on April 16 regarding connected vehicle privacy in the context of the Canada China preliminary joint arrangement on the electric vehicle sector, then before the Senate Standing Committee on Social Affairs, Science and Technology on April 22 to advise on Bill S-5. The Senate testimony supported the Bill&#8217;s interoperability provisions while recommending an explicit privacy law exception to the proposed data blocking prohibition.</p>
+                <p class="detail">The Commissioner&#8217;s appearances continue a pattern of escalating engagement on emerging technology and digital health interoperability files. The Office has funded research on automaker privacy permissions and on privacy by design in connected vehicles, signalling a shift from after the fact enforcement toward upstream design influence. Federal institutions and their suppliers should track both files for direct procurement and design implications.</p>
+                <ul class="key-points">
+                    <li>April 16: testimony to House on connected vehicle data flows in the Canada China EV arrangement context</li>
+                    <li>April 22: testimony to Senate on Bill S-5 supporting interoperability with explicit privacy law exception</li>
+                    <li>OPC funding research on connected vehicle privacy by design and automaker privacy permissions</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Federal procurement and suppliers in the connected mobility, digital health, and EV ecosystems should expect privacy by design expectations to harden. Privacy Impact Assessments, ISO/IEC 27701 privacy information management, and explicit data flow diagrams should be ready for regulator request. Canadian organizations should track the Privacy Act modernization consultation closing July 10, 2026 and align internal program roadmaps to the directional signals the Commissioner is sending.</p>
+                </div>
+                <a href="https://www.priv.gc.ca/en/opc-actions-and-decisions/advice-to-parliament/2026/parl_260422/" target="_blank" rel="noopener" class="source-link">Source: Office of the Privacy Commissioner of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="nist,ai,governance">
+                <div class="article-header"><span class="tag tag-nist">NIST</span><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">Apr 2026</span></div>
+                <h3>NIST Cyber AI Profile Heads to Initial Public Draft Linking CSF 2.0 With AI Risk</h3>
+                <p class="summary">NIST confirmed plans to release the initial public draft of the Cybersecurity Framework Profile for Artificial Intelligence, NISTIR 8596, in 2026. The profile centres on three overlapping focus areas: securing AI systems, conducting AI enabled cyber defence, and thwarting AI enabled cyberattacks. The Cyber AI Profile is intended to operate as a structured overlay on CSF 2.0 rather than a parallel framework, aiming to reduce duplication for organizations already aligned to NIST.</p>
+                <p class="detail">The profile is the second major NIST publication this year that explicitly bridges cybersecurity and AI risk. The combination of the CSF 2.0 Govern function, the AI Risk Management Framework, and the forthcoming Cyber AI Profile gives Canadian organizations a clearer scaffold for integrating ISO/IEC 42001 AI management with existing ISO/IEC 27001 information security management programs.</p>
+                <ul class="key-points">
+                    <li>Profile NISTIR 8596 will overlay on CSF 2.0 rather than introducing a separate framework</li>
+                    <li>Three focus areas cover securing AI, AI enabled defence, and adversarial AI threats</li>
+                    <li>Aligns with the CSF 2.0 Govern function, the AI RMF, and existing ISO management system standards</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Organizations building AI governance programs should track the Cyber AI Profile as a practical bridge between cybersecurity and AI management. Integrated reporting against ISO/IEC 27001 Annex A, ISO/IEC 42001, and the forthcoming NIST profile reduces the cost of multi framework conformance. Internal audit teams should plan to incorporate the profile into the assurance map once the initial public draft is released.</p>
+                </div>
+                <a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener" class="source-link">Source: NIST <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
         </div>
 
-        <!-- ════════ FRAMEWORKS ════════ -->
         <div class="section-title" id="frameworks">Frameworks &amp; Standards</div>
         <div class="articles">
-            <div class="article" data-tags="iso,ai,governance">
-                <div class="article-header"><span class="tag tag-iso">ISO</span><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">14 Apr 2026</span></div>
-                <h3>ISO/IEC 42001 Certification Wave Continues Across Legal, Consulting, and Technology Sectors</h3>
-                <p class="summary">April brought a concentrated wave of ISO/IEC 42001 certification announcements: ibex certified April 8, Willkie certified April 14 as among the first global law firms, and Intetics certified April 14. Earlier in the month, Palindrome Technologies became an accredited certification body for ISO/IEC 42001, expanding the supply of qualified assessors. The trend reflects AI governance shifting from voluntary best practice to contractual requirement.</p>
-                <p class="detail">Market analysts have observed that ISO/IEC 42001 is increasingly cited in procurement documents as a qualification prerequisite for AI service providers. The Colorado AI Act recognizes ISO/IEC 42001 as a legal safe harbour, and reporting cites Gartner estimates that 83 percent of Fortune 500 procurement teams plan to require ISO/IEC 42001 alignment from vendors by 2027.</p>
+            <div class="article" data-tags="audit,governance">
+                <div class="article-header"><span class="tag tag-audit">Audit</span><span class="tag tag-governance">Governance</span><span class="article-date">Apr 2026</span></div>
+                <h3>Delve Removed From Y Combinator After SOC 2 Reports Allegedly Pre Generated, Audit Integrity Questions Reach Boards</h3>
+                <p class="summary">In early April, Y Combinator removed Delve, a compliance automation startup that had raised approximately $32 million at a $300 million valuation, from its directory after analysis of 494 SOC 2 reports indicated the auditor conclusions and test results were populated before client company descriptions were submitted. Reporting alleged that 493 of 494 reports used identical boilerplate, and that evidence for control implementation was fabricated for several engagements.</p>
+                <p class="detail">The episode is now being raised at audit committees and procurement functions across regulated industries. The integrity question is not whether SOC 2 is a valid framework, but whether the report a customer relies on actually reflects independent, evidence based audit work. Organizations relying on SOC 2 reports for vendor due diligence should reconsider how they evaluate the credibility of the issuing audit firm and the review process that produced the report.</p>
                 <ul class="key-points">
-                    <li>Multiple April certifications across law, consulting, and technology sectors signal broadening adoption</li>
-                    <li>Colorado AI Act recognizes ISO/IEC 42001 as legal safe harbour, anchoring US state level reliance</li>
-                    <li>Certification body capacity expanding with new accreditations, supporting projected 2027 procurement demand</li>
+                    <li>Reporting alleges 493 of 494 SOC 2 reports used identical boilerplate templates with pre populated conclusions</li>
+                    <li>Y Combinator removed Delve from its directory and asked the founders to leave the program</li>
+                    <li>Audit committees and procurement teams reassessing SOC 2 reliance and vendor due diligence practice</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Organizations providing AI products or services to regulated industries should plan ISO/IEC 42001 certification on a 12 to 18 month horizon. Enterprise buyers should update vendor qualification questionnaires to include AI management system certification status. The standard provides a durable bridge across multiple regulatory regimes including the EU AI Act, state level US laws, and expected Canadian requirements.</p>
+                    <p>SOC 2 reports should be evaluated on the credibility of the issuing CPA firm, scope of evidence gathered, and observed exceptions, not on the existence of a clean opinion. Organizations using SOC 2 to evidence vendor controls should request the underlying CPA firm name, retention of working papers, and scope statement. Where higher assurance is required, ISO/IEC 27001 certification by an accredited certification body provides an independently verifiable accreditation chain that SOC 2 lacks. Procurement governance should treat the Delve episode as a prompt to reassess the assurance profile of the entire vendor portfolio.</p>
                 </div>
-                <a href="https://www.globenewswire.com/news-release/2026/04/08/3270173/0/en/ibex-Earns-ISO-IEC-42001-Certification-Setting-the-Standard-for-Responsible-AI-in-Customer-Experience.html" target="_blank" rel="noopener" class="source-link">Source: GlobeNewswire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://captaincompliance.com/news/the-delve-scandal-fake-soc-2-audits-open-source-code-theft-and-exit-from-y-combinator/" target="_blank" rel="noopener" class="source-link">Source: Captain Compliance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
-            <div class="article" data-tags="nist,governance">
-                <div class="article-header"><span class="tag tag-nist">NIST</span><span class="tag tag-governance">Governance</span><span class="article-date">Apr 2026</span></div>
-                <h3>NIST Publishes Final CSF 2.0 Quick Start Guide for Cybersecurity, Enterprise Risk, and Workforce Integration</h3>
-                <p class="summary">NIST released the final version of the Cybersecurity Framework 2.0 Quick Start Guide SP 1308, covering integration across cybersecurity, enterprise risk management, and workforce management. The guide is the latest in a series that has accompanied CSF 2.0 since February 2024, targeting specific adoption pathways across roles and functions. NIST has also confirmed an initial public draft of the Cybersecurity Framework Profile for Artificial Intelligence (NISTIR 8596) is planned for 2026.</p>
-                <p class="detail">CSF 2.0 is now organized around six core functions: Govern, Identify, Protect, Detect, Respond, and Recover. The addition of the Govern function reflects the framework&#8217;s maturation from technical practice guide to organizational risk management reference. Quick Start Guides are intended to reduce the cost of operationalizing the framework in mid size and large organizations.</p>
+            <div class="article" data-tags="iso,audit,governance">
+                <div class="article-header"><span class="tag tag-iso">ISO</span><span class="tag tag-audit">Audit</span><span class="tag tag-governance">Governance</span><span class="article-date">Apr 2026</span></div>
+                <h3>AWS European Sovereign Cloud Closes First Compliance Milestone With SOC 2, C5, and Seven ISO Certifications</h3>
+                <p class="summary">AWS announced that its European Sovereign Cloud has achieved its first compliance milestone, with a SOC 2 Type 1 attestation, a C5 Type 1 report, and seven ISO certifications: ISO/IEC 27001:2022, ISO/IEC 27017:2015, ISO/IEC 27018:2019, ISO/IEC 27701:2019, ISO 22301:2019, ISO/IEC 20000 1:2018, and ISO 9001:2015. The milestone is part of AWS&#8217;s broader sovereign cloud offering aimed at European public sector and regulated buyers.</p>
+                <p class="detail">The certification footprint is notable for what it covers and what it does not. ISO/IEC 27001:2022 with the 2024 environmental amendment is the current certifiable edition, and pairing it with ISO/IEC 27701 privacy management and ISO 22301 business continuity gives buyers a defensible evidence base. The absence of ISO/IEC 42001 is a gap in the AI era and a likely future target. For Canadian buyers evaluating sovereign options, the announcement reinforces the maturity gap between dedicated sovereign offerings and standard public cloud regions on accredited certification depth.</p>
                 <ul class="key-points">
-                    <li>SP 1308 Quick Start Guide targets integration with enterprise risk management and workforce management functions</li>
-                    <li>AI focused profile NISTIR 8596 progressing toward initial public draft in 2026</li>
-                    <li>Govern function in CSF 2.0 anchors cybersecurity within enterprise risk management</li>
+                    <li>Seven ISO certifications including the current ISO/IEC 27001:2022 edition and supporting privacy and continuity standards</li>
+                    <li>SOC 2 Type 1 attestation and C5 Type 1 report provide complementary US and German federal assurance views</li>
+                    <li>Notable absence: ISO/IEC 42001 AI management system certification, a likely next milestone</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Canadian organizations aligning to NIST CSF 2.0 should integrate the Govern function outcomes with their existing enterprise risk management and internal audit processes. The forthcoming AI profile will provide a practical bridge between CSF 2.0 and ISO/IEC 42001, reducing duplicate effort for organizations building AI governance on top of existing cybersecurity programs.</p>
+                    <p>Canadian buyers evaluating sovereign cloud options should benchmark accredited certification depth, not just regional residency claims. ISO/IEC 27001:2022 with the 2024 amendment, ISO/IEC 27701, ISO 22301, and ISO/IEC 42001 should appear in any rigorous cloud RFP for regulated workloads. Procurement should request current certificate copies issued by an accredited certification body, with explicit scope statements that match the workload boundary the customer plans to operate.</p>
                 </div>
-                <a href="https://industrialcyber.co/nist/nist-releases-updated-csf-2-0-quick-start-guide-to-strengthen-cyber-erm-and-workforce-integration/" target="_blank" rel="noopener" class="source-link">Source: Industrial Cyber <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://aws.amazon.com/blogs/security/aws-european-sovereign-cloud-achieves-first-compliance-milestone-soc-2-and-c5-reports-plus-seven-iso-certifications/" target="_blank" rel="noopener" class="source-link">Source: AWS Security Blog <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
             <div class="article" data-tags="iso,audit">
                 <div class="article-header"><span class="tag tag-iso">ISO</span><span class="tag tag-audit">Audit</span><span class="article-date">Apr 2026</span></div>
-                <h3>ISO/IEC 27001:2013 Transition Period Closed: All 2026 Certifications Against the 2022 Edition</h3>
-                <p class="summary">The transition window from ISO/IEC 27001:2013 to the 2022 edition has closed. Certifications issued against the 2013 version expired on October 31, 2025, and every certification audit conducted in 2026 is now against the 2022 edition. Organizations completing fresh certifications in April, including Master of Code Global and Inde, have done so against the current standard.</p>
-                <p class="detail">The 2022 edition reorganized Annex A into four themes (Organizational, People, Physical, and Technological) and introduced 11 new controls reflecting threats that emerged over the previous decade, including cloud services, data leakage prevention, and threat intelligence. The 2024 environmental amendment added climate considerations to risk assessment activities.</p>
+                <h3>Sidetrade Recertifies to ISO/IEC 27001:2022 and Adds SOC 1 and SOC 2 Type II as AI Footprint Expands</h3>
+                <p class="summary">Sidetrade announced it has obtained SOC 1 Type II and SOC 2 Type II reports with unmodified auditor opinions following audits by EY France, and completed a full ISO/IEC 27001:2022 recertification. The combination is notable for an AI focused enterprise software vendor and reflects a continuing trend of enterprise buyers requiring multi framework assurance from vendors that handle financial and customer data.</p>
+                <p class="detail">The Sidetrade recertification sits inside the closed transition window from ISO/IEC 27001:2013 to the 2022 edition. Every certification audit conducted in 2026 is now against the 2022 edition with the 2024 environmental amendment. Vendors continuing to reference the 2013 edition in marketing or procurement materials are out of date and should be flagged in due diligence.</p>
                 <ul class="key-points">
-                    <li>Certifications against ISO/IEC 27001:2013 ceased to be valid after October 31, 2025</li>
-                    <li>All 2026 certifications are against ISO/IEC 27001:2022 with the 2024 environmental amendment</li>
-                    <li>New Annex A controls include threat intelligence, cloud services security, and data leakage prevention</li>
+                    <li>SOC 1 Type II and SOC 2 Type II reports with unmodified opinions issued by EY France</li>
+                    <li>Full ISO/IEC 27001:2022 recertification confirms alignment to the current edition with the 2024 amendment</li>
+                    <li>Multi framework assurance pattern is increasingly the procurement bar for AI focused enterprise software vendors</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Organizations still referencing the 2013 edition in internal policy documents, vendor contracts, or procurement language should update references to the 2022 edition with the 2024 environmental amendment. Suppliers claiming ISO/IEC 27001 certification should be asked to confirm the certificate version; certificates issued before the transition deadline are no longer valid evidence of conformance.</p>
+                    <p>Enterprise buyers should standardize on the multi framework assurance pattern for AI capable vendors handling regulated data: ISO/IEC 27001:2022, SOC 2 Type II, and increasingly ISO/IEC 42001. References to ISO/IEC 27001:2013 should be treated as a red flag in supplier responses. Vendor risk management programs aligned to ISO/IEC 27036 supplier security should embed the framework currency check into the standing supplier review process.</p>
                 </div>
-                <a href="https://markets.financialcontent.com/stocks/article/abnewswire-2026-4-3-master-of-code-global-achieves-updated-iso-27001-certification" target="_blank" rel="noopener" class="source-link">Source: FinancialContent <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.sidetrade.com/news/soc-1-type-2-soc-2-type-2-iso-27001-certification-2026/" target="_blank" rel="noopener" class="source-link">Source: Sidetrade <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
@@ -423,6 +404,13 @@
         <div class="section-title">Previous Reviews</div>
         <div class="prev-reviews">
             <div class="prev-reviews-list">
+                <a href="apr-10-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of April 10 to 17, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
                 <a href="mar-29-2026.html" class="prev-review-link">
                     <div>
                         <div class="prev-title">Governance &amp; Compliance Review</div>
@@ -451,17 +439,9 @@
                     </div>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </a>
-                <a href="feb-17-2026.html" class="prev-review-link">
-                    <div>
-                        <div class="prev-title">Governance &amp; Compliance Review</div>
-                        <div class="prev-date">Week of February 17 to 23, 2026</div>
-                    </div>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
             </div>
         </div>
 
-        <!-- Newsletter -->
         <div class="newsletter" id="newsletter">
             <h3>Get the Weekly Briefing</h3>
             <p>Governance, compliance, and cybersecurity developments delivered to your inbox every Monday. No noise, just what matters.</p>
