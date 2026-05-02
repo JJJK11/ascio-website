@@ -243,37 +243,37 @@
                 </div>
                 <a href="https://techcrunch.com/2026/04/27/critical-infrastructure-giant-itron-says-it-was-hacked/" target="_blank" rel="noopener" class="source-link">Source: TechCrunch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
-            <div class="article" data-tags="canada,governance,regulation">
-                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-governance">Governance</span><span class="tag tag-regulation">Regulation</span><span class="article-date">28 Apr 2026</span></div>
-                <h3>Defence, Security and Resilience Bank Talks Advance With Canada Bidding for Headquarters</h3>
-                <p class="summary">The Department of Finance Canada confirmed on April 28 that progress is being made on the multilateral Defence, Security and Resilience Bank, including formal Canadian engagement on hosting the headquarters. The DSRB is being designed to mobilize private capital at scale, deliver long term low cost financing, and accelerate defence production across allied jurisdictions. BDC President and CEO Isabelle Hudon is leading the Canadian negotiation. Allied government and industry leaders met in Canada earlier in April to advance the institutional design.</p>
-                <p class="detail">For the Canadian governance agenda, the DSRB pairs neatly with the BDC Defence Platform expansion and the StrongNorth Fund: domestic capital deployment is being mirrored by an international institutional structure that intends to extend the same financing logic across allies. If Canada hosts, the regulatory and supervisory implications for participating Canadian institutions become material, and Canadian alignment with allied defence supply chain controls including export, controlled goods, and cyber security baselines tightens.</p>
-                <ul class="key-points">
-                    <li>Department of Finance Canada confirmed progress on the multilateral DSRB on April 28</li>
-                    <li>Canada actively bidding to host the headquarters, with BDC leading the Canadian negotiation</li>
-                    <li>DSRB intends to mobilize private capital at scale to accelerate allied defence production</li>
-                </ul>
-                <div class="implications">
-                    <h4>Implications</h4>
-                    <p>Canadian financial institutions, defence suppliers, and dual use technology companies should track the DSRB design closely for governance, supervisory, and procurement implications. ISO/IEC 27001 and CPCSC alignment will be the foundational evidence base for participation. Boards should expect allied supply chain controls to flow through to Canadian suppliers in formats that look more like CMMC and ITAR than purely commercial procurement language. Organizations targeting BDC funded growth should architect their governance, controlled goods, and cyber security programs against allied baselines from inception.</p>
-                </div>
-                <a href="https://www.canada.ca/en/department-finance/news/2026/04/canada-welcomes-progress-towards-the-establishment-of-the-defence-security-and-resilience-bank-and-hosting-its-headquarters.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-            </div>
             <div class="article" data-tags="canada,cyber,governance">
                 <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">30 Apr 2026</span></div>
-                <h3>cPanel CVE 2026 41940 Added to CISA KEV as CCCS Issues Update on Web Hosting Stack Exposure</h3>
-                <p class="summary">The Canadian Centre for Cyber Security issued an update to its cPanel security advisory AV26 404 on April 30, the same day CVE 2026 41940 was added to the United States Cybersecurity and Infrastructure Security Agency Known Exploited Vulnerabilities catalogue. cPanel is one of the most widely deployed web hosting administration platforms, and the inclusion in KEV signals confirmed exploitation in the wild. CCCS also issued AV26 410 covering Progress products on the same day, alongside alerts AL26 009 (Linux CVE 2026 31431) and AL26 010 covering social engineering compromise of enterprise SaaS environments.</p>
-                <p class="detail">For Canadian organizations, CISA KEV inclusion is the strongest single signal that a vulnerability requires immediate patching, regardless of internal CVSS prioritization. Hosting environments are a particularly high impact target because compromise can pivot into hundreds or thousands of customer sites and credential stores. The AL26 010 SaaS social engineering alert is a recurring theme through 2026: identity remains the dominant attack vector, and enterprise SaaS estates remain under structured pressure from credential phishing and adversary in the middle techniques.</p>
+                <h3>CCCS Concentrated Multi Vendor Advisory Week Hits Citrix, Mozilla, Chrome, Progress, HPE, JetBrains, GNU, Jenkins</h3>
+                <p class="summary">The Canadian Centre for Cyber Security published a concentrated wave of vendor advisories between April 28 and April 30. Citrix (AV26 400), Mozilla (AV26 401), and Google Chrome for Desktop (AV26 402) landed on April 28. GNU (AV26 407) and Jenkins Credentials Binding Plugin (AV26 403) followed on April 29. April 30 added HPE Telco Service Orchestrator and Activator (AV26 408), Progress MOVEit Automation critical advisories (AV26 410), and JetBrains IntelliJ IDEA (AV26 412). cPanel update (AV26 404) the same day coincided with CISA Known Exploited Vulnerabilities catalogue addition.</p>
+                <p class="detail">The combination of browser, identity, build pipeline, and managed file transfer surfaces inside a single week elevates the patch cadence demand on Canadian enterprise security teams. Browser advisories on Chrome and Mozilla touch every endpoint. Citrix, Progress MOVEit, and HPE Telco gear is widely deployed in Canadian enterprise estates and federal supply chains. Jenkins and JetBrains touch the development toolchain, where credential and supply chain risk concentrate.</p>
                 <ul class="key-points">
-                    <li>cPanel CVE 2026 41940 added to CISA KEV April 30, indicating confirmed in the wild exploitation</li>
-                    <li>CCCS updated AV26 404 (cPanel) and issued AV26 410 (Progress) on the same day</li>
-                    <li>AL26 010 covers social engineering compromise of enterprise SaaS environments</li>
+                    <li>Eight vendor advisories from CCCS between April 28 and 30 across browsers, identity, build pipeline, and managed file transfer</li>
+                    <li>cPanel CVE 2026 41940 added to CISA KEV April 30, signalling confirmed in the wild exploitation</li>
+                    <li>Browser, Citrix, MOVEit, and HPE Telco footprints touch the bulk of Canadian enterprise estates</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Canadian hosting providers and any organization operating cPanel managed environments should patch immediately and review for indicators of compromise. CISA KEV inclusion should be a standing trigger in vulnerability management workflows; ISO/IEC 27001 Annex A 8.8 alignment should explicitly incorporate KEV as a prioritization input. Enterprise SaaS estates should review identity controls, particularly conditional access, session token binding, and FIDO2 enforcement, against the techniques described in AL26 010.</p>
+                    <p>Vulnerability management programs should treat multi vendor advisory weeks as a structural feature rather than an exception. ISO/IEC 27001 Annex A 8.8 alignment should explicitly incorporate CISA KEV inclusion as a same week patch trigger. Boards should ask whether the organization can demonstrate evidence of within window remediation for advisories on internet exposed perimeter and managed file transfer infrastructure. Development pipelines should not be exempt from the same vulnerability and credential rotation cadence as production estates.</p>
                 </div>
-                <a href="https://www.cyber.gc.ca/en/alerts-advisories/cpanel-security-advisory-av26-404" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.cyber.gc.ca/en/alerts-advisories" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="cyber,governance,regulation">
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="tag tag-regulation">Regulation</span><span class="article-date">27 Apr 2026</span></div>
+                <h3>UK NCSC Publishes Updated Cyber Essentials Requirements for IT Infrastructure</h3>
+                <p class="summary">The UK National Cyber Security Centre published updated Cyber Essentials Requirements for IT Infrastructure on April 27. Cyber Essentials is the foundational UK government baseline covering five technical control areas: firewalls, secure configuration, access control, malware protection, and security update management. The refresh tightens scoping, clarifies cloud and bring your own device boundaries, and updates control language for current operating environments including managed identity and modern endpoint patterns.</p>
+                <p class="detail">For Canadian organizations with UK operations or UK government supply chain exposure, Cyber Essentials remains a procurement gating control for many central government and critical sector contracts. The requirements also map closely to ISO/IEC 27001 Annex A foundational controls, so updating internal control libraries against the refreshed Cyber Essentials text yields downstream value for ISO management system documentation.</p>
+                <ul class="key-points">
+                    <li>UK NCSC published updated Cyber Essentials Requirements for IT Infrastructure on April 27</li>
+                    <li>Refresh tightens scoping for cloud, BYOD, and managed identity boundaries</li>
+                    <li>Maps closely to ISO/IEC 27001 Annex A foundational controls</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Canadian organizations with UK operations or government supply chain exposure should refresh Cyber Essentials posture against the updated requirements text within the next renewal cycle. Internal control libraries that reference the prior Cyber Essentials version should be updated. ISO/IEC 27001 Annex A coverage of access control (5.15, 5.16, 5.18), secure configuration (8.9), malware protection (8.7), and management of technical vulnerabilities (8.8) provides the natural mapping point for integrated documentation.</p>
+                </div>
+                <a href="https://www.ncsc.gov.uk/cyberessentials/resources" target="_blank" rel="noopener" class="source-link">Source: UK National Cyber Security Centre <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
@@ -315,75 +315,40 @@
                 </div>
                 <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener" class="source-link">Source: European Commission <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
-            <div class="article" data-tags="iso,ai,governance">
-                <div class="article-header"><span class="tag tag-iso">ISO</span><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">Apr 2026</span></div>
-                <h3>ISO/IEC 42001 and ISO/IEC 27001 Converge as Baseline Requirements for AI Era Assurance</h3>
-                <p class="summary">Industry analysis through April converged on a clear pattern: ISO/IEC 27001 is now treated as the foundational information security layer, and ISO/IEC 42001 is the natural overlay for AI specific risk including bias, explainability gaps, model drift, and misuse. Reporting indicates organizations already certified to ISO/IEC 27001 can achieve ISO/IEC 42001 conformance materially faster than greenfield implementations because the common Annex SL clause structure, Statement of Applicability mechanics, and management review cadence carry directly across.</p>
-                <p class="detail">The convergence has practical implications for the Canadian compliance ecosystem. Procurement teams are increasingly requesting ISO/IEC 42001 alongside ISO/IEC 27001 in vendor RFPs, and regulators in the EU, US, and Asia continue to push toward proactive governance through risk classification, documentation, and transparency requirements. The early adopter window in Canada is meaningful: organizations that achieve dual certification before customer demand fully materializes will face less competitive pressure on price and timing.</p>
+            <div class="article" data-tags="canada,ai,governance">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">29 Apr 2026</span></div>
+                <h3>Canada's AI Global Innovation Cluster Deploys $31.3 Million Across 22 Projects, Total Investment $96 Million With Partners</h3>
+                <p class="summary">Canada's AI Global Innovation Cluster, operated by Scale AI, announced on April 29 the deployment of $31.3 million across 22 projects, with total partner participation bringing the combined investment to approximately $96 million. The portfolio targets industrial AI, supply chain, healthcare, and clean technology applications. The funding wave aligns with the federal direction signalled by the appointment of Canada's first Minister of Artificial Intelligence and Digital Innovation in May 2025 and the AI Strategy Task Force consultation now underway on Canada's next national AI strategy.</p>
+                <p class="detail">For Canadian organizations contemplating AI adoption or scale up, the cluster funding pattern is the practical complement to the BDC LIFT program announced April 24. Public capital is now structurally available across the AI maturity curve: cluster grants for collaborative innovation projects, BDC LIFT financing for SME adoption, and specialized vehicles for deep tech and dual use applications. Governance posture should be aligned to the funding cycle rather than retrofitted after award.</p>
                 <ul class="key-points">
-                    <li>ISO/IEC 27001 increasingly treated as the foundational layer with ISO/IEC 42001 layered on for AI specific risk</li>
-                    <li>Existing ISO/IEC 27001 certified organizations can reach ISO/IEC 42001 conformance materially faster than greenfield</li>
-                    <li>Regulators in EU, US, and Asia pushing risk classification, documentation, and transparency requirements simultaneously</li>
+                    <li>$31.3M deployed by Canada's AI Global Innovation Cluster across 22 projects on April 29</li>
+                    <li>Combined investment with partner participation totals approximately $96M</li>
+                    <li>Portfolio targets industrial AI, supply chain, healthcare, and clean technology applications</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Canadian organizations operating AI in production should plan toward dual ISO/IEC 27001 and ISO/IEC 42001 conformance, with shared management system mechanics where possible. Statement of Applicability documents should be designed to carry both control sets. Internal audit programs should map evidence sources once and use them across both standards. Boards should expect ISO/IEC 42001 to appear in customer due diligence questionnaires through 2026 and 2027.</p>
+                    <p>Canadian organizations on the AI cluster, BDC LIFT, or sectoral grant pathways should architect AI governance against ISO/IEC 42001 from project inception. Statement of Applicability documents should anticipate AI specific controls before public funding award, not after. Boards should treat the volume and pace of federal AI funding as a directional commitment that will surface in procurement, supplier qualification, and customer due diligence questionnaires through 2026 and 2027.</p>
                 </div>
-                <a href="https://www.iso.org/standard/42001" target="_blank" rel="noopener" class="source-link">Source: ISO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://betakit.com/canadas-ai-global-innovation-cluster-invests-31-3-million-across-22-projects/" target="_blank" rel="noopener" class="source-link">Source: BetaKit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
-            <div class="article" data-tags="nist,ai,governance">
-                <div class="article-header"><span class="tag tag-nist">NIST</span><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">Apr 2026</span></div>
-                <h3>NIST CSF 2.0 Quick Start Guide Bridges Cyber, Enterprise Risk Management, and Workforce</h3>
-                <p class="summary">NIST released the final version of the Cybersecurity Framework 2.0 Quick Start Guide on cybersecurity, enterprise risk management, and workforce management, designated SP 1308. The guide consolidates practical implementation guidance for translating CSF 2.0 outcomes into ERM language and workforce planning. The Govern function added in CSF 2.0 is the central pivot, formalizing the linkage between cybersecurity outcomes and enterprise level governance, risk appetite, and accountability.</p>
-                <p class="detail">For Canadian organizations operating an integrated NIST and ISO/IEC 27001 program, SP 1308 simplifies the work of demonstrating that cybersecurity outcomes are governed at the enterprise level. The guide also informs workforce planning conversations: as Canadian IT leaders forecast 48% headcount growth in 2026 with concentrated shortfalls in cloud, security, and AI, formalizing role clarity against CSF 2.0 outcomes makes the talent investment more defensible.</p>
+            <div class="article" data-tags="ai,governance,iso">
+                <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="tag tag-iso">ISO</span><span class="article-date">28 Apr 2026</span></div>
+                <h3>Anthropic Releases Claude Opus 4.7 and Creative Connectors, Frontier Model Lifecycle Cadence Tightens</h3>
+                <p class="summary">Anthropic released Claude Opus 4.7 to general availability on April 28 and introduced a suite of Claude Creative Connectors that link the model directly with Blender, Autodesk Fusion, Adobe Creative Cloud, Ableton, Splice, Affinity by Canva, and other widely deployed creative software. Opus 4.7 is positioned as a notable improvement on Opus 4.6 in advanced software engineering, with particular gains on the most difficult tasks. The release cadence reinforces the pattern that frontier model lifecycle is now operating on a weekly to monthly tempo at the upper tier.</p>
+                <p class="detail">For governance and risk teams, the practical implication is that any AI management program built against a static model assumption will be out of step with reality within a quarter. ISO/IEC 42001 clauses on AI system lifecycle management, change management, and post deployment monitoring become operational rather than theoretical. Connectors that link models directly to creative production tools also raise data flow questions: outbound data classification, prompt and output logging, and intellectual property handling should be policy items, not edge cases.</p>
                 <ul class="key-points">
-                    <li>SP 1308 consolidates CSF 2.0 implementation guidance for cyber, ERM, and workforce in a single document</li>
-                    <li>The Govern function from CSF 2.0 is the pivot point linking cyber outcomes to enterprise risk and accountability</li>
-                    <li>Quick Start guidance simplifies the integration of NIST CSF outcomes into ISO/IEC 27001 management system mechanics</li>
+                    <li>Claude Opus 4.7 reached general availability April 28 with software engineering capability gains over Opus 4.6</li>
+                    <li>Claude Creative Connectors link the model directly with Blender, Autodesk Fusion, Adobe Creative Cloud, Ableton, and others</li>
+                    <li>Frontier model release cadence now operates on a weekly to monthly tempo at the upper tier</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Organizations should incorporate SP 1308 into governance documentation alongside ISO/IEC 27001 management system documents. Internal audit and risk committees can use the Govern function structure to hold management accountable for cybersecurity outcomes in language that ERM stakeholders already use. Workforce planning that ties role definitions to CSF 2.0 outcomes makes hiring requests more defensible to finance and HR.</p>
+                    <p>AI management systems should formally cover model lifecycle change management, including version pinning, evaluation against approved use cases on each upgrade, and rollback paths. ISO/IEC 42001 alignment should be treated as operational discipline, not certificate paperwork. Connectors that link models to creative or development tools should pass through the same data classification, logging, and intellectual property review as any new SaaS integration. Boards should request evidence that AI system inventories are kept current at the cadence the model providers actually ship at.</p>
                 </div>
-                <a href="https://industrialcyber.co/nist/nist-releases-updated-csf-2-0-quick-start-guide-to-strengthen-cyber-erm-and-workforce-integration/" target="_blank" rel="noopener" class="source-link">Source: Industrial Cyber <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener" class="source-link">Source: Anthropic <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
-        <div class="section-title" id="frameworks">Frameworks &amp; Standards</div>
-        <div class="articles">
-            <div class="article" data-tags="canada,privacy,regulation">
-                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-privacy">Privacy</span><span class="tag tag-regulation">Regulation</span><span class="article-date">Apr 2026</span></div>
-                <h3>Canada Privacy Act Modernization Review Underway as Federal Sector Faces Updated Obligations</h3>
-                <p class="summary">The Government of Canada confirmed a formal review of the Privacy Act, the federal public sector privacy statute that governs how government institutions collect, use, and disclose personal information. The review process is consulting on modernization proposals that include strengthened transparency, broader rights for individuals, and clearer obligations on data sharing across federal institutions. The consultation runs in parallel with ongoing private sector privacy reform discussions and the OPC&#8217;s public guidance modernization program.</p>
-                <p class="detail">For federal institutions and any organization that supplies them, the modernization is best treated as a near term planning input rather than a long horizon abstraction. Privacy Impact Assessment expectations are likely to harden, and the documentation required to evidence lawful collection, retention, and disclosure decisions will need to be more structured than current practice. ISO/IEC 27701 privacy information management aligned to ISO/IEC 27001 provides a defensible scaffold for both federal and private sector compliance.</p>
-                <ul class="key-points">
-                    <li>Review of the federal Privacy Act underway with consultation on modernization proposals</li>
-                    <li>Likely outcomes include strengthened transparency, broader individual rights, and clearer data sharing obligations</li>
-                    <li>Federal institution suppliers should expect tighter PIA and documentation expectations</li>
-                </ul>
-                <div class="implications">
-                    <h4>Implications</h4>
-                    <p>Federal suppliers should align Privacy Impact Assessments and data flow documentation against the directional signals from the consultation. ISO/IEC 27701 privacy information management certification provides a third party verifiable foundation that maps cleanly onto modernized Privacy Act obligations. Boards of federal contractors should request evidence that personal information held under federal contracts is governed against current OPC guidance, not legacy interpretation.</p>
-                </div>
-                <a href="https://gowlingwlg.com/en-ca/insights-resources/articles/2026/canada-launches-review-of-the-privacy-act" target="_blank" rel="noopener" class="source-link">Source: Gowling WLG <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-            </div>
-            <div class="article" data-tags="iso,governance,regulation">
-                <div class="article-header"><span class="tag tag-iso">ISO</span><span class="tag tag-governance">Governance</span><span class="tag tag-regulation">Regulation</span><span class="article-date">Apr 2026</span></div>
-                <h3>SAP Sovereign Cloud for Canada Completes CCCS Cloud Assessments, Sovereignty Conversation Sharpens</h3>
-                <p class="summary">SAP confirmed that SAP Sovereign Cloud for Canada has completed Canadian Centre for Cyber Security cloud assessments, strengthening its position with Canadian public sector and regulated industry buyers. The CCCS cloud assessment process evaluates security controls against the Cyber Centre&#8217;s baseline expectations for cloud services serving Canadian government and critical sector workloads. The announcement adds another credentialed sovereign option for Canadian buyers and continues the broader move toward residency, lawful access, and certification depth as primary evaluation criteria.</p>
-                <p class="detail">The Canadian sovereign cloud landscape is differentiating quickly. ISO/IEC 27001 certification, CCCS cloud assessment status, and explicit residency and lawful access language are increasingly the minimum bar for regulated workloads. ISO/IEC 42001 AI management system certification will be the next differentiator as AI capabilities embed deeper into platform offerings.</p>
-                <ul class="key-points">
-                    <li>SAP Sovereign Cloud for Canada has completed CCCS cloud assessments</li>
-                    <li>CCCS assessment evaluates security controls for cloud serving Canadian government and critical workloads</li>
-                    <li>Sovereign cloud evaluation increasingly weighs ISO/IEC 27001, CCCS assessment, residency, and lawful access language</li>
-                </ul>
-                <div class="implications">
-                    <h4>Implications</h4>
-                    <p>Procurement teams evaluating sovereign cloud options should require evidence of CCCS cloud assessment status alongside ISO/IEC 27001 certification. RFP language for regulated workloads should include explicit residency, lawful access, and incident notification commitments backed by current certificates issued by accredited certification bodies. ISO/IEC 42001 conformance should be raised in negotiations as a forward looking expectation as platform AI capabilities mature.</p>
-                </div>
-                <a href="https://news.sap.com/canada/2026/03/sap-strengthens-compliance-in-canada-with-canadian-centre-for-cyber-security-cccs-cloud-assessments-of-sap-sovereign-cloud-for-canada/" target="_blank" rel="noopener" class="source-link">Source: SAP Canada News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-            </div>
-        </div>
 
 <!-- ════════ PREVIOUS REVIEWS ════════ -->
         <div class="section-title">Previous Reviews</div>
