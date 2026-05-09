@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N7K1X6GV2R"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N7K1X6GV2R');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Governance &amp; Compliance Review: Week of April 25 to May 1, 2026: ascio</title>
+    <meta name="description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta property="og:title" content="Governance &amp; Compliance Review: ascio">
+    <meta property="og:description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta property="og:image" content="https://ascio.ca/linkedin-cover.png">
+    <meta property="og:url" content="https://ascio.ca/review/apr-25-2026.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Governance &amp; Compliance Review: ascio">
+    <meta name="twitter:description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta name="twitter:image" content="https://ascio.ca/linkedin-cover.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #09090b;
+            --bg-raised: #18181b;
+            --bg-elevated: #27272a;
+            --border: #27272a;
+            --border-light: #3f3f46;
+            --text: #fafafa;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --accent: #06b6d4;
+            --accent-dim: rgba(6, 182, 212, 0.15);
+            --accent-border: rgba(6, 182, 212, 0.3);
+            --green: #22c55e;
+            --mono: 'JetBrains Mono', monospace;
+            --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 15px; -webkit-font-smoothing: antialiased; line-height: 1.7; overflow-x: hidden; }
+        ::selection { background: var(--accent); color: var(--bg); }
+        a { color: inherit; text-decoration: none; }
+        .w { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(9, 9, 11, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+        header .w { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+        .logo { font-family: var(--mono); font-size: 2rem; font-weight: 600; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+        .nav-links { display: flex; gap: 0.5rem; list-style: none; align-items: center; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.15s; }
+        .nav-links a:hover { color: var(--text); background: var(--bg-raised); }
+        .nav-links a.active { color: var(--text); }
+        .nav-cta { background: var(--text) !important; color: var(--bg) !important; font-weight: 600 !important; padding: 0.5rem 1.25rem !important; border-radius: 6px !important; transition: all 0.15s !important; }
+        .nav-cta:hover { background: var(--accent) !important; }
+        .mobile-toggle { display: none; background: none; border: none; color: var(--text); cursor: pointer; padding: 6px; }
+        .mobile-nav { position: fixed; top: 64px; left: 0; right: 0; background: var(--bg); z-index: 199; display: flex; flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); border-bottom: 1px solid var(--border); }
+        .mobile-nav.open { max-height: 400px; }
+        .mobile-nav a { font-size: 0.88rem; color: var(--text-secondary); font-weight: 500; padding: 0.75rem 2rem; transition: color 0.2s, background 0.2s; }
+        .mobile-nav a:hover { color: var(--text); background: var(--bg-raised); }
+
+        .grid-bg { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(39, 39, 42, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(39, 39, 42, 0.3) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+        .archive-banner { background: var(--accent-dim); border-bottom: 1px solid var(--accent-border); padding: 0.75rem 0; font-size: 0.8rem; color: var(--accent); text-align: center; position: relative; z-index: 1; }
+        .archive-banner a { color: var(--text); font-weight: 600; margin-left: 0.5rem; }
+
+        .hero { padding: 140px 0 80px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%); pointer-events: none; }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .hero-tag { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; gap: 1rem; }
+        .hero-tag::before, .hero-tag::after { content: ''; width: 40px; height: 1px; background: var(--accent); }
+        .hero h1 { font-family: var(--sans); font-weight: 700; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 1.5rem; color: var(--text); }
+        .hero h1 span { color: var(--text-muted); }
+        .hero p { font-size: 1.05rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.8; }
+        .hero-date { margin-top: 2rem; font-family: var(--mono); font-size: 0.6rem; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; }
+        .hero-rule { width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.4; }
+
+        .main { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 60px 2rem; }
+        .section-title { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); margin-bottom: 32px; display: flex; align-items: center; gap: 1rem; }
+        .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+        .tag { display: inline-block; padding: 0.2rem 0.6rem; font-family: var(--mono); font-size: 0.55rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; width: fit-content; border-radius: 3px; }
+        .tag-governance { color: var(--bg); background: var(--accent); }
+        .tag-iso { color: #a78bfa; background: rgba(167, 139, 250, 0.12); }
+        .tag-cyber { color: #fb7185; background: rgba(244, 63, 94, 0.12); }
+        .tag-regulation { color: #fbbf24; background: rgba(251, 191, 36, 0.12); }
+        .tag-privacy { color: #34d399; background: rgba(16, 185, 129, 0.12); }
+        .tag-ai { color: #60a5fa; background: rgba(96, 165, 250, 0.12); }
+        .tag-canada { color: #f87171; background: rgba(248, 113, 113, 0.12); }
+        .tag-audit { color: #c084fc; background: rgba(192, 132, 252, 0.12); }
+        .tag-nist { color: #38bdf8; background: rgba(56, 189, 248, 0.12); }
+
+        .featured { margin-bottom: 64px; background: var(--bg-raised); border: 1px solid var(--border); overflow: hidden; border-top: 3px solid var(--accent); border-radius: 6px; }
+        .featured-body { padding: 3rem; }
+        .featured-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .featured-meta { font-family: var(--mono); font-size: 0.58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .featured-body h2 { font-size: 1.75rem; font-weight: 700; color: var(--text); margin-bottom: 1.25rem; line-height: 1.3; max-width: 800px; letter-spacing: -0.02em; }
+        .featured-body .lead { font-size: 1rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 1rem; max-width: 860px; }
+        .featured-body .detail { font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.75rem; max-width: 860px; }
+        .source-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--mono); font-size: 0.62rem; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 1rem; transition: gap 0.3s var(--ease), color 0.2s; text-decoration: none; border-bottom: 1px solid var(--accent-border); padding-bottom: 2px; }
+        .source-link:hover { gap: 0.65rem; color: #22d3ee; }
+        .source-link svg { width: 10px; height: 10px; }
+
+        .articles { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 64px; }
+        .article { background: var(--bg-raised); border: 1px solid var(--border); border-left: 3px solid transparent; padding: 2rem 2.5rem; transition: all 0.3s var(--ease); border-radius: 6px; }
+        .article:hover { border-left-color: var(--accent); background: var(--bg-elevated); }
+        .article-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .article-header .article-date { font-family: var(--mono); font-size: 0.58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .article h3 { font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; line-height: 1.35; letter-spacing: -0.01em; }
+        .article .summary { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 0.5rem; }
+        .article .detail { font-size: 0.82rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.5rem; }
+        .article .key-points { margin: 1rem 0 0.75rem; padding-left: 1.25rem; }
+        .article .key-points li { font-size: 0.82rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0.35rem; }
+        .article .key-points li::marker { color: var(--accent); }
+
+        .implications { margin-top: 1rem; padding: 1.25rem 1.5rem; background: var(--accent-dim); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; }
+        .implications h4 { font-family: var(--mono); font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.5rem; }
+        .implications p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.85; }
+
+        .prev-reviews { margin-bottom: 64px; }
+        .prev-reviews-list { display: flex; flex-direction: column; gap: 0.75rem; }
+        .prev-review-link { display: flex; align-items: center; justify-content: space-between; background: var(--bg-raised); border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem 2rem; transition: all 0.3s var(--ease); text-decoration: none; }
+        .prev-review-link:hover { border-color: var(--accent-border); background: var(--bg-elevated); }
+        .prev-review-link .prev-title { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+        .prev-review-link .prev-date { font-family: var(--mono); font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .prev-review-link svg { color: var(--accent); width: 14px; height: 14px; flex-shrink: 0; transition: transform 0.3s var(--ease); }
+        .prev-review-link:hover svg { transform: translateX(3px); }
+
+        .newsletter { background: var(--bg-raised); border: 1px solid var(--border); padding: 48px; text-align: center; margin-bottom: 64px; border-top: 2px solid var(--accent); border-radius: 6px; }
+        .newsletter h3 { font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: 12px; letter-spacing: -0.02em; }
+        .newsletter p { color: var(--text-secondary); margin-bottom: 28px; font-size: 0.92rem; }
+        .newsletter-form { display: flex; max-width: 480px; margin: 0 auto; gap: 12px; }
+        .newsletter-form input { flex: 1; padding: 0.8rem 1.25rem; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 0.85rem; border-radius: 6px; outline: none; transition: border-color 0.25s; }
+        .newsletter-form input::placeholder { color: var(--text-muted); }
+        .newsletter-form input:focus { border-color: var(--accent); }
+        .newsletter-form button { padding: 0.8rem 2rem; background: var(--text); color: var(--bg); font-family: var(--sans); font-weight: 600; font-size: 0.82rem; border: none; border-radius: 6px; cursor: pointer; transition: all 0.15s; }
+        .newsletter-form button:hover { background: var(--accent); }
+
+        footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 1.5rem 0; }
+        .ft { display: flex; justify-content: space-between; align-items: center; }
+        .ft-brand { font-size: 0.7rem; color: var(--text-muted); }
+        .ft-brand strong { font-family: var(--mono); color: var(--text-secondary); }
+        .ft-copy { font-size: 0.62rem; color: var(--text-muted); }
+        .ft-social { display: flex; align-items: center; gap: 1rem; }
+        .ft-social a { color: var(--text-muted); transition: color 0.15s; display: flex; align-items: center; }
+        .ft-social a:hover { color: var(--accent); }
+        .ft-social svg { width: 16px; height: 16px; }
+
+        @media (max-width: 900px) {
+            .hero h1 { font-size: clamp(2rem, 5vw, 3rem); }
+            .featured-body { padding: 2rem; }
+            .article { padding: 1.5rem; }
+            .newsletter { padding: 2rem; }
+        }
+        @media (max-width: 720px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; }
+            .ft { flex-direction: column; gap: 0.35rem; text-align: center; }
+            .newsletter-form { flex-direction: column; }
+            .prev-review-link { padding: 1rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-bg"></div>
+
+    <header><div class="w">
+        <a href="../index.html" class="logo">ascio</a>
+        <ul class="nav-links">
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#standards">Standards</a></li>
+            <li><a href="../index.html#process">Process</a></li>
+            <li><a href="./" class="active">Weekly Review</a></li>
+            <li><a href="../index.html#contact" class="nav-cta">Request Advisory</a></li>
+        </ul>
+        <button class="mobile-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+    </div></header>
+    <div class="mobile-nav">
+        <a href="../index.html#services" onclick="this.parentElement.classList.remove('open')">Services</a>
+        <a href="../index.html#standards" onclick="this.parentElement.classList.remove('open')">Standards</a>
+        <a href="../index.html#process" onclick="this.parentElement.classList.remove('open')">Process</a>
+        <a href="./" onclick="this.parentElement.classList.remove('open')">Weekly Review</a>
+        <a href="../index.html#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">Weekly Review</div>
+            <h1>Governance &amp; Compliance <span>Review</span></h1>
+            <p>Developments in technology governance, cybersecurity standards, and regulatory compliance.</p>
+            <div class="hero-date">Week of April 25 to May 1, 2026</div>
+        </div>
+    </section>
+    <div class="hero-rule"></div>
+    <div class="archive-banner"><div class="w">This is an archived edition. <a href="./">View the latest review &rarr;</a></div></div>
+
+    <div class="main">
+
+        <div class="section-title">Lead Story</div>
+        <div class="featured" data-tags="canada,governance,regulation">
+            <div class="featured-body">
+                <div class="featured-header">
+                    <span class="tag tag-canada">Canada</span>
+                    <span class="tag tag-governance">Governance</span>
+                    <span class="tag tag-regulation">Regulation</span>
+                    <span class="featured-meta">29 Apr 2026</span>
+                </div>
+                <h2>Canada Confirmed as Host of the Multilateral Defence, Security and Resilience Bank</h2>
+                <p class="lead">Multilateral negotiations on the DSRB Charter concluded in Montréal, and the Department of Finance Canada confirmed on April 29 that participating countries unanimously supported Canada as the host country for the future DSRB headquarters. The bank is being designed to mobilize private capital at scale, deliver long term low cost financing for defence, security, and resilience initiatives across supply chains, and help small and medium sized enterprises and member governments close critical financing gaps. BDC President and CEO Isabelle Hudon is Canada's lead negotiator for the DSRB.</p>
+                <p class="detail">For the Canadian governance agenda, the DSRB host country confirmation positions Canada at the centre of a new multilateral defence financing institution and accelerates the allied alignment of supplier qualification, supervisory expectations, and procurement practice. Federal context matters: Canada has met NATO's 2 per cent of GDP spending target this fiscal year, the Prime Minister launched the Canadian Defence Industrial Strategy on February 17 with a "Build Partner Buy" framework, and Budget 2025 included over $80 billion in defence investment. Suppliers should expect allied baselines, controlled goods, and ITAR alignment to flow through DSRB participation as the institution moves toward ratification.</p>
+                <ul class="key-points">
+                    <li>DSRB Charter negotiations concluded in Montréal with unanimous support for Canada as host country</li>
+                    <li>BDC President and CEO Isabelle Hudon is Canada's lead negotiator for the DSRB</li>
+                    <li>Bank is designed to mobilize private capital, deliver long term low cost defence financing, and close supply chain financing gaps</li>
+                    <li>Sits inside a broader federal defence agenda including the February Defence Industrial Strategy and Budget 2025 commitments</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Canadian financial institutions, defence suppliers, and dual use technology companies should track DSRB design closely for governance, supervisory, and procurement implications. ISO/IEC 27001 and CPCSC alignment will be the foundational evidence base for participation. Boards should expect allied supply chain controls to flow through to Canadian suppliers in formats that look more like CMMC and ITAR than purely commercial procurement language. Organizations targeting allied defence procurement should architect their governance, controlled goods, and cyber security programs against allied baselines from inception, particularly where DSRB financing eventually enters the picture.</p>
+                </div>
+                <a href="https://www.canada.ca/en/department-finance/news/2026/04/canada-welcomes-progress-towards-the-establishment-of-the-defence-security-and-resilience-bank-and-hosting-its-headquarters.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <div class="section-title" id="defence">Canadian Defence Industrial Capacity</div>
+        <div class="articles">
+            <div class="article" data-tags="canada,governance,regulation">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-governance">Governance</span><span class="tag tag-regulation">Regulation</span><span class="article-date">12 Mar 2026</span></div>
+                <h3>BDC Defence Platform Scaled to $6 Billion and StrongNorth Fund Stood Up as Canada's Domestic Defence Capital Layer</h3>
+                <p class="summary">BDC's domestic Defence Platform has been scaled to $6 billion, after providing $91.7 million in financing to 16 Canadian businesses since the platform launched in late December. BDC has also named the leadership of StrongNorth, a $300 million venture capital fund dedicated to early stage Canadian companies developing deep technologies with defence focused or dual use applications. The Defence Platform finances operating Canadian SMEs scaling production; the StrongNorth Fund seeds the early stage technology pipeline. Together they form Canada's domestic defence capital layer beneath the multilateral DSRB.</p>
+                <p class="detail">The architecture is two layered and complementary. Public capital is now structurally available across the maturity curve at home: domestic financing through the Defence Platform for operating SMEs, venture capital through StrongNorth for early stage deep tech, and the multilateral DSRB once ratified for allied scale. For Canadian organizations contemplating defence sector entry or expansion, the practical implication is that the financing pathway is structured rather than ad hoc, and qualification expectations will tighten in step.</p>
+                <ul class="key-points">
+                    <li>BDC Defence Platform scaled to $6B with $91.7M deployed to 16 Canadian SMEs since the December launch</li>
+                    <li>StrongNorth Fund is a $300M venture capital vehicle for deep tech with defence focused or dual use applications</li>
+                    <li>Together they form Canada's domestic defence capital layer beneath the multilateral DSRB</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Canadian SMEs targeting defence and dual use markets should align certification, controlled goods, and information security posture with the funding cycle, not behind it. CPCSC Level 1 self attestation against the 13 foundational controls is now table stakes for designated contracts; ISO/IEC 27001 Annex A coverage of access control (5.15, 5.16, 5.18), supplier relationships (5.19), and information transfer (5.14) provides the evidence base most likely to satisfy BDC due diligence. Organizations on the StrongNorth pathway should architect AI and dual use capabilities against ISO/IEC 42001 from inception to avoid retrofitting governance later in the funding cycle.</p>
+                </div>
+                <a href="https://www.bdc.ca/en/about/mediaroom/news-releases/bdc-boosts-defence-platform-after-providing-financing-names-strong-northfund-leader" target="_blank" rel="noopener" class="source-link">Source: BDC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <div class="section-title" id="cybersecure">CyberSecure Canada &amp; Cyber Threats</div>
+        <div class="articles">
+            <div class="article" data-tags="cyber,governance">
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">24 Apr 2026</span></div>
+                <h3>Itron 8-K Discloses Intrusion in Internal Corporate IT, Customer Hosted Systems Reported Unaffected at Initial Disclosure</h3>
+                <p class="summary">Itron, a major supplier of smart meters, grid edge devices, and utility software to electricity, gas, and water utilities, filed an SEC Form 8-K on April 24 disclosing that intruders had been present in its internal corporate IT systems before being expelled. The company stated at initial disclosure that it had not identified unauthorized activity in the customer hosted portion of its systems, and that operations continued in all material respects. News outlets picked up the disclosure on April 27. The intrusion sits inside a Q1 2026 regional threat picture in which Cyble's Americas Threat Landscape Report recorded 1,138 publicly claimed ransomware attacks across the Americas, with healthcare, manufacturing, education, and critical infrastructure absorbing the largest share.</p>
+                <p class="detail">For Canadian utility operators that rely on Itron meters, head end systems, or analytics services, the relevant question is downstream supply chain exposure rather than direct operational technology compromise. The reported scope is corporate IT, not Itron's grid edge or meter operating environments, but vendor incidents at this layer can evolve as investigation progresses, and contractual visibility into subsequent disclosures is rarely automatic. The episode is also a reminder that ransomware and adjacent actors continue to focus on the energy sector supply chain.</p>
+                <ul class="key-points">
+                    <li>Itron 8-K filed April 24 disclosed intrusion in internal corporate IT systems; no unauthorized activity identified in customer hosted portion at initial disclosure</li>
+                    <li>News outlet coverage followed on April 27; OT environments were not the reported scope of the intrusion</li>
+                    <li>Cyble Americas Threat Landscape Report recorded 1,138 publicly claimed ransomware attacks in Q1 2026 across the Americas</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Canadian utilities and any organization with Itron components in the stack should request a structured incident briefing under existing contractual rights and update third party risk records accordingly, with particular focus on whether their customer hosted systems were among those affected. ISO/IEC 27001 Annex A 5.21 information security in the ICT supply chain, 5.22 monitoring and review of supplier services, and 5.23 information security for use of cloud services apply directly. Boards of utility owners should request evidence that operational technology vendor risk is monitored at the same cadence as IT vendor risk. CIREN scenario libraries published by the Canadian Centre for Cyber Security are a useful reference point for tabletop exercises that include vendor compromise variants.</p>
+                </div>
+                <a href="https://techcrunch.com/2026/04/27/critical-infrastructure-giant-itron-says-it-was-hacked/" target="_blank" rel="noopener" class="source-link">Source: TechCrunch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="canada,cyber,governance">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">30 Apr 2026</span></div>
+                <h3>CCCS Concentrated Multi Vendor Advisory Week Hits Citrix, Mozilla, Chrome, Progress, HPE, JetBrains, GNU, Jenkins</h3>
+                <p class="summary">The Canadian Centre for Cyber Security published a concentrated wave of vendor advisories between April 28 and April 30. Citrix (AV26 400), Mozilla (AV26 401), and Google Chrome for Desktop (AV26 402) landed on April 28. GNU (AV26 407) and Jenkins Credentials Binding Plugin (AV26 403) followed on April 29. April 30 added HPE Telco Service Orchestrator and Activator (AV26 408), Progress MOVEit Automation critical advisories (AV26 410), and JetBrains IntelliJ IDEA (AV26 412). cPanel update (AV26 404) the same day coincided with CISA Known Exploited Vulnerabilities catalogue addition.</p>
+                <p class="detail">The combination of browser, identity, build pipeline, and managed file transfer surfaces inside a single week elevates the patch cadence demand on Canadian enterprise security teams. Browser advisories on Chrome and Mozilla touch every endpoint. Citrix, Progress MOVEit, and HPE Telco gear is widely deployed in Canadian enterprise estates and federal supply chains. Jenkins and JetBrains touch the development toolchain, where credential and supply chain risk concentrate.</p>
+                <ul class="key-points">
+                    <li>Eight vendor advisories from CCCS between April 28 and 30 across browsers, identity, build pipeline, and managed file transfer</li>
+                    <li>cPanel CVE 2026 41940 added to CISA KEV April 30, signalling confirmed in the wild exploitation</li>
+                    <li>Browser, Citrix, MOVEit, and HPE Telco footprints touch the bulk of Canadian enterprise estates</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Vulnerability management programs should treat multi vendor advisory weeks as a structural feature rather than an exception. ISO/IEC 27001 Annex A 8.8 alignment should explicitly incorporate CISA KEV inclusion as a same week patch trigger. Boards should ask whether the organization can demonstrate evidence of within window remediation for advisories on internet exposed perimeter and managed file transfer infrastructure. Development pipelines should not be exempt from the same vulnerability and credential rotation cadence as production estates.</p>
+                </div>
+                <a href="https://www.cyber.gc.ca/en/alerts-advisories" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="cyber,governance,regulation">
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="tag tag-regulation">Regulation</span><span class="article-date">27 Apr 2026</span></div>
+                <h3>UK NCSC Publishes Updated Cyber Essentials Requirements for IT Infrastructure</h3>
+                <p class="summary">The UK National Cyber Security Centre published updated Cyber Essentials Requirements for IT Infrastructure on April 27. Cyber Essentials is the foundational UK government baseline covering five technical control areas: firewalls, secure configuration, access control, malware protection, and security update management. The refresh tightens scoping, clarifies cloud and bring your own device boundaries, and updates control language for current operating environments including managed identity and modern endpoint patterns.</p>
+                <p class="detail">For Canadian organizations with UK operations or UK government supply chain exposure, Cyber Essentials remains a procurement gating control for many central government and critical sector contracts. The requirements also map closely to ISO/IEC 27001 Annex A foundational controls, so updating internal control libraries against the refreshed Cyber Essentials text yields downstream value for ISO management system documentation.</p>
+                <ul class="key-points">
+                    <li>UK NCSC published updated Cyber Essentials Requirements for IT Infrastructure on April 27</li>
+                    <li>Refresh tightens scoping for cloud, BYOD, and managed identity boundaries</li>
+                    <li>Maps closely to ISO/IEC 27001 Annex A foundational controls</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Canadian organizations with UK operations or government supply chain exposure should refresh Cyber Essentials posture against the updated requirements text within the next renewal cycle. Internal control libraries that reference the prior Cyber Essentials version should be updated. ISO/IEC 27001 Annex A coverage of access control (5.15, 5.16, 5.18), secure configuration (8.9), malware protection (8.7), and management of technical vulnerabilities (8.8) provides the natural mapping point for integrated documentation.</p>
+                </div>
+                <a href="https://www.ncsc.gov.uk/cyberessentials/resources" target="_blank" rel="noopener" class="source-link">Source: UK National Cyber Security Centre <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <div class="section-title" id="cpcsc">CPCSC</div>
+        <div class="articles">
+            <div class="article" data-tags="canada,governance,cyber">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-governance">Governance</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">14 Apr 2026</span></div>
+                <h3>CPCSC Level 1 Adoption Window Tightens Toward the Summer 2026 Contract Integration Date</h3>
+                <p class="summary">Government of Canada announcement on April 14 introduced Level 1 of the Canadian Program for Cyber Security Certification, which has been available to suppliers since April 1. With the Summer 2026 contract integration window now under three months away, supplier readiness has moved from advisory question to operational priority. Level 1 requires suppliers to identify the implementation status of 13 baseline security requirements through annual self assessment. The 13 controls are technically aligned with NIST Special Publication 800 171 foundational controls, and CPCSC is anchored in the Canadian Centre for Cyber Security Canadian industrial cyber security standard.</p>
+                <p class="detail">Level 2, scheduled for select contracts in spring 2027, will require external assessment by accredited certification bodies. Level 3 is reserved for the highest risk scenarios and assessments will be conducted by the Government of Canada rather than third parties. The cumulative effect is a tiered assurance model that defence procurement, BDC due diligence, and prime contractor flow downs will all reference. Suppliers that have not begun the alignment work should treat the Summer 2026 deadline as binding for any active or anticipated defence opportunity.</p>
+                <ul class="key-points">
+                    <li>Level 1 self attestation required for select defence contracts beginning Summer 2026</li>
+                    <li>13 Level 1 controls align technically with NIST SP 800 171 foundational controls</li>
+                    <li>Level 2 external assessment by accredited certification bodies scheduled for spring 2027</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Suppliers should pair CPCSC Level 1 attestation with documented evidence of operational control implementation, not policy presence alone. ISO/IEC 27001 Annex A coverage, NIST SP 800 171 mapping, and CCCS baseline control set should be tracked in a single integrated control register. Organizations seeking BDC Defence Platform financing should expect CPCSC Level 1 status to surface in due diligence conversations. Suppliers anticipating Level 2 should begin gap assessments now to use the runway to spring 2027 effectively while accredited certification body capacity is being built in the Canadian market.</p>
+                </div>
+                <a href="https://www.canada.ca/en/public-services-procurement/news/2026/04/canadian-program-for-cyber-security-certification-level-1.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <div class="section-title" id="ai-governance">AI Governance &amp; Regulation</div>
+        <div class="articles">
+            <div class="article" data-tags="ai,regulation,governance">
+                <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-regulation">Regulation</span><span class="tag tag-governance">Governance</span><span class="article-date">28 Apr 2026</span></div>
+                <h3>EU AI Act Digital Omnibus Trilogue Ends Without Agreement, August 2026 High Risk Deadline Remains Operative</h3>
+                <p class="summary">The second political trilogue between the European Parliament, Council of the EU, and European Commission on the Digital Omnibus concluded on April 28 without agreement. A further trilogue is scheduled for May 13. The Commission proposal published in November 2025 seeks to defer the high risk compliance deadline from August 2 2026 to December 2 2027. Until the agreement is published in the Official Journal, the August 2 2026 deadline remains the only operative legal obligation. Member States are also required to establish at least one AI regulatory sandbox at national level by August 2 2026.</p>
+                <p class="detail">For Canadian organizations with EU exposure, the prudent path is to plan against the current operative deadline while monitoring trilogue progression. Even where high risk obligations are eventually deferred, the foundational logging, risk management, and post market monitoring expectations are unchanged and align with ISO/IEC 42001 AI management system requirements. Treating the design as anchored to ISO/IEC 42001 means downstream regulatory shifts become incremental adjustments rather than rebuilds.</p>
+                <ul class="key-points">
+                    <li>Second trilogue April 28 ended without agreement, third scheduled May 13</li>
+                    <li>August 2 2026 high risk compliance deadline remains operative law until any agreement is published</li>
+                    <li>Member States required to establish national AI regulatory sandboxes by August 2 2026</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Plan against the August 2 2026 deadline; treat any deferral as upside rather than baseline. Anchor the AI risk management, logging, and post market monitoring architecture to ISO/IEC 42001 so that EU specific obligations become a configurable overlay rather than a parallel program. Canadian organizations targeting EU markets should expect customer due diligence questions on AI governance posture to intensify regardless of the trilogue outcome.</p>
+                </div>
+                <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener" class="source-link">Source: European Commission <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="canada,ai,governance">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">28 Apr 2026</span></div>
+                <h3>Federal Spring Economic Update References Six Pillars of National AI Strategy and the Existing Sovereign AI Compute Strategy</h3>
+                <p class="summary">The Spring Economic Update tabled by Finance Minister François Philippe Champagne on April 28 referenced the six pillars of Canada's forthcoming national AI strategy, previously unveiled in a speech by Minister of Artificial Intelligence and Digital Innovation Evan Solomon. The update also referenced the existing Canadian Sovereign AI Compute Strategy, which is built on three complementary pillars: mobilizing private sector investment, building public supercomputing infrastructure, and establishing the AI Compute Access Fund. The call for applications under the AI Sovereign Compute Infrastructure Program launched in mid April. The package was tabled alongside a small and medium business procurement program intended to widen federal contract access.</p>
+                <p class="detail">For Canadian organizations, the Spring Economic Update is the clearest federal signal yet on the direction of national AI policy. The framing language matters: "safe and sovereign" AI, domestic compute capacity, and adoption across both private and public sectors. The update also resets the planning horizon for AI procurement, supplier qualification, and governance expectations. Organizations should expect the eventual full strategy text to harden expectations around AI risk management, model lifecycle governance, and supplier transparency.</p>
+                <ul class="key-points">
+                    <li>Spring Economic Update tabled by Finance Minister Champagne on April 28 referenced the six AI strategy pillars previously unveiled by AI Minister Solomon</li>
+                    <li>Existing Canadian Sovereign AI Compute Strategy spans private investment, public supercomputing infrastructure, and an AI Compute Access Fund; applications under the AI Sovereign Compute Infrastructure Program opened in mid April</li>
+                    <li>Small and medium business procurement program tabled alongside, intended to widen federal contract access</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Canadian organizations should treat the Spring Economic Update direction as the governance planning baseline through 2026 and 2027. ISO/IEC 42001 alignment should anticipate the federal AI governance language likely to flow into procurement and supplier qualification, particularly for organizations bidding on federal AI workloads or seeking BDC LIFT or sovereign compute access. Boards should request a single integrated view of AI regime exposure across federal Canadian, EU, and US obligations rather than tracking each separately.</p>
+                </div>
+                <a href="https://www.canada.ca/en/innovation-science-economic-development/news/2026/04/canada-launches-national-initiative-to-build-large-scale-ai-supercomputing-capacity.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+
+<!-- ════════ PREVIOUS REVIEWS ════════ -->
+        <div class="section-title">Previous Reviews</div>
+        <div class="prev-reviews">
+            <div class="prev-reviews-list">
+                <a href="apr-18-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of April 18 to 24, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="apr-10-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of April 10 to 17, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="mar-29-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of March 23 to 29, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="mar-16-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of March 16 to 22, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="mar-2-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of March 2 to 8, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="feb-23-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of February 23 to March 1, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="newsletter" id="newsletter">
+            <h3>Get the Weekly Briefing</h3>
+            <p>Governance, compliance, and cybersecurity developments delivered to your inbox every Monday. No noise, just what matters.</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <script>
+            document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var email = this.querySelector('input[name="email"]').value;
+                var btn = this.querySelector('button');
+                btn.disabled = true; btn.textContent = 'Subscribing...';
+                fetch('https://ascio-leads-api.vercel.app/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: 'Newsletter Subscriber', email: email, brand: 'ascio', interest: 'Newsletter', message: 'Governance & Compliance Review subscriber' })
+                }).then(function() {
+                    btn.textContent = 'Subscribed!';
+                }).catch(function() {
+                    btn.textContent = 'Subscribed!';
+                });
+            });
+            </script>
+        </div>
+
+    </div>
+
+    <footer><div class="w"><div class="ft">
+        <div class="ft-brand"><strong>ascio</strong> &#8212; Technology Governance, Inspection &amp; Assessment Readiness / Canada</div>
+        <div class="ft-social">
+            <a href="https://www.linkedin.com/company/ascio-advisory-services" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://x.com/ascio_tech" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+        <div class="ft-copy">&copy; 2017&#8211;2026 ascio</div>
+    </div></div></footer>
+
+</body>
+</html>
