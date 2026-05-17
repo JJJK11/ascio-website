@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N7K1X6GV2R"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N7K1X6GV2R');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Governance &amp; Compliance Review: ascio, Week of May 2 to 8, 2026</title>
+    <meta name="description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta property="og:title" content="Governance &amp; Compliance Review: ascio">
+    <meta property="og:description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta property="og:image" content="https://ascio.ca/linkedin-cover.png">
+    <meta property="og:url" content="https://ascio.ca/review/may-2-2026.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Governance &amp; Compliance Review: ascio">
+    <meta name="twitter:description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta name="twitter:image" content="https://ascio.ca/linkedin-cover.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #09090b;
+            --bg-raised: #18181b;
+            --bg-elevated: #27272a;
+            --border: #27272a;
+            --border-light: #3f3f46;
+            --text: #fafafa;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --accent: #06b6d4;
+            --accent-dim: rgba(6, 182, 212, 0.15);
+            --accent-border: rgba(6, 182, 212, 0.3);
+            --green: #22c55e;
+            --mono: 'JetBrains Mono', monospace;
+            --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 15px; -webkit-font-smoothing: antialiased; line-height: 1.7; overflow-x: hidden; }
+        ::selection { background: var(--accent); color: var(--bg); }
+        a { color: inherit; text-decoration: none; }
+        .w { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(9, 9, 11, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+        header .w { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+        .logo { font-family: var(--mono); font-size: 2rem; font-weight: 600; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+        .nav-links { display: flex; gap: 0.5rem; list-style: none; align-items: center; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.15s; }
+        .nav-links a:hover { color: var(--text); background: var(--bg-raised); }
+        .nav-links a.active { color: var(--text); }
+        .nav-cta { background: var(--text) !important; color: var(--bg) !important; font-weight: 600 !important; padding: 0.5rem 1.25rem !important; border-radius: 6px !important; transition: all 0.15s !important; }
+        .nav-cta:hover { background: var(--accent) !important; }
+        .mobile-toggle { display: none; background: none; border: none; color: var(--text); cursor: pointer; padding: 6px; }
+        .mobile-nav { position: fixed; top: 64px; left: 0; right: 0; background: var(--bg); z-index: 199; display: flex; flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); border-bottom: 1px solid var(--border); }
+        .mobile-nav.open { max-height: 400px; }
+        .mobile-nav a { font-size: 0.88rem; color: var(--text-secondary); font-weight: 500; padding: 0.75rem 2rem; transition: color 0.2s, background 0.2s; }
+        .mobile-nav a:hover { color: var(--text); background: var(--bg-raised); }
+
+        .grid-bg { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(39, 39, 42, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(39, 39, 42, 0.3) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+        .archive-banner { background: var(--accent-dim); border-bottom: 1px solid var(--accent-border); padding: 0.75rem 0; font-size: 0.8rem; color: var(--accent); text-align: center; position: relative; z-index: 1; }
+        .archive-banner a { color: var(--text); font-weight: 600; margin-left: 0.5rem; }
+
+        .hero { padding: 140px 0 80px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%); pointer-events: none; }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .hero-tag { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; gap: 1rem; }
+        .hero-tag::before, .hero-tag::after { content: ''; width: 40px; height: 1px; background: var(--accent); }
+        .hero h1 { font-family: var(--sans); font-weight: 700; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 1.5rem; color: var(--text); }
+        .hero h1 span { color: var(--text-muted); }
+        .hero p { font-size: 1.05rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.8; }
+        .hero-date { margin-top: 2rem; font-family: var(--mono); font-size: 0.6rem; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; }
+        .hero-rule { width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.4; }
+
+        .main { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 60px 2rem; }
+        .section-title { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); margin-bottom: 32px; display: flex; align-items: center; gap: 1rem; }
+        .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+        .tag { display: inline-block; padding: 0.2rem 0.6rem; font-family: var(--mono); font-size: 0.55rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; width: fit-content; border-radius: 3px; }
+        .tag-governance { color: var(--bg); background: var(--accent); }
+        .tag-iso { color: #a78bfa; background: rgba(167, 139, 250, 0.12); }
+        .tag-cyber { color: #fb7185; background: rgba(244, 63, 94, 0.12); }
+        .tag-regulation { color: #fbbf24; background: rgba(251, 191, 36, 0.12); }
+        .tag-privacy { color: #34d399; background: rgba(16, 185, 129, 0.12); }
+        .tag-ai { color: #60a5fa; background: rgba(96, 165, 250, 0.12); }
+        .tag-canada { color: #f87171; background: rgba(248, 113, 113, 0.12); }
+        .tag-audit { color: #c084fc; background: rgba(192, 132, 252, 0.12); }
+        .tag-nist { color: #38bdf8; background: rgba(56, 189, 248, 0.12); }
+
+        .featured { margin-bottom: 64px; background: var(--bg-raised); border: 1px solid var(--border); overflow: hidden; border-top: 3px solid var(--accent); border-radius: 6px; }
+        .featured-body { padding: 3rem; }
+        .featured-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .featured-meta { font-family: var(--mono); font-size: 0.58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .featured-body h2 { font-size: 1.75rem; font-weight: 700; color: var(--text); margin-bottom: 1.25rem; line-height: 1.3; max-width: 800px; letter-spacing: -0.02em; }
+        .featured-body .lead { font-size: 1rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 1rem; max-width: 860px; }
+        .featured-body .detail { font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.75rem; max-width: 860px; }
+        .source-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--mono); font-size: 0.62rem; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 1rem; transition: gap 0.3s var(--ease), color 0.2s; text-decoration: none; border-bottom: 1px solid var(--accent-border); padding-bottom: 2px; }
+        .source-link:hover { gap: 0.65rem; color: #22d3ee; }
+        .source-link svg { width: 10px; height: 10px; }
+
+        .articles { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 64px; }
+        .article { background: var(--bg-raised); border: 1px solid var(--border); border-left: 3px solid transparent; padding: 2rem 2.5rem; transition: all 0.3s var(--ease); border-radius: 6px; }
+        .article:hover { border-left-color: var(--accent); background: var(--bg-elevated); }
+        .article-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .article-header .article-date { font-family: var(--mono); font-size: 0.58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .article h3 { font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; line-height: 1.35; letter-spacing: -0.01em; }
+        .article .summary { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 0.5rem; }
+        .article .detail { font-size: 0.82rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.5rem; }
+        .article .key-points { margin: 1rem 0 0.75rem; padding-left: 1.25rem; }
+        .article .key-points li { font-size: 0.82rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0.35rem; }
+        .article .key-points li::marker { color: var(--accent); }
+
+        .implications { margin-top: 1rem; padding: 1.25rem 1.5rem; background: var(--accent-dim); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; }
+        .implications h4 { font-family: var(--mono); font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.5rem; }
+        .implications p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.85; }
+
+        .prev-reviews { margin-bottom: 64px; }
+        .prev-reviews-list { display: flex; flex-direction: column; gap: 0.75rem; }
+        .prev-review-link { display: flex; align-items: center; justify-content: space-between; background: var(--bg-raised); border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem 2rem; transition: all 0.3s var(--ease); text-decoration: none; }
+        .prev-review-link:hover { border-color: var(--accent-border); background: var(--bg-elevated); }
+        .prev-review-link .prev-title { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+        .prev-review-link .prev-date { font-family: var(--mono); font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .prev-review-link svg { color: var(--accent); width: 14px; height: 14px; flex-shrink: 0; transition: transform 0.3s var(--ease); }
+        .prev-review-link:hover svg { transform: translateX(3px); }
+
+        .newsletter { background: var(--bg-raised); border: 1px solid var(--border); padding: 48px; text-align: center; margin-bottom: 64px; border-top: 2px solid var(--accent); border-radius: 6px; }
+        .newsletter h3 { font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: 12px; letter-spacing: -0.02em; }
+        .newsletter p { color: var(--text-secondary); margin-bottom: 28px; font-size: 0.92rem; }
+        .newsletter-form { display: flex; max-width: 480px; margin: 0 auto; gap: 12px; }
+        .newsletter-form input { flex: 1; padding: 0.8rem 1.25rem; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 0.85rem; border-radius: 6px; outline: none; transition: border-color 0.25s; }
+        .newsletter-form input::placeholder { color: var(--text-muted); }
+        .newsletter-form input:focus { border-color: var(--accent); }
+        .newsletter-form button { padding: 0.8rem 2rem; background: var(--text); color: var(--bg); font-family: var(--sans); font-weight: 600; font-size: 0.82rem; border: none; border-radius: 6px; cursor: pointer; transition: all 0.15s; }
+        .newsletter-form button:hover { background: var(--accent); }
+
+        footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 1.5rem 0; }
+        .ft { display: flex; justify-content: space-between; align-items: center; }
+        .ft-brand { font-size: 0.7rem; color: var(--text-muted); }
+        .ft-brand strong { font-family: var(--mono); color: var(--text-secondary); }
+        .ft-copy { font-size: 0.62rem; color: var(--text-muted); }
+        .ft-social { display: flex; align-items: center; gap: 1rem; }
+        .ft-social a { color: var(--text-muted); transition: color 0.15s; display: flex; align-items: center; }
+        .ft-social a:hover { color: var(--accent); }
+        .ft-social svg { width: 16px; height: 16px; }
+
+        @media (max-width: 900px) {
+            .hero h1 { font-size: clamp(2rem, 5vw, 3rem); }
+            .featured-body { padding: 2rem; }
+            .article { padding: 1.5rem; }
+            .newsletter { padding: 2rem; }
+        }
+        @media (max-width: 720px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; }
+            .ft { flex-direction: column; gap: 0.35rem; text-align: center; }
+            .newsletter-form { flex-direction: column; }
+            .prev-review-link { padding: 1rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-bg"></div>
+
+    <header><div class="w">
+        <a href="../index.html" class="logo">ascio</a>
+        <ul class="nav-links">
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#standards">Standards</a></li>
+            <li><a href="../index.html#process">Process</a></li>
+            <li><a href="./" class="active">Weekly Review</a></li>
+            <li><a href="../index.html#contact" class="nav-cta">Request Advisory</a></li>
+        </ul>
+        <button class="mobile-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+    </div></header>
+    <div class="mobile-nav">
+        <a href="../index.html#services" onclick="this.parentElement.classList.remove('open')">Services</a>
+        <a href="../index.html#standards" onclick="this.parentElement.classList.remove('open')">Standards</a>
+        <a href="../index.html#process" onclick="this.parentElement.classList.remove('open')">Process</a>
+        <a href="./" onclick="this.parentElement.classList.remove('open')">Weekly Review</a>
+        <a href="../index.html#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">Weekly Review</div>
+            <h1>Governance &amp; Compliance <span>Review</span></h1>
+            <p>Developments in technology governance, cybersecurity standards, and regulatory compliance.</p>
+            <div class="hero-date">Week of May 2 to 8, 2026</div>
+        </div>
+    </section>
+    <div class="hero-rule"></div>
+    <div class="archive-banner"><div class="w">This is an archived edition. <a href="./">View the latest review &rarr;</a></div></div>
+
+    <div class="main">
+
+        <div class="section-title">Lead Story</div>
+        <div class="featured" data-tags="canada,cyber,privacy">
+            <div class="featured-body">
+                <div class="featured-header">
+                    <span class="tag tag-canada">Canada</span>
+                    <span class="tag tag-cyber">Cybersecurity</span>
+                    <span class="tag tag-privacy">Privacy</span>
+                    <span class="featured-meta">8 May 2026</span>
+                </div>
+                <h2>Canvas LMS Breach via Instructure Vendor Compromise Exposes Student Data at UBC, SFU, and Other Canadian Universities</h2>
+                <p class="lead">The University of British Columbia, Simon Fraser University, the University of Toronto, OCAD University, Ontario Tech University, and the University of Alberta are among approximately 9,000 to 15,000 institutions worldwide affected by a breach of Canvas, the learning management system operated by Instructure. Instructure detected unauthorized activity on April 29 and confirmed publicly on May 1 that a criminal threat actor had accessed user data. The cybercrime group ShinyHunters has claimed responsibility and asserts it exfiltrated approximately 3.65 terabytes of data covering 275 million records, including names, email addresses, student ID numbers, and the contents of messages between students and instructors. Instructure has stated that no evidence indicates passwords, dates of birth, government identifiers, or financial information were involved.</p>
+                <p class="detail">Instructure's investigation has identified the entry point as a vulnerability in Free For Teacher accounts, the no cost individual tier of Canvas that allows educators to provision their own classroom environments outside of paid institutional tenants. The unauthorized actor exploited that surface to make changes to pages rendered to logged in students and teachers, then pivoted into broader data access. Instructure has since shut down Free For Teacher accounts as a precautionary measure and has urged institutional administrators to enable multifactor authentication and review administrative access. ShinyHunters is the same group active across the 2025 and 2026 SaaS supply chain campaigns affecting Salesforce, Snowflake, and connected analytics platforms, where the recurring pattern is voice phishing of help desk staff, OAuth token theft, and exploitation of shared services that connect into customer environments. Several Canadian universities including UBC and U of T temporarily suspended Canvas while their security teams reviewed exposure; access has since been restored at most institutions with mandatory password resets in place.</p>
+                <ul class="key-points">
+                    <li>Instructure detected unauthorized activity in Canvas on April 29; public disclosure followed on May 1</li>
+                    <li>Entry point identified as a vulnerability in Canvas Free For Teacher accounts, the no cost individual tier outside paid institutional tenants</li>
+                    <li>ShinyHunters claims approximately 3.65 TB and 275 million records exfiltrated; data confirmed to include names, emails, student IDs, and message contents</li>
+                    <li>UBC, SFU, U of T, OCAD, Ontario Tech, and U of Alberta among affected Canadian institutions; several suspended Canvas while reviewing exposure</li>
+                    <li>Pattern is consistent with the ShinyHunters SaaS supply chain campaign across Salesforce, Snowflake, and connected SaaS platforms</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>For Canadian post secondary institutions, and any organization that relies on hosted learning, collaboration, or analytics platforms, the Canvas incident is a textbook ISO/IEC 27001 third party risk failure mode: a multi tenant SaaS provider with a free tier surface that connects into the same data plane as paid customers. ISO/IEC 27001:2022 Annex A controls 5.19 (information security in supplier relationships), 5.20 (addressing information security within supplier agreements), 5.21 (information security in the ICT supply chain), 5.22 (monitoring, review and change management of supplier services), and 5.23 (information security for use of cloud services) apply directly. PIPEDA real risk of significant harm assessments will be triggered for affected Canadian institutions, with notification to the Office of the Privacy Commissioner of Canada and to affected students. Boards should request evidence that vendor risk monitoring covers not only the contracted SaaS tier, but also adjacent free, developer, or partner tiers that share infrastructure, identity, or data planes. Tabletop exercises should explicitly include scenarios where the institution itself is unbreached but its data is exfiltrated through the vendor.</p>
+                </div>
+                <a href="https://www.cbc.ca/news/canada/british-columbia/ubc-sfu-canvas-cyber-breach-9.7191972" target="_blank" rel="noopener" class="source-link">Source: CBC News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <div class="section-title" id="cybersecure">CyberSecure Canada &amp; Cyber Threats</div>
+        <div class="articles">
+            <div class="article" data-tags="canada,cyber,governance">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">7 May 2026</span></div>
+                <h3>CCCS Issues Concentrated May 7 Multi Vendor Advisory Wave Across Ivanti, Broadcom VMware, and Mozilla</h3>
+                <p class="summary">The Canadian Centre for Cyber Security issued a concentrated wave of vendor advisories on May 7, including Ivanti (AV26 435), Broadcom VMware (AV26 434), and Mozilla (AV26 433). The advisories cover vulnerabilities across edge, virtualization, and browser surfaces that are widely deployed in Canadian enterprise estates. Ivanti and Broadcom VMware infrastructure remains a frequent target for nation state and ransomware actors, with several 2025 and 2026 campaigns having exploited Ivanti edge devices for initial access into federal supply chain environments.</p>
+                <p class="detail">The pattern of multi vendor advisory weeks continues to compress patch cadence. Browser advisories on Mozilla touch every endpoint. Broadcom VMware advisories typically affect virtualization estates that host the most concentrated business workloads, including domain controllers, identity services, and database tiers. Organizations operating Ivanti Connect Secure, Sentry, or Endpoint Manager surfaces should treat these advisories as same week patch triggers given the historical exploitation cadence in this product family.</p>
+                <ul class="key-points">
+                    <li>CCCS advisories AV26 433 to AV26 435 issued May 7 across Mozilla, Broadcom VMware, and Ivanti</li>
+                    <li>Ivanti edge surfaces remain a frequent initial access target in nation state and ransomware campaigns</li>
+                    <li>Broadcom VMware advisories affect virtualization estates that host concentrated business workloads</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Vulnerability management programs should treat a same week patch obligation as the operational baseline for advisories at this concentration. ISO/IEC 27001:2022 Annex A 8.8 (management of technical vulnerabilities), 8.9 (configuration management), and 8.16 (monitoring activities) provide the documentation backbone. Boards should expect their vulnerability and patch service level agreements to be tested by audit and customer due diligence against CCCS advisory and CISA Known Exploited Vulnerabilities catalogue inclusion timing. Where Ivanti, Broadcom, or Mozilla components sit in critical infrastructure operating environments, the patch decision is also a regulatory disclosure question.</p>
+                </div>
+                <a href="https://www.cyber.gc.ca/en/alerts-advisories" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="canada,cyber,governance">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">5 May 2026</span></div>
+                <h3>CCCS Active Alert AL26 010 on Social Engineering Compromise of Enterprise SaaS Reads Directly Onto the Canvas Incident</h3>
+                <p class="summary">CCCS active alert AL26 010 covers cyber criminals using social engineering to compromise enterprise SaaS environments. The alert describes voice phishing, help desk impersonation, and OAuth token harvesting patterns consistent with the ShinyHunters campaign that has compromised Salesforce, Snowflake, and most recently Canvas tenants. It reads directly onto this week's Instructure disclosure affecting UBC, SFU, and other Canadian universities, and supports the broader threat picture that Canadian security operations teams should be tracking through May.</p>
+                <p class="detail">Voice phishing of help desk staff is the most common entry vector in this campaign cluster, followed by abuse of OAuth tokens for connected SaaS applications and lateral movement through shared cloud data warehouses and analytics platforms. Multifactor authentication is a necessary but not sufficient control: where OAuth tokens are persistent and broadly scoped, an attacker that obtains a token operates as the user without re prompting for MFA.</p>
+                <ul class="key-points">
+                    <li>CCCS active alert AL26 010 covers social engineering against enterprise SaaS environments</li>
+                    <li>Pattern overlaps directly with the ShinyHunters campaign and the Canvas incident this week</li>
+                    <li>OAuth token persistence is a recurring weak point that MFA alone does not address</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>ISO/IEC 27001:2022 A.5.16 identity management, A.5.17 authentication information, A.8.5 secure authentication, and A.5.23 information security for use of cloud services should be reviewed against current OAuth and SaaS connector posture. Help desk processes that allow password or MFA reset on inbound voice contact require formal callback and identity verification controls. Connected app inventories should be reviewed quarterly with privileged scopes removed where unjustified.</p>
+                </div>
+                <a href="https://www.cyber.gc.ca/en/alerts-advisories" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="canada,cyber,governance">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">28 Apr 2026</span></div>
+                <h3>Cyber Centre Launches Severe Cyber Threat Preparation Initiative for Canadian Critical Infrastructure</h3>
+                <p class="summary">The Canadian Centre for Cyber Security launched a new initiative to help Canada's critical infrastructure prepare for severe cyber threats. The program packages advisories, alerts, cyber flashes, pre ransomware notifications, and best practice guidance into a single coordinated stream for owner operators across the cyber security partner network. CCCS issued more than 300 pre ransomware notifications in 2024 and is positioning the new initiative as a structural response to the elevated nation state and criminal threat environment captured in the National Cyber Threat Assessment 2025 to 2026.</p>
+                <p class="detail">The launch follows CCCS framing of nation state and criminal threats as urgent risks to Canadian critical infrastructure, and aligns with broader allied movement toward formal pre ransomware notification frameworks. Owner operators in energy, water, transportation, finance, and health are the primary audience, but the same content stream is useful for any organization that operates inside the critical infrastructure supplier base.</p>
+                <ul class="key-points">
+                    <li>CCCS launched the severe cyber threat preparation initiative in late April 2026</li>
+                    <li>Combines advisories, alerts, cyber flashes, pre ransomware notifications, and best practice guidance into a single stream</li>
+                    <li>More than 300 pre ransomware notifications were issued by CCCS in 2024</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Critical infrastructure operators should formally subscribe to the CCCS partner channels and integrate pre ransomware notifications into incident response runbooks. ISO/IEC 27001:2022 A.5.7 threat intelligence and A.5.24 information security incident management planning provide the management system anchor. Boards should request evidence that pre ransomware notifications, where issued, trigger documented response and disclosure workflows rather than informal escalation.</p>
+                </div>
+                <a href="https://www.canada.ca/en/communications-security/news/2026/04/cyber-centre-launches-new-initiative-to-help-canadas-critical-infrastructure-prepare-for-severe-cyber-threats.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <div class="section-title" id="cpcsc">CPCSC</div>
+        <div class="articles">
+            <div class="article" data-tags="canada,governance,cyber">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-governance">Governance</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">5 May 2026</span></div>
+                <h3>Legal Coverage Reframes CPCSC Level 1 as a Binding Procurement Gate Ahead of Summer 2026 Contract Integration</h3>
+                <p class="summary">Coverage in Law360 Canada this week framed CPCSC Level 1 as an active procurement gate rather than a future obligation. With Level 1 self attestation available since April 1 and integration into select Department of National Defence contracts beginning Summer 2026, suppliers that have not begun the alignment work are operating against a binding deadline for any active or anticipated defence opportunity. Level 2, scheduled for spring 2027, will require external assessment by accredited certification bodies and is the operational pivot point for Canadian defence supplier readiness through 2026 and 2027.</p>
+                <p class="detail">The 13 Level 1 controls anchor on the foundational tier of NIST Special Publication 800 171 and on the Canadian Centre for Cyber Security industrial cyber security baseline. Suppliers should expect prime contractor flow downs, BDC due diligence, and federal procurement instruments to reference CPCSC posture in addition to ISO/IEC 27001 status. The Level 2 external assessment market in Canada is in early build phase, and suppliers anticipating Level 2 should treat the runway to spring 2027 as already constrained.</p>
+                <ul class="key-points">
+                    <li>Law360 Canada coverage this week framed CPCSC Level 1 as a binding procurement gate</li>
+                    <li>Level 1 contract integration begins Summer 2026; Level 2 external assessment scheduled for spring 2027</li>
+                    <li>13 Level 1 controls align technically with NIST SP 800 171 foundational controls</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Suppliers should pair CPCSC Level 1 attestation with documented evidence of operational control implementation, not policy presence alone. ISO/IEC 27001 Annex A coverage, NIST SP 800 171 mapping, and the CCCS baseline control set should be tracked in a single integrated control register. Organizations seeking BDC Defence Platform financing should expect CPCSC Level 1 status to surface in due diligence conversations. Suppliers anticipating Level 2 should begin gap assessments now to use the runway to spring 2027 effectively while accredited certification body capacity is being built in the Canadian market.</p>
+                </div>
+                <a href="https://www.law360.ca/ca/business/articles/2472529" target="_blank" rel="noopener" class="source-link">Source: Law360 Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <div class="section-title" id="ai-governance">AI Governance &amp; Regulation</div>
+        <div class="articles">
+            <div class="article" data-tags="canada,ai,privacy,regulation">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-ai">AI</span><span class="tag tag-privacy">Privacy</span><span class="tag tag-regulation">Regulation</span><span class="article-date">6 May 2026</span></div>
+                <h3>OPC Joint Investigation of OpenAI ChatGPT Concludes Conditional Resolution Under PIPEDA</h3>
+                <p class="summary">The Office of the Privacy Commissioner of Canada published findings on May 6 from its joint investigation, with the privacy commissioners of British Columbia, Alberta, and Quebec, into OpenAI's collection, use, and disclosure of personal information through ChatGPT (PIPEDA Findings #2026 002). The commissioners found that OpenAI's collection of personal data from publicly accessible websites and licensed datasets to train GPT 3.5 and GPT 4 was overbroad and inappropriate, and that OpenAI did not obtain valid consent for that collection. The matter has been conditionally resolved on the basis of new privacy protective measures, including a tool to detect and mask identifying information about private individuals in training datasets.</p>
+                <p class="detail">The finding is the first major Canadian regulatory pronouncement on the privacy treatment of large language model training data and sets the interpretive baseline for PIPEDA application to AI development. The commissioners' position that consent could not reasonably be inferred from prior public posting given the novel and unfamiliar nature of large model training establishes a precedent that other foundation model developers and downstream deployers will be measured against. OpenAI's commitments around detection and masking of identifying information about private individuals are likely to migrate into Canadian customer due diligence questionnaires across the AI supply chain through the rest of 2026.</p>
+                <ul class="key-points">
+                    <li>PIPEDA Findings #2026 002 published May 6 from joint OPC, BC, Alberta, and Quebec investigation</li>
+                    <li>Commissioners found collection from public web and licensed datasets overbroad and inappropriate, with no valid consent</li>
+                    <li>Conditionally resolved on the basis of new privacy protective measures, including identifying information detection and masking</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Canadian organizations deploying foundation model based products should expect customer privacy due diligence to expand to cover training data lineage and consent posture, not only inference time data handling. ISO/IEC 42001:2023 AI management system controls covering AI lifecycle, data for AI systems, and information for interested parties provide the documentation anchor for responding to these questions. Canadian deployers should also revisit PIPEDA breach assessment processes to ensure that AI training data practices are within scope.</p>
+                </div>
+                <a href="https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2026/pipeda-2026-002/" target="_blank" rel="noopener" class="source-link">Source: Office of the Privacy Commissioner of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="canada,ai,governance">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">5 May 2026</span></div>
+                <h3>Federal Sovereign AI Compute Application Window Closes June 1, 2026</h3>
+                <p class="summary">The federal Spring Economic Update referenced the six pillars of Canada's forthcoming national AI strategy and the Canadian Sovereign AI Compute Strategy, with the call for applications under the AI Sovereign Compute Infrastructure Program closing June 1, 2026. The federal program is making approximately $890 million available to build large scale AI optimized supercomputing on Canadian soil, alongside the AI Compute Access Fund and a small and medium business procurement track. TELUS this week announced the launch of Canada's first sovereign AI factory in Rimouski, Québec, signalling the early arrival of domestic AI infrastructure capacity.</p>
+                <p class="detail">For Canadian organizations seeking sovereign compute access or federal AI procurement positioning, the operational implication is a hard application deadline at the start of June, with successful applicants expected to demonstrate AI risk management, data residency, and governance posture sufficient to operate inside a federally backed compute environment. ISO/IEC 42001 alignment is a useful organizing framework for these submissions and reduces the ad hoc evidence gathering burden under federal scrutiny.</p>
+                <ul class="key-points">
+                    <li>AI Sovereign Compute Infrastructure Program applications close June 1, 2026</li>
+                    <li>Approximately $890 million available for Canadian AI optimized supercomputing capacity</li>
+                    <li>TELUS announced Canada's first sovereign AI factory in Rimouski, Québec, this week</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Boards of organizations bidding into the sovereign compute program or contemplating federal AI procurement should request evidence that AI governance posture is sufficient to satisfy federal due diligence. ISO/IEC 42001:2023 implementation, paired with ISO/IEC 27001 baseline information security, is the most efficient path. Organizations should track the eventual full national AI strategy text for changes in supplier qualification language, and should expect Canadian sovereign AI infrastructure providers to begin asking the same governance questions of their tenants.</p>
+                </div>
+                <a href="https://www.canada.ca/en/innovation-science-economic-development/news/2026/04/canada-launches-national-initiative-to-build-large-scale-ai-supercomputing-capacity.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <div class="section-title" id="frameworks">Frameworks &amp; Standards</div>
+        <div class="articles">
+            <div class="article" data-tags="iso,ai,governance">
+                <div class="article-header"><span class="tag tag-iso">ISO</span><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">5 May 2026</span></div>
+                <h3>ISO/IEC 42001 Continues to Establish Itself as the Integrating AI Management System Standard</h3>
+                <p class="summary">ISO/IEC 42001:2023 AI management system certifications continued to accelerate through early 2026, with growing references to the standard in customer due diligence questionnaires, procurement instruments, and emerging Canadian and international AI governance frameworks. Industry coverage this week described 42001 as the de facto operating system for AI compliance across multiple jurisdictions, with adoption visible in regulated finance, professional services, and technology vendors providing AI components into Canadian and Five Eyes customer environments.</p>
+                <p class="detail">For Canadian organizations, the practical implication is that 42001 is now positioned to serve as the integrating management system for AI obligations under emerging federal Canadian, EU, OSFI sectoral, and Quebec Law 25 expectations. Organizations with mature ISO/IEC 27001 management systems will find the 42001 implementation curve compressed; organizations without an existing management system framework should expect a longer build cycle and should sequence ISO/IEC 27001 first.</p>
+                <ul class="key-points">
+                    <li>ISO/IEC 42001:2023 adoption visible across regulated finance, professional services, and technology vendors</li>
+                    <li>Functioning as the integrating management system across federal Canadian, EU, OSFI, and Quebec AI obligations</li>
+                    <li>Implementation curve is compressed for organizations with existing ISO/IEC 27001 management systems</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Canadian organizations evaluating AI governance investment should treat ISO/IEC 42001 as the durable target, with ISO/IEC 27001 as the prerequisite information security foundation. Boards should request a single integrated view of AI governance posture against 42001 control families, with mappings to applicable Canadian, US, and EU obligations.</p>
+                </div>
+                <a href="https://www.iso.org/standard/42001" target="_blank" rel="noopener" class="source-link">Source: ISO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="iso,cyber,governance">
+                <div class="article-header"><span class="tag tag-iso">ISO</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">8 May 2026</span></div>
+                <h3>ISO/IEC 27001 Supplier and Cloud Control Families Move to the Foreground After Canvas Incident</h3>
+                <p class="summary">The Canvas LMS incident this week makes the supplier and cloud control families in ISO/IEC 27001:2022 a board level conversation rather than a technical control library. Annex A controls 5.19 to 5.23 cover supplier relationships, supplier agreements, ICT supply chain, monitoring of supplier services, and cloud services security. Effective implementation requires that controls extend not only to contracted enterprise tiers but also to adjacent free, developer, and partner tiers that share infrastructure, identity, or data planes with the contracted environment.</p>
+                <p class="detail">The Canvas case exposes a control gap that is increasingly common in modern SaaS architectures: the contracted institutional tenant is treated as the audit and risk boundary, while adjacent no cost tiers operated by the same vendor share underlying infrastructure. ISO/IEC 27001 alignment for vendor risk should explicitly require disclosure and assessment of all tiers operated by a vendor that touch the same control plane, identity provider, or data store as the customer's tenant.</p>
+                <ul class="key-points">
+                    <li>ISO/IEC 27001:2022 Annex A 5.19 to 5.23 cover the supplier and cloud control families directly engaged by the Canvas incident</li>
+                    <li>Effective implementation must extend beyond the contracted tier to adjacent free, developer, and partner tiers sharing infrastructure</li>
+                    <li>Vendor risk assessments should require disclosure and assessment of all tiers touching the same control plane, identity, or data store</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Information security committees should review vendor risk frameworks to ensure that adjacent tier disclosure is a contractual requirement and an ongoing monitoring obligation. Auditors will increasingly probe this gap in 27001 surveillance and recertification audits through 2026 and 2027.</p>
+                </div>
+                <a href="https://www.iso.org/standard/27001" target="_blank" rel="noopener" class="source-link">Source: ISO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+
+<!-- ════════ PREVIOUS REVIEWS ════════ -->
+        <div class="section-title">Previous Reviews</div>
+        <div class="prev-reviews">
+            <div class="prev-reviews-list">
+                <a href="apr-25-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of April 25 to May 1, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="apr-18-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of April 18 to 24, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="apr-10-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of April 10 to 17, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="mar-29-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of March 23 to 29, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="mar-16-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of March 16 to 22, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="mar-2-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of March 2 to 8, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="feb-23-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of February 23 to March 1, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="newsletter" id="newsletter">
+            <h3>Get the Weekly Briefing</h3>
+            <p>Governance, compliance, and cybersecurity developments delivered to your inbox every Monday. No noise, just what matters.</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <script>
+            document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var email = this.querySelector('input[name="email"]').value;
+                var btn = this.querySelector('button');
+                btn.disabled = true; btn.textContent = 'Subscribing...';
+                fetch('https://ascio-leads-api.vercel.app/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: 'Newsletter Subscriber', email: email, brand: 'ascio', interest: 'Newsletter', message: 'Governance & Compliance Review subscriber' })
+                }).then(function() {
+                    btn.textContent = 'Subscribed!';
+                }).catch(function() {
+                    btn.textContent = 'Subscribed!';
+                });
+            });
+            </script>
+        </div>
+
+    </div>
+
+    <footer><div class="w"><div class="ft">
+        <div class="ft-brand"><strong>ascio</strong> &#8212; Technology Governance, Inspection &amp; Assessment Readiness / Canada</div>
+        <div class="ft-social">
+            <a href="https://www.linkedin.com/company/ascio-advisory-services" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://x.com/ascio_tech" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+        <div class="ft-copy">&copy; 2017&#8211;2026 ascio</div>
+    </div></div></footer>
+
+</body>
+</html>
