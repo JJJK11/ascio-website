@@ -192,7 +192,7 @@
             <div class="hero-tag">Weekly Review</div>
             <h1>Governance &amp; Compliance <span>Review</span></h1>
             <p>Developments in technology governance, cybersecurity standards, and regulatory compliance.</p>
-            <div class="hero-date">Week of May 9 to 15, 2026</div>
+            <div class="hero-date">Week of May 11 to 17, 2026</div>
         </div>
     </section>
     <div class="hero-rule"></div>
@@ -200,100 +200,100 @@
     <div class="main">
 
         <div class="section-title">Lead Story</div>
-        <div class="featured" data-tags="cyber,ai,regulation,governance">
+        <div class="featured" data-tags="canada,cyber,governance">
             <div class="featured-body">
                 <div class="featured-header">
+                    <span class="tag tag-canada">Canada</span>
                     <span class="tag tag-cyber">Cybersecurity</span>
-                    <span class="tag tag-ai">AI</span>
-                    <span class="tag tag-regulation">Regulation</span>
                     <span class="tag tag-governance">Governance</span>
-                    <span class="featured-meta">13 May 2026</span>
+                    <span class="featured-meta">15 May 2026</span>
                 </div>
-                <h2>European Central Bank Issues Strongest Warning Yet to Financial Institutions on Frontier AI Enabled Cyberattacks</h2>
-                <p class="lead">The European Central Bank issued one of its strongest public warnings to date this week, urging financial institutions to urgently prepare for AI enabled cyberattacks tied to frontier models, including the Mythos class of capabilities now reaching production. ECB officials stated that AI systems are demonstrating the ability to identify and chain software vulnerabilities at a pace that significantly exceeds traditional approaches, and that regulated institutions must elevate AI threat preparation inside operational resilience programs. The warning lands alongside parallel statements from Google threat intelligence and Palo Alto Networks describing a step change in offensive AI capability that defenders should expect to face within months, not years.</p>
-                <p class="detail">For Canadian governance and risk leaders, the ECB intervention sets the regulatory tone for how prudential supervisors are going to address AI threat exposure inside financial sector resilience expectations. OSFI, the Bank of Canada, and provincial regulators have been moving in a similar direction through 2026 around technology and cyber risk management, and the ECB framing of AI assisted attack capability as a near term operational risk will translate quickly into Canadian supervisory expectations. The conversation is also extending beyond banking: critical infrastructure regulators, defence procurement authorities, and federal cyber leadership are all watching the same threat curve and asking the same questions of regulated entities and suppliers about AI threat readiness, control validation, and event logging.</p>
+                <h2>CCCS Active Alert AL26 012: Cisco Catalyst SD WAN CVE 2026 20182 Under Active Exploitation, CVSS 10.0, CISA Emergency Directive Mandates Remediation by May 17</h2>
+                <p class="lead">The Canadian Centre for Cyber Security issued active alert AL26 012 on May 15 covering CVE 2026 20182, a critical authentication bypass in the Cisco Catalyst SD WAN Controller and Manager carrying a CVSS v3.1 base score of 10.0. CCCS confirmed it is aware of incidents involving the vulnerability, with reported attempts to add SSH keys, modify NETCONF configurations, and escalate to root privileges. Cisco Talos has attributed the campaign to sophisticated threat actor UAT 8616. CISA issued Emergency Directive 26 03 mandating federal civilian remediation by May 17, the same date Canadian critical infrastructure operators are expected to align to under existing CCCS guidance.</p>
+                <p class="detail">For Canadian organizations operating Cisco Catalyst SD WAN, the alert is a same day patch obligation, not a queued ticket. The exploitation pattern described by CCCS and Cisco Talos shows the attacker pivoting from authentication bypass through SSH key injection into persistent administrative control of the SD WAN fabric, which in most Canadian enterprise estates is the connectivity backbone for branch offices, regulated workloads, and cloud egress. Failing to remediate within the CISA directive timeline carries reputational and supervisory consequences for federally regulated entities and critical infrastructure operators in addition to the direct compromise risk. Cisco patches are available for all supported releases.</p>
                 <ul class="key-points">
-                    <li>ECB issued a high profile warning May 13 directing financial institutions to urgently prepare for AI enabled cyberattacks tied to frontier models</li>
-                    <li>Regulators flagged that AI systems can identify and chain vulnerabilities significantly faster than traditional approaches</li>
-                    <li>Statement aligns with Google threat intelligence and Palo Alto Networks warnings the same week on AI offensive capability</li>
-                    <li>Canadian prudential and critical infrastructure supervisors are tracking the same threat curve and expectations</li>
+                    <li>CCCS active alert AL26 012 issued May 15 on CVE 2026 20182, CVSS v3.1 10.0, Cisco Catalyst SD WAN Controller and Manager</li>
+                    <li>Cisco Talos attributes the active exploitation campaign to threat actor UAT 8616; SSH keys added, NETCONF modified, root escalation observed</li>
+                    <li>CISA Emergency Directive 26 03 mandates federal civilian remediation by May 17, 2026</li>
+                    <li>Patches are available for all supported Cisco Catalyst SD WAN releases</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Regulated financial institutions and any organization operating inside critical infrastructure or federal supply chains should treat the ECB warning as a directional signal on near term Canadian supervisory expectations. ISO/IEC 27001:2022 Annex A 5.7 threat intelligence, 5.24 information security incident management planning, 8.7 protection against malware, 8.8 management of technical vulnerabilities, and 8.16 monitoring activities frame the management system response. ISO/IEC 42001:2023 AI management system controls covering AI lifecycle, AI risk treatment, and information for interested parties extend the response to AI specific exposure on the defender side. Boards should request evidence that the organization's threat intelligence intake, vulnerability discovery cadence, and detection engineering plans contemplate AI assisted offensive capability. Operational resilience programs should add a documented AI threat scenario to scheduled tabletop exercises through the rest of 2026.</p>
+                    <p>Organizations running Cisco Catalyst SD WAN must close the patch cycle on or before May 17 and run a post patch integrity check for SSH key additions, NETCONF configuration drift, and unexpected administrative accounts. Where compromise indicators are present, follow CCCS incident management guidance and notify the Cyber Centre. Map this advisory to ISO/IEC 27001:2022 Annex A 8.8 management of technical vulnerabilities, A.5.24 information security incident management planning, A.5.26 response to information security incidents, and A.8.16 monitoring activities. Boards should request a one page status from IT operations confirming patch coverage, integrity check outcome, and time to act, measured against the May 17 directive deadline.</p>
                 </div>
-                <a href="https://www.bankinfosecurity.com/ecb-ai-means-european-banks-must-hasten-cybersecurity-pace-a-31691" target="_blank" rel="noopener" class="source-link">Source: BankInfoSecurity <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.cyber.gc.ca/en/alerts-advisories/al26-012-critical-vulnerability-affecting-cisco-catalyst-sd-wan-cve-2026-20182" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
         <div class="section-title" id="cybersecure">CyberSecure Canada &amp; Cyber Threats</div>
         <div class="articles">
-            <div class="article" data-tags="cyber,ai,governance">
-                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">12 May 2026</span></div>
-                <h3>Google Threat Intelligence Reports AI Assisted Hacking Has Reached Industrial Scale Across China, Russia, and North Korea</h3>
-                <p class="summary">Google Threat Intelligence Group researchers reported that AI assisted hacking activity has evolved into an industrial scale threat within months. Threat actors tied to China, Russia, and North Korea are using advanced AI systems to improve malware development, phishing campaign quality, persistence techniques inside compromised environments, and downstream vulnerability exploitation. Google characterised the shift as a near term change in the threat environment that defenders should expect to face in operational settings during 2026.</p>
-                <p class="detail">The Google finding reinforces the same operational warning that the ECB and Palo Alto Networks issued this week and aligns with the Canadian Centre for Cyber Security severe cyber threat preparation initiative launched in late April. For Canadian governance teams, the practical message is that AI assisted offensive capability is no longer a theoretical risk but a present operating condition. Detection engineering, threat hunting, and email security programs should already be calibrating against AI generated content quality, AI accelerated reconnaissance, and AI mediated lateral movement.</p>
+            <div class="article" data-tags="canada,cyber,governance">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">14 May 2026</span></div>
+                <h3>CCCS Active Alert AL26 005: SharePoint Server CVE 2026 20963 Under Active Exploitation, Affects Multiple On Premises Versions</h3>
+                <p class="summary">CCCS active alert AL26 005 confirms active exploitation of CVE 2026 20963, a critical deserialization of untrusted data vulnerability affecting multiple versions of Microsoft SharePoint Server. The flaw enables remote code execution against unpatched on premises SharePoint estates and has been observed in real intrusion activity through May. The advisory sits alongside the Microsoft May Patch Tuesday release on May 13 and reinforces the same operational pressure: Canadian organizations running SharePoint Server on premises must be on a same week patch cycle.</p>
+                <p class="detail">SharePoint Server on premises is the document collaboration and content management backbone for many Canadian enterprises, government departments, and critical infrastructure operators. Deserialization vulnerabilities in this product class are typically pre or low authentication, frequently chain into broader Windows domain compromise, and surface quickly in active campaigns. CCCS has been consistent through 2025 and 2026 about the urgency of treating SharePoint advisories as priority patch events rather than scheduled maintenance.</p>
                 <ul class="key-points">
-                    <li>Google Threat Intelligence reports AI assisted hacking has evolved to industrial scale across China, Russia, and North Korea linked actors</li>
-                    <li>Reported uses span malware development, phishing quality, persistence, and vulnerability exploitation</li>
-                    <li>Findings align with the same week ECB and Palo Alto Networks warnings on AI offensive capability</li>
+                    <li>CCCS active alert AL26 005 covers CVE 2026 20963 deserialization of untrusted data in SharePoint Server</li>
+                    <li>Active exploitation observed against on premises SharePoint installations</li>
+                    <li>Sits alongside Microsoft May 13 Patch Tuesday with parallel SharePoint and Exchange hybrid fixes</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Threat intelligence programs covered by ISO/IEC 27001:2022 A.5.7 should explicitly track AI assisted offensive capability across the actor sets that the organization is exposed to. A.5.24 incident management planning and A.8.16 monitoring activities should be reviewed to confirm that detection coverage contemplates AI accelerated reconnaissance and the higher quality phishing and social engineering content that AI generation enables. ISO/IEC 42001 alignment supports the parallel defender side AI risk treatment, particularly where defensive AI tooling is being introduced into the security operations stack.</p>
+                    <p>Patch all supported SharePoint Server versions and validate by KB number, then audit unified logs for indicators of post exploitation activity over the past 30 days. ISO/IEC 27001:2022 A.8.8 management of technical vulnerabilities, A.8.16 monitoring activities, and A.5.7 threat intelligence apply directly. For federally regulated entities and government departments, document the patch decision, time to act, and detection coverage; CCCS guidance and audit will reference this advisory.</p>
                 </div>
-                <a href="https://www.axios.com/2026/05/12/ai-hacking-found-google-report" target="_blank" rel="noopener" class="source-link">Source: Axios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.cyber.gc.ca/en/alerts-advisories/al26-005-critical-vulnerability-impacting-microsoft-sharepoint-server-cve-2026-20963" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="cyber,governance">
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">13 May 2026</span></div>
+                <h3>Microsoft May 13 Patch Tuesday: 120 Vulnerabilities, Exchange Hybrid Cloud Takeover Risk (CVE 2026 42897), SharePoint RCE (CVE 2026 40365)</h3>
+                <p class="summary">Microsoft May 13 Patch Tuesday addressed 120 vulnerabilities including 29 critical remote code execution flaws. Two are particularly material for Canadian governance teams: CVE 2026 42897 in Exchange Outlook Web Access, which can be exploited via crafted email to execute arbitrary JavaScript in the OWA browser context and create a cloud takeover path inside hybrid Exchange environments, and CVE 2026 40365 in SharePoint, which permits an authenticated Site Owner to inject and execute code remotely. The hybrid Exchange flaw is the more strategically dangerous of the two because it bridges on premises identity into the Microsoft 365 control plane.</p>
+                <p class="detail">Most Canadian mid market and enterprise estates still run hybrid Exchange because of historical migration sequencing, third party mail flow integrations, or legacy regulated requirements. In that topology, a compromised on premises Exchange server can be used as a stepping stone into Entra ID and Microsoft 365 tenant resources, which is the cloud takeover scenario Microsoft and Field Effect have flagged. Patching alone is necessary but not sufficient; teams should also tighten the hybrid trust boundary, rotate service principal credentials, and review conditional access policies after applying the update.</p>
+                <ul class="key-points">
+                    <li>Microsoft May 13 Patch Tuesday: 120 vulnerabilities, 29 critical RCE</li>
+                    <li>CVE 2026 42897 Exchange OWA enables cloud takeover risk in hybrid Exchange environments</li>
+                    <li>CVE 2026 40365 SharePoint allows authenticated Site Owner remote code execution</li>
+                    <li>Hybrid trust boundary tightening recommended in addition to patching</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Treat Exchange hybrid environments as a special case: patch on premises Exchange and then immediately validate the hybrid agreement, service principal scopes, and Entra ID conditional access. ISO/IEC 27001:2022 A.5.23 information security for use of cloud services, A.5.16 identity management, A.5.17 authentication information, A.8.8 management of technical vulnerabilities, and A.8.16 monitoring activities all apply. Boards of organizations still running hybrid Exchange should request a written status on patch completion, hybrid trust boundary review outcome, and the timeline to retire hybrid Exchange entirely.</p>
+                </div>
+                <a href="https://techcommunity.microsoft.com/blog/exchange/addressing-exchange-server-may-2026-vulnerability-cve-2026-42897/4518498" target="_blank" rel="noopener" class="source-link">Source: Microsoft Community Hub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
             <div class="article" data-tags="cyber,ai,governance">
-                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">13 May 2026</span></div>
-                <h3>Palo Alto Networks Says New AI Models From Anthropic and OpenAI Identified Seven Times the Normal Number of Software Vulnerabilities in a Month</h3>
-                <p class="summary">Palo Alto Networks disclosed this week that new AI cybersecurity models from Anthropic and OpenAI identified more than seven times the normal number of software vulnerabilities in a single month of testing. Security leaders at the company warned that organizations may have only months before similar offensive capability becomes widely available to attackers. The disclosure significantly elevated the enterprise governance conversation around secure development practices, attack surface management, and operational resilience under AI assisted threat conditions.</p>
-                <p class="detail">The Palo Alto finding maps directly to the same week ECB and Google Threat Intelligence warnings and adds quantified evidence of the offensive capability gradient. For Canadian organizations, the seven times multiplier is a useful concrete number to anchor governance and audit conversations around AI threat preparation, vulnerability program cadence, and the realism of current detection assumptions. The same capability that defenders are using to discover and remediate vulnerabilities at speed is, by construction, also available to threat actors who acquire or replicate it.</p>
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">11 May 2026</span></div>
+                <h3>Google Threat Intelligence Disrupts First Confirmed Real World Attack Using AI Generated Zero Day</h3>
+                <p class="summary">Google Threat Intelligence Group reported with high confidence that it disrupted a campaign in which attackers used an AI model to identify and operationalise an unknown zero day vulnerability, creating a path to bypass two factor authentication. Google characterised this as the first known case of an AI generated zero day used in a real world attack. The model used was not Google Gemini or Anthropic Claude Mythos. The disclosure sits within Google's broader May report on AI assisted hacking moving from nascent capability to operational use across criminal and state aligned actors.</p>
+                <p class="detail">For Canadian governance teams, the operational finding is that AI assisted zero day generation has now crossed from research demonstration into adversary tradecraft. Detection programs that have been calibrated against known exploit signatures will have a harder time catching the next instance of this pattern. Threat intelligence intake, two factor authentication implementation strength, and continuous detection engineering all need to be re evaluated against this new baseline. CCCS guidance and the National Cyber Threat Assessment will reference this development in subsequent updates.</p>
                 <ul class="key-points">
-                    <li>New AI cybersecurity models from Anthropic and OpenAI identified more than seven times the normal number of vulnerabilities in a single month of testing</li>
-                    <li>Palo Alto warned that comparable offensive capability could reach attackers within months</li>
-                    <li>Disclosure aligns with the same week ECB and Google Threat Intelligence warnings on AI assisted threat acceleration</li>
+                    <li>First confirmed real world cyberattack using an AI generated zero day, disrupted by Google with high confidence</li>
+                    <li>Attack chain included a path to bypass two factor authentication</li>
+                    <li>Crosses AI assisted attack capability from research demonstration into operational adversary tradecraft</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Vulnerability and patch management programs should plan to operate at materially faster cadence under AI assisted threat conditions. ISO/IEC 27001:2022 A.8.8 management of technical vulnerabilities, A.8.25 secure development lifecycle, A.8.28 secure coding, and A.8.29 security testing in development and acceptance should be reviewed for capacity to keep pace. Boards should request evidence that the organization's secure development and application security testing program is calibrated against current AI assisted exploitation pace, not the 2024 baseline. ISO/IEC 42001 alignment supports governance of any AI tooling introduced into security operations.</p>
+                    <p>Detection engineering programs anchored on ISO/IEC 27001:2022 A.5.7 threat intelligence and A.8.16 monitoring activities should be reviewed for signature dependency and for coverage of behavioural anomalies that AI generated exploits will surface ahead of known indicators. Two factor authentication implementation strength, particularly for privileged and remote access, should be revalidated. Boards of regulated entities should request a single page status on detection coverage maturity, threat intelligence intake, and authentication strength in light of this development.</p>
                 </div>
-                <a href="https://www.axios.com/2026/05/13/palo-alto-networks-mythos-gpt-cybersecurity" target="_blank" rel="noopener" class="source-link">Source: Axios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-            </div>
-            <div class="article" data-tags="canada,cyber,ai,governance">
-                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">9 May 2026</span></div>
-                <h3>Canadian Bank Executives and Federal Regulators Meet to Discuss Risks Raised by Anthropic's Latest AI Model</h3>
-                <p class="summary">Canadian bank executives and federal regulators met this week to discuss cybersecurity risks raised by Anthropic's latest AI model, which has been flagged for capability that could help threat actors identify and exploit software vulnerabilities at unprecedented speed. The meeting took place against the backdrop of the same week ECB warning to European financial institutions and reinforced the operational risk framing that Canadian prudential supervisors are bringing to AI threat exposure inside the federally regulated sector.</p>
-                <p class="detail">The convening signals that Canadian regulators expect domestic systemically important financial institutions to elevate AI threat preparation inside operational resilience programs and to demonstrate that supervisory expectations on technology and cyber risk management contemplate AI assisted offensive capability. The discussion also has implications for the broader Canadian critical infrastructure supplier base, which is increasingly being asked the same questions by federal procurement and by prime contractors with defence and critical infrastructure exposure.</p>
-                <ul class="key-points">
-                    <li>Canadian bank executives met federal regulators May 9 on AI model risk tied to Anthropic frontier capability</li>
-                    <li>Meeting aligns with the same week ECB warning on AI assisted cyberattacks against financial institutions</li>
-                    <li>Conversation extends into critical infrastructure and federal supplier expectations on AI threat readiness</li>
-                </ul>
-                <div class="implications">
-                    <h4>Implications</h4>
-                    <p>Federally regulated Canadian financial institutions should expect supervisory dialogue on AI threat exposure to move into formal expectations through 2026. ISO/IEC 27001:2022 baseline information security controls and ISO/IEC 42001:2023 AI management system controls together provide the documentation backbone for these conversations. Critical infrastructure and federal supplier boards should treat the meeting as a leading indicator and request internal updates on AI threat readiness, vulnerability program cadence, and detection coverage.</p>
-                </div>
-                <a href="https://www.theglobeandmail.com/business/article-canadian-banks-anthropic-ai-claude-risks-model-finance-department/" target="_blank" rel="noopener" class="source-link">Source: The Globe and Mail <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access" target="_blank" rel="noopener" class="source-link">Source: Google Cloud Threat Intelligence <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
         <div class="section-title" id="cpcsc">CPCSC</div>
         <div class="articles">
             <div class="article" data-tags="canada,governance,cyber">
-                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-governance">Governance</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">12 May 2026</span></div>
-                <h3>CPCSC Level 1 Runway Tightens as AI Threat Acceleration Sharpens the Operational Stakes for Canadian Defence Suppliers</h3>
-                <p class="summary">CPCSC Level 1 self attestation has been available to suppliers since April 1, 2026 and is on track to begin appearing as a binding requirement in select Department of National Defence contracts during Summer 2026. With the same week ECB, Google Threat Intelligence, and Palo Alto Networks warnings on AI assisted offensive capability, the operational stakes attached to Level 1 readiness have sharpened materially. Suppliers operating against the Summer 2026 contract integration window should treat the runway as compressed and should be using May to close evidence gaps against the 13 Level 1 controls.</p>
-                <p class="detail">The 13 Level 1 controls anchor on the foundational tier of NIST Special Publication 800 171 and on the Canadian Centre for Cyber Security industrial cyber security baseline. Level 2, scheduled for spring 2027, will require external assessment by accredited certification bodies and remains the operational pivot point for Canadian defence supplier readiness through 2026 and 2027. Prime contractor flow downs, BDC due diligence on the Defence Platform, and federal procurement instruments are all converging on CPCSC posture as a screening criterion alongside ISO/IEC 27001 status.</p>
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-governance">Governance</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">14 May 2026</span></div>
+                <h3>CPCSC Level 1 Self Attestation Runway Compresses as Cisco SD WAN and SharePoint Exploitation Reframe Defence Supplier Readiness</h3>
+                <p class="summary">CPCSC Level 1 self attestation has been available to Canadian defence suppliers since April 1, 2026, with integration into select Department of National Defence contracts scheduled for Summer 2026. The two CCCS active alerts this week, AL26 005 SharePoint and AL26 012 Cisco Catalyst SD WAN, both engage technologies common in defence supplier estates and sharpen the operational case for completing Level 1 evidence work in May. Level 2, scheduled for spring 2027, will require external assessment by accredited certification bodies and remains the operational pivot point for supplier readiness through 2026 and 2027.</p>
+                <p class="detail">The 13 Level 1 controls anchor on the foundational tier of NIST SP 800 171 and on the CCCS industrial cyber security baseline. Prime contractor flow downs, BDC Defence Platform due diligence, and federal procurement instruments are all converging on CPCSC posture as a screening criterion alongside ISO/IEC 27001 status. New market entrants have begun launching CPCSC readiness services in May, signalling the commercial market is sizing up for the Summer 2026 contract integration window.</p>
                 <ul class="key-points">
                     <li>CPCSC Level 1 self attestation available since April 1, 2026; contract integration begins Summer 2026</li>
                     <li>Level 2 external assessment by accredited certification bodies remains scheduled for spring 2027</li>
-                    <li>13 Level 1 controls align technically with NIST SP 800 171 foundational tier and the CCCS baseline</li>
-                    <li>AI assisted offensive capability raises the operational stakes attached to baseline supplier readiness</li>
+                    <li>13 Level 1 controls align with NIST SP 800 171 foundational tier and the CCCS industrial cyber security baseline</li>
+                    <li>This week's SharePoint and Cisco SD WAN active exploitation cases reinforce the operational stakes attached to baseline readiness</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Suppliers should pair CPCSC Level 1 attestation with documented evidence of operational control implementation, not policy presence alone. ISO/IEC 27001 Annex A coverage, NIST SP 800 171 mapping, and the CCCS baseline should be tracked in a single integrated control register. Organizations seeking BDC Defence Platform financing should expect CPCSC Level 1 status to surface in due diligence. Suppliers anticipating Level 2 should begin gap assessments now while accredited certification body capacity is being built in the Canadian market.</p>
+                    <p>Suppliers should pair Level 1 attestation with documented evidence of operational control implementation, not policy presence alone. ISO/IEC 27001 Annex A coverage, NIST SP 800 171 mapping, and the CCCS industrial baseline belong in a single integrated control register. Organizations expecting Level 2 should begin gap assessments now while accredited certification body capacity is still being built in the Canadian market. Treat the AL26 005 and AL26 012 advisories this week as concrete tests of operational readiness against the Level 1 control set.</p>
                 </div>
                 <a href="https://www.canada.ca/en/public-services-procurement/news/2026/04/government-of-canada-introduces-level-1-of-canadian-program-for-cyber-security-certification.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
@@ -301,73 +301,37 @@
 
         <div class="section-title" id="ai-governance">AI Governance &amp; Regulation</div>
         <div class="articles">
+            <div class="article" data-tags="canada,ai,regulation,governance">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-ai">AI</span><span class="tag tag-regulation">Regulation</span><span class="tag tag-governance">Governance</span><span class="article-date">13 May 2026</span></div>
+                <h3>Canadian Bank Executives Meet Federal Regulators on Risks Raised by Anthropic Mythos</h3>
+                <p class="summary">Canadian bank executives and federal regulators convened this week to discuss cybersecurity risks raised by Anthropic Mythos, the frontier model whose general release Anthropic delayed in April over concerns it could help adversaries identify and exploit decades old software vulnerabilities. The meeting parallels the European Central Bank intervention to euro area banks on the same risk, and reflects the operational risk framing Canadian prudential supervisors are bringing to AI threat exposure inside the federally regulated sector.</p>
+                <p class="detail">The convening signals that Canadian regulators expect domestic systemically important financial institutions to elevate AI threat preparation inside operational resilience programs and to demonstrate that supervisory expectations on technology and cyber risk management contemplate AI assisted offensive capability. The discussion has implications beyond banking: federal departments, critical infrastructure operators, and defence supplier primes are increasingly being asked the same questions by federal procurement and oversight bodies.</p>
+                <ul class="key-points">
+                    <li>Canadian bank executives met federal regulators on AI model risk tied to Anthropic Mythos</li>
+                    <li>Anthropic delayed Mythos rollout in April over abuse and exploitation concerns</li>
+                    <li>Conversation parallels the same week ECB warning to euro area banks</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Federally regulated Canadian financial institutions should expect supervisory dialogue on AI threat exposure to move into formal expectations through 2026. ISO/IEC 27001:2022 baseline information security controls and ISO/IEC 42001:2023 AI management system controls together provide the documentation backbone. Boards of critical infrastructure and federal supplier organizations should treat the meeting as a leading indicator and request internal updates on AI threat readiness, vulnerability program cadence, and detection coverage.</p>
+                </div>
+                <a href="https://www.theglobeandmail.com/business/article-canadian-banks-anthropic-ai-claude-risks-model-finance-department/" target="_blank" rel="noopener" class="source-link">Source: The Globe and Mail <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
             <div class="article" data-tags="ai,cyber,regulation,governance">
-                <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-regulation">Regulation</span><span class="tag tag-governance">Governance</span><span class="article-date">12 May 2026</span></div>
-                <h3>OpenAI Expands Cybersecurity Focused Model Access to Major European Enterprises Under the Trusted Access for Cyber Initiative</h3>
-                <p class="summary">OpenAI announced expanded access to its latest cybersecurity focused AI models for major European organizations including Deutsche Telekom, BBVA, Telefonica, and Sophos. The expansion is part of the OpenAI Trusted Access for Cyber initiative supporting financial services, telecommunications, energy, and public sector resilience programs. The announcement is a notable signal of how frontier AI vendors are now offering controlled defender side access to cybersecurity capability as part of strategic enterprise relationships.</p>
-                <p class="detail">For Canadian governance and procurement leaders, the Trusted Access for Cyber framing introduces a new procurement question: which AI vendors are willing to offer differentiated cybersecurity model access under controlled terms, and what governance, residency, and contractual protections are bundled with that access. The framing also raises a parallel risk management question, since the same cybersecurity capability that defenders can negotiate access to can also be replicated or acquired by threat actors over time.</p>
+                <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-regulation">Regulation</span><span class="tag tag-governance">Governance</span><span class="article-date">13 May 2026</span></div>
+                <h3>European Central Bank Urges Euro Area Banks to Hasten Cybersecurity Pace Under AI Threat Conditions</h3>
+                <p class="summary">ECB board member Frank Elderson urged euro area banks on May 13 to quickly prepare for potential cyberattacks launched with the help of Anthropic Mythos or similar tools. The intervention echoed parallel statements from the International Monetary Fund and the German financial regulator BaFin, all framing AI assisted attack capability as an imminent threat to financial sector stability. Regulators flagged aging banking systems and fragmented technology stacks as the most exposed surface.</p>
+                <p class="detail">For Canadian governance leaders, the ECB statement is a leading indicator on how prudential supervisors are likely to address AI threat exposure inside resilience expectations. OSFI, the Bank of Canada, and provincial regulators have been moving in a similar direction through 2026 on technology and cyber risk, and the ECB framing translates quickly into Canadian supervisory dialogue. The same logic extends to critical infrastructure regulators and federal procurement: AI assisted attack capability is a present operating condition.</p>
                 <ul class="key-points">
-                    <li>OpenAI expanded Trusted Access for Cyber to Deutsche Telekom, BBVA, Telefonica, and Sophos</li>
-                    <li>Programme targets financial services, telecommunications, energy, and public sector resilience</li>
-                    <li>Frontier vendors are increasingly offering controlled defender side cybersecurity AI access under strategic enterprise terms</li>
+                    <li>ECB board member Frank Elderson urged euro area banks May 13 to prepare for AI assisted cyberattacks tied to Mythos and similar frontier tools</li>
+                    <li>Aligns with parallel IMF and BaFin statements the same week</li>
+                    <li>Aging banking systems and fragmented technology stacks identified as most exposed</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Procurement teams evaluating AI vendor strategic relationships should ask whether cybersecurity focused model access is contemplated, on what terms, and with what residency and contractual controls. ISO/IEC 42001 alignment supports governance of any cybersecurity AI capability introduced into operational defence, while ISO/IEC 27001 controls cover the underlying information security baseline. Boards should expect customer due diligence to begin asking about defender side AI tooling posture in addition to inference time AI usage.</p>
+                    <p>Regulated financial institutions and any organization operating inside critical infrastructure or federal supply chains should treat the ECB statement as directional for near term Canadian supervisory expectations. Map response to ISO/IEC 27001:2022 A.5.7 threat intelligence, A.5.24 incident management planning, A.8.8 management of technical vulnerabilities, and A.8.16 monitoring activities. Add a documented AI threat scenario to scheduled tabletop exercises through the rest of 2026.</p>
                 </div>
-                <a href="https://www.thestar.com.my/tech/tech-news/2026/05/12/openai-gives-european-companies-access-to-its-latest-models-to-bolster-resilience" target="_blank" rel="noopener" class="source-link">Source: Reuters via The Star <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-            </div>
-            <div class="article" data-tags="ai,cyber,governance">
-                <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">12 May 2026</span></div>
-                <h3>OpenAI Introduces Daybreak, an Agentic Cybersecurity Initiative for Vulnerability Discovery, Attack Simulation, and Secure Development</h3>
-                <p class="summary">OpenAI this week introduced Daybreak, an agentic cybersecurity initiative designed to automate vulnerability discovery, attack simulation, remediation prioritization, and secure software development workflows. Daybreak is positioned as an integrated capability spanning development environments, security operations, and governance, and reflects the broader enterprise shift toward AI driven security operations and autonomous analysis across the secure development lifecycle.</p>
-                <p class="detail">Daybreak adds to a rapidly thickening defender side AI tooling layer alongside Google, Microsoft, and Palo Alto Networks initiatives announced in 2026. For Canadian governance leaders, the practical question is which agentic security tools enter the organization with what controls, what evidence the organization can show that AI mediated security activity is governed and logged, and how customer assurance and audit will receive that evidence. ISO/IEC 42001 alignment offers a useful organizing framework for these decisions.</p>
-                <ul class="key-points">
-                    <li>OpenAI Daybreak announced as an agentic cybersecurity initiative covering vulnerability discovery, attack simulation, remediation, and secure development</li>
-                    <li>Positioned as integrated capability across development, security operations, and governance</li>
-                    <li>Adds to a thickening defender side AI tooling layer alongside Google, Microsoft, and Palo Alto Networks</li>
-                </ul>
-                <div class="implications">
-                    <h4>Implications</h4>
-                    <p>Security operations and engineering leadership should evaluate agentic AI security tools against ISO/IEC 42001:2023 control families covering AI lifecycle, AI risk management, and information for interested parties. ISO/IEC 27001 controls covering secure development, vulnerability management, and monitoring activities provide the operational baseline. Boards should request evidence that any AI driven security activity inside the organization is governed, logged, and reviewable by audit and by customer assurance teams.</p>
-                </div>
-                <a href="https://openai.com/daybreak/" target="_blank" rel="noopener" class="source-link">Source: OpenAI <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-            </div>
-        </div>
-
-        <div class="section-title" id="frameworks">Frameworks &amp; Standards</div>
-        <div class="articles">
-            <div class="article" data-tags="iso,ai,cyber,governance">
-                <div class="article-header"><span class="tag tag-iso">ISO</span><span class="tag tag-ai">AI</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">14 May 2026</span></div>
-                <h3>ISO/IEC 42001 Operationalizes AI Risk Management as Frontier Threat Acceleration Reframes the Defender Conversation</h3>
-                <p class="summary">The combined ECB, Google Threat Intelligence, and Palo Alto Networks warnings this week make ISO/IEC 42001:2023 a more pointed governance conversation than it was even a month ago. Organizations adopting 42001 are increasingly being asked to demonstrate not only that AI use is governed for ethics, transparency, and privacy, but also that AI risk management contemplates AI assisted threat exposure, defender side AI tooling, and the interaction between the organization's AI use and its security posture. Industry coverage this week treats 42001 as the de facto integrating standard across these layered obligations.</p>
-                <p class="detail">For Canadian organizations, ISO/IEC 42001 alignment is positioned to function as the integrating management system across federal Canadian, EU AI Act, OSFI sectoral, and Quebec Law 25 expectations, while also providing the documentation backbone for defender side AI governance. Organizations with mature ISO/IEC 27001 management systems will find the 42001 implementation curve compressed; organizations without an existing management system framework should sequence 27001 first.</p>
-                <ul class="key-points">
-                    <li>Frontier AI threat warnings this week sharpen the operational case for ISO/IEC 42001:2023 adoption</li>
-                    <li>42001 functions as the integrating standard across Canadian, EU, OSFI, and Quebec AI obligations and defender side AI governance</li>
-                    <li>Implementation curve is compressed for organizations with existing ISO/IEC 27001 management systems</li>
-                </ul>
-                <div class="implications">
-                    <h4>Implications</h4>
-                    <p>Boards evaluating AI governance investment should treat ISO/IEC 42001 as the durable target, with ISO/IEC 27001 as the prerequisite information security foundation. AI risk management documentation under 42001 should explicitly contemplate AI assisted threat exposure and the introduction of defender side AI tooling into security operations. Boards should request a single integrated view of AI governance posture mapped to applicable Canadian, US, and EU obligations.</p>
-                </div>
-                <a href="https://www.iso.org/standard/42001" target="_blank" rel="noopener" class="source-link">Source: ISO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-            </div>
-            <div class="article" data-tags="iso,cyber,governance">
-                <div class="article-header"><span class="tag tag-iso">ISO</span><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">15 May 2026</span></div>
-                <h3>ISO/IEC 27001 Threat Intelligence and Vulnerability Management Controls Move Back to the Front of Board Risk Conversations</h3>
-                <p class="summary">The week's combined threat warnings push ISO/IEC 27001:2022 threat intelligence and vulnerability management controls back to the front of board level risk conversations. Annex A 5.7 threat intelligence, 5.24 information security incident management planning, 8.7 protection against malware, 8.8 management of technical vulnerabilities, 8.16 monitoring activities, 8.25 secure development lifecycle, and 8.28 secure coding all engage directly with the operational consequences of AI assisted threat acceleration. Effective implementation depends on whether the organization can keep pace with a materially faster attacker tempo.</p>
-                <p class="detail">For Canadian organizations, the practical implication is that the cadence at which patches are deployed, alerts are triaged, and detection coverage is updated must be measured against the new attacker baseline. Boards should request operational metrics demonstrating mean time to patch, detection coverage of AI generated phishing and reconnaissance, and the maturity of threat intelligence intake.</p>
-                <ul class="key-points">
-                    <li>ISO/IEC 27001:2022 A.5.7, A.5.24, A.8.7, A.8.8, A.8.16, A.8.25, and A.8.28 are central to AI threat preparation</li>
-                    <li>Patch, alert, and detection cadence must be measured against AI accelerated attacker tempo</li>
-                    <li>Boards should request operational metrics on patch, detection, and threat intelligence maturity</li>
-                </ul>
-                <div class="implications">
-                    <h4>Implications</h4>
-                    <p>Information security committees should review vulnerability, detection, and threat intelligence service levels against current AI assisted threat conditions. Auditors will increasingly probe these areas in 27001 surveillance and recertification audits through 2026 and 2027.</p>
-                </div>
-                <a href="https://www.iso.org/standard/27001" target="_blank" rel="noopener" class="source-link">Source: ISO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.bankinfosecurity.com/ecb-ai-means-european-banks-must-hasten-cybersecurity-pace-a-31691" target="_blank" rel="noopener" class="source-link">Source: BankInfoSecurity <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
