@@ -36,6 +36,31 @@
         .ft { font-family: var(--mono); font-size: 0.65rem; color: var(--text-muted); }
         .ft strong { color: var(--accent); }
     </style>
+    <!-- modern-enhancements: additive, no content/link change -->
+    <meta name="theme-color" content="#09090b">
+    <meta name="color-scheme" content="dark">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <style>
+  /* View Transitions API: smooth same-origin page navigation */
+  @view-transition { navigation: auto; }
+  /* Match native UI (scrollbars, form controls, autofill) to the dark theme */
+  :root { color-scheme: dark; }
+  /* Respect users who reduce motion: disable the view-transition animation */
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+  }
+  /* Respect users who reduce transparency: drop translucency/blur on overlays */
+  @media (prefers-reduced-transparency: reduce) {
+    header, .context-bar, .mobile-nav-overlay, .chat-window {
+      backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: var(--bg) !important;
+    }
+  }
+  /* Respect users who request higher contrast: strengthen secondary text/borders */
+  @media (prefers-contrast: more) {
+    :root { --text-secondary: #c8c8d0; --text-muted: #9a9aa5; --border: #52525b; --border-light: #6b6b75; }
+  }
+    </style>
 </head>
 <body>
     <header><div class="w"><a href="/" class="logo">ascio <span>consultancy</span></a></div></header>
