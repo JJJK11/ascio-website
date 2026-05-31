@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N7K1X6GV2R"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N7K1X6GV2R');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week of May 18 to 23, 2026: Governance &amp; Compliance Review: ascio</title>
+    <meta name="description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta property="og:title" content="Governance &amp; Compliance Review: ascio">
+    <meta property="og:description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta property="og:image" content="https://ascio.ca/linkedin-cover.png">
+    <meta property="og:url" content="https://ascio.ca/review/may-18-2026.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Governance &amp; Compliance Review: ascio">
+    <meta name="twitter:description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
+    <meta name="twitter:image" content="https://ascio.ca/linkedin-cover.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #09090b;
+            --bg-raised: #18181b;
+            --bg-elevated: #27272a;
+            --border: #27272a;
+            --border-light: #3f3f46;
+            --text: #fafafa;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --accent: #06b6d4;
+            --accent-dim: rgba(6, 182, 212, 0.15);
+            --accent-border: rgba(6, 182, 212, 0.3);
+            --green: #22c55e;
+            --mono: 'JetBrains Mono', monospace;
+            --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 15px; -webkit-font-smoothing: antialiased; line-height: 1.7; overflow-x: hidden; }
+        ::selection { background: var(--accent); color: var(--bg); }
+        a { color: inherit; text-decoration: none; }
+        .w { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(9, 9, 11, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+        header .w { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+        .logo { font-family: var(--mono); font-size: 2rem; font-weight: 600; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+        .nav-links { display: flex; gap: 0.5rem; list-style: none; align-items: center; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.15s; }
+        .nav-links a:hover { color: var(--text); background: var(--bg-raised); }
+        .nav-links a.active { color: var(--text); }
+        .nav-cta { background: var(--text) !important; color: var(--bg) !important; font-weight: 600 !important; padding: 0.5rem 1.25rem !important; border-radius: 6px !important; transition: all 0.15s !important; }
+        .nav-cta:hover { background: var(--accent) !important; }
+        .mobile-toggle { display: none; background: none; border: none; color: var(--text); cursor: pointer; padding: 6px; }
+        .mobile-nav { position: fixed; top: 64px; left: 0; right: 0; background: var(--bg); z-index: 199; display: flex; flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); border-bottom: 1px solid var(--border); }
+        .mobile-nav.open { max-height: 400px; }
+        .mobile-nav a { font-size: 0.88rem; color: var(--text-secondary); font-weight: 500; padding: 0.75rem 2rem; transition: color 0.2s, background 0.2s; }
+        .mobile-nav a:hover { color: var(--text); background: var(--bg-raised); }
+
+        .grid-bg { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(39, 39, 42, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(39, 39, 42, 0.3) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+        .archive-banner { background: var(--accent-dim); border-bottom: 1px solid var(--accent-border); padding: 0.75rem 0; font-size: 0.8rem; color: var(--accent); text-align: center; position: relative; z-index: 1; }
+        .archive-banner a { color: var(--text); font-weight: 600; margin-left: 0.5rem; }
+
+        .hero { padding: 140px 0 80px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%); pointer-events: none; }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .hero-tag { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; gap: 1rem; }
+        .hero-tag::before, .hero-tag::after { content: ''; width: 40px; height: 1px; background: var(--accent); }
+        .hero h1 { font-family: var(--sans); font-weight: 700; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 1.5rem; color: var(--text); }
+        .hero h1 span { color: var(--text-muted); }
+        .hero p { font-size: 1.05rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.8; }
+        .hero-date { margin-top: 2rem; font-family: var(--mono); font-size: 0.6rem; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; }
+        .hero-rule { width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.4; }
+
+        .main { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 60px 2rem; }
+        .section-title { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); margin-bottom: 32px; display: flex; align-items: center; gap: 1rem; }
+        .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+        .tag { display: inline-block; padding: 0.2rem 0.6rem; font-family: var(--mono); font-size: 0.55rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; width: fit-content; border-radius: 3px; }
+        .tag-governance { color: var(--bg); background: var(--accent); }
+        .tag-iso { color: #a78bfa; background: rgba(167, 139, 250, 0.12); }
+        .tag-cyber { color: #fb7185; background: rgba(244, 63, 94, 0.12); }
+        .tag-regulation { color: #fbbf24; background: rgba(251, 191, 36, 0.12); }
+        .tag-privacy { color: #34d399; background: rgba(16, 185, 129, 0.12); }
+        .tag-ai { color: #60a5fa; background: rgba(96, 165, 250, 0.12); }
+        .tag-canada { color: #f87171; background: rgba(248, 113, 113, 0.12); }
+        .tag-audit { color: #c084fc; background: rgba(192, 132, 252, 0.12); }
+        .tag-nist { color: #38bdf8; background: rgba(56, 189, 248, 0.12); }
+
+        .featured { margin-bottom: 64px; background: var(--bg-raised); border: 1px solid var(--border); overflow: hidden; border-top: 3px solid var(--accent); border-radius: 6px; }
+        .featured-body { padding: 3rem; }
+        .featured-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .featured-meta { font-family: var(--mono); font-size: 0.58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .featured-body h2 { font-size: 1.75rem; font-weight: 700; color: var(--text); margin-bottom: 1.25rem; line-height: 1.3; max-width: 800px; letter-spacing: -0.02em; }
+        .featured-body .lead { font-size: 1rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 1rem; max-width: 860px; }
+        .featured-body .detail { font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.75rem; max-width: 860px; }
+        .source-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--mono); font-size: 0.62rem; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 1rem; transition: gap 0.3s var(--ease), color 0.2s; text-decoration: none; border-bottom: 1px solid var(--accent-border); padding-bottom: 2px; }
+        .source-link:hover { gap: 0.65rem; color: #22d3ee; }
+        .source-link svg { width: 10px; height: 10px; }
+
+        .articles { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 64px; }
+        .article { background: var(--bg-raised); border: 1px solid var(--border); border-left: 3px solid transparent; padding: 2rem 2.5rem; transition: all 0.3s var(--ease); border-radius: 6px; }
+        .article:hover { border-left-color: var(--accent); background: var(--bg-elevated); }
+        .article-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .article-header .article-date { font-family: var(--mono); font-size: 0.58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .article h3 { font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; line-height: 1.35; letter-spacing: -0.01em; }
+        .article .summary { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 0.5rem; }
+        .article .detail { font-size: 0.82rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.5rem; }
+        .article .key-points { margin: 1rem 0 0.75rem; padding-left: 1.25rem; }
+        .article .key-points li { font-size: 0.82rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0.35rem; }
+        .article .key-points li::marker { color: var(--accent); }
+
+        .implications { margin-top: 1rem; padding: 1.25rem 1.5rem; background: var(--accent-dim); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; }
+        .implications h4 { font-family: var(--mono); font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.5rem; }
+        .implications p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.85; }
+
+        .prev-reviews { margin-bottom: 64px; }
+        .prev-reviews-list { display: flex; flex-direction: column; gap: 0.75rem; }
+        .prev-review-link { display: flex; align-items: center; justify-content: space-between; background: var(--bg-raised); border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem 2rem; transition: all 0.3s var(--ease); text-decoration: none; }
+        .prev-review-link:hover { border-color: var(--accent-border); background: var(--bg-elevated); }
+        .prev-review-link .prev-title { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+        .prev-review-link .prev-date { font-family: var(--mono); font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .prev-review-link svg { color: var(--accent); width: 14px; height: 14px; flex-shrink: 0; transition: transform 0.3s var(--ease); }
+        .prev-review-link:hover svg { transform: translateX(3px); }
+
+        .newsletter { background: var(--bg-raised); border: 1px solid var(--border); padding: 48px; text-align: center; margin-bottom: 64px; border-top: 2px solid var(--accent); border-radius: 6px; }
+        .newsletter h3 { font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: 12px; letter-spacing: -0.02em; }
+        .newsletter p { color: var(--text-secondary); margin-bottom: 28px; font-size: 0.92rem; }
+        .newsletter-form { display: flex; max-width: 480px; margin: 0 auto; gap: 12px; }
+        .newsletter-form input { flex: 1; padding: 0.8rem 1.25rem; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 0.85rem; border-radius: 6px; outline: none; transition: border-color 0.25s; }
+        .newsletter-form input::placeholder { color: var(--text-muted); }
+        .newsletter-form input:focus { border-color: var(--accent); }
+        .newsletter-form button { padding: 0.8rem 2rem; background: var(--text); color: var(--bg); font-family: var(--sans); font-weight: 600; font-size: 0.82rem; border: none; border-radius: 6px; cursor: pointer; transition: all 0.15s; }
+        .newsletter-form button:hover { background: var(--accent); }
+
+        footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 1.5rem 0; }
+        .ft { display: flex; justify-content: space-between; align-items: center; }
+        .ft-brand { font-size: 0.7rem; color: var(--text-muted); }
+        .ft-brand strong { font-family: var(--mono); color: var(--text-secondary); }
+        .ft-copy { font-size: 0.62rem; color: var(--text-muted); }
+        .ft-social { display: flex; align-items: center; gap: 1rem; }
+        .ft-social a { color: var(--text-muted); transition: color 0.15s; display: flex; align-items: center; }
+        .ft-social a:hover { color: var(--accent); }
+        .ft-social svg { width: 16px; height: 16px; }
+
+        @media (max-width: 900px) {
+            .hero h1 { font-size: clamp(2rem, 5vw, 3rem); }
+            .featured-body { padding: 2rem; }
+            .article { padding: 1.5rem; }
+            .newsletter { padding: 2rem; }
+        }
+        @media (max-width: 720px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; }
+            .ft { flex-direction: column; gap: 0.35rem; text-align: center; }
+            .newsletter-form { flex-direction: column; }
+            .prev-review-link { padding: 1rem 1.25rem; }
+        }
+    </style>
+    <!-- modern-enhancements: additive, no content/link change -->
+    <link rel="canonical" href="https://ascio.ca/review/">
+    <meta name="theme-color" content="#09090b">
+    <meta name="color-scheme" content="dark">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <meta property="og:site_name" content="ascio">
+    <meta property="og:locale" content="en_CA">
+    <meta property="og:image:width" content="1584">
+    <meta property="og:image:height" content="396">
+    <style>
+  /* View Transitions API: smooth same-origin page navigation */
+  @view-transition { navigation: auto; }
+  /* Match native UI (scrollbars, form controls, autofill) to the dark theme */
+  :root { color-scheme: dark; }
+  /* Respect users who reduce motion: disable the view-transition animation */
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+  }
+  /* Respect users who reduce transparency: drop translucency/blur on overlays */
+  @media (prefers-reduced-transparency: reduce) {
+    header, .context-bar, .mobile-nav-overlay, .chat-window {
+      backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: var(--bg) !important;
+    }
+  }
+  /* Respect users who request higher contrast: strengthen secondary text/borders */
+  @media (prefers-contrast: more) {
+    :root { --text-secondary: #c8c8d0; --text-muted: #9a9aa5; --border: #52525b; --border-light: #6b6b75; }
+  }
+    </style>
+</head>
+<body>
+
+    <div class="grid-bg"></div>
+
+    <header><div class="w">
+        <a href="../index.html" class="logo">ascio</a>
+        <ul class="nav-links">
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#standards">Standards</a></li>
+            <li><a href="../index.html#process">Process</a></li>
+            <li><a href="./" class="active">Weekly Review</a></li>
+            <li><a href="../index.html#contact" class="nav-cta">Request Advisory</a></li>
+        </ul>
+        <button class="mobile-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+    </div></header>
+    <div class="mobile-nav">
+        <a href="../index.html#services" onclick="this.parentElement.classList.remove('open')">Services</a>
+        <a href="../index.html#standards" onclick="this.parentElement.classList.remove('open')">Standards</a>
+        <a href="../index.html#process" onclick="this.parentElement.classList.remove('open')">Process</a>
+        <a href="./" onclick="this.parentElement.classList.remove('open')">Weekly Review</a>
+        <a href="../index.html#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">Weekly Review</div>
+            <h1>Governance &amp; Compliance <span>Review</span></h1>
+            <p>Developments in technology governance, cybersecurity standards, and regulatory compliance.</p>
+            <div class="hero-date">Week of May 18 to 23, 2026</div>
+        </div>
+    </section>
+    <div class="hero-rule"></div>
+    <div class="archive-banner"><div class="w">This is an archived edition. <a href="./">View the latest review &rarr;</a></div></div>
+
+    <div class="main">
+
+        <div class="section-title">Lead Story</div>
+        <div class="featured" data-tags="ai,cyber,governance">
+            <div class="featured-body">
+                <div class="featured-header">
+                    <span class="tag tag-ai">AI</span>
+                    <span class="tag tag-cyber">Cybersecurity</span>
+                    <span class="tag tag-governance">Governance</span>
+                    <span class="featured-meta">18 May 2026</span>
+                </div>
+                <h2>Anthropic to Brief the Financial Stability Board on Cyber Flaws Found by Project Glasswing Mythos, Bank of England Chair Andrew Bailey Requesting the Briefing</h2>
+                <p class="lead">The Financial Times reported on May 18 that Anthropic will brief the Financial Stability Board on cybersecurity weaknesses surfaced by Mythos, the unreleased cybersecurity model developed under Project Glasswing. The briefing was requested by Bank of England Governor Andrew Bailey, who chairs the FSB, and signals that frontier AI capability has now moved into the prudential supervision agenda for the global financial system. About 40 organizations including Amazon, Microsoft, and JPMorgan Chase have been given Mythos access to date so they can address vulnerabilities the model surfaces. Bailey named Mythos in an April 15 speech at Columbia University as one of two events that moved cyber up regulators' risk ranking faster than any other category in recent years.</p>
+                <p class="detail">For Canadian governance leaders, the Mythos briefing is a leading indicator that AI assisted vulnerability discovery now sits inside the financial stability conversation, not only enterprise cybersecurity operations. OSFI, the Bank of Canada, and provincial regulators have signalled similar concerns through 2026 on technology and cyber risk. The May warnings from the ECB, the IMF, and BaFin on AI assisted attack capability against banks all point in the same direction. Expect Canadian supervisory conversations on cyber resilience, third party risk, and AI governance to converge through the second half of 2026, with multinational Canadian financial institutions and any organization in federal critical infrastructure chains drawn into the same framing.</p>
+                <ul class="key-points">
+                    <li>Anthropic to brief the Financial Stability Board on cyber flaws surfaced by Mythos under Project Glasswing</li>
+                    <li>Briefing requested by Bank of England Governor Andrew Bailey, who chairs the FSB</li>
+                    <li>Approximately 40 organizations including Amazon, Microsoft, and JPMorgan Chase already have Mythos access</li>
+                    <li>Follows May warnings from the ECB, the IMF, and BaFin on AI assisted attack capability in banking</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Regulated financial institutions and any organization operating inside critical infrastructure or federal supply chains should treat the FSB briefing as directional for near term Canadian supervisory expectations. Map response to ISO/IEC 27001:2022 A.5.7 threat intelligence, A.5.24 incident management planning, A.8.8 management of technical vulnerabilities, and A.8.16 monitoring activities. ISO/IEC 42001:2023 AI management system requirements apply to organizations developing or deploying AI in regulated contexts. Add documented AI threat scenarios to scheduled tabletop exercises through the rest of 2026 and request a board level one page status on threat intelligence intake, detection coverage, and authentication strength against AI assisted exploitation.</p>
+                </div>
+                <a href="https://www.irishtimes.com/business/2026/05/18/anthropic-to-brief-global-financial-watchdog-on-cyber-flaws-exposed-by-mythos/" target="_blank" rel="noopener" class="source-link">Source: The Irish Times (Financial Times) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <div class="section-title" id="cybersecure">CyberSecure Canada &amp; Cyber Threats</div>
+        <div class="articles">
+            <div class="article" data-tags="cyber,ai,governance">
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-ai">AI</span><span class="tag tag-governance">Governance</span><span class="article-date">19 May 2026</span></div>
+                <h3>Verizon 2026 DBIR: Vulnerability Exploitation Has Overtaken Stolen Credentials as the Top Breach Entry Point, AI Compressing the Patch Window From Months to Hours</h3>
+                <p class="summary">Verizon released the 2026 Data Breach Investigations Report on May 19. For the first time in the report's 19 year history, vulnerability exploitation has overtaken stolen credentials as the top breach entry point: 31% of breaches now start with vulnerability exploitation versus 13% from credential abuse. Verizon attributes the shift in part to AI compressing the disclosure to exploitation window from months to hours. Median time to fully patch worsened to 43 days, and organizations remediated only 26% of CISA KEV listed vulnerabilities. Ransomware activity rose to 48% of breaches from 44% in the prior year, and 62% of breaches involved a human element.</p>
+                <p class="detail">For Canadian governance leaders this is the first time vulnerability management overtakes identity hardening in DBIR ranking, and the operational implication is direct: patch cycle reliability, exposure inventory, and KEV remediation completeness become first order board level metrics. The AI accelerated exploitation pattern reinforces this week's Mythos and Microsoft Defender developments, and ties through to the upcoming CPCSC defence supplier readiness window. Detection programs anchored on signatures will under perform against AI generated exploits; behavioural detection coverage needs to be reassessed.</p>
+                <ul class="key-points">
+                    <li>Vulnerability exploitation at 31% of breaches overtakes credential abuse at 13% as the top entry point for the first time in 19 years</li>
+                    <li>Median time to full patch worsened to 43 days; only 26% of CISA KEV listed vulnerabilities were remediated last year</li>
+                    <li>Ransomware grew to 48% of breaches from 44%; 62% of breaches involved a human element</li>
+                    <li>Verizon attributes the shift in part to AI compressing the disclosure to exploitation window from months to hours</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Boards and audit committees should request a one page DBIR aligned status from technology operations: KEV remediation rate, median patch time, exposure surface inventory, ransomware tabletop date, and AI assisted exploitation detection coverage. Map response to ISO/IEC 27001:2022 A.8.8 management of technical vulnerabilities, A.5.7 threat intelligence, A.8.16 monitoring activities, A.5.24 incident management planning, and A.6.3 information security awareness. NIST SP 800 53 RA 5, SI 2, and SI 4 controls apply. CPCSC Level 1 readiness work should be re scoped to ensure vulnerability management and KEV remediation evidence are explicit, not implicit.</p>
+                </div>
+                <a href="https://www.verizon.com/business/resources/reports/dbir/" target="_blank" rel="noopener" class="source-link">Source: Verizon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="cyber,governance">
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">20 May 2026</span></div>
+                <h3>SonicWall Gen6 SSL VPN MFA Bypass (CVE 2024 12802): Firmware Patch Alone Does Not Close the Gap, Six Manual LDAP Reconfiguration Steps Are Required</h3>
+                <p class="summary">ReliaQuest disclosed that CVE 2024 12802, a SonicWall Gen6 SSL VPN MFA bypass tied to separate UPN and SAM account handling in Active Directory integration, was exploited in the wild between February and March 2026, with intrusion activity consistent with the Akira ransomware ecosystem. The critical operational point is that the firmware patch alone does not remediate the vulnerability on Gen6 devices; six manual LDAP reconfiguration steps are required, and standard patch management workflows are not designed to verify them. Gen6 also reached end of life on April 16, 2026, sharpening the legacy VPN exposure question for organizations that have not yet migrated.</p>
+                <p class="detail">In one ReliaQuest observed intrusion, attackers reached a file server and deployed pre ransomware staging tools within 30 minutes of gaining VPN access. The lesson is that MFA does not compensate for incomplete patch completion or configuration drift on legacy infrastructure, and that vendor patch advisories must be read against the actual operational steps required to close exposure on the deployed estate. Newer Gen7 and Gen8 devices are mitigated by the firmware update alone.</p>
+                <ul class="key-points">
+                    <li>CVE 2024 12802 SonicWall Gen6 SSL VPN MFA bypass exploited in the wild February to March 2026, consistent with Akira tooling</li>
+                    <li>Firmware patch alone does not close the gap on Gen6; six manual LDAP reconfiguration steps are required</li>
+                    <li>Gen6 reached end of life April 16, 2026</li>
+                    <li>One observed intrusion reached file server access and pre ransomware staging within 30 minutes of VPN entry</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Verify on the actual estate that the six manual Gen6 LDAP reconfiguration steps have been completed, do not rely on the patch status field alone. Plan Gen6 retirement now given the April 16, 2026 end of life. Map response to ISO/IEC 27001:2022 A.5.16 identity management, A.5.17 authentication information, A.8.5 secure authentication, A.8.8 management of technical vulnerabilities, and A.8.16 monitoring activities. Update lifecycle and asset management policies so that vendor end of life dates trigger automatic retirement timelines rather than ad hoc decisions.</p>
+                </div>
+                <a href="https://www.sonicwall.com/support/notices/ssl-vpn-mfa-bypass-cve-2024-12802/kA1VN0000000RBd0AM" target="_blank" rel="noopener" class="source-link">Source: SonicWall <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="cyber,governance">
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">20 May 2026</span></div>
+                <h3>CISA Adds Two Actively Exploited Microsoft Defender Zero Days to the KEV Catalogue, Federal Remediation Deadline June 3, 2026</h3>
+                <p class="summary">CISA added two actively exploited Microsoft Defender flaws to the Known Exploited Vulnerabilities catalogue on May 20: CVE 2026 41091 (privilege escalation via link following in the Microsoft Malware Protection Engine, CVSS 7.8, gains SYSTEM) and CVE 2026 45498 (denial of service against Defender, CVSS 4.0). Used in sequence the pair allows an attacker to first disable endpoint protection and then escalate privileges, an unusually direct path against the security product itself. Patches are available in Microsoft Defender Antimalware Platform versions 1.1.26040.8 and 4.18.26040.7. Federal Civilian Executive Branch agencies must remediate by June 3, 2026.</p>
+                <p class="detail">When the endpoint protection product becomes the exposure point, patch governance for security tooling cannot be operated to lower assurance than business application patching. Many Canadian estates monitor patch status for productivity and ERP applications more rigorously than for endpoint protection because Defender is assumed to update silently. That assumption is the gap this week's KEV entries exploit.</p>
+                <ul class="key-points">
+                    <li>CISA added CVE 2026 41091 and CVE 2026 45498 to KEV on May 20 after observed active exploitation</li>
+                    <li>CVE 2026 45498 disrupts Defender; CVE 2026 41091 escalates to SYSTEM through link following in the Malware Protection Engine</li>
+                    <li>Patches in Microsoft Defender Antimalware Platform versions 1.1.26040.8 and 4.18.26040.7</li>
+                    <li>Federal Civilian Executive Branch remediation deadline June 3, 2026</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Confirm Defender platform versions on the estate match or exceed the patched levels and that any management overrides have not blocked the update. Add endpoint protection tooling to the patch governance scope monitored at audit committee level, not only business application patching. Map response to ISO/IEC 27001:2022 A.8.7 protection against malware, A.8.8 management of technical vulnerabilities, A.8.16 monitoring activities, and A.5.7 threat intelligence. NIST SP 800 53 SI 3 malicious code protection and SI 4 information system monitoring apply.</p>
+                </div>
+                <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener" class="source-link">Source: CISA Known Exploited Vulnerabilities Catalogue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="cyber,governance">
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="article-date">19 May 2026</span></div>
+                <h3>GitHub Confirms Internal Repository Breach Traces to Compromised Nx Console VS Code Extension, Itself a Downstream Casualty of the TanStack npm Supply Chain Attack</h3>
+                <p class="summary">GitHub CISO Alexis Wales confirmed that the breach of approximately 3,800 internal GitHub repositories traces back to a malicious version of the Nx Console VS Code extension (version 18.95.0, 2.2 million installs), live on the Visual Studio Marketplace for about 11 minutes on May 18. The Nx Console compromise itself originated from the May 11 TanStack npm supply chain attack, in which an attacker abused a pull_request_target Pwn Request pattern combined with GitHub Actions cache poisoning to publish 84 malicious versions across 42 @tanstack/* packages using TanStack's legitimate trusted publishing identity. Grafana, OpenAI, and Mistral AI are also confirmed downstream casualties. Attribution points to a threat actor group tracked as TeamPCP, with the campaign codenamed Mini Shai Hulud.</p>
+                <p class="detail">This is one of the most consequential developer ecosystem compromises in recent memory because the attack chained through three trust layers in sequence: npm package publishing, IDE extension marketplace publishing, and ultimately employee credential exposure inside a major code hosting provider. Canadian software organizations should treat developer environment hardening, extension allowlisting, and CI/CD credential rotation as immediate operational items, not Q3 backlog. The same TeamPCP actor was previously linked to the Aqua Security Trivy scanner compromise in March and the Bitwarden CLI npm package compromise in April.</p>
+                <ul class="key-points">
+                    <li>GitHub confirms approximately 3,800 internal repositories breached via malicious Nx Console v18.95.0 VS Code extension</li>
+                    <li>Nx Console compromise traces upstream to the May 11 TanStack npm supply chain attack via @tanstack/zod-adapter@1.166.15</li>
+                    <li>Grafana, OpenAI, and Mistral AI confirmed downstream casualties</li>
+                    <li>Attribution to threat actor group TeamPCP, codenamed Mini Shai Hulud, previously linked to Trivy and Bitwarden CLI compromises</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Move developer environment hardening, IDE extension allowlisting, CI/CD credential rotation, and trusted publishing identity protection to the top of the operational queue. Map response to ISO/IEC 27001:2022 A.8.25 secure development life cycle, A.8.28 secure coding, A.5.19 information security in supplier relationships, A.5.21 managing information security in the ICT supply chain, A.5.16 identity management, and A.8.16 monitoring activities. NIST SP 800 218 Secure Software Development Framework applies in full. Boards should request a one page supply chain integrity status: known compromised package exposure, npm and extension allowlist coverage, CI/CD credential rotation cadence, and trusted publishing identity controls.</p>
+                </div>
+                <a href="https://www.bleepingcomputer.com/news/security/github-links-repo-breach-to-tanstack-npm-supply-chain-attack/" target="_blank" rel="noopener" class="source-link">Source: BleepingComputer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <div class="section-title" id="cpcsc">CPCSC</div>
+        <div class="articles">
+            <div class="article" data-tags="canada,governance,cyber">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-governance">Governance</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">23 May 2026</span></div>
+                <h3>Defence Supplier CPCSC Readiness Tightens as Verizon DBIR, AI Generated Exploitation, and the Nx Console Supply Chain Breach Land in the Same Week</h3>
+                <p class="summary">CPCSC Level 1 self attestation has been available to Canadian defence suppliers since April 1, 2026 and contract integration begins Summer 2026. This week's developments tighten the operational case for completing Level 1 evidence work in May: the Verizon 2026 DBIR shows vulnerability exploitation has overtaken stolen credentials as the top breach entry point, Anthropic is briefing the Financial Stability Board on AI surfaced cyber weaknesses, CISA added two actively exploited Microsoft Defender zero days to KEV, and GitHub confirmed the Nx Console VS Code extension breach as a downstream casualty of the TanStack npm supply chain attack. Level 2, scheduled for spring 2027, will require external assessment by accredited certification bodies.</p>
+                <p class="detail">The 13 Level 1 controls anchor on the foundational tier of NIST SP 800 171 and the CCCS industrial cyber security baseline. Suppliers preparing for Summer 2026 contract integration should pair attestation with documented operational evidence covering vulnerability management cycle reliability, CISA KEV remediation discipline, endpoint protection patch governance, software supply chain controls, and AI assisted exploitation detection coverage. Prime contractor flow downs and BDC Defence Platform due diligence will surface these dimensions even where the Level 1 control wording does not call them out explicitly.</p>
+                <ul class="key-points">
+                    <li>CPCSC Level 1 self attestation available since April 1, 2026; contract integration begins Summer 2026; Level 2 external assessment scheduled spring 2027</li>
+                    <li>Verizon DBIR ranks vulnerability exploitation above credential abuse for the first time in 19 years</li>
+                    <li>Anthropic Mythos FSB briefing signals AI assisted attack capability has entered financial stability supervision</li>
+                    <li>CISA KEV additions for Microsoft Defender and Drupal this week reinforce remediation discipline expectations</li>
+                    <li>Nx Console and TanStack chain raises developer environment hardening and CI/CD supply chain controls into operational priority</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Defence suppliers should pair Level 1 self attestation with operational evidence packages: KEV remediation cadence, endpoint protection patch verification, software supply chain controls, IDE extension allowlisting, CI/CD credential rotation, and AI assisted exploitation detection coverage. Map response across ISO/IEC 27001:2022 Annex A and NIST SP 800 171 in a single integrated control register. Organizations expecting Level 2 should begin gap assessments now while accredited certification body capacity is being built in the Canadian market.</p>
+                </div>
+                <a href="https://www.canada.ca/en/public-services-procurement/news/2026/04/government-of-canada-introduces-level-1-of-canadian-program-for-cyber-security-certification.html" target="_blank" rel="noopener" class="source-link">Source: Government of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <div class="section-title" id="ai-governance">AI Governance &amp; Regulation</div>
+        <div class="articles">
+            <div class="article" data-tags="ai,regulation,governance">
+                <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-regulation">Regulation</span><span class="tag tag-governance">Governance</span><span class="article-date">21 May 2026</span></div>
+                <h3>Trump Postpones AI Oversight Executive Order After Last Minute Pressure From Musk, Zuckerberg, and Sacks</h3>
+                <p class="summary">President Trump postponed the signing of his administration's AI oversight executive order on Thursday May 21, hours before a scheduled signing ceremony. The draft order would have empowered the US government to pre evaluate frontier AI models on a voluntary basis 90 days before public release, identifying security vulnerabilities before deployment. Postponement followed a concentrated lobbying push from Elon Musk, Mark Zuckerberg, and former US AI and crypto czar David Sacks, who argued the order risked slowing US AI competitiveness against China. Trump confirmed the postponement to reporters in the Oval Office, citing concerns about disrupting US leadership.</p>
+                <p class="detail">The directional read for Canadian governance leaders is that US federal AI oversight is becoming fragmented, voluntary, and commercially contested rather than codified. Canadian organizations cannot rely on a US oversight regime to set baseline expectations for frontier model evaluation, deployment governance, or security posture. Internal AI control frameworks anchored on ISO/IEC 42001:2023 and the NIST AI Risk Management Framework now carry more weight, not less. The EU AI Act implementation timeline, which advanced earlier in May, is the more reliable external anchor for multinational Canadian operators.</p>
+                <ul class="key-points">
+                    <li>Trump postponed the AI oversight executive order signing on May 21, hours before the scheduled ceremony</li>
+                    <li>Draft order would have allowed voluntary government pre evaluation of frontier models 90 days before public release</li>
+                    <li>Last minute lobbying pressure from Musk, Zuckerberg, and Sacks cited as the proximate cause</li>
+                    <li>Postponement reflects fragmentation between voluntary frameworks and competitive pressure with China</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Canadian organizations developing or deploying AI should anchor governance on ISO/IEC 42001:2023 AI management system requirements, the NIST AI Risk Management Framework, and the EU AI Act implementation timeline rather than assume a US federal baseline. Procurement should ask AI vendors for written model evaluation, red teaming, and deployment governance commitments rather than rely on US executive branch policy. Boards should expect AI customer assurance and due diligence to harden through 2026 as US oversight remains contested.</p>
+                </div>
+                <a href="https://www.cnbc.com/2026/05/21/trump-ai-executive-order-postponed.html" target="_blank" rel="noopener" class="source-link">Source: CNBC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+        <div class="section-title" id="frameworks">Frameworks &amp; Standards</div>
+        <div class="articles">
+            <div class="article" data-tags="cyber,governance,iso">
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Governance</span><span class="tag tag-iso">ISO</span><span class="article-date">22 May 2026</span></div>
+                <h3>Drupal Core SQL Injection (CVE 2026 9082, SA CORE 2026 004) Added to CISA KEV After Active Exploitation, PostgreSQL Sites Face May 27 Federal Deadline</h3>
+                <p class="summary">Drupal published advisory SA CORE 2026 004 (CVE 2026 9082) on May 20, a highly critical unauthenticated SQL injection vulnerability in Drupal core's database abstraction API that affects sites running PostgreSQL. The vulnerability can lead to information disclosure, privilege escalation, and in some cases remote code execution. Drupal updated the advisory on May 22 to confirm exploit attempts in the wild, and CISA added the CVE to the Known Exploited Vulnerabilities catalogue the same day with a May 27 federal remediation deadline. Imperva observed more than 15,000 attack attempts targeting almost 6,000 sites across 65 countries.</p>
+                <p class="detail">Affected versions span 8.9.0 through 11.3.x with patched releases issued in 10.4.10, 10.5.10, 10.6.9, 11.1.10, 11.2.12, and 11.3.10. Public facing CMS exposure remains one of the fastest paths from disclosure to exploitation in the Verizon DBIR ranking this week, and the PostgreSQL specific scope narrows the question for many Canadian operators but does not eliminate it. The May 27 federal deadline is a useful external anchor for Canadian critical infrastructure and federally regulated entities aligning to the same timeline.</p>
+                <ul class="key-points">
+                    <li>CVE 2026 9082, SA CORE 2026 004: unauthenticated SQL injection in Drupal core, PostgreSQL backed sites only</li>
+                    <li>Drupal confirmed exploit attempts in the wild on May 22; CISA added to KEV the same day with May 27 remediation deadline</li>
+                    <li>Imperva observed 15,000+ attack attempts across nearly 6,000 sites in 65 countries</li>
+                    <li>Patched releases: 10.4.10, 10.5.10, 10.6.9, 11.1.10, 11.2.12, 11.3.10</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>Identify all PostgreSQL backed Drupal estates in the asset inventory, patch to the listed releases, and review web application logs for indicators of compromise covering at least the period since disclosure. Map response to ISO/IEC 27001:2022 A.8.8 management of technical vulnerabilities, A.8.16 monitoring activities, A.8.25 secure development life cycle, and A.8.26 application security requirements. NIST SP 800 53 RA 5 and SI 4 controls apply. Boards of organizations running customer facing or regulator facing Drupal estates should request a written status confirming remediation against the May 27 federal anchor and identifying any unsupported Drupal versions requiring upgrade.</p>
+                </div>
+                <a href="https://www.drupal.org/sa-core-2026-004" target="_blank" rel="noopener" class="source-link">Source: Drupal Security Advisory <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+        </div>
+
+
+<!-- ════════ PREVIOUS REVIEWS ════════ -->
+        <div class="section-title">Previous Reviews</div>
+        <div class="prev-reviews">
+            <div class="prev-reviews-list">
+                <a href="may-11-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of May 11 to 17, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="may-2-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of May 2 to 8, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="apr-25-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of April 25 to May 1, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="apr-18-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of April 18 to 24, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="apr-10-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of April 10 to 17, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="mar-29-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of March 23 to 29, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="mar-16-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of March 16 to 22, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="mar-2-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of March 2 to 8, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="feb-23-2026.html" class="prev-review-link">
+                    <div>
+                        <div class="prev-title">Governance &amp; Compliance Review</div>
+                        <div class="prev-date">Week of February 23 to March 1, 2026</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="newsletter" id="newsletter">
+            <h3>Get the Weekly Briefing</h3>
+            <p>Governance, compliance, and cybersecurity developments delivered to your inbox every Monday. No noise, just what matters.</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <script>
+            document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var email = this.querySelector('input[name="email"]').value;
+                var btn = this.querySelector('button');
+                btn.disabled = true; btn.textContent = 'Subscribing...';
+                fetch('https://ascio-leads-api.vercel.app/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: 'Newsletter Subscriber', email: email, brand: 'ascio', interest: 'Newsletter', message: 'Governance & Compliance Review subscriber' })
+                }).then(function() {
+                    btn.textContent = 'Subscribed!';
+                }).catch(function() {
+                    btn.textContent = 'Subscribed!';
+                });
+            });
+            </script>
+        </div>
+
+    </div>
+
+    <footer><div class="w"><div class="ft">
+        <div class="ft-brand"><strong>ascio</strong> &#8212; Technology Governance, Inspection &amp; Assessment Readiness / Canada</div>
+        <div class="ft-social">
+            <a href="https://www.linkedin.com/company/ascio-advisory-services" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://x.com/ascio_tech" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+        <div class="ft-copy">&copy; 2017&#8211;2026 ascio</div>
+    </div></div></footer>
+
+</body>
+</html>
