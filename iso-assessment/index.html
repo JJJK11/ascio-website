@@ -65,10 +65,13 @@
         .card .std { font-family: var(--mono); font-size: 0.95rem; font-weight: 600; color: var(--accent); margin-bottom: 0.35rem; }
         .card h3 { font-size: 1.08rem; font-weight: 600; margin-bottom: 0.85rem; line-height: 1.3; }
         .card p { font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.65; }
-        .card ul { list-style: none; margin-top: auto; display: flex; flex-direction: column; gap: 0.5rem; }
+        .card .covers { font-family: var(--mono); font-size: 0.62rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.7rem; }
+        .card ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
         .card li { font-size: 0.82rem; color: var(--text-secondary); padding-left: 1.3rem; position: relative; line-height: 1.5; }
         .card li::before { content: ''; position: absolute; left: 0; top: 0.45em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
         .card .focus-note { font-size: 0.78rem; color: var(--amber); background: rgba(245,158,11,0.08); border-left: 2px solid var(--amber); padding: 0.6rem 0.75rem; border-radius: 0 6px 6px 0; margin-bottom: 1rem; }
+        .card .receive-line { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--text-secondary); line-height: 1.55; }
+        .card .receive-line strong { color: var(--text); font-weight: 600; }
 
         .receive { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 2.25rem; }
         .journey { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.5rem; }
@@ -161,36 +164,42 @@
                     <div class="card">
                         <div class="std">ISO/IEC 27001</div>
                         <h3>Information Security Management</h3>
-                        <p>Find out how your security governance, controls, and evidence measure up to the certifiable ISMS standard.</p>
+                        <p>Find out how your security governance, controls, and evidence measure up to the certifiable ISMS standard, and what stands between you and a successful audit.</p>
+                        <div class="covers">What we assess</div>
                         <ul>
                             <li>Gap view across governance, controls, and evidence</li>
                             <li>Risk assessment and Statement of Applicability readiness</li>
                             <li>Internal audit and management review maturity</li>
                             <li>Prioritized path to certification readiness</li>
                         </ul>
+                        <div class="receive-line"><strong>You receive:</strong> a 27001 readiness rating, a gap summary, and a prioritized path to certification.</div>
                     </div>
                     <div class="card">
                         <div class="std">ISO/IEC 42001</div>
                         <h3>AI Management System</h3>
                         <div class="focus-note">Most organizations have no AI policy or procedures in place yet. We focus here first.</div>
                         <p>Assess your readiness for the first certifiable AI management system standard, starting with the policy and procedure foundation.</p>
+                        <div class="covers">What we assess</div>
                         <ul>
                             <li>AI policy and procedure gap review</li>
                             <li>AI risk, impact assessment, and lifecycle controls</li>
                             <li>Roles, accountability, and responsible AI governance</li>
                             <li>What to document first to become ready</li>
                         </ul>
+                        <div class="receive-line"><strong>You receive:</strong> a 42001 readiness rating, your policy and procedure gaps, and what to document first.</div>
                     </div>
                     <div class="card">
                         <div class="std">CyberSecure Canada</div>
                         <h3>Baseline Cyber Certification</h3>
-                        <p>See how your foundational controls and cyber hygiene align to the Government of Canada baseline certification for SMEs.</p>
+                        <p>See how your foundational controls and cyber hygiene align to the Government of Canada baseline certification for SMEs, and where the quick wins are.</p>
+                        <div class="covers">What we assess</div>
                         <ul>
                             <li>Baseline control coverage check</li>
                             <li>Evidence and documentation readiness</li>
                             <li>Practical remediation priorities</li>
                             <li>Path to assessment readiness</li>
                         </ul>
+                        <div class="receive-line"><strong>You receive:</strong> a baseline readiness rating, evidence gaps, and practical remediation priorities.</div>
                     </div>
                 </div>
             </div>
