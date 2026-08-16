@@ -6,12 +6,12 @@
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N7K1X6GV2R');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Governance &amp; Compliance Review: ascio</title>
+    <title>Governance &amp; Compliance Review: ascio | Week of August 2 to 8, 2026</title>
     <meta name="description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
     <meta property="og:title" content="Governance &amp; Compliance Review: ascio">
     <meta property="og:description" content="Weekly developments in technology governance, cybersecurity standards, and compliance frameworks, curated by ascio.">
     <meta property="og:image" content="https://ascio.ca/linkedin-cover.png">
-    <meta property="og:url" content="https://ascio.ca/review/">
+    <meta property="og:url" content="https://ascio.ca/review/aug-2-2026.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Governance &amp; Compliance Review: ascio">
@@ -64,6 +64,9 @@
         .mobile-nav a:hover { color: var(--text); background: var(--bg-raised); }
 
         .grid-bg { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(39, 39, 42, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(39, 39, 42, 0.3) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+
+        .archive-banner { position: relative; z-index: 1; background: var(--accent-dim); border-bottom: 1px solid var(--accent-border); padding: 0.75rem 0; text-align: center; font-family: var(--mono); font-size: 0.7rem; color: var(--text-secondary); }
+        .archive-banner a { color: var(--accent); text-decoration: underline; }
 
         .hero { padding: 140px 0 80px; text-align: center; position: relative; overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%); pointer-events: none; }
@@ -162,7 +165,7 @@
         }
     </style>
     <!-- modern-enhancements: additive, no content/link change -->
-    <link rel="canonical" href="https://ascio.ca/review/">
+    <link rel="canonical" href="https://ascio.ca/review/aug-2-2026.html">
     <meta name="theme-color" content="#09090b">
     <meta name="author" content="K. Kelly">
     <meta name="color-scheme" content="dark">
@@ -223,189 +226,182 @@
             <div class="hero-tag">Weekly Review</div>
             <h1>Governance &amp; Compliance <span>Review</span></h1>
             <p>Developments in technology governance, cybersecurity standards, and regulatory compliance.</p>
-            <div class="hero-date">Week of August 9 to 15, 2026</div>
+            <div class="hero-date">Week of August 2 to 8, 2026</div>
         </div>
     </section>
     <div class="hero-rule"></div>
+    <div class="archive-banner"><div class="w">This is an archived edition. <a href="./">View the latest review &rarr;</a></div></div>
 
     <div class="main">
 
         <div class="section-title">Lead Story</div>
-        <div class="featured" data-tags="ai,cyber,governance">
+        <div class="featured" data-tags="canada,cyber,privacy">
             <div class="featured-body">
                 <div class="featured-header">
-                    <span class="tag tag-ai">AI</span>
+                    <span class="tag tag-canada">Canada</span>
                     <span class="tag tag-cyber">Cybersecurity</span>
-                    <span class="tag tag-governance">Threat Landscape</span>
-                    <span class="featured-meta">13 Aug 2026</span>
+                    <span class="tag tag-privacy">Data Breach</span>
+                    <span class="featured-meta">05 Aug 2026</span>
                 </div>
-                <h2>AI Agents Ran a Four Day, Near Autonomous Cyberattack on Taiwan's Government, Built Entirely From Open Source Tooling</h2>
-                <p class="lead">Cybersecurity firm Dream published research on August 13 documenting a multi wave campaign in which a coordinated system of up to eight AI agents autonomously conducted reconnaissance, credential attacks, and lateral movement against Taiwanese government networks over four days in early July. The agentic attacker mapped 21 government systems, cracked 85 government accounts, exfiltrated more than 2,500 personnel records, and produced 1,395 files across 12 attack waves between July 1 and 4. Taiwan's Ministry of Digital Affairs independently confirmed detecting an AI agent assisted attack. The campaign reached IT supply chain vendors, a nuclear safety agency, energy companies, and a government email system, and is widely reported as the first known near autonomous, end to end AI attack on government targets.</p>
-                <p class="detail">The system was built entirely from the open source Hermes and OpenClaw agent frameworks rather than frontier lab models, and its guardrails were bypassed by framing the operation as authorized penetration testing. Linguistic indicators point to a Chinese speaking operator, with no formal attribution. The entry points were unglamorous: unauthenticated APIs and single sign on integrations, worked at machine speed and machine patience.</p>
+                <h2>A Canadian Hacker Pleads Guilty to the Snowflake Campaign That Breached More Than 165 Companies, and the Root Cause Was Missing MFA</h2>
+                <p class="lead">Connor Riley Moucka, a 26 year old from Kitchener, Ontario who operated under the aliases Waifu and Judische, pleaded guilty in United States federal court on August 5 to computer fraud, aggravated identity theft, and conspiracy charges for the 2024 campaign that compromised more than 165 Snowflake customer environments using stolen credentials. Victims publicly linked to the campaign include AT&amp;T, Ticketmaster, LendingTree, Santander, Advance Auto Parts, Neiman Marcus, Pure Storage, and Canada's Bausch Health. Moucka and co conspirators collected more than 2.5 million dollars US in ransom payments plus roughly 500,000 dollars from selling stolen data, with victims suffering about 9.5 million dollars in losses. Sentencing is set for October 27, 2026, with a mandatory minimum of two years on the identity theft count and exposure to roughly thirty more on the remaining counts.</p>
+                <p class="detail">The campaign that produced some of 2024's largest breaches required no exploit and no malware at the point of entry: it ran on credentials harvested by infostealers and replayed against cloud data platform tenants that had not enforced multi factor authentication. Moucka was arrested in Canada in October 2024 after a multinational investigation and extradited to the United States in July 2025, a reminder that Canadian based attackers targeting foreign organizations are being prosecuted across the border.</p>
                 <ul class="key-points">
-                    <li>Up to eight coordinated AI agents ran reconnaissance, credential attacks, and lateral movement over four days with minimal human direction</li>
-                    <li>21 systems mapped, 85 accounts cracked, more than 2,500 personnel records exfiltrated across 12 attack waves</li>
-                    <li>Built from open source agent frameworks, with guardrails bypassed by posing the work as authorized penetration testing</li>
-                    <li>Taiwan's Ministry of Digital Affairs confirmed the incident; no formal attribution has been made</li>
+                    <li>Guilty plea entered August 5 to computer fraud, aggravated identity theft, and conspiracy for the Snowflake customer compromises</li>
+                    <li>More than 165 organizations were breached using stolen credentials, with no MFA in the way</li>
+                    <li>Proceeds exceeded 2.5 million dollars in ransoms plus data sale revenue, against roughly 9.5 million dollars in victim losses</li>
+                    <li>Sentencing comes October 27, 2026, following arrest in Canada in 2024 and extradition in July 2025</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>This moves agentic AI attacks from theory to documented practice against a national government, and it was done with freely available tooling, which compresses every assumed timeline for AI enabled adversaries. The practical work is unchanged but more urgent: harden the unauthenticated APIs and single sign on integrations that served as the actual entry points, and pressure test detection against an adversary that does not sleep between waves, per ISO/IEC 27001:2022 A.8.16 monitoring activities and A.8.26 application security requirements. The same incident is the strongest evidence yet for governing internal agent deployments under ISO/IEC 42001:2023, because the difference between this attack system and a legitimate automation platform is intent, not architecture. Boards asking whether AI threat is concrete now have a precedent to file.</p>
+                    <p>Every consequence in this story flows from one absent control on third party cloud tenants, and that control is the organization's obligation, not the provider's. Enforce multi factor authentication on every SaaS and cloud data platform tenant per ISO/IEC 27001:2022 A.8.5 secure authentication and A.5.17 authentication information, and verify enforcement by audit rather than policy assertion, since the Snowflake victims had policies too. MFA on cloud services is also a baseline requirement of CyberSecure Canada, which makes this campaign the clearest business case yet for certifying against it. Extend vendor due diligence under A.5.19 and A.5.20 to ask suppliers whether MFA is enforced on the tenants holding your data, and monitor for credential replay per A.8.16, because infostealer harvests are the standing inventory this entire attack class runs on.</p>
                 </div>
-                <a href="https://www.csoonline.com/article/4209210/ai-agents-wage-near-autonomous-cyberattack-on-asian-government-networks.html" target="_blank" rel="noopener" class="source-link">Source: CSO Online <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://techcrunch.com/2026/08/06/hacker-pleads-guilty-to-stealing-data-from-more-than-165-snowflake-customers/" target="_blank" rel="noopener" class="source-link">Source: TechCrunch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
         <div class="section-title" id="cybersecure">CyberSecure Canada &amp; Cyber Threats</div>
         <div class="articles">
-            <div class="article" data-tags="canada,cyber">
-                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Ransomware</span><span class="article-date">11 Aug 2026</span></div>
-                <h3>Ransomware at Manitoba's Largest Hospital Hits the Building, Not the Data: Door Access and HVAC Systems Knocked Out</h3>
-                <p class="summary">Shared Health confirmed on August 11 that a ransomware incident affected facility maintenance systems at Winnipeg's Health Sciences Centre, including heating, ventilation and cooling controls and door access systems. Clinical services continued uninterrupted and Shared Health said there is no indication patient data was affected, with third party experts investigating alongside the province. The Manitoba Nurses Union raised physical safety concerns about unlocked doors, and Health Minister Uzoma Asagwara said cybersecurity is a government priority.</p>
-                <p class="detail">The instructive detail is where the impact landed: building operational technology rather than clinical IT or data. A 2024 Manitoba auditor general report had already recommended enhanced cybersecurity testing and training at Shared Health, which turns an unimplemented audit recommendation into a board level accountability question after the fact.</p>
+            <div class="article" data-tags="cyber,canada">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">04 Aug 2026</span></div>
+                <h3>A Five Year Old Firmware Flaw in Coinkite's Coldcard Wallets Lets Attackers Drain More Than 140 Million Dollars in Bitcoin</h3>
+                <p class="summary">More than 100 million dollars US, about 140 million Canadian, in bitcoin has been stolen from users of Coldcard hardware wallets made by Toronto based Coinkite Inc., BNN Bloomberg reported August 4. The root cause is a March 2021 firmware coding mistake that weakened the randomness used to generate wallet seeds, leaving private keys mathematically reconstructable offline with no physical access to a device. On July 30, more than 1,000 bitcoins were drained from over 1,000 addresses within 41 minutes; by August 3, more than 1,500 coins across roughly 7,300 addresses had been taken in three confirmed waves plus 14 smaller incidents. Coinkite released patched firmware by August 1, destroyed vulnerable inventory, halted shipments, and chief executive Rodolfo Novak issued a public apology.</p>
+                <p class="detail">The instructive detail is the latency: a cryptographic implementation error sat dormant in shipped products for over five years before someone weaponized the mathematics, and when they did, the theft ran at machine speed against thousands of victims at once. Entropy weaknesses do not announce themselves in functional testing; the wallets worked perfectly the entire time.</p>
                 <ul class="key-points">
-                    <li>HVAC controls and door access systems were affected at Manitoba's largest hospital; clinical services continued</li>
-                    <li>Shared Health reports no indication patient data was affected; investigation is ongoing with provincial involvement</li>
-                    <li>The nurses union flagged physical safety risk from unlocked doors</li>
-                    <li>A 2024 auditor general report had recommended enhanced cybersecurity testing and training at Shared Health</li>
+                    <li>A March 2021 firmware flaw weakened seed generation randomness, making private keys reconstructable offline</li>
+                    <li>Over 1,000 bitcoins moved from more than 1,000 addresses in 41 minutes on July 30</li>
+                    <li>By August 3 the count reached more than 1,500 coins and roughly 7,300 compromised addresses</li>
+                    <li>Coinkite shipped patched firmware by August 1, destroyed vulnerable stock, and halted shipments</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Most hospital and campus risk registers underweight the scenario that materialized here: ransomware whose operational impact runs through building management systems rather than records. Security program scope definitions, and the certification scopes built on them, need to name building OT explicitly, because a control set that stops at the clinical network boundary would have passed an audit the week before this incident. ISO/IEC 27001:2022 A.7.4 physical security monitoring and A.8.20 networks security both reach these systems once they are in scope, and the sequencing lesson is sharper still: audit recommendations left unimplemented become the first exhibit in post incident accountability.</p>
+                    <p>For Canadian product companies, this is what deferred secure development cost looks like: a nine figure customer loss and a public apology traceable to one unreviewed implementation decision. Cryptographic code deserves controls beyond ordinary review, which is exactly the ground covered by ISO/IEC 27001:2022 A.8.24 use of cryptography, A.8.25 secure development life cycle, and A.8.29 security testing in development and acceptance, including validation of randomness sources rather than trust in them. Organizations holding digital assets should verify firmware provenance on hardware wallets and rotate any keys generated on affected versions, treating them as compromised regardless of balance. Boards of device makers should note that breach notification, recall logistics, and product liability arrived here as one combined event, not three separate scenarios.</p>
                 </div>
-                <a href="https://www.thecanadianpressnews.ca/health/nurses-union-questions-safety-as-ransomware-hits-health-sciences-centre-systems/article_88d04933-1e1c-59ff-aa6c-b60997a371a1.html" target="_blank" rel="noopener" class="source-link">Source: The Canadian Press <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.bnnbloomberg.ca/markets/crypto/2026/08/04/hackers-drain-more-than-140m-in-bitcoin-from-devices-made-by-canadian-firm/" target="_blank" rel="noopener" class="source-link">Source: BNN Bloomberg <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
-            <div class="article" data-tags="cyber,governance">
-                <div class="article-header"><span class="tag tag-cyber">Ransomware</span><span class="tag tag-governance">Supply Chain</span><span class="article-date">10 Aug 2026</span></div>
-                <h3>Microsoft Ties a New Ransomware Family to the N central Flaw the Cyber Centre Flagged, and the MSP Supply Chain Is the Target</h3>
-                <p class="summary">Microsoft Threat Intelligence reported August 10 that Storm 1175, a financially motivated group with China links and a former Medusa affiliate, began deploying a previously unseen ransomware family called StormEncryptor on August 2, likely through CVE 2026 18577, the critical unauthenticated access flaw in N able's N central remote monitoring and management platform. The timeline is compressed: zero day activity detected July 31, StormEncryptor deployments and an emergency patch August 2, and a second emergency hotfix August 6 after the first patch was circumvented. A compromised RMM server gives attackers a launchpad into every endpoint it manages.</p>
+            <div class="article" data-tags="cyber,governance,canada">
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-governance">Vulnerability</span><span class="article-date">04 Aug 2026</span></div>
+                <h3>The Cyber Centre Flags Actively Exploited Flaws in the RMM Platform Many Canadian MSPs Run</h3>
+                <p class="summary">The Canadian Centre for Cyber Security published advisory AV26 769 on August 4, updated August 6, for two actively exploited vulnerabilities in N central, the remote monitoring and management platform from N able that managed service providers use to administer client fleets. CVE 2026 18577, an authentication bypass rated CVSS 8.2 that stems from an incomplete patch of CVE 2026 18556, allows remote unauthenticated attackers to gain administrative control of N central servers and pivot into managed endpoints through the platform's built in Take Control feature. CISA added the two flaws to its Known Exploited Vulnerabilities catalog on August 3 and August 4, ordering US federal agencies to remediate by August 6. The vendor shipped version 2026.3.1.7 on August 2 and a second hotfix, 2026.3.1.10, on August 6; every version prior to that hotfix is affected, with exploitation observed since August 1.</p>
+                <p class="detail">RMM compromise is a force multiplier: administrative control of one server grants an attacker legitimate remote access tooling into every client the provider manages. The incomplete patch lineage matters too, because organizations that applied the first fix promptly were still exposed until the second one arrived.</p>
                 <ul class="key-points">
-                    <li>StormEncryptor is a new C++ based ransomware family that threatens publication of stolen data within three days</li>
-                    <li>Storm 1175 is exploiting the same N central flaw covered in last week's Cyber Centre advisory AV26 769</li>
-                    <li>The first patch was circumvented, requiring a second emergency hotfix on August 6</li>
-                    <li>MSP compromise can cascade ransomware to dozens of downstream customers, echoing Kaseya in 2021</li>
+                    <li>CVE 2026 18577 and CVE 2026 18556, both CVSS 8.2, are under active exploitation since August 1</li>
+                    <li>The Cyber Centre issued advisory AV26 769 on August 4; CISA added both flaws to the KEV catalog August 3 and 4</li>
+                    <li>Attackers gaining server control can reach managed endpoints through the Take Control feature</li>
+                    <li>All versions prior to hotfix 2026.3.1.10, released August 6, are affected</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Last week this vulnerability was an exploitation advisory; this week it is a dedicated ransomware operation aimed at the managed service provider supply chain, which is the escalation pattern to plan for. Organizations that outsource IT should move from asking whether their provider patched to requiring a written attestation of RMM patch status and a review of remote access session logs since July 31, and should place RMM platforms in the top tier of supplier risk assessments under ISO/IEC 27001:2022 A.5.22 monitoring, review and change management of supplier services. For the small organizations CyberSecure Canada serves, this chain of events is the concrete argument for its patching and vendor oversight baseline controls.</p>
+                    <p>Canadian organizations that outsource IT should send their provider two questions this week: confirm N central is at 2026.3.1.10 or later, and confirm a review of Take Control session logs back to August 1. Providers running the platform should treat unpatched internet reachable instances as presumed compromised and hunt accordingly rather than patch and move on. The episode maps to ISO/IEC 27001:2022 A.5.22 monitoring, review and change management of supplier services, because an MSP's tooling is inside your trust boundary whether or not it appears on your asset register, and to A.8.8 management of technical vulnerabilities for the compressed patch cycle. For small organizations, patching and vendor oversight are core CyberSecure Canada baseline controls, and this is the scenario they exist for.</p>
                 </div>
-                <a href="https://therecord.media/china-hackers-ransomware-microsoft" target="_blank" rel="noopener" class="source-link">Source: The Record <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-            </div>
-            <div class="article" data-tags="canada,cyber,governance">
-                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Vulnerability</span><span class="article-date">13 Aug 2026</span></div>
-                <h3>The Cyber Centre Issues an Alert for an Actively Exploited Cisco VPN Flaw That Can Knock Out Remote Access</h3>
-                <p class="summary">The Canadian Centre for Cyber Security published Alert AL26 018 on August 13 for CVE 2026 20349, a heap memory flaw in Cisco ASA versions 9.16.x through 9.24.x and Secure Firewall Threat Defense versions 7.0.x through 10.0.x. The vulnerability lets unauthenticated remote attackers trigger denial of service against SSL VPN, IKEv2 remote access VPN, and zero trust network access services using crafted HTTP requests, and Cisco confirmed active exploitation in the wild at disclosure on August 11. The Cyber Centre recommends inventorying internet facing systems, reviewing logs for unexpected device reloads and suspicious HTTP requests, and prioritizing patches on internet facing devices.</p>
-                <ul class="key-points">
-                    <li>CVE 2026 20349 is under active exploitation and requires no authentication to trigger</li>
-                    <li>Affected: Cisco ASA 9.16.x through 9.24.x and Firewall Threat Defense 7.0.x through 10.0.x with SSL VPN, IKEv2 remote access VPN, or ZTNA enabled</li>
-                    <li>The impact is denial of service against the appliances organizations depend on for remote access</li>
-                    <li>The Cyber Centre issued a full Alert rather than a routine advisory, its stronger signal</li>
-                </ul>
-                <div class="implications">
-                    <h4>Implications</h4>
-                    <p>An actively exploited flaw in perimeter VPN infrastructure is a patch now event, and the operational tell deserves circulation to network teams: repeated unexpected reloads of edge firewalls should be triaged as potential exploitation rather than assumed hardware trouble. The scenario is also a reminder that availability is a first class protection objective, not an afterthought to confidentiality; losing remote access capacity mid week is a business continuity event, which brings ISO/IEC 27001:2022 A.8.8 management of technical vulnerabilities and A.5.30 ICT readiness for business continuity into the same conversation. Organizations without a current inventory of internet facing appliances will find this alert hard to action, which is itself the finding.</p>
-                </div>
-                <a href="https://www.cyber.gc.ca/en/alerts-advisories/al26-018-vulnerability-affecting-cisco-asa-secure-firewall-threat-defense-software-remote-access-ssl-vpn-cve-2026-20349" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://cyber.gc.ca/en/alerts-advisories/n-able-security-advisory-av26-769" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
             <div class="article" data-tags="cyber,privacy">
-                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-privacy">Data Breach</span><span class="article-date">11 Aug 2026</span></div>
-                <h3>A Logistics Provider's Breach Ripples Out to Retailers, Banks, and Steam Hardware Customers Who Never Heard of It</h3>
-                <p class="summary">A cyberattack on French logistics giant Ceva disrupted at least eight European warehouses and exposed customer and shipment data belonging to client companies including Dutch e commerce giant Bol, department store De Bijenkorf, eyewear brand Ace &amp; Tate, football club Ajax, and Valve's Steam hardware business, The Record reported August 11. The attack window ran from July 29 to August 1, with Valve told on August 7 that data was taken. Exposed data spans names, addresses, postal codes, phone numbers, emails, order numbers, tracking information, and purchase details; Ceva retained delivery records for up to 90 days after each order.</p>
+                <div class="article-header"><span class="tag tag-cyber">Cybersecurity</span><span class="tag tag-privacy">Data Breach</span><span class="article-date">07 Aug 2026</span></div>
+                <h3>Framework Notifies Every Customer of a Breach That Entered Through an Analytics Vendor's Zero Day</h3>
+                <p class="summary">Modular laptop maker Framework told all of its customers on August 7 that attackers stole names, email addresses, phone numbers, and physical addresses; payment data was not taken. The intrusion path ran through a zero day vulnerability in Metabase, the business intelligence platform Framework connected to its cloud database. Framework declined to give a customer count, but the company has sold hundreds of thousands of devices. Metabase disclosed its own breach on its blog before Framework's notification went out and did not respond to press inquiries.</p>
+                <p class="detail">This is a textbook fourth party incident: the data lived in Framework's cloud database, the exploited software belonged to an analytics supplier bolted onto it, and the customers belonged to neither. Analytics and business intelligence tools routinely hold standing, privileged connections into production data stores while sitting outside the scrutiny applied to the stores themselves.</p>
                 <ul class="key-points">
-                    <li>At least eight European warehouses were disrupted, with client notifications flowing out from August 1</li>
-                    <li>End customer data from Bol, De Bijenkorf, Ace &amp; Tate, Ajax, and Valve was exposed through the shared provider</li>
-                    <li>Ceva retained delivery records up to 90 days post order, defining the exposure window</li>
-                    <li>No attribution or ransom demand had been publicly disclosed as of August 11</li>
+                    <li>All Framework customers were notified August 7; names, emails, phone numbers, and physical addresses were taken</li>
+                    <li>The attackers exploited a zero day in Metabase, the analytics platform connected to Framework's cloud database</li>
+                    <li>Payment data was not compromised, and Framework has not disclosed a customer count</li>
+                    <li>Metabase disclosed its own breach before Framework's customer notification</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>The end customers exposed here had no relationship with Ceva; their data sat in a fulfilment provider's systems because retention practices put it there. The controls that shrink this exposure are contractual and unglamorous: data minimization and retention limits written into logistics agreements, breach notification flow down clauses with defined clocks, and an actual map of where customer personal information resides across the fulfilment chain, per ISO/IEC 27001:2022 A.5.19 information security in supplier relationships and A.8.10 information deletion. Canadian organizations carry the PIPEDA real risk of significant harm assessment themselves regardless of which supplier was breached, so the 90 day retention detail is the number to go ask your own logistics providers about.</p>
+                    <p>Inventory every analytics, business intelligence, and reporting tool holding a connection into production data this week, and record what each connection can read, because that list is an attack surface catalogue. Constrain those connections to least privilege and monitor them per ISO/IEC 27001:2022 A.8.16, and bring the tools themselves under A.5.21 managing information security in the ICT supply chain and A.5.23 information security for use of cloud services, including a contractual requirement that the vendor notifies you of their incidents on a defined clock. Under PIPEDA, the real risk of significant harm assessment and notification duty is yours even when the exploited software belongs to a supplier, so the vendor's disclosure timeline cannot be the start of yours.</p>
                 </div>
-                <a href="https://therecord.media/ceva-logistics-cyberattack-bol-steam-debijenkorf-ace-tate" target="_blank" rel="noopener" class="source-link">Source: The Record <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-            </div>
-            <div class="article" data-tags="canada,cyber">
-                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-cyber">Vulnerability</span><span class="article-date">10 Aug 2026</span></div>
-                <h3>The Cyber Centre Flags an Actively Exploited WordPress Core Flaw, and Most Companies' Websites Sit Outside Their Patch Pipeline</h3>
-                <p class="summary">Cyber Centre advisory AV26 792, published August 10, warns that WordPress versions before 7.0.3 are affected by CVE 2026 64638, with open source reporting indicating exploitation in the wild, and urges immediate updates. The advisory arrived within days of the WordPress release. WordPress powers a large share of Canadian small business and marketing sites, which makes this a broad exposure advisory rather than a niche one.</p>
-                <ul class="key-points">
-                    <li>CVE 2026 64638 affects WordPress core prior to version 7.0.3; the fix is upgrading to 7.0.3</li>
-                    <li>The Cyber Centre cites open source reporting of active exploitation in the wild</li>
-                    <li>The advisory was published within days of the WordPress release</li>
-                </ul>
-                <div class="implications">
-                    <h4>Implications</h4>
-                    <p>Corporate websites are routinely run by marketing teams or external agencies outside the security program's patch pipeline, and an actively exploited CMS core flaw is the prompt to close that gap: confirm who owns patching for the public website, whether automatic updates are enabled, and whether web properties appear in the asset inventory at all. These are exactly the gaps that surface in gap assessments and CyberSecure Canada baselining, where the public website is often the most exposed asset nobody owns. ISO/IEC 27001:2022 A.5.9 inventory of information and other associated assets is the control that makes the question answerable before an advisory forces it.</p>
-                </div>
-                <a href="https://www.cyber.gc.ca/en/alerts-advisories/wordpress-security-advisory-av26-792" target="_blank" rel="noopener" class="source-link">Source: Canadian Centre for Cyber Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://techcrunch.com/2026/08/07/computer-maker-framework-notifies-all-customers-of-a-data-breach/" target="_blank" rel="noopener" class="source-link">Source: TechCrunch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
         <div class="section-title" id="ai-governance">AI Governance &amp; Regulation</div>
         <div class="articles">
-            <div class="article" data-tags="ai,regulation">
-                <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-regulation">Transparency</span><span class="article-date">12 Aug 2026</span></div>
-                <h3>Anthropic Will Watermark AI Generated Text Under EU Transparency Rules, and Disclosure Stops Being Optional by Default</h3>
-                <p class="summary">Anthropic announced it will add watermarks to text generated by its models in response to European regulatory requirements for identifying AI generated content, with the marker designed to travel with copied text and possibly persist through editing, BetaKit reported August 12. Google, Meta, Microsoft, and OpenAI have made similar commitments. The driver is the EU AI Act's Article 50 transparency obligations for machine readable labelling of AI generated content, enforceable since August 2. The same coverage notes that research finds AI text detection tools largely ineffective, which is why some organizations are adopting explicit AI usage policies with human accountability instead of relying on detection.</p>
+            <div class="article" data-tags="canada,privacy,ai,regulation">
+                <div class="article-header"><span class="tag tag-canada">Canada</span><span class="tag tag-privacy">Privacy</span><span class="tag tag-ai">AI</span><span class="article-date">06 Aug 2026</span></div>
+                <h3>The Privacy Commissioner Puts Automated Decision Rules at the Centre of Privacy Act Modernization</h3>
+                <p class="summary">Privacy Commissioner Philippe Dufresne published his submission to the Treasury Board of Canada Secretariat's consultation on modernizing the federal Privacy Act on August 6. The submission calls for recognizing privacy as a fundamental right, embedding contemporary privacy principles in the statute, stronger enforcement mechanisms, mandatory privacy impact assessments for high risk activities, enhanced transparency requirements for automated decision systems, and greater authority to collaborate with other oversight bodies. Dufresne framed strong data governance as contributing to "a more resilient Canadian economy, and a more secure and enriching digital society." No legislative timeline accompanied the submission.</p>
+                <p class="detail">The Privacy Act binds federal institutions, not the private sector, but OPC positions have a track record of previewing what the regulator later expects from everyone: the transparency and impact assessment language here reads as a draft of the expectations an eventual PIPEDA successor will carry for automated decision making.</p>
                 <ul class="key-points">
-                    <li>The watermark travels with copied text; Anthropic says only that it may survive editing, with technical details undisclosed</li>
-                    <li>All major model providers have now committed to content identifiers under EU AI Act Article 50 pressure</li>
-                    <li>Research cited finds detection tools unreliable, pushing organizations toward policy based accountability</li>
+                    <li>The OPC submission responds to Treasury Board's consultation on modernizing the Privacy Act</li>
+                    <li>It asks for mandatory privacy impact assessments for high risk activities and transparency duties for automated decision systems</li>
+                    <li>Stronger enforcement mechanisms and recognition of privacy as a fundamental right anchor the position</li>
+                    <li>No legislative timeline is attached; the consultation continues</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Organizations using AI in client deliverables, communications, or published content should now plan on the assumption that AI generated text is becoming identifiable by default, whether or not they choose to disclose it. That assumption belongs in acceptable use policies, client contracts, and public disclosure positions before it is tested by a client or regulator, not after. ISO/IEC 42001:2023 gives the structure for deciding and documenting an organizational stance, with Clause A.8.2 covering system transparency and provision of information to interested parties, and the decision itself is the governance act: an organization that has determined and recorded when it uses AI and how it discloses that use has nothing to fear from a watermark.</p>
+                    <p>Organizations selling AI enabled services to the federal government should expect transparency and assessment requirements to arrive through procurement clauses well before they arrive in statute, so the compliance clock is a contract cycle, not a legislative one. The low regret move is building AI system impact assessment practice now under ISO/IEC 42001:2023 Clause 6.1.4, which produces exactly the documented, repeatable assessments both the OPC position and federal procurement flow downs point toward. Private sector organizations using automated decisions about individuals should map where those decisions occur and what explanation they could produce today, because that inventory is the first question any future PIPEDA successor obligation will ask.</p>
                 </div>
-                <a href="https://betakit.com/the-ai-text-conundrum/" target="_blank" rel="noopener" class="source-link">Source: BetaKit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_260806/" target="_blank" rel="noopener" class="source-link">Source: Office of the Privacy Commissioner of Canada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
-            <div class="article" data-tags="ai,cyber,governance">
-                <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">10 Aug 2026</span></div>
-                <h3>OpenAI Gates a Purpose Built Offensive Security Model Behind Vetted Access, and Dual Use AI Gets Its First Procurement Test</h3>
-                <p class="summary">OpenAI expanded its Daybreak cyber defence offering into Blue and Red tiers on August 10 and introduced GPT 5.6 Cyber, a purpose trained cybersecurity model restricted to trusted partners including Accenture, IBM, CrowdStrike, and Cloudflare for security testing and vulnerability research. The Blue tier covers incident response and malware analysis; the Red tier carries the purpose trained offensive capability behind restricted access. OpenAI framed the launch around a narrowing window for defenders as AI led attacks multiply, in the same week research documented the near autonomous campaign against Taiwan.</p>
+            <div class="article" data-tags="ai,cyber">
+                <div class="article-header"><span class="tag tag-ai">AI</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">07 Aug 2026</span></div>
+                <h3>Trojanized AI Agent Skills Reached 1.7 Million Installs in a Credential Stealing Campaign</h3>
+                <p class="summary">Researchers at Zenity disclosed that attackers uploaded malicious AI agent skills to skills.sh, the open agent skills marketplace maintained by Vercel, impersonating the Paperclip agent orchestration platform and the Browser Use automation service, CSO Online reported August 7. Malicious instructions hidden in secondary documentation files directed AI agents to download and install a credential stealer targeting SSH keys, cloud credentials, Git tokens, and Kubernetes configurations. The campaign began July 11 and reached 1.7 million combined downloads by August 2, with individual Paperclip themed skills at roughly 300,000 installs each. Initial payload packages were pulled from npm and PyPI within hours of detection, after which the attackers pivoted to serving payloads from fake GitHub organizations.</p>
+                <p class="detail">The mechanism deserves attention: the malicious instructions targeted the agent, not the human. Skills are documents an AI agent reads and acts on with the developer's credentials and permissions, which makes a skills marketplace an instruction injection channel with an install counter.</p>
                 <ul class="key-points">
-                    <li>GPT 5.6 Cyber is gated to vetted enterprises rather than generally available, an explicit dual use control</li>
-                    <li>Blue tier covers incident response and malware analysis; Red tier holds offensive security capability</li>
-                    <li>Named partners include Accenture, IBM, CrowdStrike, and Cloudflare</li>
+                    <li>Malicious skills on skills.sh impersonated Paperclip and Browser Use, reaching 1.7 million combined downloads by August 2</li>
+                    <li>Hidden instructions directed agents to install a stealer targeting SSH keys, cloud credentials, Git tokens, and Kubernetes configurations</li>
+                    <li>The campaign ran from July 11, with payloads pulled from npm and PyPI within hours and re hosted via fake GitHub organizations</li>
+                    <li>Individual trojanized skills recorded roughly 300,000 installs each</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Offensive grade AI capability is now a product with an access control list, and it will reach organizations through their vendors before it reaches them directly: penetration test providers, managed security services, and assessment tooling will adopt these models quickly. Vendor risk and procurement teams need questions they do not currently ask, starting with whether a security provider uses AI models against client environments, on what data, under what confidentiality and retention terms, and with what human review. Getting those answers into service agreements now, under ISO/IEC 27001:2022 A.5.20 addressing information security within supplier agreements, is cheaper than renegotiating after an engagement has already run client data through a third party model.</p>
+                    <p>Agent skills are an unvetted software supply chain executing with developer level credentials, and most organizations have no inventory of what their staff's AI agents have installed. Extend third party software policy and allow listing to skill marketplaces now, and treat agent installed dependencies as fully in scope for ISO/IEC 27001:2022 A.5.21 managing information security in the ICT supply chain, A.8.7 protection against malware, and A.8.19 installation of software on operational systems. Under ISO/IEC 42001:2023, agent tooling with the ability to fetch and execute third party instructions warrants an impact assessment before deployment, not after the incident, and this campaign is the evidence to attach to that assessment.</p>
                 </div>
-                <a href="https://techcrunch.com/2026/08/10/as-ai-led-attacks-multiply-openai-launches-a-new-cyber-model/" target="_blank" rel="noopener" class="source-link">Source: TechCrunch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://www.csoonline.com/article/4206851/trojanized-ai-skills-gain-1-7m-installs-in-agent-targeted-attack.html" target="_blank" rel="noopener" class="source-link">Source: CSO Online <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
         <div class="section-title" id="frameworks">Frameworks &amp; Standards</div>
         <div class="articles">
-            <div class="article" data-tags="iso,governance">
-                <div class="article-header"><span class="tag tag-iso">ISO</span><span class="tag tag-governance">Cloud Security</span><span class="article-date">27 Jul 2026</span></div>
-                <h3>ISO/IEC 27017 Gets Its First Revision in a Decade, Realigning Cloud Security Controls to the 2022 Control Set</h3>
-                <p class="summary">ISO and IEC have published edition 2.0 of ISO/IEC 27017, the cloud services security controls standard, replacing the 2015 edition and aligning its guidance with the ISO/IEC 27002:2022 control structure that organizations have been transitioning to since 2022. The 39 page revision, published July 27 and now rolling into certification and contract cycles, provides updated cloud specific implementation guidance for both cloud service customers and cloud service providers across public, private, and hybrid deployment models.</p>
+            <div class="article" data-tags="nist,cyber,governance">
+                <div class="article-header"><span class="tag tag-nist">NIST</span><span class="tag tag-governance">Framework</span><span class="article-date">05 Aug 2026</span></div>
+                <h3>NIST Finalizes a Cybersecurity Framework 2.0 Community Profile for the Transit Sector</h3>
+                <p class="summary">The National Institute of Standards and Technology's National Cybersecurity Center of Excellence published the final Interagency Report IR 8576 on August 5, a Cybersecurity Framework 2.0 Community Profile for the transit sector. The profile translates transit specific mission needs into prioritized CSF 2.0 outcomes covering both business IT and operational technology, including cyber physical systems such as network connected signalling and fare systems. It was developed with transit agencies, operators, and federal partners, is voluntary and non regulatory, and extends NIST's growing series of sector Community Profiles built on CSF 2.0.</p>
                 <ul class="key-points">
-                    <li>Edition 2.0 supersedes ISO/IEC 27017:2015 after more than a decade</li>
-                    <li>Guidance now aligns with the ISO/IEC 27002:2022 control set rather than the 2013 structure</li>
-                    <li>Coverage addresses both customer and provider responsibilities across deployment models</li>
+                    <li>Final IR 8576 published August 5 as a CSF 2.0 Community Profile for transit</li>
+                    <li>Scope spans business IT and operational technology, including signalling and fare systems</li>
+                    <li>Developed with transit agencies, operators, and federal partners; adoption is voluntary</li>
+                    <li>It joins a growing series of sector profiles built on CSF 2.0</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Organizations citing ISO/IEC 27017 in cloud vendor contracts, trust pages, or statements of applicability should update references from the 2015 edition and review the realigned guidance, because a citation to a superseded edition is the kind of finding document reviews exist to catch. Cloud providers holding 27017 attestations should expect transition questions at their next assessment cycle. The substantive opportunity is bigger than the citation hygiene: the revision is a clean prompt to revisit shared responsibility definitions in cloud agreements, which drift as services are added, and to confirm that the customer side obligations the standard assigns are actually resourced rather than assumed to be the provider's problem.</p>
+                    <p>Canadian transit agencies and transportation authorities routinely borrow NIST profiles in the absence of a Canadian sector equivalent, and this one arrives with regulatory timing attached: interprovincial transport is a named sector under the Critical Cyber Systems Protection Act, which awaits its coming into force order. A CSF 2.0 transit profile is a ready made scaffold for the cybersecurity program designated operators will need to evidence, and its OT inclusive risk framing covers exactly the signalling and fare infrastructure most transit security programs treat thinly today. Mapping an existing ISO/IEC 27001:2022 management system to the profile's prioritized outcomes is a low cost way to find the transit specific gaps before a regulator or assessor does.</p>
                 </div>
-                <a href="https://webstore.iec.ch/en/publication/115400" target="_blank" rel="noopener" class="source-link">Source: IEC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://csrc.nist.gov/News/2026/transit-cybersecurity-framework-community-profile" target="_blank" rel="noopener" class="source-link">Source: NIST <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
-            <div class="article" data-tags="cyber,governance,ai">
-                <div class="article-header"><span class="tag tag-governance">Vulnerability Management</span><span class="tag tag-ai">AI</span><span class="article-date">12 Aug 2026</span></div>
-                <h3>Microsoft Patches 419 Vulnerabilities in One Month as AI Driven Discovery Rewrites the Denominator for Patch Programs</h3>
-                <p class="summary">Microsoft's August Patch Tuesday fixed 419 vulnerabilities, including 62 rated critical and three zero days, one of which, CVE 2026 68820 in Windows network connections, is actively exploited by Lazarus Group against defence and aerospace job applicants, The Record reported August 12. The monthly totals tell the structural story: 137 vulnerabilities in May, 206 in June, 622 in July, 419 in August, roughly five times pre AI discovery levels, as AI powered vulnerability research scales on both sides. The Cyber Centre issued its companion advisory AV26 804 on August 11 covering the rollup across more than 60 product families.</p>
+            <div class="article" data-tags="nist,cyber">
+                <div class="article-header"><span class="tag tag-nist">NIST</span><span class="tag tag-cyber">Telecommunications</span><span class="article-date">06 Aug 2026</span></div>
+                <h3>NIST Opens Comment on Securing the First Message a Device Sends a 5G Network</h3>
+                <p class="summary">NIST's National Cybersecurity Center of Excellence released the initial public draft of Cybersecurity White Paper CSWP 36F, Initial Non Access Stratum Message Security, on August 6, with comments due September 7, 2026. The paper documents how 5G networks encrypt and integrity protect the initial handshake message between a device and the network, a message that 4G sent unprotected, where it was exploitable for subscriber tracking and downgrade attacks. The draft includes a demonstration of the capability on the NCCoE's operational 5G testbed and implementation guidance for network operators.</p>
                 <ul class="key-points">
-                    <li>419 vulnerabilities fixed: 62 critical, 357 important, three zero days, one exploited in the wild</li>
-                    <li>The exploited flaw is tied to Lazarus Group targeting of defence and aerospace job applicants</li>
-                    <li>Monthly Microsoft patch volumes are running roughly five times pre AI levels</li>
-                    <li>Cyber Centre advisory AV26 804 covers the rollup for Canadian organizations</li>
+                    <li>CSWP 36F initial public draft released August 6; comments close September 7, 2026</li>
+                    <li>The paper covers encryption and integrity protection of the initial device to network handshake in 5G</li>
+                    <li>The equivalent 4G message was unprotected and exploitable for subscriber tracking and downgrade attacks</li>
+                    <li>Findings are demonstrated on the NCCoE's operational 5G testbed with operator guidance included</li>
                 </ul>
                 <div class="implications">
                     <h4>Implications</h4>
-                    <p>Patch management programs sized for 100 to 200 Microsoft vulnerabilities a month are now structurally under resourced, and the honest response is to redesign rather than work harder: prioritization logic that puts exploited and internet facing flaws first, more automation in deployment, and risk acceptance volumes that leadership has actually seen and endorsed. The change also reaches paperwork that predates it, because patch currency commitments worded for the old denominator, in policies, service agreements, and certification scopes under ISO/IEC 27001:2022 A.8.8, are quietly becoming promises no one can keep. Reviewing that wording before an auditor or a customer does is this quarter's cheapest finding to close.</p>
+                    <p>Canadian carriers and any enterprise deploying private 5G can lift CSWP 36F directly into procurement language, requiring initial NAS protection from network vendors rather than assuming the 5G label implies it. Telecommunications is a named sector under the Critical Cyber Systems Protection Act, and documented adoption of recognized security capabilities like this one will be useful evidence when program obligations arrive. The three week comment window is short; operators whose deployments differ from the testbed configuration should say so before September 7, because this class of white paper tends to harden into assessment expectations.</p>
                 </div>
-                <a href="https://therecord.media/microsoft-massive-patch-tuesday-releases-continue-ai" target="_blank" rel="noopener" class="source-link">Source: The Record <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+                <a href="https://csrc.nist.gov/News/2026/comment-on-nccoe-initial-public-draft-cswp-36f" target="_blank" rel="noopener" class="source-link">Source: NIST <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+            </div>
+            <div class="article" data-tags="cyber,governance">
+                <div class="article-header"><span class="tag tag-governance">Vulnerability Management</span><span class="tag tag-cyber">Cybersecurity</span><span class="article-date">06 Aug 2026</span></div>
+                <h3>ENISA Scales Up Its CVE Root as NATO's Communications Agency and an AI Security Firm Join as Numbering Authorities</h3>
+                <p class="summary">The European Union Agency for Cybersecurity announced August 6 that the NATO Communications and Information Agency and AI cybersecurity firm AISLE have joined the CVE Numbering Authorities operating under the ENISA Root, bringing it to 20 CNAs: 12 onboarded directly by ENISA and 8 transferred from the MITRE Root. ENISA took on its CVE Root role in November 2025 and now acts as the European coordination point for CVE identifier assignment, CNA recruitment, training, and program compliance, alongside CISA and MITRE. Chief Cybersecurity Officer Hans de Vries tied the expansion to the impact of frontier AI models on vulnerability discovery volumes.</p>
+                <ul class="key-points">
+                    <li>The ENISA Root now spans 20 CVE Numbering Authorities after the NCIA and AISLE joined August 6</li>
+                    <li>ENISA has held its CVE Root role since November 2025, alongside CISA and MITRE</li>
+                    <li>The agency coordinates CVE assignment, CNA recruitment, training, and compliance for Europe</li>
+                    <li>ENISA links the expansion to AI accelerated vulnerability discovery volumes</li>
+                </ul>
+                <div class="implications">
+                    <h4>Implications</h4>
+                    <p>The steady Europeanization of CVE infrastructure reduces the single point dependence on US funding that unsettled the program's users in 2025, which is quiet good news for every Canadian vulnerability management pipeline that consumes CVE data daily. The more actionable signal is the stated driver: the program's own operators now plan around AI accelerated vulnerability discovery, which means CVE volumes will keep climbing. Patch management service levels calibrated to human speed disclosure volumes deserve a review under ISO/IEC 27001:2022 A.8.8 management of technical vulnerabilities, with triage capacity and prioritization criteria sized for the volume curve ahead rather than the one behind.</p>
+                </div>
+                <a href="https://www.enisa.europa.eu/news/enisa-scales-up-its-role-in-the-cve-program" target="_blank" rel="noopener" class="source-link">Source: ENISA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
             </div>
         </div>
 
@@ -413,13 +409,6 @@
         <div class="section-title">Previous Reviews</div>
         <div class="prev-reviews">
             <div class="prev-reviews-list">
-                <a href="aug-2-2026.html" class="prev-review-link">
-                    <div>
-                        <div class="prev-title">Governance &amp; Compliance Review</div>
-                        <div class="prev-date">Week of August 2 to 8, 2026</div>
-                    </div>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
                 <a href="jul-26-2026.html" class="prev-review-link">
                     <div>
                         <div class="prev-title">Governance &amp; Compliance Review</div>
