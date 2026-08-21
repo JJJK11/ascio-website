@@ -226,7 +226,7 @@
         <div class="w hero-content">
             <div class="hero-tag">Free Assessment</div>
             <h1>Inspection &amp; Assessment Readiness</h1>
-            <p>Check your CPCSC Level 1 readiness against the self assessment criteria, or evaluate readiness for ISO 27001, ISO 42001, CyberSecure Canada, and CPCSC certification. Takes about 5 minutes.</p>
+            <p>Check your CPCSC Level 1 readiness against the self assessment criteria, your CCSPA readiness against the Act's duties, or evaluate readiness for ISO 27001, ISO 42001, CyberSecure Canada, and CPCSC certification. Takes about 5 minutes.</p>
         </div>
     </section>
 
@@ -250,6 +250,7 @@
                         <select id="aFramework">
                             <option value="" disabled selected>Select a framework</option>
                             <option value="cpcsc-l1">CPCSC Level 1: Defence Contract Readiness Check</option>
+                            <option value="ccspa">CCSPA: Critical Infrastructure Readiness Check</option>
                             <option value="iso27001">ISO/IEC 27001 &#8212; Information Security Management</option>
                             <option value="iso42001">ISO/IEC 42001 &#8212; AI Management System</option>
                             <option value="cybersecure">CyberSecure Canada &#8212; Baseline Cybersecurity</option>
@@ -433,6 +434,27 @@
                 { id: 'e2', label: 'Physical access', desc: 'Is physical access to relevant systems authorized and controlled, including alternate work sites?' },
                 { id: 'e3', label: 'Supporting records', desc: 'Could you produce a record behind each answer above: a policy, a configuration, a log, a screenshot?' },
                 { id: 'e4', label: 'Attestation readiness', desc: 'Is your CanadaBuys supplier profile current, and do you have a process to affirm annually?' }
+            ]
+        },
+        ccspa: {
+            governance: [
+                { id: 'g1', label: 'Designation exposure', desc: 'Do you know whether your organization sits in a class likely to be designated under the Critical Cyber Systems Protection Act?' },
+                { id: 'g2', label: 'Critical cyber system inventory', desc: 'Have you identified the systems whose compromise would affect the vital service you deliver?' },
+                { id: 'g3', label: 'Named accountability', desc: 'Are named executives accountable for the cyber security of those systems, with board visibility?' },
+                { id: 'g4', label: 'Cyber security program', desc: 'Do you have a documented program that could be finalized within 90 days of designation?' }
+            ],
+            controls: [
+                { id: 'c1', label: 'Protection of critical systems', desc: 'Are protective controls on critical cyber systems identified, implemented, and reviewed?' },
+                { id: 'c2', label: 'Supply chain and third party risk', desc: 'Are the vendors and services your critical systems depend on identified, with risks mitigated?' },
+                { id: 'c3', label: 'Incident detection', desc: 'Could you detect a significant incident on a critical system fast enough to decide and report within 72 hours?' },
+                { id: 'c4', label: 'Reporting runbook', desc: 'Is there a rehearsed runbook covering severity decision and reporting to the Cyber Centre?' },
+                { id: 'c5', label: 'Resilience', desc: 'Could you operate isolated from third party dependencies and rebuild systems while degraded?' }
+            ],
+            evidence: [
+                { id: 'e1', label: 'Operating records', desc: 'Could you produce records proving the controls operate: reviews, logs, test results?' },
+                { id: 'e2', label: 'Exercises', desc: 'Have you exercised the incident and resilience scenarios on a tabletop, with documented outcomes?' },
+                { id: 'e3', label: 'Board reporting', desc: 'Does the board receive regular cyber reporting with records behind every answer?' },
+                { id: 'e4', label: 'Direction readiness', desc: 'Is there a process to receive, act on, and evidence compliance with a binding cyber security direction?' }
             ]
         },
         iso27001: {
@@ -694,7 +716,7 @@
         }, 30);
 
         /* Summary */
-        const fwNames = { 'cpcsc-l1': 'CPCSC Level 1', iso27001: 'ISO/IEC 27001', iso42001: 'ISO/IEC 42001', cybersecure: 'CyberSecure Canada', cpcsc: 'CPCSC' };
+        const fwNames = { 'cpcsc-l1': 'CPCSC Level 1', ccspa: 'CCSPA', iso27001: 'ISO/IEC 27001', iso42001: 'ISO/IEC 42001', cybersecure: 'CyberSecure Canada', cpcsc: 'CPCSC' };
         const summaryEl = document.getElementById('scoreSummary');
         const descEl = document.getElementById('scoreDesc');
 
@@ -711,6 +733,20 @@
             } else {
                 summaryEl.textContent = 'Getting Started';
                 descEl.textContent = 'You are at the beginning of Level 1 readiness. That is where most of the defence supply chain is starting too. Define your scope first; a small, defensible boundary makes every control that follows cheaper.';
+            }
+        } else if (framework === 'ccspa') {
+            if (pct >= 75) {
+                summaryEl.textContent = 'High Readiness';
+                descEl.textContent = 'Your answers indicate a program that could meet designation with room to spare. The remaining work is keeping evidence current and exercising the scenarios, so the 90 day clock becomes a review exercise.';
+            } else if (pct >= 50) {
+                summaryEl.textContent = 'Moderate Readiness';
+                descEl.textContent = 'A foundation exists, but the flagged gaps are the ones a regulator, or your board, will ask about. Close them before designation orders land; a credible program takes longer than 90 days to build well.';
+            } else if (pct >= 25) {
+                summaryEl.textContent = 'Early Stage';
+                descEl.textContent = 'Significant work remains before your organization could meet the duties of the Act on the designation clock. Start with the critical cyber system inventory; it anchors the program, the reporting duty, and the board conversation.';
+            } else {
+                summaryEl.textContent = 'Getting Started';
+                descEl.textContent = 'You are at the beginning of CCSPA readiness. The first two artifacts, an exposure determination and a critical cyber system inventory, are quick to produce and change the conversation immediately.';
             }
         } else if (pct >= 75) {
             summaryEl.textContent = 'High Readiness';
@@ -777,6 +813,11 @@
             ['Scope &amp; Access', 'Where your contract information lives, and who can reach it. Aligned to the Level 1 self assessment criteria; the official criteria in your CanadaBuys profile remains the authority.'],
             ['Technical Controls', 'The safeguards the Level 1 criteria expect to be in place.'],
             ['Evidence &amp; Attestation', 'What you can prove, and whether you are ready to affirm annually.']
+        ],
+        ccspa: [
+            ['Exposure &amp; Governance', 'Whether the Act will reach you, and who answers for it.'],
+            ['Program &amp; Duties', 'What a designated operator must operate, not just document.'],
+            ['Evidence &amp; Readiness', 'What you can prove, and how fast you can report.']
         ]
     };
     const DEFAULT_TITLES = [
