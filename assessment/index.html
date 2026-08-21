@@ -5,11 +5,11 @@
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N7K1X6GV2R');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inspection &amp; Assessment Readiness: ascio</title>
-    <meta name="description" content="Free self-assessment for ISO 27001, ISO 42001, CyberSecure Canada, and CPCSC certification readiness. Identify gaps and get a prioritized action plan.">
-    <meta property="og:title" content="Inspection &amp; Assessment Readiness: ascio">
-    <meta property="og:description" content="Free readiness assessment for ISO 27001, ISO 42001, CyberSecure Canada, and CPCSC.">
-    <meta property="og:image" content="https://ascio.ca/linkedin-cover.png">
+    <title>CPCSC Level 1 Readiness Check &amp; Certification Self Assessment: ascio</title>
+    <meta name="description" content="Free CPCSC Level 1 readiness check mapped to the self assessment criteria, plus readiness assessments for ISO 27001, ISO 42001, and CyberSecure Canada. Identify gaps and get a prioritized action plan.">
+    <meta property="og:title" content="CPCSC Level 1 Readiness Check &amp; Certification Self Assessment: ascio">
+    <meta property="og:description" content="Check your CPCSC Level 1 readiness against the self assessment criteria. Free, about 5 minutes.">
+    <meta property="og:image" content="https://ascio.ca/og-image.png">
     <meta property="og:url" content="https://ascio.ca/assessment/">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -226,7 +226,7 @@
         <div class="w hero-content">
             <div class="hero-tag">Free Assessment</div>
             <h1>Inspection &amp; Assessment Readiness</h1>
-            <p>Evaluate your organization's readiness for ISO 27001, ISO 42001, CyberSecure Canada, or CPCSC certification. Takes about 5 minutes.</p>
+            <p>Check your CPCSC Level 1 readiness against the self assessment criteria, or evaluate readiness for ISO 27001, ISO 42001, CyberSecure Canada, and CPCSC certification. Takes about 5 minutes.</p>
         </div>
     </section>
 
@@ -249,6 +249,7 @@
                         <label for="aFramework">Framework</label>
                         <select id="aFramework">
                             <option value="" disabled selected>Select a framework</option>
+                            <option value="cpcsc-l1">CPCSC Level 1: Defence Contract Readiness Check</option>
                             <option value="iso27001">ISO/IEC 27001 &#8212; Information Security Management</option>
                             <option value="iso42001">ISO/IEC 42001 &#8212; AI Management System</option>
                             <option value="cybersecure">CyberSecure Canada &#8212; Baseline Cybersecurity</option>
@@ -293,8 +294,8 @@
 
                 <!-- Step 1: Governance & Leadership -->
                 <div class="assess-step" data-step="1">
-                    <h2>Governance &amp; Leadership</h2>
-                    <p class="step-desc">Rate your organization's current maturity in each area.</p>
+                    <h2 id="q1Title">Governance &amp; Leadership</h2>
+                    <p class="step-desc" id="q1Desc">Rate your organization's current maturity in each area.</p>
                     <div id="q1Container"></div>
                     <div class="assess-nav">
                         <button class="btn btn-back" onclick="assessBack()"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M15 19l-7-7 7-7"/></svg> Back</button>
@@ -304,8 +305,8 @@
 
                 <!-- Step 2: Controls & Operations -->
                 <div class="assess-step" data-step="2">
-                    <h2>Controls &amp; Operations</h2>
-                    <p class="step-desc">Evaluate your control implementation and operational practices.</p>
+                    <h2 id="q2Title">Controls &amp; Operations</h2>
+                    <p class="step-desc" id="q2Desc">Evaluate your control implementation and operational practices.</p>
                     <div id="q2Container"></div>
                     <div class="assess-nav">
                         <button class="btn btn-back" onclick="assessBack()"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M15 19l-7-7 7-7"/></svg> Back</button>
@@ -315,8 +316,8 @@
 
                 <!-- Step 3: Evidence & Audit Readiness -->
                 <div class="assess-step" data-step="3">
-                    <h2>Evidence &amp; Audit Readiness</h2>
-                    <p class="step-desc">Assess your documentation and audit preparation.</p>
+                    <h2 id="q3Title">Evidence &amp; Audit Readiness</h2>
+                    <p class="step-desc" id="q3Desc">Assess your documentation and audit preparation.</p>
                     <div id="q3Container"></div>
                     <div class="assess-nav">
                         <button class="btn btn-back" onclick="assessBack()"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M15 19l-7-7 7-7"/></svg> Back</button>
@@ -413,6 +414,27 @@
 
     /* Framework-specific questions */
     const QUESTIONS = {
+        'cpcsc-l1': {
+            governance: [
+                { id: 'g1', label: 'Specified Information scope', desc: 'Do you know exactly which systems, people, and locations hold the contractual information your defence contract identifies?' },
+                { id: 'g2', label: 'Unique user accounts', desc: 'Does every user have an individual account, with no shared logins on systems holding contract information?' },
+                { id: 'g3', label: 'Least privilege', desc: 'Is access limited to the people and functions that need it, and removed when no longer needed?' },
+                { id: 'g4', label: 'External connections', desc: 'Are connections to and from external systems identified, restricted, and approved?' }
+            ],
+            controls: [
+                { id: 'c1', label: 'Multifactor authentication', desc: 'Is MFA enforced for accounts that reach contract information, including remote and administrative access?' },
+                { id: 'c2', label: 'Authenticator management', desc: 'Are default passwords changed, and credentials issued, managed, and revoked through a defined process?' },
+                { id: 'c3', label: 'Boundary protection', desc: 'Do boundary controls separate systems holding contract information from the rest of your network?' },
+                { id: 'c4', label: 'Flaw remediation', desc: 'Are known flaws in operating systems and applications patched within a defined timeframe?' },
+                { id: 'c5', label: 'Malicious code protection', desc: 'Is protection against malicious code deployed and kept current on relevant systems?' }
+            ],
+            evidence: [
+                { id: 'e1', label: 'Media sanitization', desc: 'Is media holding contract information sanitized or destroyed before disposal or reuse, with records kept?' },
+                { id: 'e2', label: 'Physical access', desc: 'Is physical access to relevant systems authorized and controlled, including alternate work sites?' },
+                { id: 'e3', label: 'Supporting records', desc: 'Could you produce a record behind each answer above: a policy, a configuration, a log, a screenshot?' },
+                { id: 'e4', label: 'Attestation readiness', desc: 'Is your CanadaBuys supplier profile current, and do you have a process to affirm annually?' }
+            ]
+        },
         iso27001: {
             governance: [
                 { id: 'g1', label: 'Information security policy', desc: 'Is there a documented, management-approved information security policy?' },
@@ -672,11 +694,25 @@
         }, 30);
 
         /* Summary */
-        const fwNames = { iso27001: 'ISO/IEC 27001', iso42001: 'ISO/IEC 42001', cybersecure: 'CyberSecure Canada', cpcsc: 'CPCSC' };
+        const fwNames = { 'cpcsc-l1': 'CPCSC Level 1', iso27001: 'ISO/IEC 27001', iso42001: 'ISO/IEC 42001', cybersecure: 'CyberSecure Canada', cpcsc: 'CPCSC' };
         const summaryEl = document.getElementById('scoreSummary');
         const descEl = document.getElementById('scoreDesc');
 
-        if (pct >= 75) {
+        if (framework === 'cpcsc-l1') {
+            if (pct >= 75) {
+                summaryEl.textContent = 'High Readiness';
+                descEl.textContent = 'Your answers indicate strong alignment with the Level 1 self assessment criteria. The next step is assembling the record behind each answer, because an assessor, or a prime contractor, will ask for exactly that.';
+            } else if (pct >= 50) {
+                summaryEl.textContent = 'Moderate Readiness';
+                descEl.textContent = 'A foundation is in place, but the flagged gaps need closing before you affirm in your CanadaBuys profile. Each answer needs a record behind it, and the gaps below are where an assessor would start asking questions.';
+            } else if (pct >= 25) {
+                summaryEl.textContent = 'Early Stage';
+                descEl.textContent = 'Significant work remains before a credible Level 1 self assessment. Start with scope: identify exactly which systems hold contract information, then work the control gaps in priority order.';
+            } else {
+                summaryEl.textContent = 'Getting Started';
+                descEl.textContent = 'You are at the beginning of Level 1 readiness. That is where most of the defence supply chain is starting too. Define your scope first; a small, defensible boundary makes every control that follows cheaper.';
+            }
+        } else if (pct >= 75) {
             summaryEl.textContent = 'High Readiness';
             descEl.textContent = `Your organization shows strong alignment with ${fwNames[framework]} requirements. Focus on closing remaining gaps to achieve certification readiness.`;
         } else if (pct >= 50) {
@@ -734,6 +770,37 @@
         document.getElementById('aCompany').value = '';
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    /* Framework-specific step titles */
+    const STEP_TITLES = {
+        'cpcsc-l1': [
+            ['Scope &amp; Access', 'Where your contract information lives, and who can reach it. Aligned to the Level 1 self assessment criteria; the official criteria in your CanadaBuys profile remains the authority.'],
+            ['Technical Controls', 'The safeguards the Level 1 criteria expect to be in place.'],
+            ['Evidence &amp; Attestation', 'What you can prove, and whether you are ready to affirm annually.']
+        ]
+    };
+    const DEFAULT_TITLES = [
+        ['Governance &amp; Leadership', 'Rate your organization\'s current maturity in each area.'],
+        ['Controls &amp; Operations', 'Evaluate your control implementation and operational practices.'],
+        ['Evidence &amp; Audit Readiness', 'Assess your documentation and audit preparation.']
+    ];
+    document.getElementById('aFramework').addEventListener('change', function() {
+        const t = STEP_TITLES[this.value] || DEFAULT_TITLES;
+        for (let i = 0; i < 3; i++) {
+            document.getElementById('q' + (i + 1) + 'Title').innerHTML = t[i][0];
+            document.getElementById('q' + (i + 1) + 'Desc').textContent = t[i][1].replace('&amp;', '&');
+        }
+    });
+
+    /* Preselect framework from query string, e.g. ?framework=cpcsc-l1 */
+    (function() {
+        const fw = new URLSearchParams(location.search).get('framework');
+        const sel = document.getElementById('aFramework');
+        if (fw && QUESTIONS[fw]) {
+            sel.value = fw;
+            sel.dispatchEvent(new Event('change'));
+        }
+    })();
     </script>
 </body>
 </html>

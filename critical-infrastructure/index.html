@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N7K1X6GV2R"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N7K1X6GV2R');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCSPA & Bill C-8 Readiness for Critical Infrastructure Operators: ascio</title>
+    <meta name="description" content="CCSPA readiness for designated operators in finance, telecommunications, energy, and transportation: gap assessment, cyber security program design, incident reporting readiness, and resilience planning.">
+    <link rel="canonical" href="https://ascio.ca/critical-infrastructure/">
+    <meta property="og:title" content="CCSPA & Bill C-8 Readiness for Critical Infrastructure Operators: ascio">
+    <meta property="og:description" content="CCSPA readiness for designated operators in finance, telecommunications, energy, and transportation: gap assessment, cyber security program design, incident reporting readiness, and resilience planning.">
+    <meta property="og:image" content="https://ascio.ca/og-image.png">
+    <meta property="og:url" content="https://ascio.ca/critical-infrastructure/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_CA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CCSPA & Bill C-8 Readiness for Critical Infrastructure Operators: ascio">
+    <meta name="twitter:description" content="CCSPA readiness for designated operators in finance, telecommunications, energy, and transportation: gap assessment, cyber security program design, incident reporting readiness, and resilience planning.">
+    <meta name="twitter:image" content="https://ascio.ca/og-image.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Critical Infrastructure Cyber Governance","description":"CCSPA readiness for designated operators in finance, telecommunications, energy, and transportation: gap assessment, cyber security program design, incident reporting readiness, and resilience planning.","provider":{"@type":"Organization","name":"ascio Consultancy Inc.","url":"https://ascio.ca"},"areaServed":"CA","url":"https://ascio.ca/critical-infrastructure/"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"We have not been designated. Why act now?","acceptedAnswer":{"@type":"Answer","text":"Because the program obligation arrives with a 90 day clock, and a credible program takes longer than that to build well. The Act is in force, the designation schedule is being populated, and boards in the four sectors are already being asked what the plan is."}},{"@type":"Question","name":"Does CCSPA apply to us?","acceptedAnswer":{"@type":"Answer","text":"Part 2 of Bill C-8 applies to designated operators of critical cyber systems in federally regulated finance, telecommunications, energy, and transportation. Designation happens by order in council. Determining your realistic exposure is the first step of the engagement, and it is quick."}},{"@type":"Question","name":"What counts as a critical cyber system?","acceptedAnswer":{"@type":"Answer","text":"In practice: a system whose compromise would affect the continuity or security of the vital service you deliver. Producing that inventory, and being able to defend it, is the first artifact of the work."}},{"@type":"Question","name":"We are ISO 27001 certified. Are we covered?","acceptedAnswer":{"@type":"Answer","text":"A certified ISMS is a strong scaffold and shortens the build considerably, but the Act's duties are specific: the 90 day program, incident reporting on the regulator's clock, supply chain duties, and binding directions. We map your ISMS onto the Act's obligations and close what remains."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ascio","item":"https://ascio.ca/"},{"@type":"ListItem","position":2,"name":"Critical Infrastructure Cyber Governance","item":"https://ascio.ca/critical-infrastructure/"}]}</script>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #09090b; --bg-raised: #18181b; --bg-elevated: #27272a;
+            --border: #27272a; --border-light: #3f3f46;
+            --text: #ffffff; --text-secondary: #a1a1aa; --text-muted: #71717a; --text-metadata: #52525b;
+            --accent: #06b6d4; --accent-dim: rgba(6, 182, 212, 0.15); --green: #22c55e;
+            --mono: 'JetBrains Mono', monospace;
+            --body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--text-secondary); font-family: var(--body); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        .w { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+        .narrow { max-width: 780px; }
+        .nw { max-width: 820px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        h1, h2, h3, h4 { color: var(--text); line-height: 1.2; }
+        strong { color: var(--text); font-weight: 600; }
+
+        header { position: sticky; top: 0; z-index: 50; background: rgba(9,9,11,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+        .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .logo { font-family: var(--mono); font-weight: 600; font-size: 1.15rem; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
+        .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+        .nav-links a { color: var(--text-muted); font-size: 0.85rem; font-weight: 500; text-decoration: none; }
+        .nav-links a:hover { color: var(--text); }
+        @media (max-width: 720px) { .nav-links { display: none; } }
+
+        .hero { padding: 6.5rem 0 4.5rem; border-bottom: 1px solid var(--border); background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(6,182,212,0.07), transparent); }
+        .eyebrow { display: inline-flex; align-items: center; gap: 0.75rem; font-family: var(--mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 1.5rem; text-transform: uppercase; }
+        .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 1.25rem; max-width: 22ch; }
+        .lede { font-size: 1.08rem; color: var(--text-secondary); max-width: 640px; margin-bottom: 1.75rem; }
+        .proof { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2.25rem; }
+        .proof-line { display: flex; align-items: center; gap: 0.75rem; font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); }
+        .proof-line::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; opacity: 0.7; }
+        .ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.4rem; background: var(--text); color: var(--bg); font-weight: 600; font-size: 0.9rem; border-radius: 6px; text-decoration: none; transition: all 0.18s var(--ease); }
+        .btn:hover { background: var(--accent); color: var(--bg); text-decoration: none; transform: translateY(-1px); }
+        .btn2 { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.4rem; color: var(--text-secondary); font-weight: 500; font-size: 0.9rem; border: 1px solid var(--border-light); border-radius: 6px; text-decoration: none; transition: all 0.18s var(--ease); }
+        .btn2:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
+        section { padding: 4.5rem 0 0; }
+        .sec-label { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 0.9rem; }
+        section h2 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1rem; }
+        .sec-desc { max-width: 640px; margin-bottom: 2rem; }
+
+        .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+        .tile { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem 1.4rem 1.2rem; }
+        .tile .num { font-family: var(--mono); font-size: 1.7rem; font-weight: 600; color: var(--text); line-height: 1.15; }
+        .tile .num span { color: var(--accent); font-size: 1.05rem; }
+        .tile .lbl { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem; line-height: 1.5; }
+
+        .tl { border-left: 1px solid var(--border-light); margin: 2rem 0 0 0.4rem; }
+        .tl-row { position: relative; padding: 0 0 2rem 1.75rem; }
+        .tl-row::before { content: ''; position: absolute; left: -5px; top: 0.4em; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+        .tl-row.now::before { background: var(--green); border-color: var(--green); }
+        .tl-when { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.06em; margin-bottom: 0.3rem; text-transform: uppercase; }
+        .tl-row h3 { font-size: 1.02rem; margin-bottom: 0.35rem; }
+        .tl-row p { font-size: 0.92rem; max-width: 62ch; }
+
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1rem; }
+        .card { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }
+        .card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+        .card p { font-size: 0.9rem; }
+
+        .steps { list-style: none; counter-reset: step; margin-top: 0.5rem; }
+        .steps li { counter-increment: step; position: relative; padding: 0 0 1.4rem 3.2rem; }
+        .steps li::before { content: counter(step, decimal-leading-zero); position: absolute; left: 0; top: 0.1em; font-family: var(--mono); font-size: 0.8rem; color: var(--accent); border: 1px solid var(--border-light); border-radius: 6px; padding: 0.25rem 0.45rem; }
+        .steps li strong { display: block; margin-bottom: 0.15rem; }
+        .steps li p { font-size: 0.92rem; max-width: 68ch; }
+
+        .checks { list-style: none; margin-top: 0.5rem; }
+        .checks li { position: relative; padding: 0 0 0.7rem 1.6rem; font-size: 0.95rem; }
+        .checks li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 8px; height: 8px; border-radius: 2px; background: var(--accent-dim); border: 1px solid var(--accent); }
+
+        details.faq { border: 1px solid var(--border); border-radius: 8px; background: var(--bg-raised); margin-bottom: 0.75rem; }
+        details.faq summary { cursor: pointer; padding: 1.1rem 1.3rem; font-weight: 600; color: var(--text); font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+        details.faq summary::-webkit-details-marker { display: none; }
+        details.faq summary::after { content: '+'; font-family: var(--mono); color: var(--accent); flex-shrink: 0; }
+        details.faq[open] summary::after { content: '\2212'; }
+        details.faq .a { padding: 0 1.3rem 1.2rem; font-size: 0.92rem; max-width: 72ch; }
+
+        .band { margin-top: 4.5rem; border-top: 1px solid var(--border); background: linear-gradient(180deg, rgba(6,182,212,0.05), transparent); }
+        .band-inner { padding: 3.5rem 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
+        .band h2 { font-size: 1.4rem; margin-bottom: 0.4rem; }
+        .band p { font-size: 0.95rem; max-width: 52ch; }
+
+        article { padding: 3.5rem 0 0; }
+        article h2 { font-size: 1.45rem; margin: 2.8rem 0 0.9rem; letter-spacing: -0.015em; }
+        article h3 { font-size: 1.08rem; margin: 1.9rem 0 0.6rem; }
+        article p, article ul, article ol { margin-bottom: 1.05rem; max-width: 72ch; }
+        article ul, article ol { padding-left: 1.3rem; }
+        article li { margin-bottom: 0.4rem; }
+        .toc { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 8px; padding: 1.3rem 1.5rem; margin: 2rem 0; }
+        .toc .t { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.7rem; }
+        .toc ol { list-style: none; columns: 2; gap: 2rem; }
+        .toc li { margin-bottom: 0.45rem; font-size: 0.9rem; }
+        @media (max-width: 640px) { .toc ol { columns: 1; } }
+        .note { border-left: 2px solid var(--accent); background: var(--bg-raised); border-radius: 0 8px 8px 0; padding: 1rem 1.3rem; margin: 1.5rem 0; font-size: 0.92rem; max-width: 72ch; }
+        .tbl { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+        .tbl th { text-align: left; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--border-light); }
+        .tbl td { padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+        .tblwrap { overflow-x: auto; }
+        .sources { margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+        .sources .t { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.8rem; }
+        .sources ul { list-style: none; }
+        .sources li { font-size: 0.85rem; margin-bottom: 0.4rem; }
+        .meta-line { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+        footer { margin-top: 5rem; border-top: 1px solid var(--border); padding: 2.5rem 0; }
+        .foot { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; font-size: 0.82rem; color: var(--text-metadata); }
+        .foot a { color: var(--text-metadata); }
+        .foot .fb strong { font-family: var(--mono); color: var(--text); }
+</style>
+</head>
+<body>
+    <header><div class="w"><nav class="nav" aria-label="Main">
+        <a href="/" class="logo">ascio</a>
+        <ul class="nav-links">
+            <li><a href="/#practices">Practices</a></li>
+            <li><a href="/assessment/">Assessment</a></li>
+            <li><a href="/review/">Weekly Review</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    </nav></div></header>
+    <main>
+        <section class="hero"><div class="w">
+            <div class="eyebrow">Practice 02 &middot; Critical Infrastructure Cyber Governance</div>
+            <h1>Designation starts a 90 day clock. Be ready before it does.</h1>
+            <p class="lede">The Critical Cyber Systems Protection Act is law. When designation orders land, operators in finance, telecommunications, energy, and transportation will have 90 days to establish a cyber security program, with incident reporting, supply chain duties, and board accountability behind it. The preparation window is now.</p>
+            <div class="proof"><div class="proof-line">Bill C-8 received Royal Assent June 15, 2026</div><div class="proof-line">Administrative monetary penalties reach $15 million per day</div></div>
+            <div class="ctas"><a class="btn" href="/#contact">Request a CCSPA gap assessment</a><a class="btn2" href="/guides/ccspa/">Read the CCSPA guide</a></div>
+        </div></section>
+
+        <section><div class="w">
+            <div class="sec-label">Why now</div>
+            <h2>The obligations are set. The names are pending.</h2>
+            <p class="sec-desc">Part 2 of Bill C-8, the Critical Cyber Systems Protection Act, creates binding obligations for designated operators. Designation happens by order in council, and the schedule of designated classes is still being populated. That puts the compliance clock in 2027 and the preparation market in 2026: a credible program takes longer than 90 days to build well.</p>
+            <div class="tiles"><div class="tile"><div class="num">4</div><div class="lbl">federally regulated sectors in scope: finance, telecommunications, energy, transportation</div></div><div class="tile"><div class="num">90<span> days</span></div><div class="lbl">to establish a cyber security program after designation</div></div><div class="tile"><div class="num">72<span> hrs</span></div><div class="lbl">incident reporting window regulations are expected to cap</div></div></div>
+        </div></section>
+
+        <section><div class="w">
+            <div class="sec-label">The obligation</div>
+            <h2>What the Act requires of designated operators</h2>
+            <p class="sec-desc">Four duties, each producing artifacts a regulator, and your board, can examine.</p>
+            <div class="tl"><div class="tl-row"><div class="tl-when">Duty 01</div><h3>Establish a cyber security program</h3><p>Within 90 days of designation: a documented program covering the identification and protection of critical cyber systems. This is the anchor artifact, and the one worth building before the clock starts.</p></div><div class="tl-row"><div class="tl-when">Duty 02</div><h3>Mitigate supply chain and third party risks</h3><p>Identify and reduce the risks your vendors and service providers introduce into critical cyber systems, with contractual and technical measures behind the paperwork.</p></div><div class="tl-row"><div class="tl-when">Duty 03</div><h3>Report significant cyber incidents</h3><p>Inside a window regulations are expected to cap at 72 hours. That takes detection, a severity decision process, and a rehearsed reporting runbook, not just a policy.</p></div><div class="tl-row"><div class="tl-when">Duty 04</div><h3>Comply with cyber security directions</h3><p>The government can issue binding directions to designated operators. Compliance capability, and records of it, need to exist before a direction arrives.</p></div></div>
+            <div class="note"><strong>Also in motion:</strong> the Cyber Centre's critical infrastructure resilience initiative, launched April 2026, tells operators to prepare for severe disruption: operating independently of third party dependencies for extended periods and rebuilding systems while isolated. Boards in these sectors now face questions they must answer on the record.</div>
+        </div></section>
+
+        <section><div class="w">
+            <div class="sec-label">What we do</div>
+            <h2>Five services, one practice</h2>
+            <p class="sec-desc">CCSPA sets the floor. The practice is governance your board can stand behind.</p>
+            <div class="cards"><div class="card"><h3>CCSPA readiness and gap assessment</h3><p>Exposure determination, critical cyber system identification, and a gap register against the Act's obligations and Cyber Centre guidance.</p></div><div class="card"><h3>Cyber security program design</h3><p>The 90 day artifact, built before designation: scoped to your critical cyber systems, owned by named roles, and evidenced from day one.</p></div><div class="card"><h3>Incident reporting readiness</h3><p>Detection thresholds, a severity decision process, and a reporting runbook that fits a 72 hour window, exercised on a tabletop before it is needed.</p></div><div class="card"><h3>Resilience planning</h3><p>Per Cyber Centre guidance: operating isolated from third party dependencies, rebuilding while degraded, and proving both are more than slideware.</p></div><div class="card"><h3>Third party and supply chain risk</h3><p>Who you depend on, what flows down to them, and which of those dependencies can take your vital service down with them.</p></div></div>
+        </div></section>
+
+        <section><div class="w"><div class="nw">
+            <div class="sec-label">How the engagement runs</div>
+            <h2>Nine steps, exposure to exercised</h2>
+            <p class="sec-desc">Time and materials, with checkpoints. Your team implements; we design, support, and verify. Every stage produces an artifact you keep.</p>
+            <ol class="steps"><li><strong>Exposure determination</strong><p>Is your organization in a class likely to be designated, what obligations follow, and what the realistic clock looks like.</p></li><li><strong>Critical cyber system identification</strong><p>Which systems, if compromised, affect the vital service you deliver. This inventory anchors everything after it.</p></li><li><strong>Baseline gap assessment</strong><p>Against the Act's obligations and Cyber Centre guidance, producing a prioritized register.</p></li><li><strong>Program design</strong><p>The cyber security program the Act requires, built to be operated rather than filed.</p></li><li><strong>Supply chain risk process</strong><p>Dependency mapping, flow down requirements, and contractual teeth.</p></li><li><strong>Incident reporting readiness</strong><p>Thresholds, decision process, runbook, and the reporting path.</p></li><li><strong>Resilience planning</strong><p>Isolation and rebuild scenarios, planned and costed.</p></li><li><strong>Board governance layer</strong><p>Reporting cadence, records, and the answers directors must give on the record.</p></li><li><strong>Exercise and maintain</strong><p>Tabletop the program, track designation orders and directions as they land, and keep the evidence current.</p></li></ol>
+        </div></div></section>
+
+        <section><div class="w"><div class="nw">
+            <div class="sec-label">What you walk away with</div>
+            <h2>Artifacts, not advice</h2>
+            <ul class="checks"><li>A critical cyber system inventory your board has seen</li><li>A gap register against the Act's four duties</li><li>A cyber security program ready for the 90 day clock</li><li>An incident reporting runbook that fits 72 hours, tested on a tabletop</li><li>A third party risk map with flow down requirements</li><li>A board reporting pack with records behind every answer</li></ul>
+        </div></div></section>
+
+        <section><div class="w"><div class="nw">
+            <div class="sec-label">Questions</div>
+            <h2>Asked often</h2>
+            <details class="faq"><summary>We have not been designated. Why act now?</summary><div class="a"><p>Because the program obligation arrives with a 90 day clock, and a credible program takes longer than that to build well. The Act is in force, the designation schedule is being populated, and boards in the four sectors are already being asked what the plan is.</p></div></details>
+                <details class="faq"><summary>Does CCSPA apply to us?</summary><div class="a"><p>Part 2 of Bill C-8 applies to designated operators of critical cyber systems in federally regulated finance, telecommunications, energy, and transportation. Designation happens by order in council. Determining your realistic exposure is the first step of the engagement, and it is quick.</p></div></details>
+                <details class="faq"><summary>What counts as a critical cyber system?</summary><div class="a"><p>In practice: a system whose compromise would affect the continuity or security of the vital service you deliver. Producing that inventory, and being able to defend it, is the first artifact of the work.</p></div></details>
+                <details class="faq"><summary>We are ISO 27001 certified. Are we covered?</summary><div class="a"><p>A certified ISMS is a strong scaffold and shortens the build considerably, but the Act's duties are specific: the 90 day program, incident reporting on the regulator's clock, supply chain duties, and binding directions. We map your ISMS onto the Act's obligations and close what remains.</p></div></details>
+        </div></div></section>
+    </main>
+    <div class="band"><div class="w"><div class="band-inner">
+        <div><h2>Boards are asking the question already.</h2><p>What are our critical systems, what controls do we have, where are the gaps, can we prove any of it. A gap assessment gives you the answers on the record.</p></div>
+        <div class="ctas"><a class="btn" href="/#contact">Request a CCSPA gap assessment</a><a class="btn2" href="/#contact">Request a discovery call</a></div>
+    </div></div></div>
+    <footer><div class="w"><div class="foot">
+        <div class="fb"><strong>ascio</strong>: Security, Risk &amp; Compliance for Canada's Defence, Critical Infrastructure &amp; AI Economy</div>
+        <div>&copy; 2017&ndash;2026 ascio Consultancy Inc. &nbsp;&middot;&nbsp; <a href="/privacy">Privacy Policy</a></div>
+    </div></div></footer>
+</body>
+</html>

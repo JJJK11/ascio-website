@@ -79,6 +79,10 @@
         .main { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 60px 2rem; }
         .section-title { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); margin-bottom: 32px; display: flex; align-items: center; gap: 1rem; }
         .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+        .tracks-bar { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 48px; padding: 1rem 1.25rem; background: var(--bg-raised); border: 1px solid var(--border); border-radius: 8px; }
+        .tracks-bar .tb-label { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; color: var(--text-muted); margin-right: 0.25rem; }
+        .track-chip { font-family: var(--mono); font-size: 0.68rem; padding: 0.35rem 0.75rem; border: 1px solid var(--border-light); border-radius: 100px; color: var(--text-secondary); text-decoration: none; transition: all 0.18s ease; }
+        .track-chip:hover { color: var(--accent); border-color: var(--accent); }
 
         .tag { display: inline-block; padding: 0.2rem 0.6rem; font-family: var(--mono); font-size: 0.55rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; width: fit-content; border-radius: 3px; }
         .tag-governance { color: var(--bg); background: var(--accent); }
@@ -229,6 +233,13 @@
     <div class="hero-rule"></div>
 
     <div class="main">
+
+        <div class="tracks-bar">
+            <span class="tb-label">Tracks</span>
+            <a class="track-chip" href="../defence/">Defence &amp; Supply Chain Security</a>
+            <a class="track-chip" href="../critical-infrastructure/">Critical Infrastructure</a>
+            <a class="track-chip" href="../ai-governance/">AI Governance</a>
+        </div>
 
         <div class="section-title">Lead Story</div>
         <div class="featured" data-tags="ai,cyber,governance">
