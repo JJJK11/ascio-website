@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N7K1X6GV2R"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N7K1X6GV2R');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference Library: Standards, Programs & Regulations: ascio</title>
+    <meta name="description" content="The full catalog of standards, programs, and regulations Ascio works across: ISO management systems, Canadian programs, privacy law, AI governance frameworks, and sector requirements.">
+    <link rel="canonical" href="https://ascio.ca/standards/">
+    <meta property="og:title" content="Reference Library: Standards, Programs & Regulations: ascio">
+    <meta property="og:description" content="The full catalog of standards, programs, and regulations Ascio works across: ISO management systems, Canadian programs, privacy law, AI governance frameworks, and sector requirements.">
+    <meta property="og:image" content="https://ascio.ca/og-image.png">
+    <meta property="og:url" content="https://ascio.ca/standards/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_CA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Reference Library: Standards, Programs & Regulations: ascio">
+    <meta name="twitter:description" content="The full catalog of standards, programs, and regulations Ascio works across: ISO management systems, Canadian programs, privacy law, AI governance frameworks, and sector requirements.">
+    <meta name="twitter:image" content="https://ascio.ca/og-image.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ascio","item":"https://ascio.ca/"},{"@type":"ListItem","position":2,"name":"Reference Library","item":"https://ascio.ca/standards/"}]}</script>
+    <style>
+        .standards-group { margin-bottom: 2.5rem; }
+        .standards-group h3 { font-family: var(--mono); font-size: 0.72rem; font-weight: 500; color: var(--text); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+        .std-count { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; color: var(--text-metadata); background: rgba(113,113,122,0.1); border: 1px solid rgba(113,113,122,0.15); padding: 0.1rem 0.4rem; border-radius: 3px; margin-left: 0.5rem; text-transform: none; letter-spacing: 0; white-space: nowrap; }
+        .std-proves { display: block; width: 100%; font-family: var(--body); font-size: 0.72rem; font-weight: 400; color: var(--text-metadata); text-transform: none; letter-spacing: 0; margin-top: 0.25rem; font-style: italic; }
+        .standards-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0.75rem; }
+        .standard-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; background: var(--bg-raised); border: 1px solid var(--border); border-left: 3px solid transparent; border-radius: 6px; transition: all 0.18s var(--ease); }
+        .standard-item:hover { border-color: var(--border-light); border-left-color: var(--accent); transform: translateX(4px); }
+        .standard-code { font-family: var(--mono); font-weight: 600; font-size: 0.8rem; color: var(--accent); white-space: nowrap; }
+        .standard-name { font-size: 0.85rem; color: var(--text-muted); flex: 1; }
+        .standard-badge { font-family: var(--mono); font-size: 0.55rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.15rem 0.4rem; border-radius: 2px; white-space: nowrap; }
+        .standard-badge.certifiable { color: var(--green); background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); }
+        .standard-badge.guidance { color: var(--text-muted); background: rgba(113,113,122,0.1); border: 1px solid rgba(113,113,122,0.2); }
+        .standard-badge.program { color: #f59e0b; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); }
+        .standard-badge.regulation { color: #f87171; background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.2); }
+        .standard-badge.attestation { color: #818cf8; background: rgba(129,140,248,0.1); border: 1px solid rgba(129,140,248,0.2); }
+        .ai-section { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; margin-top: 2rem; }
+        .ai-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1.75rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+        .ai-header-content h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+        .ai-header-content p { color: var(--text-secondary); font-size: 0.95rem; max-width: 56ch; }
+        .ai-badge { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; color: var(--green); padding: 0.4rem 0.75rem; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); border-radius: 4px; height: fit-content; }
+        .ai-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
+        .ai-item { padding: 1.5rem; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; }
+        .ai-item h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .ai-item h4::before { content: ''; width: 3px; height: 16px; background: var(--accent); border-radius: 2px; flex-shrink: 0; }
+        .ai-item p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem; }
+        .ai-item ul { list-style: none; padding: 0; }
+        .ai-item ul li { font-size: 0.8rem; color: var(--text-muted); padding-left: 1.1rem; position: relative; margin-bottom: 0.35rem; }
+        .ai-item ul li::before { content: '\2192'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; }
+        .lib-tools { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; margin-bottom: 2.5rem; }
+        .lib-search { flex: 1; min-width: 240px; background: var(--bg-raised); border: 1px solid var(--border-light); border-radius: 6px; color: var(--text); font-family: var(--body); font-size: 0.9rem; padding: 0.7rem 1rem; }
+        .lib-search:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+        .lib-filter { font-family: var(--mono); font-size: 0.7rem; padding: 0.45rem 0.8rem; background: var(--bg-raised); border: 1px solid var(--border); border-radius: 4px; color: var(--text-muted); cursor: pointer; transition: all 0.12s var(--ease); }
+        .lib-filter:hover { border-color: var(--accent); color: var(--accent); }
+        .lib-filter.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
+        .hidden { display: none !important; }
+        .lib-empty { display: none; color: var(--text-muted); font-size: 0.9rem; padding: 2rem 0; }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #09090b; --bg-raised: #18181b; --bg-elevated: #27272a;
+            --border: #27272a; --border-light: #3f3f46;
+            --text: #ffffff; --text-secondary: #a1a1aa; --text-muted: #71717a; --text-metadata: #52525b;
+            --accent: #06b6d4; --accent-dim: rgba(6, 182, 212, 0.15); --green: #22c55e;
+            --mono: 'JetBrains Mono', monospace;
+            --body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--text-secondary); font-family: var(--body); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        .w { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+        .narrow { max-width: 780px; }
+        .nw { max-width: 820px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        h1, h2, h3, h4 { color: var(--text); line-height: 1.2; }
+        strong { color: var(--text); font-weight: 600; }
+
+        header { position: sticky; top: 0; z-index: 50; background: rgba(9,9,11,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+        .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .logo { font-family: var(--mono); font-weight: 600; font-size: 1.15rem; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
+        .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+        .nav-links a { color: var(--text-muted); font-size: 0.85rem; font-weight: 500; text-decoration: none; }
+        .nav-links a:hover { color: var(--text); }
+        @media (max-width: 720px) { .nav-links { display: none; } }
+
+        .hero { padding: 6.5rem 0 4.5rem; border-bottom: 1px solid var(--border); background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(6,182,212,0.07), transparent); }
+        .eyebrow { display: inline-flex; align-items: center; gap: 0.75rem; font-family: var(--mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 1.5rem; text-transform: uppercase; }
+        .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 1.25rem; max-width: 22ch; }
+        .lede { font-size: 1.08rem; color: var(--text-secondary); max-width: 640px; margin-bottom: 1.75rem; }
+        .proof { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2.25rem; }
+        .proof-line { display: flex; align-items: center; gap: 0.75rem; font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); }
+        .proof-line::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; opacity: 0.7; }
+        .ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.4rem; background: var(--text); color: var(--bg); font-weight: 600; font-size: 0.9rem; border-radius: 6px; text-decoration: none; transition: all 0.18s var(--ease); }
+        .btn:hover { background: var(--accent); color: var(--bg); text-decoration: none; transform: translateY(-1px); }
+        .btn2 { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.4rem; color: var(--text-secondary); font-weight: 500; font-size: 0.9rem; border: 1px solid var(--border-light); border-radius: 6px; text-decoration: none; transition: all 0.18s var(--ease); }
+        .btn2:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
+        section { padding: 4.5rem 0 0; }
+        .sec-label { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 0.9rem; }
+        section h2 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1rem; }
+        .sec-desc { max-width: 640px; margin-bottom: 2rem; }
+
+        .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+        .tile { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem 1.4rem 1.2rem; }
+        .tile .num { font-family: var(--mono); font-size: 1.7rem; font-weight: 600; color: var(--text); line-height: 1.15; }
+        .tile .num span { color: var(--accent); font-size: 1.05rem; }
+        .tile .lbl { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem; line-height: 1.5; }
+
+        .tl { border-left: 1px solid var(--border-light); margin: 2rem 0 0 0.4rem; }
+        .tl-row { position: relative; padding: 0 0 2rem 1.75rem; }
+        .tl-row::before { content: ''; position: absolute; left: -5px; top: 0.4em; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+        .tl-row.now::before { background: var(--green); border-color: var(--green); }
+        .tl-when { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.06em; margin-bottom: 0.3rem; text-transform: uppercase; }
+        .tl-row h3 { font-size: 1.02rem; margin-bottom: 0.35rem; }
+        .tl-row p { font-size: 0.92rem; max-width: 62ch; }
+
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1rem; }
+        .card { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }
+        .card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+        .card p { font-size: 0.9rem; }
+
+        .steps { list-style: none; counter-reset: step; margin-top: 0.5rem; }
+        .steps li { counter-increment: step; position: relative; padding: 0 0 1.4rem 3.2rem; }
+        .steps li::before { content: counter(step, decimal-leading-zero); position: absolute; left: 0; top: 0.1em; font-family: var(--mono); font-size: 0.8rem; color: var(--accent); border: 1px solid var(--border-light); border-radius: 6px; padding: 0.25rem 0.45rem; }
+        .steps li strong { display: block; margin-bottom: 0.15rem; }
+        .steps li p { font-size: 0.92rem; max-width: 68ch; }
+
+        .checks { list-style: none; margin-top: 0.5rem; }
+        .checks li { position: relative; padding: 0 0 0.7rem 1.6rem; font-size: 0.95rem; }
+        .checks li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 8px; height: 8px; border-radius: 2px; background: var(--accent-dim); border: 1px solid var(--accent); }
+
+        details.faq { border: 1px solid var(--border); border-radius: 8px; background: var(--bg-raised); margin-bottom: 0.75rem; }
+        details.faq summary { cursor: pointer; padding: 1.1rem 1.3rem; font-weight: 600; color: var(--text); font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+        details.faq summary::-webkit-details-marker { display: none; }
+        details.faq summary::after { content: '+'; font-family: var(--mono); color: var(--accent); flex-shrink: 0; }
+        details.faq[open] summary::after { content: '\2212'; }
+        details.faq .a { padding: 0 1.3rem 1.2rem; font-size: 0.92rem; max-width: 72ch; }
+
+        .band { margin-top: 4.5rem; border-top: 1px solid var(--border); background: linear-gradient(180deg, rgba(6,182,212,0.05), transparent); }
+        .band-inner { padding: 3.5rem 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
+        .band h2 { font-size: 1.4rem; margin-bottom: 0.4rem; }
+        .band p { font-size: 0.95rem; max-width: 52ch; }
+
+        article { padding: 3.5rem 0 0; }
+        article h2 { font-size: 1.45rem; margin: 2.8rem 0 0.9rem; letter-spacing: -0.015em; }
+        article h3 { font-size: 1.08rem; margin: 1.9rem 0 0.6rem; }
+        article p, article ul, article ol { margin-bottom: 1.05rem; max-width: 72ch; }
+        article ul, article ol { padding-left: 1.3rem; }
+        article li { margin-bottom: 0.4rem; }
+        .toc { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 8px; padding: 1.3rem 1.5rem; margin: 2rem 0; }
+        .toc .t { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.7rem; }
+        .toc ol { list-style: none; columns: 2; gap: 2rem; }
+        .toc li { margin-bottom: 0.45rem; font-size: 0.9rem; }
+        @media (max-width: 640px) { .toc ol { columns: 1; } }
+        .note { border-left: 2px solid var(--accent); background: var(--bg-raised); border-radius: 0 8px 8px 0; padding: 1rem 1.3rem; margin: 1.5rem 0; font-size: 0.92rem; max-width: 72ch; }
+        .tbl { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+        .tbl th { text-align: left; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--border-light); }
+        .tbl td { padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+        .tblwrap { overflow-x: auto; }
+        .sources { margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+        .sources .t { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.8rem; }
+        .sources ul { list-style: none; }
+        .sources li { font-size: 0.85rem; margin-bottom: 0.4rem; }
+        .meta-line { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+        footer { margin-top: 5rem; border-top: 1px solid var(--border); padding: 2.5rem 0; }
+        .foot { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; font-size: 0.82rem; color: var(--text-metadata); }
+        .foot a { color: var(--text-metadata); }
+        .foot .fb strong { font-family: var(--mono); color: var(--text); }
+</style>
+</head>
+<body>
+    <header><div class="w"><nav class="nav" aria-label="Main">
+        <a href="/" class="logo">ascio</a>
+        <ul class="nav-links">
+            <li><a href="/#practices">Practices</a></li>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/standards/">Library</a></li>
+            <li><a href="/assessment/">Assessment</a></li>
+            <li><a href="/review/">Weekly Review</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    </nav></div></header>
+    <main>
+        <section class="hero"><div class="w">
+            <div class="eyebrow">Reference Library</div>
+            <h1>The standards we work across</h1>
+            <p class="lede">Engagements lead with the <a href="/#practices">three practices</a>; these are the instruments they draw on. Kept here as a working reference: filter it, or ask us which of these your situation actually needs, because the answer is usually three, not fifty.</p>
+        </div></section>
+        <section style="padding-top:3rem"><div class="w">
+
+                <div class="lib-tools">
+                    <input class="lib-search" id="libSearch" type="search" placeholder="Filter by name or code, e.g. 27001, privacy, CPCSC..." aria-label="Filter the library">
+                    <button class="lib-filter active" data-filter="all">All</button>
+                    <button class="lib-filter" data-filter="certifiable">Certifiable</button>
+                    <button class="lib-filter" data-filter="iso">ISO</button>
+                    <button class="lib-filter" data-filter="cybersecurity">Security</button>
+                    <button class="lib-filter" data-filter="ai">AI</button>
+                    <button class="lib-filter" data-filter="privacy">Privacy</button>
+                    <button class="lib-filter" data-filter="canadian">Canadian</button>
+                    <button class="lib-filter" data-filter="governance">Governance</button>
+                    <button class="lib-filter" data-filter="resilience">Resilience</button>
+                </div>
+                <p class="lib-empty" id="libEmpty">Nothing in the library matches that filter.</p>
+
+<div class="standards-group" id="standards-cybersecurity" data-categories="iso cybersecurity certifiable"><h3>Cybersecurity & Information Security<span class="std-count">14 items</span><span class="std-proves">Proves operational control of information security risks</span> </h3><div class="standards-list" id="stdlist-cyber">
+                    <div class="standard-item"><span class="standard-code">ISO/IEC 27001</span><span class="standard-name">Information Security Management</span><span class="standard-badge certifiable">Certifiable</span></div>
+                    <div class="standard-item"><span class="standard-code">ISO/IEC 42001</span><span class="standard-name">AI Management System</span><span class="standard-badge certifiable">Certifiable</span></div>
+                    <div class="standard-item"><span class="standard-code">ISO/IEC 27701</span><span class="standard-name">Privacy Information Management</span><span class="standard-badge certifiable">Certifiable</span></div>
+                    <div class="standard-item"><span class="standard-code">ISO/IEC 27017</span><span class="standard-name">Cloud Services Security</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">ISO/IEC 27018</span><span class="standard-name">PII Protection in Public Cloud</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">ISO/IEC 27035</span><span class="standard-name">Incident Management</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">ISO/IEC 27005</span><span class="standard-name">Information Security Risk Management</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">ISO/IEC 27031</span><span class="standard-name">ICT Readiness for Business Continuity</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">ISO/IEC 27002</span><span class="standard-name">Information Security Controls</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">ISO/IEC 27036</span><span class="standard-name">Supplier Relationship Security</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">ISO/IEC 27019</span><span class="standard-name">Energy Utility Information Security</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">IEC 62443</span><span class="standard-name">Industrial Automation & Control Systems Security</span><span class="standard-badge certifiable">Certifiable</span></div>
+                    <div class="standard-item"><span class="standard-code">FIPS 140-3</span><span class="standard-name">Cryptographic Module Validation</span><span class="standard-badge program">Program</span></div>
+                    <div class="standard-item"><span class="standard-code">Common Criteria</span><span class="standard-name">IT Security Evaluation (ISO/IEC 15408)</span><span class="standard-badge certifiable">Certifiable</span></div>
+                </div></div>
+<div class="standards-group" id="standards-itservice" data-categories="iso certifiable"><h3>IT Service & Digital Operations<span class="std-count">3 items</span><span class="std-proves">Proves structured IT service delivery and governance</span> </h3><div class="standards-list" id="stdlist-it">
+                    <div class="standard-item"><span class="standard-code">ISO/IEC 20000-1</span><span class="standard-name">IT Service Management</span><span class="standard-badge certifiable">Certifiable</span></div>
+                    <div class="standard-item"><span class="standard-code">ISO/IEC 19770-1</span><span class="standard-name">IT Asset Management</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">ISO/IEC 38500</span><span class="standard-name">Governance of IT</span><span class="standard-badge guidance">Guidance</span></div>
+                </div></div>
+<div class="standards-group" id="standards-resilience" data-categories="iso resilience certifiable"><h3>Business Continuity & Organizational Resilience<span class="std-count">3 items</span><span class="std-proves">Proves ability to maintain operations through disruption</span> </h3><div class="standards-list" id="stdlist-bc">
+                    <div class="standard-item"><span class="standard-code">ISO 22301</span><span class="standard-name">Business Continuity Management</span><span class="standard-badge certifiable">Certifiable</span></div>
+                    <div class="standard-item"><span class="standard-code">ISO 22316</span><span class="standard-name">Organizational Resilience</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">ISO 31000</span><span class="standard-name">Enterprise Risk Management</span><span class="standard-badge guidance">Guidance</span></div>
+                </div></div>
+<div class="standards-group" id="standards-compliance" data-categories="iso certifiable governance"><h3>Compliance & Integrated Management Systems<span class="std-count">4 items</span><span class="std-proves">Proves systematic compliance across multiple obligations</span> </h3><div class="standards-list" id="stdlist-comp">
+                    <div class="standard-item"><span class="standard-code">ISO 37301</span><span class="standard-name">Compliance Management</span><span class="standard-badge certifiable">Certifiable</span></div>
+                    <div class="standard-item"><span class="standard-code">IMS Advisory</span><span class="standard-name">Integrated Management System</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">Multistandard</span><span class="standard-name">Harmonization & Certification</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">ISO/IEC 17020</span><span class="standard-name">Conformity Assessment: Inspection Bodies</span><span class="standard-badge certifiable">Certifiable</span></div>
+                </div></div>
+<div class="standards-group" id="standards-canadian" data-categories="canadian cybersecurity"><h3>Canadian Programs<span class="std-count">4 items</span><span class="std-proves">Proves alignment with federal cybersecurity requirements</span> </h3><div class="standards-list" id="stdlist-ca">
+                    <div class="standard-item"><span class="standard-code">CyberSecure Canada</span><span class="standard-name">Baseline Cybersecurity Certification</span><span class="standard-badge program">Program</span></div>
+                    <div class="standard-item"><span class="standard-code">CPCSC</span><span class="standard-name">Higher Assurance Federal Cybersecurity Certification</span><span class="standard-badge program">Program</span></div>
+                    <div class="standard-item"><span class="standard-code">ITSG-33</span><span class="standard-name">Federal IT Security Control Framework</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">PBMM</span><span class="standard-name">Protected B, Medium Integrity, Medium Availability</span><span class="standard-badge program">Program</span></div>
+                </div></div>
+<div class="standards-group" id="standards-frameworks" data-categories="cybersecurity ai governance"><h3>Framework Interoperability<span class="std-count">5 items</span><span class="std-proves">Proves alignment across frameworks for reporting to many stakeholders</span> </h3><div class="standards-list" id="stdlist-fw">
+                    <div class="standard-item"><span class="standard-code">NIST CSF</span><span class="standard-name">Cybersecurity Framework Alignment</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">NIST AI RMF</span><span class="standard-name">AI Risk Management Framework Mapping</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">CIS Controls</span><span class="standard-name">Center for Internet Security Critical Controls</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">COBIT</span><span class="standard-name">IT Governance & Management Framework</span><span class="standard-badge guidance">Guidance</span></div>
+                    <div class="standard-item"><span class="standard-code">SOC 2</span><span class="standard-name">Service Organization Controls: Trust Services</span><span class="standard-badge attestation">Attestation</span></div>
+                </div></div>
+<div class="standards-group" id="standards-privacy" data-categories="privacy canadian certifiable"><h3>Privacy & Data Protection<span class="std-count">6 items</span><span class="std-proves">Proves compliance with privacy legislation and data protection requirements</span> </h3><div class="standards-list" id="stdlist-priv">
+                    <div class="standard-item"><span class="standard-code">PIPEDA</span><span class="standard-name">Personal Information Protection and Electronic Documents Act</span><span class="standard-badge regulation">Regulation</span></div>
+                    <div class="standard-item"><span class="standard-code">Privacy Act</span><span class="standard-name">Federal Public Sector Privacy Legislation</span><span class="standard-badge regulation">Regulation</span></div>
+                    <div class="standard-item"><span class="standard-code">BC PIPA</span><span class="standard-name">British Columbia Personal Information Protection Act</span><span class="standard-badge regulation">Regulation</span></div>
+                    <div class="standard-item"><span class="standard-code">AB PIPA</span><span class="standard-name">Alberta Personal Information Protection Act</span><span class="standard-badge regulation">Regulation</span></div>
+                    <div class="standard-item"><span class="standard-code">QC Law 25</span><span class="standard-name">Quebec Act Respecting the Protection of Personal Information</span><span class="standard-badge regulation">Regulation</span></div>
+                    <div class="standard-item"><span class="standard-code">PCI DSS</span><span class="standard-name">Payment Card Industry Data Security Standard</span><span class="standard-badge certifiable">Certifiable</span></div>
+                </div></div>
+<div class="standards-group" id="standards-sector" data-categories="cybersecurity governance certifiable"><h3>Sector & Supply Chain<span class="std-count">3 items</span><span class="std-proves">Proves compliance with sector and supply chain security requirements</span> </h3><div class="standards-list" id="stdlist-sector">
+                    <div class="standard-item"><span class="standard-code">NERC CIP</span><span class="standard-name">North American Electric Reliability Critical Infrastructure Protection</span><span class="standard-badge regulation">Regulation</span></div>
+                    <div class="standard-item"><span class="standard-code">TISAX</span><span class="standard-name">Trusted Information Security Assessment Exchange (Automotive)</span><span class="standard-badge certifiable">Certifiable</span></div>
+                    <div class="standard-item"><span class="standard-code">SWIFT CSP</span><span class="standard-name">SWIFT Customer Security Programme</span><span class="standard-badge program">Program</span></div>
+                </div></div>
+<div class="ai-section" id="standards-ai" data-categories="ai iso certifiable">
+                    <div class="ai-header"><div class="ai-header-content"><h3>AI Governance & International Regulation</h3><p>Preparing for AI governance obligations across Canadian and international regulation.</p></div><span class="ai-badge">EMERGING</span></div>
+                    <div class="ai-grid">
+                        <div class="ai-item"><h4>ISO/IEC 42001 AIMS</h4><p>AI Management System design and implementation readiness for the international standard.</p><ul><li>AI risk classification frameworks</li><li>Lifecycle governance controls</li><li>Responsible AI documentation</li></ul></div>
+                        <div class="ai-item"><h4>ISO/IEC 23894</h4><p>AI risk management guidance for identifying, assessing, and mitigating risks specific to AI.</p><ul><li>Algorithmic impact assessments</li><li>Bias and fairness evaluation</li><li>Model governance protocols</li></ul></div>
+                        <div class="ai-item"><h4>ISO/IEC 38507</h4><p>Governance implications of AI for organizational decision making and oversight.</p><ul><li>AI ethics committees</li><li>Human oversight mechanisms</li><li>Stakeholder frameworks</li></ul></div>
+                        <div class="ai-item"><h4>ISO/IEC 22989</h4><p>AI concepts and terminology foundation for organizational AI literacy.</p><ul><li>AI taxonomy alignment</li><li>Terminology standardization</li><li>AI literacy across teams</li></ul></div>
+                        <div class="ai-item"><h4>ISO/IEC 23053</h4><p>Framework for AI system lifecycle, from design through deployment and decommissioning.</p><ul><li>AI pipeline architecture</li><li>Model training & validation stages</li><li>Deployment & monitoring controls</li></ul></div>
+                        <div class="ai-item"><h4>AIDA Readiness</h4><p>Preparation for Canada's Artificial Intelligence and Data Act requirements.</p><ul><li>High impact system assessment</li><li>Transparency measures</li><li>Regulatory compliance planning</li></ul></div>
+                        <div class="ai-item"><h4>CPCSC</h4><p>Canadian Program for Cyber Security Certification readiness and alignment.</p><ul><li>Certification pathway planning</li><li>Control mapping & gap analysis</li><li>Federal compliance readiness</li></ul></div>
+                        <div class="ai-item"><h4>EU AI Act</h4><p>European Union regulation establishing requirements tiered by risk for AI systems.</p><ul><li>Risk classification (unacceptable, high, limited, minimal)</li><li>Conformity assessment preparation</li><li>Compliance alignment across borders</li></ul></div>
+                        <div class="ai-item"><h4>OECD AI Principles</h4><p>International principles for responsible stewardship of trustworthy AI.</p><ul><li>Transparency & explainability</li><li>Accountability frameworks</li><li>Alignment with human centred values</li></ul></div>
+                        <div class="ai-item"><h4>UNESCO AI Ethics</h4><p>Global recommendation on the ethics of artificial intelligence.</p><ul><li>Proportionality & do no harm</li><li>Fairness & fairness in outcomes</li><li>Data governance & privacy</li></ul></div>
+                    </div>
+                </div>
+        </div></section>
+    </main>
+    <div class="band"><div class="w"><div class="band-inner">
+        <div><h2>Not sure which instrument applies?</h2><p>The finder on the homepage routes your situation to an obligation, a clock, and a first step in under a minute.</p></div>
+        <div class="ctas"><a class="btn" href="/#start">Find what applies to you</a><a class="btn2" href="/#contact">Talk to us</a></div>
+    </div></div></div>
+    <footer><div class="w"><div class="foot">
+        <div class="fb"><strong>ascio</strong>: Security, Risk &amp; Compliance for Canada's Defence, Critical Infrastructure &amp; AI Economy</div>
+        <div>&copy; 2017&ndash;2026 ascio Consultancy Inc. &nbsp;&middot;&nbsp; <a href="/privacy">Privacy Policy</a></div>
+    </div></div></footer>
+
+    <script>
+    (function() {
+        const search = document.getElementById('libSearch');
+        const filters = document.querySelectorAll('.lib-filter');
+        let cat = 'all';
+        function apply() {
+            const q = search.value.trim().toLowerCase();
+            let any = false;
+            document.querySelectorAll('.standards-group, .ai-section').forEach(g => {
+                const inCat = cat === 'all' || (g.dataset.categories || '').includes(cat);
+                let visible = 0;
+                g.querySelectorAll('.standard-item, .ai-item').forEach(it => {
+                    const hit = !q || it.textContent.toLowerCase().includes(q);
+                    it.classList.toggle('hidden', !(hit && inCat));
+                    if (hit && inCat) visible++;
+                });
+                g.classList.toggle('hidden', visible === 0);
+                if (visible > 0) any = true;
+            });
+            document.getElementById('libEmpty').style.display = any ? 'none' : 'block';
+        }
+        search.addEventListener('input', apply);
+        filters.forEach(f => f.addEventListener('click', () => {
+            filters.forEach(x => x.classList.remove('active'));
+            f.classList.add('active');
+            cat = f.dataset.filter;
+            apply();
+        }));
+    })();
+    </script>
+
+</body>
+</html>

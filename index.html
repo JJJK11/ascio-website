@@ -191,6 +191,26 @@
         .finder-cta:hover { background: var(--accent); }
         .finder-cta.ghost { background: transparent; color: var(--text-secondary); border: 1px solid var(--border-light); font-weight: 500; }
         .finder-cta.ghost:hover { color: var(--accent); border-color: var(--accent); background: transparent; }
+
+        /* Obligation clock strip */
+        .clock-strip { border-bottom: 1px solid var(--border); background: rgba(24,24,27,0.5); }
+        .clock-items { display: flex; flex-wrap: wrap; align-items: center; }
+        .clock-item { display: flex; align-items: center; gap: 0.55rem; font-family: var(--mono); font-size: 0.7rem; color: var(--text-muted); padding: 0.9rem 1.5rem 0.9rem 0; margin-right: 1.5rem; }
+        .clock-item:not(:last-child) { border-right: 1px solid var(--border); }
+        .clock-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+        .clock-dot.live { background: var(--green); }
+        .clock-dot.signal { background: #f59e0b; }
+        .clock-name { color: var(--text); font-weight: 500; }
+        .clock-status { text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary); }
+        .clock-note { color: var(--text-metadata); }
+        @media (max-width: 900px) { .clock-item { border-right: none !important; padding-right: 0; } }
+
+        /* Compact process strip */
+        .process-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+        .ps { background: var(--bg-raised); padding: 1.3rem 1.15rem; }
+        .ps-num { font-family: var(--mono); font-size: 0.7rem; color: var(--accent); }
+        .ps h3 { font-size: 0.95rem; font-weight: 700; margin: 0.45rem 0 0.3rem; }
+        .ps p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
         .hero-proof { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2.5rem; opacity: 0; transform: translateY(20px); animation: heroUp 0.8s var(--ease) 0.5s forwards; }
         .hero-proof-line { display: flex; align-items: center; gap: 0.75rem; font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); }
         .hero-proof-line::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; opacity: 0.7; }
@@ -561,8 +581,8 @@
                 <a href="#" class="logo">ascio</a>
                 <ul class="nav-links">
                     <li><a href="#practices">Practices</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#standards">Reference Library</a></li>
+                    <li><a href="services/">Services</a></li>
+                    <li><a href="standards/">Reference Library</a></li>
                     <li><a href="#process">Process</a></li>
                     <li><a href="review/">Weekly Review</a></li>
                     <li><a href="assessment/">Assessment</a></li>
@@ -575,8 +595,8 @@
         <div class="mobile-nav-overlay" id="mobileNavOverlay">
             <ul class="mobile-nav-list">
                 <li><a href="#practices">Practices</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#standards">Reference Library</a></li>
+                <li><a href="services/">Services</a></li>
+                <li><a href="standards/">Reference Library</a></li>
                 <li><a href="#process">Process</a></li>
                 <li><a href="review/">Weekly Review</a></li>
                 <li><a href="assessment/">Assessment</a></li>
@@ -605,6 +625,13 @@
                     </div>
                 </div>
             </section>
+
+            <div class="clock-strip"><div class="container"><div class="clock-items">
+                <div class="clock-item"><span class="clock-dot live"></span><span class="clock-name">CCSPA</span><span class="clock-status">In force</span><span class="clock-note" id="ccspaClock">Royal Assent June 15, 2026</span></div>
+                <div class="clock-item"><span class="clock-dot live"></span><span class="clock-name">CPCSC Level 1</span><span class="clock-status">In contracts</span><span class="clock-note">select contracts, summer 2026</span></div>
+                <div class="clock-item"><span class="clock-dot"></span><span class="clock-name">CPCSC Level 2</span><span class="clock-status">Expected</span><span class="clock-note">select contracts, spring 2027</span></div>
+                <div class="clock-item"><span class="clock-dot signal"></span><span class="clock-name">AI legislation</span><span class="clock-status">Signaled</span><span class="clock-note">consultation closed July 2026</span></div>
+            </div></div></div>
 
             <section id="start"><div class="container"><div class="services-grid"><div class="section-label reveal"><span>00</span>Start Here</div><div><div class="reveal" style="display:block;margin-bottom:2.5rem"><h2 class="section-anchor">Where do you sit?<button class="anchor-copy" data-section="start" aria-label="Copy link to Start Here"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></button></h2><p class="section-desc">Pick your situation. You get the obligation, the clock, and the first step. Five situations cover most of the Canadian economy, statutes and customer contracts alike.</p></div>
                 <div class="reveal">
@@ -673,132 +700,19 @@
 
             </div></div></div></div></section>
 
-            <section id="services"><div class="container"><div class="services-grid"><div class="section-label reveal"><span>02</span>Services</div><div><div class="reveal" style="display:block;margin-bottom:3rem"><h2 class="section-anchor">Readiness & Preparation<button class="anchor-copy" data-section="services" aria-label="Copy link to Services"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></button></h2><p class="section-desc">How engagements run inside each practice: readiness, assessment, internal audit, certification preparation, and governance.</p></div><div class="services-list stagger-children">
 
-                <div class="service-card reveal" tabindex="0" role="button" aria-expanded="false" aria-controls="detail-ir"><div class="service-id">SVC_IR</div><div class="service-info"><h3>Inspection Readiness</h3><p>Prepare for third-party technology inspections with evidence validation and gap remediation.</p><div class="service-best-for">Best for: Organizations facing upcoming third-party inspections</div></div><ul class="service-list"><li>Evidence preparation</li><li>Internal simulations</li><li>Gap analysis</li></ul><div class="service-chevron">&#9662;</div></div>
-                <div class="service-detail" id="detail-ir" role="region"><div class="service-detail-inner"><strong>Focus:</strong> Preparing for third-party inspections where an inspector validates evidence against defined criteria. The work centres on evidence validation and operational proof: confirming controls are implemented, records exist and are complete, and responsibilities and escalation paths are clear.<ul><li>Inspection evidence pack</li><li>Validated control-to-evidence map</li><li>Remediation actions for identified gaps</li></ul><div class="service-meta-row"><span class="service-meta-label">Timeline</span><span class="service-meta-value">2–4 weeks</span></div><div class="service-meta-row"><span class="service-meta-label">Inputs</span><span class="service-meta-value">Control framework, existing evidence, inspection scope</span></div><div class="output-chips"><span class="output-chip">Evidence Pack</span><span class="output-chip">Control Map</span><span class="output-chip">Remediation Plan</span></div></div></div>
 
-                <div class="service-card reveal" tabindex="0" role="button" aria-expanded="false" aria-controls="detail-ar"><div class="service-id">SVC_AR</div><div class="service-info"><h3>Assessment Readiness</h3><p>Internal assessments and gap analysis against ISO management system requirements.</p><div class="service-best-for">Best for: Pre-certification gap assessment and system structuring</div></div><ul class="service-list"><li>Control maturity reviews</li><li>Policy development</li><li>Pre-assessment support</li></ul><div class="service-chevron">&#9662;</div></div>
-                <div class="service-detail" id="detail-ar" role="region"><div class="service-detail-inner"><strong>Focus:</strong> Internal or pre-external evaluation of how well the organization aligns with management system requirements. Work includes control maturity reviews, policy and procedure development, role clarity, and management system structuring.<ul><li>Gap assessment report</li><li>Prioritized remediation plan</li><li>Draft management system with supporting documentation</li></ul><div class="service-meta-row"><span class="service-meta-label">Timeline</span><span class="service-meta-value">3–6 weeks</span></div><div class="service-meta-row"><span class="service-meta-label">Inputs</span><span class="service-meta-value">Current policies, risk register, org chart</span></div><div class="output-chips"><span class="output-chip">Gap Assessment</span><span class="output-chip">Remediation Plan</span><span class="output-chip">Draft Management System</span></div></div></div>
-
-                <div class="service-card reveal" tabindex="0" role="button" aria-expanded="false" aria-controls="detail-ia"><div class="service-id">SVC_IA</div><div class="service-info"><h3>Internal Audit Support</h3><p>Establish and execute internal audit programs required before certification.</p><div class="service-best-for">Best for: Building audit capability before Stage 1 engagement</div></div><ul class="service-list"><li>Audit program design</li><li>Auditor training</li><li>Audit scheduling frameworks</li></ul><div class="service-chevron">&#9662;</div></div>
-                <div class="service-detail" id="detail-ia" role="region"><div class="service-detail-inner"><strong>Focus:</strong> Building and running the internal audit program required before certification body engagement. Certification bodies look for evidence of a functioning internal audit program at Stage 1: without it, you are not ready for Stage 2.<ul><li>Audit program design: scope, frequency, criteria</li><li>Auditor competency development</li><li>Annual audit plans and resource allocation</li><li>Findings management and corrective action tracking</li><li>Management review input for leadership reporting</li></ul><div class="service-meta-row"><span class="service-meta-label">Timeline</span><span class="service-meta-value">4–8 weeks</span></div><div class="service-meta-row"><span class="service-meta-label">Inputs</span><span class="service-meta-value">Management system scope, prior audit results, personnel list</span></div><div class="output-chips"><span class="output-chip">Internal Audit Program</span><span class="output-chip">Audit Plan</span><span class="output-chip">Findings Register</span></div></div></div>
-
-                <div class="service-card reveal" tabindex="0" role="button" aria-expanded="false" aria-controls="detail-cr"><div class="service-id">SVC_CR</div><div class="service-info"><h3>Certification Readiness</h3><p>Structured preparation for independent certification audits across ISO standards.</p><div class="service-best-for">Best for: Stage 1 and Stage 2 certification audit preparation</div></div><ul class="service-list"><li>Stage 1 & 2 preparation</li><li>Evidence traceability</li><li>CB selection (17021-1 aware)</li></ul><div class="service-chevron">&#9662;</div></div>
-                <div class="service-detail" id="detail-cr" role="region"><div class="service-detail-inner"><strong>Focus:</strong> Structured preparation for independent certification audits, aligned to Stage 1 and Stage 2 expectations. Stage 1 focuses on documentation completeness; Stage 2 focuses on operational effectiveness and evidence that the system is working in practice.<ul><li>Stage 1 documentation pack</li><li>Stage 2 evidence set</li><li>Audit interview preparation and readiness simulations</li><li>CB selection support (ISO/IEC 17021-1 aware)</li></ul><div class="service-meta-row"><span class="service-meta-label">Timeline</span><span class="service-meta-value">6–12 weeks</span></div><div class="service-meta-row"><span class="service-meta-label">Inputs</span><span class="service-meta-value">Gap assessment, internal audit evidence, management review</span></div><div class="output-chips"><span class="output-chip">Certification Readiness</span><span class="output-chip">Evidence Pack</span><span class="output-chip">Interview Prep</span></div></div></div>
-
-                <div class="service-card reveal" tabindex="0" role="button" aria-expanded="false" aria-controls="detail-gr"><div class="service-id">SVC_GR</div><div class="service-info"><h3>Governance & Risk</h3><p>Technology governance frameworks aligned with regulatory requirements.</p><div class="service-best-for">Best for: Leadership accountability and governance operating models</div></div><ul class="service-list"><li>Governance design</li><li>Risk frameworks</li><li>Accountability structures</li></ul><div class="service-chevron">&#9662;</div></div>
-                <div class="service-detail" id="detail-gr" role="region"><div class="service-detail-inner"><strong>Focus:</strong> Establishing who is accountable for technology decisions, how risk is identified and managed, and how oversight is performed at leadership level. Connects operational technology controls to leadership accountability and regulatory expectations.<ul><li>Governance operating model</li><li>Risk framework and tolerance definition</li><li>Committee terms of reference</li><li>Role accountability matrix</li><li>Executive dashboards for ongoing oversight</li></ul><div class="service-meta-row"><span class="service-meta-label">Timeline</span><span class="service-meta-value">4–8 weeks</span></div><div class="service-meta-row"><span class="service-meta-label">Inputs</span><span class="service-meta-value">Org structure, risk appetite, regulatory obligations</span></div><div class="output-chips"><span class="output-chip">Governance Model</span><span class="output-chip">Risk Framework</span><span class="output-chip">RACI Matrix</span></div></div></div>
-
+            <section id="process"><div class="container"><div class="process-grid"><div class="section-label reveal"><span>02</span>Process</div><div><div class="reveal" style="margin-bottom:3rem"><h2 class="section-anchor">Structured Readiness Approach<button class="anchor-copy" data-section="process" aria-label="Copy link to Process"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></button></h2><p class="section-desc">Every practice runs the same seven step shape. Only the obligation set changes.</p></div><div class="process-strip reveal">
+                <div class="ps"><span class="ps-num">01</span><h3>Triage</h3><p>Read the obligations that apply, and their dates.</p></div>
+                <div class="ps"><span class="ps-num">02</span><h3>Scope</h3><p>Draw the smallest defensible boundary.</p></div>
+                <div class="ps"><span class="ps-num">03</span><h3>Assess</h3><p>Gap the applicable control set.</p></div>
+                <div class="ps"><span class="ps-num">04</span><h3>Build</h3><p>Remediate, sequenced by deadline. You implement; we verify.</p></div>
+                <div class="ps"><span class="ps-num">05</span><h3>Evidence</h3><p>A record behind every control.</p></div>
+                <div class="ps"><span class="ps-num">06</span><h3>Attest or Certify</h3><p>Enter the assessment prepared.</p></div>
+                <div class="ps"><span class="ps-num">07</span><h3>Maintain</h3><p>Renewal clocks tracked, readiness held.</p></div>
             </div></div></div></div></section>
 
-            <section id="standards"><div class="container"><div class="standards-grid"><div class="section-label reveal"><span>03</span>Reference Library</div><div class="standards-content"><div class="reveal"><h2 class="section-anchor">Reference Library<button class="anchor-copy" data-section="standards" aria-label="Copy link to Reference Library"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></button></h2><p class="section-desc">The full catalog of standards, programs, and regulations we work across. Engagements lead with the practices above; these are the instruments they draw on.</p></div>
-                <div class="standards-controls reveal"><button class="standards-control" id="expandAll">Expand all</button><button class="standards-control" id="collapseAll">Collapse all</button></div>
-                <div class="standards-filters reveal" id="standardsFilters">
-                    <button class="standards-filter active" data-filter="all">All</button><button class="standards-filter" data-filter="certifiable">Certifiable</button>
-                    <button class="standards-filter" data-filter="iso">ISO</button>
-                    <button class="standards-filter" data-filter="cybersecurity">Security</button>
-                    <button class="standards-filter" data-filter="ai">AI</button>
-                    <button class="standards-filter" data-filter="privacy">Privacy</button>
-                    <button class="standards-filter" data-filter="canadian">Canadian</button>
-                    <button class="standards-filter" data-filter="governance">Governance</button>
-                    <button class="standards-filter" data-filter="resilience">Resilience</button>
-                </div>
-
-                <div class="standards-group reveal" id="standards-cybersecurity" data-categories="iso cybersecurity certifiable" tabindex="0" role="button"><h3 aria-expanded="true" aria-controls="stdlist-cyber">Cybersecurity & Information Security<span class="std-count">14 items</span><span class="std-proves">Proves operational control of information security risks</span> <span class="toggle-icon">&minus;</span></h3><div class="standards-list stagger-children" id="stdlist-cyber">
-                    <div class="standard-item reveal"><span class="standard-code">ISO/IEC 27001</span><span class="standard-name">Information Security Management</span><span class="standard-badge certifiable">Certifiable</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">ISO/IEC 42001</span><span class="standard-name">AI Management System</span><span class="standard-badge certifiable">Certifiable</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">ISO/IEC 27701</span><span class="standard-name">Privacy Information Management</span><span class="standard-badge certifiable">Certifiable</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">ISO/IEC 27017</span><span class="standard-name">Cloud Services Security</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">ISO/IEC 27018</span><span class="standard-name">PII Protection in Public Cloud</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">ISO/IEC 27035</span><span class="standard-name">Incident Management</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">ISO/IEC 27005</span><span class="standard-name">Information Security Risk Management</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">ISO/IEC 27031</span><span class="standard-name">ICT Readiness for Business Continuity</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">ISO/IEC 27002</span><span class="standard-name">Information Security Controls</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">ISO/IEC 27036</span><span class="standard-name">Supplier Relationship Security</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">ISO/IEC 27019</span><span class="standard-name">Energy Utility Information Security</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">IEC 62443</span><span class="standard-name">Industrial Automation & Control Systems Security</span><span class="standard-badge certifiable">Certifiable</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">FIPS 140-3</span><span class="standard-name">Cryptographic Module Validation</span><span class="standard-badge program">Program</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">Common Criteria</span><span class="standard-name">IT Security Evaluation (ISO/IEC 15408)</span><span class="standard-badge certifiable">Certifiable</span></div>
-                </div></div>
-
-                <div class="standards-group reveal collapsed" id="standards-itservice" data-categories="iso certifiable" tabindex="0" role="button"><h3 aria-expanded="false" aria-controls="stdlist-it">IT Service & Digital Operations<span class="std-count">3 items</span><span class="std-proves">Proves structured IT service delivery and governance</span> <span class="toggle-icon">+</span></h3><div class="standards-list stagger-children" id="stdlist-it">
-                    <div class="standard-item reveal"><span class="standard-code">ISO/IEC 20000-1</span><span class="standard-name">IT Service Management</span><span class="standard-badge certifiable">Certifiable</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">ISO/IEC 19770-1</span><span class="standard-name">IT Asset Management</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">ISO/IEC 38500</span><span class="standard-name">Governance of IT</span><span class="standard-badge guidance">Guidance</span></div>
-                </div></div>
-
-                <div class="standards-group reveal collapsed" id="standards-resilience" data-categories="iso resilience certifiable" tabindex="0" role="button"><h3 aria-expanded="false" aria-controls="stdlist-bc">Business Continuity & Organizational Resilience<span class="std-count">3 items</span><span class="std-proves">Proves ability to maintain operations through disruption</span> <span class="toggle-icon">+</span></h3><div class="standards-list stagger-children" id="stdlist-bc">
-                    <div class="standard-item reveal"><span class="standard-code">ISO 22301</span><span class="standard-name">Business Continuity Management</span><span class="standard-badge certifiable">Certifiable</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">ISO 22316</span><span class="standard-name">Organizational Resilience</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">ISO 31000</span><span class="standard-name">Enterprise Risk Management</span><span class="standard-badge guidance">Guidance</span></div>
-                </div></div>
-
-                <div class="standards-group reveal collapsed" id="standards-compliance" data-categories="iso certifiable governance" tabindex="0" role="button"><h3 aria-expanded="false" aria-controls="stdlist-comp">Compliance & Integrated Management Systems<span class="std-count">4 items</span><span class="std-proves">Proves systematic compliance across multiple obligations</span> <span class="toggle-icon">+</span></h3><div class="standards-list stagger-children" id="stdlist-comp">
-                    <div class="standard-item reveal"><span class="standard-code">ISO 37301</span><span class="standard-name">Compliance Management</span><span class="standard-badge certifiable">Certifiable</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">IMS Advisory</span><span class="standard-name">Integrated Management System</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">Multi-Standard</span><span class="standard-name">Harmonization & Certification</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">ISO/IEC 17020</span><span class="standard-name">Conformity Assessment: Inspection Bodies</span><span class="standard-badge certifiable">Certifiable</span></div>
-                </div></div>
-
-                <div class="standards-group reveal collapsed" id="standards-canadian" data-categories="canadian cybersecurity" tabindex="0" role="button"><h3 aria-expanded="false" aria-controls="stdlist-ca">Canadian Programs<span class="std-count">4 items</span><span class="std-proves">Proves alignment with federal cybersecurity requirements</span> <span class="toggle-icon">+</span></h3><div class="standards-list stagger-children" id="stdlist-ca">
-                    <div class="standard-item reveal"><span class="standard-code">CyberSecure Canada</span><span class="standard-name">Baseline Cybersecurity Certification</span><span class="standard-badge program">Program</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">CPCSC</span><span class="standard-name">Higher Assurance Federal Cybersecurity Certification</span><span class="standard-badge program">Program</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">ITSG-33</span><span class="standard-name">Federal IT Security Control Framework</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">PBMM</span><span class="standard-name">Protected B, Medium Integrity, Medium Availability</span><span class="standard-badge program">Program</span></div>
-                </div></div>
-
-                <div class="standards-group reveal collapsed" id="standards-frameworks" data-categories="cybersecurity ai governance" tabindex="0" role="button"><h3 aria-expanded="false" aria-controls="stdlist-fw">Framework Interoperability<span class="std-count">5 items</span><span class="std-proves">Proves cross-framework alignment for multi-stakeholder reporting</span> <span class="toggle-icon">+</span></h3><div class="standards-list stagger-children" id="stdlist-fw">
-                    <div class="standard-item reveal"><span class="standard-code">NIST CSF</span><span class="standard-name">Cybersecurity Framework Alignment</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">NIST AI RMF</span><span class="standard-name">AI Risk Management Framework Mapping</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">CIS Controls</span><span class="standard-name">Center for Internet Security Critical Controls</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">COBIT</span><span class="standard-name">IT Governance & Management Framework</span><span class="standard-badge guidance">Guidance</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">SOC 2</span><span class="standard-name">Service Organization Controls: Trust Services</span><span class="standard-badge attestation">Attestation</span></div>
-                </div></div>
-
-                <div class="standards-group reveal collapsed" id="standards-privacy" data-categories="privacy canadian certifiable" tabindex="0" role="button"><h3 aria-expanded="false" aria-controls="stdlist-priv">Privacy & Data Protection<span class="std-count">6 items</span><span class="std-proves">Proves compliance with privacy legislation and data protection requirements</span> <span class="toggle-icon">+</span></h3><div class="standards-list stagger-children" id="stdlist-priv">
-                    <div class="standard-item reveal"><span class="standard-code">PIPEDA</span><span class="standard-name">Personal Information Protection and Electronic Documents Act</span><span class="standard-badge regulation">Regulation</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">Privacy Act</span><span class="standard-name">Federal Public Sector Privacy Legislation</span><span class="standard-badge regulation">Regulation</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">BC PIPA</span><span class="standard-name">British Columbia Personal Information Protection Act</span><span class="standard-badge regulation">Regulation</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">AB PIPA</span><span class="standard-name">Alberta Personal Information Protection Act</span><span class="standard-badge regulation">Regulation</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">QC Law 25</span><span class="standard-name">Quebec Act Respecting the Protection of Personal Information</span><span class="standard-badge regulation">Regulation</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">PCI DSS</span><span class="standard-name">Payment Card Industry Data Security Standard</span><span class="standard-badge certifiable">Certifiable</span></div>
-                </div></div>
-
-                <div class="standards-group reveal collapsed" id="standards-sector" data-categories="cybersecurity governance certifiable" tabindex="0" role="button"><h3 aria-expanded="false" aria-controls="stdlist-sector">Sector-Specific & Supply Chain<span class="std-count">3 items</span><span class="std-proves">Proves compliance with industry-specific security and supply chain requirements</span> <span class="toggle-icon">+</span></h3><div class="standards-list stagger-children" id="stdlist-sector">
-                    <div class="standard-item reveal"><span class="standard-code">NERC CIP</span><span class="standard-name">North American Electric Reliability Critical Infrastructure Protection</span><span class="standard-badge regulation">Regulation</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">TISAX</span><span class="standard-name">Trusted Information Security Assessment Exchange (Automotive)</span><span class="standard-badge certifiable">Certifiable</span></div>
-                    <div class="standard-item reveal"><span class="standard-code">SWIFT CSP</span><span class="standard-name">SWIFT Customer Security Programme</span><span class="standard-badge program">Program</span></div>
-                </div></div>
-
-                <div class="ai-section reveal" id="standards-ai" data-categories="ai iso certifiable">
-                    <div class="ai-header"><div class="ai-header-content"><h3>AI Governance & International Regulation</h3><p>Preparing for evolving AI governance landscapes across Canadian and international regulatory requirements.</p></div><span class="ai-badge">EMERGING</span></div>
-                    <div class="ai-grid stagger-children">
-                        <div class="ai-item reveal"><h4>ISO/IEC 42001 AIMS</h4><p>AI Management System design and implementation readiness for the international standard.</p><ul><li>AI risk classification frameworks</li><li>Lifecycle governance controls</li><li>Responsible AI documentation</li></ul></div>
-                        <div class="ai-item reveal"><h4>ISO/IEC 23894</h4><p>AI risk management guidance for identifying, assessing, and mitigating AI-specific risks.</p><ul><li>Algorithmic impact assessments</li><li>Bias and fairness evaluation</li><li>Model governance protocols</li></ul></div>
-                        <div class="ai-item reveal"><h4>ISO/IEC 38507</h4><p>Governance implications of AI for organizational decision-making and oversight.</p><ul><li>AI ethics committees</li><li>Human oversight mechanisms</li><li>Stakeholder frameworks</li></ul></div>
-                        <div class="ai-item reveal"><h4>ISO/IEC 22989</h4><p>AI concepts and terminology foundation for organizational AI literacy.</p><ul><li>AI taxonomy alignment</li><li>Terminology standardization</li><li>Cross-team AI literacy</li></ul></div>
-                        <div class="ai-item reveal"><h4>ISO/IEC 23053</h4><p>Framework for AI system lifecycle, from design through deployment and decommissioning.</p><ul><li>AI pipeline architecture</li><li>Model training & validation stages</li><li>Deployment & monitoring controls</li></ul></div>
-                        <div class="ai-item reveal"><h4>AIDA Readiness</h4><p>Preparation for Canada's Artificial Intelligence and Data Act requirements.</p><ul><li>High-impact system assessment</li><li>Transparency measures</li><li>Regulatory compliance planning</li></ul></div>
-                        <div class="ai-item reveal"><h4>CPCSC</h4><p>Canadian Program for Cyber Security Certification readiness and alignment.</p><ul><li>Certification pathway planning</li><li>Control mapping & gap analysis</li><li>Federal compliance readiness</li></ul></div>
-                        <div class="ai-item reveal"><h4>EU AI Act</h4><p>European Union regulation establishing risk-based requirements for AI systems.</p><ul><li>Risk classification (unacceptable, high, limited, minimal)</li><li>Conformity assessment preparation</li><li>Cross-border compliance alignment</li></ul></div>
-                        <div class="ai-item reveal"><h4>OECD AI Principles</h4><p>International principles for responsible stewardship of trustworthy AI.</p><ul><li>Transparency & explainability</li><li>Accountability frameworks</li><li>Human-centred values alignment</li></ul></div>
-                        <div class="ai-item reveal"><h4>UNESCO AI Ethics</h4><p>Global recommendation on the ethics of artificial intelligence.</p><ul><li>Proportionality & do no harm</li><li>Fairness & non-discrimination</li><li>Data governance & privacy</li></ul></div>
-                    </div>
-                </div>
-            </div></div></div></section>
-
-            <section id="process"><div class="container"><div class="process-grid"><div class="section-label reveal"><span>04</span>Process</div><div><div class="reveal" style="margin-bottom:3rem"><h2 class="section-anchor">Structured Readiness Approach<button class="anchor-copy" data-section="process" aria-label="Copy link to Process"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></button></h2><p class="section-desc">Every practice runs the same seven step shape. Only the obligation set changes.</p></div><div class="process-timeline" id="processTimeline"><div class="timeline-track"><div class="timeline-progress" id="timelineProgress"></div></div>
-                <div class="process-step reveal"><div class="step-node"></div><div class="step-phase">Step 01</div><div class="step-content"><h3>Triage</h3><p>Read the contracts, legislation, or adoption plans that apply. Identify the exact obligations and their dates.</p></div></div>
-                <div class="process-step reveal"><div class="step-node"></div><div class="step-phase">Step 02</div><div class="step-content"><h3>Scope</h3><p>Define the boundary: which systems, people, and locations carry the obligation. Small and defensible.</p></div></div>
-                <div class="process-step reveal"><div class="step-node"></div><div class="step-phase">Step 03</div><div class="step-content"><h3>Assess</h3><p>Gap assessment against the applicable control set: ITSP.10.171, CCSPA obligations, ISO/IEC 42001, or the framework your contract names.</p></div></div>
-                <div class="process-step reveal"><div class="step-node"></div><div class="step-phase">Step 04</div><div class="step-content"><h3>Build</h3><p>Remediation sequenced by deadline. Your team implements; we design, support, and verify.</p></div></div>
-                <div class="process-step reveal"><div class="step-node"></div><div class="step-phase">Step 05</div><div class="step-content"><h3>Evidence</h3><p>Assemble the records an assessor would ask for: policies, configurations, and operating records, each mapped to a control.</p></div></div>
-                <div class="process-step reveal"><div class="step-node"></div><div class="step-phase">Step 06</div><div class="step-content"><h3>Attest or Certify</h3><p>Enter the attestation, external assessment, or certification audit prepared, with nothing improvised.</p></div></div>
-                <div class="process-step reveal"><div class="step-node"></div><div class="step-phase">Step 07</div><div class="step-content"><h3>Maintain</h3><p>Annual affirmations, renewal clocks, and changes to the obligations tracked so readiness holds between assessments.</p></div></div>
-            </div></div></div></div></section>
-
-            <section id="review"><div class="container"><div class="insights-grid"><div class="section-label reveal"><span>05</span>Weekly Review</div><div><div class="reveal" style="margin-bottom:2rem"><h2>Governance &amp; Compliance Review</h2><p class="section-desc">Latest developments in Canadian cybersecurity certification, AI governance, and regulatory compliance.</p></div><div class="insights-cards stagger-children">
+            <section id="review"><div class="container"><div class="insights-grid"><div class="section-label reveal"><span>03</span>Weekly Review</div><div><div class="reveal" style="margin-bottom:2rem"><h2>Governance &amp; Compliance Review</h2><p class="section-desc">Latest developments in Canadian cybersecurity certification, AI governance, and regulatory compliance.</p></div><div class="insights-cards stagger-children">
                 <a href="review/" class="insight-card reveal"><div class="insight-meta"><span class="insight-tag">AI Threat</span><span class="insight-new">NEW</span><span class="insight-date">August 13, 2026</span></div><h3>AI Agents Ran a Four Day, Near Autonomous Cyberattack on Taiwan's Government, Built Entirely From Open Source Tooling</h3><p>Up to eight coordinated AI agents mapped 21 systems, cracked 85 accounts, and exfiltrated more than 2,500 personnel records across 12 attack waves, with guardrails bypassed by posing as authorized penetration testing. The first documented near autonomous attack on a national government compresses every assumed timeline for AI enabled adversaries.</p><span class="read-more">Read more &#8594;</span></a>
                 <a href="review/#cybersecure" class="insight-card reveal"><div class="insight-meta"><span class="insight-tag">Ransomware</span><span class="insight-date">August 11, 2026</span></div><h3>Ransomware at Manitoba's Largest Hospital Hits the Building, Not the Data: Door Access and HVAC Systems Knocked Out</h3><p>The operational impact at Winnipeg's Health Sciences Centre landed on building systems rather than clinical IT, the scenario most hospital risk registers underweight. A 2024 auditor general recommendation left unimplemented is now a board level accountability question.</p><span class="read-more">Read more &#8594;</span></a>
                 <a href="review/#ai-governance" class="insight-card reveal"><div class="insight-meta"><span class="insight-tag">AI Governance</span><span class="insight-date">August 12, 2026</span></div><h3>Anthropic Will Watermark AI Generated Text Under EU Transparency Rules, and Disclosure Stops Being Optional by Default</h3><p>Every major model provider has now committed to content identifiers under EU AI Act Article 50 pressure, with markers that travel with copied text. Organizations should plan on AI generated text being identifiable by default, and put that assumption into policies and client contracts before it is tested.</p><span class="read-more">Read more &#8594;</span></a>
@@ -828,6 +742,13 @@
         <div class="chat-suggestions" id="chatSuggestions"><button class="chat-suggestion" data-query="What is inspection readiness?">Inspection Readiness</button><button class="chat-suggestion" data-query="How do we prepare for ISO certification?">ISO Certification</button><button class="chat-suggestion" data-query="Tell me about AI governance">AI Governance</button><button class="chat-suggestion" data-query="What is CPCSC?">CPCSC</button><button class="chat-suggestion" data-query="How do I get started?">Get Started</button></div>
         <div class="chat-input-area"><div class="chat-input-wrapper"><input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." autocomplete="off"><button class="chat-send" id="chatSend" aria-label="Send message"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg></button></div></div></div><button class="chat-toggle" id="chatToggle" aria-label="Open chat assistant"><svg class="chat-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg><svg class="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
     <script>
+    /* Obligation clock: live day count since CCSPA Royal Assent */
+    (function() {
+        const el = document.getElementById('ccspaClock');
+        if (!el) return;
+        const d = Math.floor((Date.now() - new Date('2026-06-15T00:00:00-04:00').getTime()) / 86400000);
+        if (d > 0 && d < 20000) el.textContent = 'day ' + d + ' since Royal Assent';
+    })();
     /* Obligation finder */
     (function() {
         const chips = document.querySelectorAll('.finder-chip');
@@ -1288,8 +1209,6 @@ const knowledge={svc_ir:{keywords:['inspection readiness','svc_ir','prepare for 
     const contextMap = {
         start: { label: 'Start Here', desc: 'Find your obligation, clock, and first step' },
         practices: { label: 'Practices', desc: 'Defence, critical infrastructure, AI governance' },
-        services: { label: 'Services', desc: 'Readiness & preparation services' },
-        standards: { label: 'Reference Library', desc: 'Standards, programs & regulations catalogue' },
         process: { label: 'Process', desc: 'Seven step readiness methodology' },
         review: { label: 'Weekly Review', desc: 'Governance & compliance developments' },
         contact: { label: 'Contact', desc: 'Request a discovery call' }
