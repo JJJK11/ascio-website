@@ -174,6 +174,23 @@
         .practice-status-dot.live { background: var(--green); }
         .practice-link { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); text-decoration: none; }
         .practice-link:hover { text-decoration: underline; }
+
+        /* Obligation finder */
+        .finder-chips { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem; }
+        .finder-chip { font-family: var(--body); font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); background: var(--bg-raised); border: 1px solid var(--border-light); border-radius: 100px; padding: 0.7rem 1.25rem; cursor: pointer; transition: all var(--motion-medium) var(--ease); }
+        .finder-chip:hover { color: var(--text); border-color: var(--accent); }
+        .finder-chip.active { color: var(--bg); background: var(--accent); border-color: var(--accent); font-weight: 600; }
+        .finder-panel { display: none; background: var(--bg-raised); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; padding: 1.75rem; }
+        .finder-panel.active { display: block; animation: finderIn 0.35s var(--ease); }
+        @keyframes finderIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+        .finder-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+        .finder-col-label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+        .finder-col p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; margin: 0; }
+        .finder-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .finder-cta { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.2rem; background: var(--text); color: var(--bg); font-weight: 600; font-size: 0.85rem; border-radius: 6px; text-decoration: none; transition: all var(--motion-medium) var(--ease); }
+        .finder-cta:hover { background: var(--accent); }
+        .finder-cta.ghost { background: transparent; color: var(--text-secondary); border: 1px solid var(--border-light); font-weight: 500; }
+        .finder-cta.ghost:hover { color: var(--accent); border-color: var(--accent); background: transparent; }
         .hero-proof { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2.5rem; opacity: 0; transform: translateY(20px); animation: heroUp 0.8s var(--ease) 0.5s forwards; }
         .hero-proof-line { display: flex; align-items: center; gap: 0.75rem; font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); }
         .hero-proof-line::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; opacity: 0.7; }
@@ -583,13 +600,70 @@
                         </div>
                         <div class="hero-ctas">
                             <a href="assessment/?framework=cpcsc-l1" class="hero-cta">Check your CPCSC readiness <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-                            <a href="#practices" class="hero-cta-secondary">Explore the practices <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></a>
+                            <a href="#start" class="hero-cta-secondary">Find what applies to you <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="practices"><div class="container"><div class="services-grid"><div class="section-label reveal"><span>01</span>Practices</div><div><div class="reveal" style="display:block;margin-bottom:3rem"><h2 class="section-anchor">Three practice lines<button class="anchor-copy" data-section="practices" aria-label="Copy link to Practices"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></button></h2><p class="section-desc">Each practice owns a defined set of obligations, a client process, and the evidence it produces. Everything else on this page is the machinery behind them.</p></div><div class="practices-list stagger-children">
+            <section id="start"><div class="container"><div class="services-grid"><div class="section-label reveal"><span>00</span>Start Here</div><div><div class="reveal" style="display:block;margin-bottom:2.5rem"><h2 class="section-anchor">Where do you sit?<button class="anchor-copy" data-section="start" aria-label="Copy link to Start Here"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></button></h2><p class="section-desc">Pick your situation. You get the obligation, the clock, and the first step. Five situations cover most of the Canadian economy, statutes and customer contracts alike.</p></div>
+                <div class="reveal">
+                <div class="finder-chips" role="tablist" aria-label="Choose your situation">
+                    <button class="finder-chip active" data-finder="f-defence" role="tab" aria-selected="true">We hold or bid defence contracts</button>
+                    <button class="finder-chip" data-finder="f-ci" role="tab" aria-selected="false">We operate critical infrastructure</button>
+                    <button class="finder-chip" data-finder="f-ai" role="tab" aria-selected="false">We are adopting AI</button>
+                    <button class="finder-chip" data-finder="f-proof" role="tab" aria-selected="false">Our customers want security proof</button>
+                    <button class="finder-chip" data-finder="f-unsure" role="tab" aria-selected="false">Not sure what applies</button>
+                </div>
+
+                <div class="finder-panel active" id="f-defence" role="tabpanel">
+                    <div class="finder-cols">
+                        <div class="finder-col"><div class="finder-col-label">The obligation</div><p>CPCSC clauses in federal defence contracts. Requirements flow down from primes to subcontractors, so they reach you even when Canada is not your direct customer.</p></div>
+                        <div class="finder-col"><div class="finder-col-label">The clock</div><p>Level 1 is mandatory in select contracts now. Level 2, with 98 controls and external assessment, is expected in select contracts spring 2027.</p></div>
+                        <div class="finder-col"><div class="finder-col-label">First step</div><p>Run the free Level 1 readiness check against the self assessment criteria. Five minutes, and the report shows what an assessor would ask next.</p></div>
+                    </div>
+                    <div class="finder-ctas"><a class="finder-cta" href="assessment/?framework=cpcsc-l1">Check Level 1 readiness</a><a class="finder-cta ghost" href="defence/">The defence practice</a><a class="finder-cta ghost" href="guides/cpcsc/">The CPCSC guide</a></div>
+                </div>
+
+                <div class="finder-panel" id="f-ci" role="tabpanel">
+                    <div class="finder-cols">
+                        <div class="finder-col"><div class="finder-col-label">The obligation</div><p>The Critical Cyber Systems Protection Act: a cyber security program, supply chain duties, incident reporting, and binding directions for designated operators in finance, telecommunications, energy, and transportation.</p></div>
+                        <div class="finder-col"><div class="finder-col-label">The clock</div><p>In force since June 15, 2026. Designation starts a 90 day program clock, and incident reporting will be capped near 72 hours.</p></div>
+                        <div class="finder-col"><div class="finder-col-label">First step</div><p>Check your readiness against the four duties of the Act before your class appears in the schedule.</p></div>
+                    </div>
+                    <div class="finder-ctas"><a class="finder-cta" href="assessment/?framework=ccspa">Check CCSPA readiness</a><a class="finder-cta ghost" href="critical-infrastructure/">The critical infrastructure practice</a><a class="finder-cta ghost" href="guides/ccspa/">The CCSPA guide</a></div>
+                </div>
+
+                <div class="finder-panel" id="f-ai" role="tabpanel">
+                    <div class="finder-cols">
+                        <div class="finder-col"><div class="finder-col-label">The obligation</div><p>The governance the national AI strategy expects and the signaled legislation will formalize: policy, risk assessment, oversight, and records. Applies to AI you buy as much as AI you build.</p></div>
+                        <div class="finder-col"><div class="finder-col-label">The clock</div><p>AI for All live since June 4, 2026. The transparency consultation closed July 2026, and legislation is signaled behind it.</p></div>
+                        <div class="finder-col"><div class="finder-col-label">First step</div><p>Inventory your AI, then run the ISO/IEC 42001 readiness assessment to see what a working management system would take.</p></div>
+                    </div>
+                    <div class="finder-ctas"><a class="finder-cta" href="assessment/?framework=iso42001">Check 42001 readiness</a><a class="finder-cta ghost" href="ai-governance/">The AI governance practice</a><a class="finder-cta ghost" href="guides/ai-governance/">The AI governance guide</a></div>
+                </div>
+
+                <div class="finder-panel" id="f-proof" role="tabpanel">
+                    <div class="finder-cols">
+                        <div class="finder-col"><div class="finder-col-label">The obligation</div><p>No statute, but the same controls arrive by contract: security questionnaires, audit clauses, and flow down requirements from enterprise and government customers. This is how most Canadian businesses meet this economy.</p></div>
+                        <div class="finder-col"><div class="finder-col-label">The clock</div><p>Set by your sales pipeline. Usually it is the deal that is waiting on your answers.</p></div>
+                        <div class="finder-col"><div class="finder-col-label">First step</div><p>A readiness assessment against ISO 27001 or CyberSecure Canada, sized to what your customers actually ask for rather than the whole catalog.</p></div>
+                    </div>
+                    <div class="finder-ctas"><a class="finder-cta" href="assessment/">Run a readiness assessment</a><a class="finder-cta ghost" href="#contact">Talk to us</a></div>
+                </div>
+
+                <div class="finder-panel" id="f-unsure" role="tabpanel">
+                    <div class="finder-cols">
+                        <div class="finder-col"><div class="finder-col-label">The obligation</div><p>Probably at least one of the above. Most Canadian organizations sit under something here, through contracts if not statutes, and the overlap is where money gets wasted.</p></div>
+                        <div class="finder-col"><div class="finder-col-label">The clock</div><p>Cheap to find out now. Expensive to find out inside a bid, a customer review, or an incident.</p></div>
+                        <div class="finder-col"><div class="finder-col-label">First step</div><p>A discovery call. Twenty minutes, and you leave with a straight answer about what applies and what does not.</p></div>
+                    </div>
+                    <div class="finder-ctas"><a class="finder-cta" href="#contact">Request a discovery call</a><a class="finder-cta ghost" href="review/">Read the Weekly Review</a></div>
+                </div>
+                </div>
+            </div></div></div></section>
+
+            <section id="practices"><div class="container"><div class="services-grid"><div class="section-label reveal"><span>01</span>Practices</div><div><div class="reveal" style="display:block;margin-bottom:3rem"><h2 class="section-anchor">Three practice lines<button class="anchor-copy" data-section="practices" aria-label="Copy link to Practices"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></button></h2><p class="section-desc">Each practice owns a defined set of obligations, a client process, and the evidence it produces. If none of the three fits you exactly, the same requirements usually reach you through your customers; the finder above routes you.</p></div><div class="practices-list stagger-children">
 
                 <div class="practice-card reveal"><div class="practice-num">PRACTICE 01</div><h3>Defence &amp; Government Supplier Security</h3><p class="practice-for">For companies entering or growing in the defence supply chain under Build, Partner, Buy.</p><ul class="practice-scope"><li>CPCSC Level 1 readiness and attestation support</li><li>ITSP.10.171 control implementation</li><li>Level 2 preparation and evidence programs</li><li>Contract security requirements interpretation</li><li>Supply chain security flow down</li></ul><a class="practice-link" href="defence/">View the practice &#8594;</a><div class="practice-status"><span class="practice-status-dot live"></span>Buying now: Level 1 clauses live in contracts</div></div>
 
@@ -737,7 +811,7 @@
                         <div class="form-group"><label for="cfName">Full Name</label><input type="text" id="cfName" name="name" placeholder="Your full name" required></div>
                         <div class="form-group"><label for="cfEmail">Email</label><input type="email" id="cfEmail" name="email" placeholder="you@organization.com" required></div>
                         <div class="form-group"><label for="cfOrg">Organization</label><input type="text" id="cfOrg" name="organization" placeholder="Organization name"></div>
-                        <div class="form-group"><label for="cfInterest">Area of Interest</label><select id="cfInterest" name="interest"><option value="" disabled selected>Select an area</option><option value="CPCSC Level 1">CPCSC Level 1 Readiness</option><option value="CPCSC Level 2">CPCSC Level 2 Preparation</option><option value="CCSPA">CCSPA / Critical Infrastructure</option><option value="ISO/IEC 42001">ISO/IEC 42001 AI Governance</option><option value="ISO/IEC 27001">ISO/IEC 27001 Information Security</option><option value="CyberSecure Canada">CyberSecure Canada</option><option value="General Readiness">General Assessment Readiness</option></select></div>
+                        <div class="form-group"><label for="cfInterest">Area of Interest</label><select id="cfInterest" name="interest"><option value="" disabled selected>Select an area</option><option value="CPCSC Level 1">CPCSC Level 1 Readiness</option><option value="CPCSC Level 2">CPCSC Level 2 Preparation</option><option value="CCSPA">CCSPA / Critical Infrastructure</option><option value="ISO/IEC 42001">ISO/IEC 42001 AI Governance</option><option value="ISO/IEC 27001">ISO/IEC 27001 Information Security</option><option value="CyberSecure Canada">CyberSecure Canada</option><option value="Customer Security Requirements">Customer Security Requirements / Vendor Review</option><option value="General Readiness">General Assessment Readiness</option></select></div>
                         <div class="form-group full"><label for="cfMsg">Message</label><textarea id="cfMsg" name="message" placeholder="Tell us about your readiness requirements..." rows="4"></textarea></div>
                         <div class="form-submit" style="grid-column:1/-1"><button type="submit">Send Request <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></button><span class="form-note">We typically respond within 24 hours</span></div>
                     </form>
@@ -753,6 +827,19 @@
         <div class="chat-quick-actions"><a href="review/" class="chat-quick-action"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>Weekly Review</a><a href="mailto:hello@ascio.ca" class="chat-quick-action"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email us</a></div>
         <div class="chat-suggestions" id="chatSuggestions"><button class="chat-suggestion" data-query="What is inspection readiness?">Inspection Readiness</button><button class="chat-suggestion" data-query="How do we prepare for ISO certification?">ISO Certification</button><button class="chat-suggestion" data-query="Tell me about AI governance">AI Governance</button><button class="chat-suggestion" data-query="What is CPCSC?">CPCSC</button><button class="chat-suggestion" data-query="How do I get started?">Get Started</button></div>
         <div class="chat-input-area"><div class="chat-input-wrapper"><input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." autocomplete="off"><button class="chat-send" id="chatSend" aria-label="Send message"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg></button></div></div></div><button class="chat-toggle" id="chatToggle" aria-label="Open chat assistant"><svg class="chat-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg><svg class="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
+    <script>
+    /* Obligation finder */
+    (function() {
+        const chips = document.querySelectorAll('.finder-chip');
+        chips.forEach(chip => chip.addEventListener('click', () => {
+            chips.forEach(c => { c.classList.remove('active'); c.setAttribute('aria-selected', 'false'); });
+            chip.classList.add('active');
+            chip.setAttribute('aria-selected', 'true');
+            document.querySelectorAll('.finder-panel').forEach(p => p.classList.remove('active'));
+            document.getElementById(chip.dataset.finder).classList.add('active');
+        }));
+    })();
+    </script>
     <script>
     /* Fallback: if JS crashes, make all content visible after 2s */
     setTimeout(function() { document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('force-visible'); }); }, 2000);
@@ -1199,6 +1286,7 @@ const knowledge={svc_ir:{keywords:['inspection readiness','svc_ir','prepare for 
     const contextSection = document.getElementById('contextBarSection');
     const contextDesc = document.getElementById('contextBarDesc');
     const contextMap = {
+        start: { label: 'Start Here', desc: 'Find your obligation, clock, and first step' },
         practices: { label: 'Practices', desc: 'Defence, critical infrastructure, AI governance' },
         services: { label: 'Services', desc: 'Readiness & preparation services' },
         standards: { label: 'Reference Library', desc: 'Standards, programs & regulations catalogue' },
