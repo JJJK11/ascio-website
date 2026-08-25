@@ -2,12 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://ascio.ca/</loc><priority>1.0</priority></url>
   <url><loc>https://ascio.ca/defence/</loc><priority>0.9</priority></url>
+  <url><loc>https://ascio.ca/buyer-assurance/</loc><priority>0.9</priority></url>
+  <url><loc>https://ascio.ca/iso-readiness/</loc><priority>0.9</priority></url>
   <url><loc>https://ascio.ca/critical-infrastructure/</loc><priority>0.9</priority></url>
   <url><loc>https://ascio.ca/ai-governance/</loc><priority>0.9</priority></url>
   <url><loc>https://ascio.ca/guides/cpcsc/</loc><priority>0.8</priority></url>
   <url><loc>https://ascio.ca/guides/ccspa/</loc><priority>0.8</priority></url>
   <url><loc>https://ascio.ca/guides/ai-governance/</loc><priority>0.8</priority></url>
-  <url><loc>https://ascio.ca/services/</loc><priority>0.7</priority></url>
   <url><loc>https://ascio.ca/standards/</loc><priority>0.7</priority></url>
   <url><loc>https://ascio.ca/privacy/</loc><priority>0.7</priority></url>
   <url><loc>https://ascio.ca/assessment/</loc><priority>0.9</priority></url>
