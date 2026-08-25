@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CPCSC Level 1 Readiness Check &amp; Certification Self Assessment: ascio</title>
-    <meta name="description" content="Free CPCSC Level 1 readiness check mapped to the self assessment criteria, plus readiness assessments for ISO 27001, ISO 42001, and CyberSecure Canada. Identify gaps and get a prioritized action plan.">
+    <meta name="description" content="Free readiness check: pick your framework, answer 8 quick questions, and get a projected readiness score with clear next steps. CPCSC Level 1, CCSPA, ISO 27001, ISO 42001, CyberSecure Canada.">
     <meta property="og:title" content="CPCSC Level 1 Readiness Check &amp; Certification Self Assessment: ascio">
-    <meta property="og:description" content="Check your CPCSC Level 1 readiness against the self assessment criteria. Free, about 5 minutes.">
+    <meta property="og:description" content="Pick your framework, answer 8 quick questions, and get a projected readiness score with clear next steps. Free, about 3 minutes.">
     <meta property="og:image" content="https://ascio.ca/og-image.png">
     <meta property="og:url" content="https://ascio.ca/assessment/">
     <meta property="og:type" content="website">
@@ -59,7 +59,7 @@
         .grid-bg { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(39,39,42,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(39,39,42,0.3) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
 
         /* Hero */
-        .hero { padding: 140px 0 60px; text-align: center; position: relative; }
+        .hero { padding: 140px 0 40px; text-align: center; position: relative; }
         .hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 800px; height: 500px; background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%); pointer-events: none; }
         .hero-content { position: relative; z-index: 2; }
         .hero-tag { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 1rem; }
@@ -67,21 +67,36 @@
         .hero h1 { font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1rem; }
         .hero p { font-size: 1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.8; }
 
-        /* Wizard */
-        .assess-card { position: relative; z-index: 1; background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; margin-bottom: 4rem; }
-        .assess-progress { display: flex; gap: 4px; margin-bottom: 2rem; }
-        .assess-prog-seg { flex: 1; height: 4px; border-radius: 2px; background: var(--bg-elevated); transition: background 0.3s; }
-        .assess-prog-seg.done { background: var(--accent); }
-        .assess-prog-seg.active { background: var(--accent); opacity: 0.5; }
+        /* Flow card */
+        .assess-card { position: relative; z-index: 1; background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; margin-bottom: 4rem; min-height: 420px; display: flex; flex-direction: column; }
+        .tf-progress { height: 4px; border-radius: 2px; background: var(--bg-elevated); margin-bottom: 2rem; overflow: hidden; }
+        .tf-progress-fill { height: 100%; width: 0; border-radius: 2px; background: var(--accent); transition: width 0.4s var(--ease); }
 
-        .assess-step { display: none; animation: fadeIn 0.3s var(--ease); }
-        .assess-step.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .tf-screen { animation: tfIn 0.35s var(--ease); flex: 1; display: flex; flex-direction: column; }
+        .tf-screen.leaving { animation: tfOut 0.22s var(--ease) forwards; }
+        @keyframes tfIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes tfOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-10px); } }
 
-        .assess-step h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
-        .assess-step .step-desc { color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.5rem; }
+        .tf-eyebrow { font-family: var(--mono); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.9rem; }
+        .tf-q { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 0.6rem; }
+        .tf-desc { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.75rem; max-width: 58ch; }
 
-        /* Form elements */
+        .tf-opts { display: flex; flex-direction: column; gap: 0.6rem; }
+        .tf-opt { display: flex; align-items: center; gap: 0.9rem; width: 100%; text-align: left; padding: 0.9rem 1.1rem; background: var(--bg); border: 1px solid var(--border-light); border-radius: 8px; color: var(--text-secondary); font-family: var(--body); font-size: 0.92rem; font-weight: 500; cursor: pointer; transition: all 0.14s; }
+        .tf-opt:hover { border-color: var(--accent-border); color: var(--text); transform: translateX(2px); }
+        .tf-opt.selected { background: var(--accent-dim); border-color: var(--accent); color: var(--text); }
+        .tf-key { flex-shrink: 0; font-family: var(--mono); font-size: 0.68rem; color: var(--text-muted); border: 1px solid var(--border-light); border-radius: 4px; padding: 0.15rem 0.45rem; }
+        .tf-opt.selected .tf-key { color: var(--accent); border-color: var(--accent); }
+        .tf-opt .tf-opt-sub { display: block; font-size: 0.75rem; font-weight: 400; color: var(--text-muted); margin-top: 0.1rem; }
+        .tf-opt-main { line-height: 1.4; }
+
+        .tf-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+        .tf-hint { font-family: var(--mono); font-size: 0.68rem; color: var(--text-muted); }
+        .tf-back { background: transparent; border: 1px solid var(--border-light); color: var(--text-secondary); border-radius: 8px; padding: 0.5rem 1rem; font-family: var(--body); font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; gap: 0.4rem; }
+        .tf-back:hover { color: var(--text); border-color: var(--text-muted); }
+        .tf-back[disabled] { opacity: 0; pointer-events: none; }
+
+        /* Form elements (contact gate) */
         .field { margin-bottom: 1.25rem; }
         .field label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.4rem; letter-spacing: 0.02em; }
         .field select, .field input[type="text"], .field input[type="email"] {
@@ -94,17 +109,6 @@
         .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
         .field-err { color: var(--red); font-size: 0.75rem; margin-top: 0.3rem; display: none; }
 
-        /* Rating scale */
-        .rating-group { margin-bottom: 1.5rem; padding: 1.25rem; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; }
-        .rating-group .rg-label { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; }
-        .rating-group .rg-desc { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.8rem; }
-        .rating-options { display: flex; gap: 6px; }
-        .rating-opt { flex: 1; text-align: center; padding: 0.5rem 0.25rem; border: 1px solid var(--border-light); border-radius: 6px; font-size: 0.72rem; font-weight: 500; color: var(--text-secondary); cursor: pointer; transition: all 0.15s; }
-        .rating-opt:hover { border-color: var(--accent-border); color: var(--text); }
-        .rating-opt.selected { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
-
-        /* Nav buttons */
-        .assess-nav { display: flex; justify-content: space-between; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
         .btn { padding: 0.65rem 1.5rem; border: none; border-radius: 8px; font-family: var(--body); font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; gap: 0.5rem; }
         .btn-back { background: transparent; color: var(--text-secondary); border: 1px solid var(--border-light); }
         .btn-back:hover { color: var(--text); border-color: var(--text-muted); }
@@ -114,7 +118,8 @@
 
         /* Results */
         .results { display: none; }
-        .results.show { display: block; animation: fadeIn 0.5s var(--ease); }
+        .results.show { display: block; animation: tfIn 0.5s var(--ease); }
+        .results .assess-card { min-height: 0; display: block; }
         .score-ring { width: 160px; height: 160px; margin: 0 auto 1.5rem; position: relative; }
         .score-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
         .score-ring circle { fill: none; stroke-width: 8; }
@@ -126,7 +131,12 @@
 
         .result-section { margin-bottom: 2rem; }
         .result-section h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
-        .result-section h3 .tag { font-family: var(--mono); font-size: 0.6rem; padding: 0.2rem 0.5rem; border-radius: 4px; background: var(--accent-dim); color: var(--accent); }
+
+        .next-steps { list-style: none; counter-reset: ns; }
+        .next-steps li { counter-increment: ns; position: relative; padding: 0 0 1.1rem 3rem; }
+        .next-steps li::before { content: counter(ns, decimal-leading-zero); position: absolute; left: 0; top: 0.1em; font-family: var(--mono); font-size: 0.75rem; color: var(--accent); border: 1px solid var(--border-light); border-radius: 6px; padding: 0.22rem 0.42rem; }
+        .next-steps li strong { display: block; font-size: 0.9rem; margin-bottom: 0.1rem; }
+        .next-steps li p { font-size: 0.82rem; color: var(--text-secondary); max-width: 64ch; }
 
         .gap-item { padding: 0.75rem 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.5rem; }
         .gap-item .gap-title { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem; }
@@ -157,12 +167,11 @@
             .nav-links { display: none; }
             .mobile-toggle { display: block; }
             .field-row { grid-template-columns: 1fr; }
-            .assess-card { padding: 1.5rem; }
-            .rating-options { flex-wrap: wrap; }
-            .rating-opt { flex: 0 0 calc(50% - 3px); }
+            .assess-card { padding: 1.5rem; min-height: 0; }
+            .tf-q { font-size: 1.15rem; }
+            .tf-hint { display: none; }
         }
     </style>
-    <!-- modern-enhancements: additive, no content/link change -->
     <link rel="canonical" href="https://ascio.ca/assessment/">
     <meta name="theme-color" content="#09090b">
     <meta name="author" content="K. Kelly">
@@ -174,21 +183,15 @@
     <meta property="og:image:width" content="1584">
     <meta property="og:image:height" content="396">
     <style>
-  /* View Transitions API: smooth same-origin page navigation */
   @view-transition { navigation: auto; }
-  /* Match native UI (scrollbars, form controls, autofill) to the dark theme */
   :root { color-scheme: dark; }
-  /* Respect users who reduce motion: disable the view-transition animation */
   @media (prefers-reduced-motion: reduce) {
     ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+    .tf-screen, .tf-screen.leaving { animation: none !important; }
   }
-  /* Respect users who reduce transparency: drop translucency/blur on overlays */
   @media (prefers-reduced-transparency: reduce) {
-    header, .context-bar, .mobile-nav-overlay, .chat-window {
-      backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: var(--bg) !important;
-    }
+    header, .mobile-nav { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: var(--bg) !important; }
   }
-  /* Respect users who request higher contrast: strengthen secondary text/borders */
   @media (prefers-contrast: more) {
     :root { --text-secondary: #c8c8d0; --text-muted: #9a9aa5; --border: #52525b; --border-light: #6b6b75; }
   }
@@ -226,131 +229,15 @@
         <div class="w hero-content">
             <div class="hero-tag">Free Assessment</div>
             <h1>Readiness Assessment</h1>
-            <p>Check your CPCSC Level 1 readiness against the self assessment criteria, your CCSPA readiness against the Act's duties, or evaluate readiness for ISO 27001, ISO 42001, CyberSecure Canada, and CPCSC certification. Takes about 5 minutes.</p>
+            <p>Pick what you are preparing for, answer 8 quick questions one at a time, and get a projected readiness score with clear next steps. About 3 minutes.</p>
         </div>
     </section>
 
     <main>
         <div class="w">
             <div class="assess-card" id="assessCard">
-                <div class="assess-progress" id="assessProgress">
-                    <div class="assess-prog-seg active"></div>
-                    <div class="assess-prog-seg"></div>
-                    <div class="assess-prog-seg"></div>
-                    <div class="assess-prog-seg"></div>
-                    <div class="assess-prog-seg"></div>
-                </div>
-
-                <!-- Step 0: Framework Selection -->
-                <div class="assess-step active" data-step="0">
-                    <h2>Select your target framework</h2>
-                    <p class="step-desc">Choose the certification or program you're preparing for. This determines which controls we'll assess.</p>
-                    <div class="field">
-                        <label for="aFramework">Framework</label>
-                        <select id="aFramework">
-                            <option value="" disabled selected>Select a framework</option>
-                            <option value="cpcsc-l1">CPCSC Level 1: Defence Contract Readiness Check</option>
-                            <option value="ccspa">CCSPA: Critical Infrastructure Readiness Check</option>
-                            <option value="iso27001">ISO/IEC 27001 &#8212; Information Security Management</option>
-                            <option value="iso42001">ISO/IEC 42001 &#8212; AI Management System</option>
-                            <option value="cybersecure">CyberSecure Canada &#8212; Baseline Cybersecurity</option>
-                            <option value="cpcsc">CPCSC &#8212; Canadian Program for Cyber Security Certification</option>
-                        </select>
-                    </div>
-                    <div class="field-row">
-                        <div class="field">
-                            <label for="aIndustry">Industry</label>
-                            <select id="aIndustry">
-                                <option value="" disabled selected>Select industry</option>
-                                <option>Defence / Aerospace</option>
-                                <option>Financial Services</option>
-                                <option>Healthcare</option>
-                                <option>Government / Public Sector</option>
-                                <option>Technology / SaaS</option>
-                                <option>Manufacturing</option>
-                                <option>Energy / Utilities</option>
-                                <option>Professional Services</option>
-                                <option>Telecommunications</option>
-                                <option>Retail / E-commerce</option>
-                                <option>Education</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div class="field">
-                            <label for="aSize">Organization size</label>
-                            <select id="aSize">
-                                <option value="" disabled selected>Select size</option>
-                                <option>1-25 employees</option>
-                                <option>26-100 employees</option>
-                                <option>101-500 employees</option>
-                                <option>500+ employees</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="assess-nav">
-                        <div></div>
-                        <button class="btn btn-next" onclick="assessNext()">Next <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg></button>
-                    </div>
-                </div>
-
-                <!-- Step 1: Governance & Leadership -->
-                <div class="assess-step" data-step="1">
-                    <h2 id="q1Title">Governance &amp; Leadership</h2>
-                    <p class="step-desc" id="q1Desc">Rate your organization's current maturity in each area.</p>
-                    <div id="q1Container"></div>
-                    <div class="assess-nav">
-                        <button class="btn btn-back" onclick="assessBack()"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M15 19l-7-7 7-7"/></svg> Back</button>
-                        <button class="btn btn-next" onclick="assessNext()">Next <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg></button>
-                    </div>
-                </div>
-
-                <!-- Step 2: Controls & Operations -->
-                <div class="assess-step" data-step="2">
-                    <h2 id="q2Title">Controls &amp; Operations</h2>
-                    <p class="step-desc" id="q2Desc">Evaluate your control implementation and operational practices.</p>
-                    <div id="q2Container"></div>
-                    <div class="assess-nav">
-                        <button class="btn btn-back" onclick="assessBack()"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M15 19l-7-7 7-7"/></svg> Back</button>
-                        <button class="btn btn-next" onclick="assessNext()">Next <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg></button>
-                    </div>
-                </div>
-
-                <!-- Step 3: Evidence & Audit Readiness -->
-                <div class="assess-step" data-step="3">
-                    <h2 id="q3Title">Evidence &amp; Audit Readiness</h2>
-                    <p class="step-desc" id="q3Desc">Assess your documentation and audit preparation.</p>
-                    <div id="q3Container"></div>
-                    <div class="assess-nav">
-                        <button class="btn btn-back" onclick="assessBack()"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M15 19l-7-7 7-7"/></svg> Back</button>
-                        <button class="btn btn-next" onclick="assessNext()">Next <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg></button>
-                    </div>
-                </div>
-
-                <!-- Step 4: Get Results (email gate) -->
-                <div class="assess-step" data-step="4">
-                    <h2>Get your readiness report</h2>
-                    <p class="step-desc">Enter your details to receive your assessment results with a prioritized gap analysis and recommended next steps.</p>
-                    <div class="field-row">
-                        <div class="field">
-                            <label for="aName">Name</label>
-                            <input type="text" id="aName" placeholder="Your name" required>
-                        </div>
-                        <div class="field">
-                            <label for="aCompany">Company</label>
-                            <input type="text" id="aCompany" placeholder="Company name">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label for="aEmail">Work email</label>
-                        <input type="email" id="aEmail" placeholder="you@company.com" required>
-                        <div class="field-err" id="emailErr">Please enter a valid email address</div>
-                    </div>
-                    <p style="font-size:0.72rem;color:var(--text-muted);margin-top:0.5rem">Your information is used only to deliver your report and relevant follow-up. We respect your privacy.</p>
-                    <div class="assess-nav">
-                        <button class="btn btn-back" onclick="assessBack()"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M15 19l-7-7 7-7"/></svg> Back</button>
-                        <button class="btn btn-next" id="submitBtn" onclick="submitAssessment()">Get My Report <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></button>
-                    </div>
-                </div>
+                <div class="tf-progress"><div class="tf-progress-fill" id="tfFill"></div></div>
+                <div id="flowRoot"></div>
             </div>
 
             <!-- Results -->
@@ -371,6 +258,11 @@
                         <p id="scoreDesc" style="color:var(--text-secondary);font-size:0.9rem"></p>
                     </div>
 
+                    <div class="result-section">
+                        <h3><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M13 5l7 7-7 7M5 5l7 7-7 7"/></svg> Clear next steps</h3>
+                        <ol class="next-steps" id="nextList"></ol>
+                    </div>
+
                     <div class="result-section" id="gapsSection">
                         <h3><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg> Key Gaps Identified</h3>
                         <div id="gapsList"></div>
@@ -382,9 +274,9 @@
                     </div>
 
                     <div class="result-cta">
-                        <h3>Ready for structured readiness support?</h3>
-                        <p>Our team can help you close these gaps with a structured, phase-based engagement.</p>
-                        <a href="../#contact" class="btn btn-next">Schedule a Discovery Call <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a>
+                        <h3 id="ctaTitle">Ready to close the gaps?</h3>
+                        <p id="ctaDesc">The matching ascio package runs self guided or guided, and ends in evidence you keep.</p>
+                        <a href="../#contact" class="btn btn-next" id="ctaBtn">View the package <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a>
                     </div>
 
                     <div style="text-align:center;margin-top:1.5rem">
@@ -398,7 +290,7 @@
     <footer>
         <div class="w">
             <div class="ft">
-                <div class="ft-brand"><strong>ascio</strong> &#8212; Technology Governance, Inspection &amp; Assessment Readiness / Canada</div>
+                <div class="ft-brand"><strong>ascio</strong> &#8212; Security, Risk &amp; Compliance / Canada</div>
                 <div class="ft-copy">&copy; 2017&#8211;2026 ascio</div>
             </div>
         </div>
@@ -413,218 +305,226 @@
         mt.setAttribute('aria-expanded', open);
     });
 
-    /* Framework-specific questions */
+    /* Frameworks */
+    const FRAMEWORKS = [
+        { id: 'cpcsc-l1', name: 'CPCSC Level 1', sub: 'Defence contract readiness check' },
+        { id: 'ccspa', name: 'CCSPA', sub: 'Critical infrastructure readiness check' },
+        { id: 'iso27001', name: 'ISO/IEC 27001', sub: 'Information security management' },
+        { id: 'iso42001', name: 'ISO/IEC 42001', sub: 'AI management system' },
+        { id: 'cybersecure', name: 'CyberSecure Canada', sub: 'Baseline cybersecurity' },
+        { id: 'cpcsc', name: 'CPCSC', sub: 'Certification program overview' }
+    ];
+    const FW_NAMES = { 'cpcsc-l1': 'CPCSC Level 1', ccspa: 'CCSPA', iso27001: 'ISO/IEC 27001', iso42001: 'ISO/IEC 42001', cybersecure: 'CyberSecure Canada', cpcsc: 'CPCSC' };
+    const FW_PACKAGE = {
+        'cpcsc-l1': { name: 'CPCSC Readiness package', url: '../defence/' },
+        cpcsc: { name: 'CPCSC Readiness package', url: '../defence/' },
+        ccspa: { name: 'Critical infrastructure readiness', url: '../critical-infrastructure/' },
+        iso27001: { name: 'ISO Readiness package', url: '../iso-readiness/' },
+        iso42001: { name: 'ISO Readiness package', url: '../iso-readiness/' },
+        cybersecure: { name: 'ISO Readiness package', url: '../iso-readiness/' }
+    };
+
+    /* 8 questions per framework */
     const QUESTIONS = {
-        'cpcsc-l1': {
-            governance: [
-                { id: 'g1', label: 'Specified Information scope', desc: 'Do you know exactly which systems, people, and locations hold the contractual information your defence contract identifies?' },
-                { id: 'g2', label: 'Unique user accounts', desc: 'Does every user have an individual account, with no shared logins on systems holding contract information?' },
-                { id: 'g3', label: 'Least privilege', desc: 'Is access limited to the people and functions that need it, and removed when no longer needed?' },
-                { id: 'g4', label: 'External connections', desc: 'Are connections to and from external systems identified, restricted, and approved?' }
-            ],
-            controls: [
-                { id: 'c1', label: 'Multifactor authentication', desc: 'Is MFA enforced for accounts that reach contract information, including remote and administrative access?' },
-                { id: 'c2', label: 'Authenticator management', desc: 'Are default passwords changed, and credentials issued, managed, and revoked through a defined process?' },
-                { id: 'c3', label: 'Boundary protection', desc: 'Do boundary controls separate systems holding contract information from the rest of your network?' },
-                { id: 'c4', label: 'Flaw remediation', desc: 'Are known flaws in operating systems and applications patched within a defined timeframe?' },
-                { id: 'c5', label: 'Malicious code protection', desc: 'Is protection against malicious code deployed and kept current on relevant systems?' }
-            ],
-            evidence: [
-                { id: 'e1', label: 'Media sanitization', desc: 'Is media holding contract information sanitized or destroyed before disposal or reuse, with records kept?' },
-                { id: 'e2', label: 'Physical access', desc: 'Is physical access to relevant systems authorized and controlled, including alternate work sites?' },
-                { id: 'e3', label: 'Supporting records', desc: 'Could you produce a record behind each answer above: a policy, a configuration, a log, a screenshot?' },
-                { id: 'e4', label: 'Attestation readiness', desc: 'Is your CanadaBuys supplier profile current, and do you have a process to affirm annually?' }
-            ]
-        },
-        ccspa: {
-            governance: [
-                { id: 'g1', label: 'Designation exposure', desc: 'Do you know whether your organization sits in a class likely to be designated under the Critical Cyber Systems Protection Act?' },
-                { id: 'g2', label: 'Critical cyber system inventory', desc: 'Have you identified the systems whose compromise would affect the vital service you deliver?' },
-                { id: 'g3', label: 'Named accountability', desc: 'Are named executives accountable for the cyber security of those systems, with board visibility?' },
-                { id: 'g4', label: 'Cyber security program', desc: 'Do you have a documented program that could be finalized within 90 days of designation?' }
-            ],
-            controls: [
-                { id: 'c1', label: 'Protection of critical systems', desc: 'Are protective controls on critical cyber systems identified, implemented, and reviewed?' },
-                { id: 'c2', label: 'Supply chain and third party risk', desc: 'Are the vendors and services your critical systems depend on identified, with risks mitigated?' },
-                { id: 'c3', label: 'Incident detection', desc: 'Could you detect a significant incident on a critical system fast enough to decide and report within 72 hours?' },
-                { id: 'c4', label: 'Reporting runbook', desc: 'Is there a rehearsed runbook covering severity decision and reporting to the Cyber Centre?' },
-                { id: 'c5', label: 'Resilience', desc: 'Could you operate isolated from third party dependencies and rebuild systems while degraded?' }
-            ],
-            evidence: [
-                { id: 'e1', label: 'Operating records', desc: 'Could you produce records proving the controls operate: reviews, logs, test results?' },
-                { id: 'e2', label: 'Exercises', desc: 'Have you exercised the incident and resilience scenarios on a tabletop, with documented outcomes?' },
-                { id: 'e3', label: 'Board reporting', desc: 'Does the board receive regular cyber reporting with records behind every answer?' },
-                { id: 'e4', label: 'Direction readiness', desc: 'Is there a process to receive, act on, and evidence compliance with a binding cyber security direction?' }
-            ]
-        },
-        iso27001: {
-            governance: [
-                { id: 'g1', label: 'Information security policy', desc: 'Is there a documented, management-approved information security policy?' },
-                { id: 'g2', label: 'Risk assessment process', desc: 'Do you have a formal risk assessment methodology and risk register?' },
-                { id: 'g3', label: 'Roles and responsibilities', desc: 'Are information security roles, responsibilities, and authorities defined?' },
-                { id: 'g4', label: 'Management commitment', desc: 'Does top management actively support and review the ISMS?' },
-                { id: 'g5', label: 'Scope definition', desc: 'Is the ISMS scope clearly defined and documented?' }
-            ],
-            controls: [
-                { id: 'c1', label: 'Access control', desc: 'Are access control policies implemented and enforced?' },
-                { id: 'c2', label: 'Asset management', desc: 'Is there an inventory of information assets with assigned owners?' },
-                { id: 'c3', label: 'Incident management', desc: 'Are security incident procedures documented and tested?' },
-                { id: 'c4', label: 'Business continuity', desc: 'Are business continuity plans documented and exercised?' },
-                { id: 'c5', label: 'Supplier security', desc: 'Are third-party security requirements defined and monitored?' }
-            ],
-            evidence: [
-                { id: 'e1', label: 'Internal audit program', desc: 'Is there a planned and executed internal audit program?' },
-                { id: 'e2', label: 'Management review', desc: 'Are management reviews conducted with documented outputs?' },
-                { id: 'e3', label: 'Corrective actions', desc: 'Are nonconformities tracked with root cause analysis and corrective actions?' },
-                { id: 'e4', label: 'Document control', desc: 'Is there a documented procedure for document creation, review, and approval?' },
-                { id: 'e5', label: 'Training records', desc: 'Are security awareness training records maintained for all personnel?' }
-            ]
-        },
-        iso42001: {
-            governance: [
-                { id: 'g1', label: 'AI policy', desc: 'Is there a documented AI governance policy approved by management?' },
-                { id: 'g2', label: 'AI risk assessment', desc: 'Do you assess risks specific to AI systems including bias and fairness?' },
-                { id: 'g3', label: 'Roles and accountability', desc: 'Are AI governance roles and accountability structures defined?' },
-                { id: 'g4', label: 'Ethical principles', desc: 'Are responsible AI principles documented and communicated?' },
-                { id: 'g5', label: 'AI system inventory', desc: 'Do you maintain an inventory of AI systems with classification?' }
-            ],
-            controls: [
-                { id: 'c1', label: 'Data governance', desc: 'Are data quality, privacy, and bias controls in place for AI training data?' },
-                { id: 'c2', label: 'Model lifecycle management', desc: 'Are AI models managed through development, testing, deployment, and retirement?' },
-                { id: 'c3', label: 'Human oversight', desc: 'Are human oversight mechanisms defined for AI system decisions?' },
-                { id: 'c4', label: 'Transparency', desc: 'Can you explain how your AI systems make decisions to stakeholders?' },
-                { id: 'c5', label: 'Impact assessment', desc: 'Do you conduct AI impact assessments before deployment?' }
-            ],
-            evidence: [
-                { id: 'e1', label: 'Internal audit program', desc: 'Is there an AI-specific internal audit program?' },
-                { id: 'e2', label: 'Management review', desc: 'Does management review AI governance performance regularly?' },
-                { id: 'e3', label: 'Monitoring and measurement', desc: 'Are AI system performance and fairness metrics tracked?' },
-                { id: 'e4', label: 'Incident reporting', desc: 'Are AI incidents and near-misses reported and investigated?' },
-                { id: 'e5', label: 'Competence records', desc: 'Are AI competency requirements defined with training records?' }
-            ]
-        },
-        cybersecure: {
-            governance: [
-                { id: 'g1', label: 'Incident response plan', desc: 'Do you have a documented cyber incident response plan?' },
-                { id: 'g2', label: 'Security awareness', desc: 'Do all employees receive cybersecurity awareness training?' },
-                { id: 'g3', label: 'Acceptable use policy', desc: 'Is there an acceptable use policy for devices and networks?' },
-                { id: 'g4', label: 'Risk assessment', desc: 'Have you identified your critical assets and assessed cyber risks?' },
-                { id: 'g5', label: 'Leadership awareness', desc: 'Is leadership aware of and supportive of cybersecurity measures?' }
-            ],
-            controls: [
-                { id: 'c1', label: 'Patching', desc: 'Are operating systems and applications patched within 14 days of release?' },
-                { id: 'c2', label: 'Multi-factor authentication', desc: 'Is MFA enabled on all external-facing services and admin accounts?' },
-                { id: 'c3', label: 'Backup and recovery', desc: 'Are regular backups performed and tested for recovery?' },
-                { id: 'c4', label: 'Malware protection', desc: 'Is anti-malware software installed and kept up to date?' },
-                { id: 'c5', label: 'Firewall and network security', desc: 'Are firewalls configured and network perimeters secured?' }
-            ],
-            evidence: [
-                { id: 'e1', label: 'Patch records', desc: 'Can you demonstrate timely patching with records?' },
-                { id: 'e2', label: 'Backup test records', desc: 'Are backup restoration tests documented?' },
-                { id: 'e3', label: 'Training records', desc: 'Are employee training completion records maintained?' },
-                { id: 'e4', label: 'Configuration documentation', desc: 'Are security configurations documented and reviewed?' },
-                { id: 'e5', label: 'Incident records', desc: 'Are past security incidents documented with lessons learned?' }
-            ]
-        },
-        cpcsc: {
-            governance: [
-                { id: 'g1', label: 'Security plan', desc: 'Is there a system security plan aligned with ITSG-33?' },
-                { id: 'g2', label: 'Security categorization', desc: 'Have you categorized information assets by sensitivity?' },
-                { id: 'g3', label: 'Roles and responsibilities', desc: 'Are security roles assigned and documented?' },
-                { id: 'g4', label: 'Supply chain awareness', desc: 'Do you understand your position in the defence supply chain?' },
-                { id: 'g5', label: 'Continuous monitoring plan', desc: 'Is there a plan for ongoing security monitoring and reporting?' }
-            ],
-            controls: [
-                { id: 'c1', label: 'Access control', desc: 'Are access controls enforced based on least privilege?' },
-                { id: 'c2', label: 'Encryption', desc: 'Is data encrypted in transit and at rest where required?' },
-                { id: 'c3', label: 'Audit logging', desc: 'Are security events logged and reviewed?' },
-                { id: 'c4', label: 'Physical security', desc: 'Are physical access controls in place for sensitive areas?' },
-                { id: 'c5', label: 'Incident response', desc: 'Is there a tested incident response capability?' }
-            ],
-            evidence: [
-                { id: 'e1', label: 'Self-assessment evidence', desc: 'Can you provide evidence for all Level 1 controls?' },
-                { id: 'e2', label: 'Configuration baselines', desc: 'Are system configuration baselines documented?' },
-                { id: 'e3', label: 'Training records', desc: 'Are security training records maintained for relevant personnel?' },
-                { id: 'e4', label: 'Risk register', desc: 'Is a risk register maintained with mitigation actions?' },
-                { id: 'e5', label: 'POA&M', desc: 'Is there a Plan of Action and Milestones for identified gaps?' }
-            ]
-        }
+        'cpcsc-l1': [
+            { id: 'g1', label: 'Do you know exactly which systems, people, and locations hold the contractual information your defence contract identifies?', desc: 'The Level 1 criteria apply to a defined scope. A small, defensible boundary makes everything that follows cheaper.' },
+            { id: 'g2', label: 'Does every user have an individual account, with no shared logins on systems holding contract information?', desc: 'Shared accounts are one of the first things an assessor asks about.' },
+            { id: 'c1', label: 'Is multifactor authentication enforced for accounts that reach contract information, including remote and administrative access?', desc: 'MFA on privileged and remote access is a baseline Level 1 expectation.' },
+            { id: 'c3', label: 'Do boundary controls separate systems holding contract information from the rest of your network?', desc: 'A flat network means your whole environment is in scope.' },
+            { id: 'c4', label: 'Are known flaws in operating systems and applications patched within a defined timeframe?', desc: 'A patching cadence you can show, not just describe.' },
+            { id: 'c5', label: 'Is protection against malicious code deployed and kept current on relevant systems?', desc: 'Deployed, updating, and covering the systems in scope.' },
+            { id: 'e3', label: 'Could you produce a record behind each answer above: a policy, a configuration, a log, a screenshot?', desc: 'An affirmation without records does not survive scrutiny.' },
+            { id: 'e4', label: 'Is your CanadaBuys supplier profile current, and do you have a process to affirm annually?', desc: 'Level 1 is affirmed in your supplier profile and renewed every year.' }
+        ],
+        ccspa: [
+            { id: 'g1', label: 'Do you know whether your organization sits in a class likely to be designated under the Critical Cyber Systems Protection Act?', desc: 'Finance, telecommunications, energy, and transportation are the Schedule 1 sectors.' },
+            { id: 'g2', label: 'Have you identified the systems whose compromise would affect the vital service you deliver?', desc: 'The critical cyber system inventory anchors everything else.' },
+            { id: 'g3', label: 'Are named executives accountable for the cyber security of those systems, with board visibility?', desc: 'Accountability the regulator can point to.' },
+            { id: 'g4', label: 'Do you have a documented cyber security program that could be finalized within 90 days of designation?', desc: 'Designation starts a 90 day program clock.' },
+            { id: 'c2', label: 'Are the vendors and services your critical systems depend on identified, with risks mitigated?', desc: 'Supply chain duties are written into the Act.' },
+            { id: 'c3', label: 'Could you detect a significant incident on a critical system fast enough to decide and report within 72 hours?', desc: 'The reporting window will be capped near 72 hours.' },
+            { id: 'e2', label: 'Have you exercised the incident and resilience scenarios on a tabletop, with documented outcomes?', desc: 'A plan that has never been exercised is a document, not a capability.' },
+            { id: 'e3', label: 'Does the board receive regular cyber reporting with records behind every answer?', desc: 'Boards of designated operators will be asked what they knew.' }
+        ],
+        iso27001: [
+            { id: 'g1', label: 'Is there a documented, management approved information security policy?', desc: 'The anchor document of the management system.' },
+            { id: 'g2', label: 'Do you have a formal risk assessment methodology and risk register?', desc: 'Risk drives control selection in ISO 27001.' },
+            { id: 'g5', label: 'Is the ISMS scope clearly defined and documented?', desc: 'Scope decides the size and cost of everything.' },
+            { id: 'c1', label: 'Are access control policies implemented and enforced?', desc: 'Who can reach what, and how that is decided and revoked.' },
+            { id: 'c3', label: 'Are security incident procedures documented and tested?', desc: 'Documented, and actually exercised.' },
+            { id: 'c5', label: 'Are third party security requirements defined and monitored?', desc: 'Suppliers are inside your risk boundary.' },
+            { id: 'e1', label: 'Is there a planned and executed internal audit program?', desc: 'Certification auditors look here first.' },
+            { id: 'e2', label: 'Are management reviews conducted with documented outputs?', desc: 'Evidence that leadership runs the system, not just signed it.' }
+        ],
+        iso42001: [
+            { id: 'g1', label: 'Is there a documented AI governance policy approved by management?', desc: 'The anchor of a certifiable AI management system.' },
+            { id: 'g5', label: 'Do you maintain an inventory of AI systems with classification?', desc: 'Including procured and embedded AI, not just what you built.' },
+            { id: 'g2', label: 'Do you assess risks specific to AI systems, including bias and fairness?', desc: 'AI risk is its own discipline in the standard.' },
+            { id: 'c2', label: 'Are AI models managed through development, testing, deployment, and retirement?', desc: 'Lifecycle management is where most gaps live.' },
+            { id: 'c3', label: 'Are human oversight mechanisms defined for AI system decisions?', desc: 'Humans in the loop where outcomes touch people.' },
+            { id: 'c4', label: 'Can you explain how your AI systems make decisions to stakeholders?', desc: 'Transparency your customers and regulators can use.' },
+            { id: 'e3', label: 'Are AI system performance and fairness metrics tracked?', desc: 'Monitoring that produces records.' },
+            { id: 'e1', label: 'Is there an AI specific internal audit program?', desc: 'The system has to be checked, not just built.' }
+        ],
+        cybersecure: [
+            { id: 'g1', label: 'Do you have a documented cyber incident response plan?', desc: 'Written down, with names and steps.' },
+            { id: 'g2', label: 'Do all employees receive cybersecurity awareness training?', desc: 'People are the widest attack surface.' },
+            { id: 'c1', label: 'Are operating systems and applications patched promptly after release?', desc: 'A defined patching cadence you can show.' },
+            { id: 'c2', label: 'Is MFA enabled on all external facing services and admin accounts?', desc: 'The single highest value control for small organizations.' },
+            { id: 'c3', label: 'Are regular backups performed and tested for recovery?', desc: 'A backup that has never been restored is a hope.' },
+            { id: 'c4', label: 'Is anti malware software installed and kept up to date?', desc: 'Deployed and current across your devices.' },
+            { id: 'e1', label: 'Can you demonstrate timely patching with records?', desc: 'Certification asks for proof, not intent.' },
+            { id: 'e2', label: 'Are backup restoration tests documented?', desc: 'The record that turns a backup into evidence.' }
+        ],
+        cpcsc: [
+            { id: 'g1', label: 'Is there a system security plan for the systems that hold contract information?', desc: 'The document that ties scope, controls, and evidence together.' },
+            { id: 'g2', label: 'Have you categorized information assets by sensitivity?', desc: 'You cannot protect what you have not classified.' },
+            { id: 'g4', label: 'Do you understand your position in the defence supply chain and which CPCSC level your contracts will require?', desc: 'The level comes from the contracts you bid on.' },
+            { id: 'c1', label: 'Are access controls enforced based on least privilege?', desc: 'Access limited to who needs it, removed when they do not.' },
+            { id: 'c2', label: 'Is data encrypted in transit and at rest where required?', desc: 'Applied where the control set expects it.' },
+            { id: 'c3', label: 'Are security events logged and reviewed?', desc: 'Logs that someone actually looks at.' },
+            { id: 'e1', label: 'Can you provide evidence for the controls you would attest to?', desc: 'A record behind every answer.' },
+            { id: 'e5', label: 'Is there a plan of action and milestones for identified gaps?', desc: 'Gaps are normal; an unmanaged gap list is not.' }
+        ]
     };
 
-    const RATINGS = ['Not Started', 'Informal', 'Partial', 'Implemented', 'Optimized'];
+    const RATINGS = [
+        { label: 'Not started', sub: 'Nothing in place yet' },
+        { label: 'Informal', sub: 'Happens sometimes, nothing written down' },
+        { label: 'Partial', sub: 'Documented or implemented, not both' },
+        { label: 'Implemented', sub: 'In place and operating' },
+        { label: 'Optimized', sub: 'Operating, measured, and improving' }
+    ];
+    const RATING_NAMES = ['Not Started', 'Informal', 'Partial', 'Implemented', 'Optimized'];
 
-    let currentStep = 0;
+    /* Flow state */
+    let fwId = null;
+    let qIndex = 0;
+    let stage = 'fw';   /* fw | q | gate */
     let answers = {};
+    let transitioning = false;
 
-    function renderQuestions(containerId, questions) {
-        const container = document.getElementById(containerId);
-        container.innerHTML = '';
-        questions.forEach(q => {
-            const group = document.createElement('div');
-            group.className = 'rating-group';
-            group.innerHTML = `<div class="rg-label">${q.label}</div><div class="rg-desc">${q.desc}</div>`
-                + `<div class="rating-options">${RATINGS.map((r, i) => `<div class="rating-opt${answers[q.id] === i ? ' selected' : ''}" data-qid="${q.id}" data-val="${i}" onclick="selectRating(this)">${r}</div>`).join('')}</div>`;
-            container.appendChild(group);
-        });
+    const flowRoot = document.getElementById('flowRoot');
+    const fill = document.getElementById('tfFill');
+
+    function totalScreens() { return 1 + 8 + 1; }
+    function screenIndex() {
+        if (stage === 'fw') return 0;
+        if (stage === 'q') return 1 + qIndex;
+        return 1 + 8;
+    }
+    function updateFill() {
+        fill.style.width = Math.round((screenIndex() / totalScreens()) * 100) + '%';
     }
 
-    window.selectRating = function(el) {
-        const qid = el.dataset.qid;
-        const val = parseInt(el.dataset.val);
-        answers[qid] = val;
-        el.closest('.rating-options').querySelectorAll('.rating-opt').forEach(o => o.classList.remove('selected'));
+    function swapTo(html, focusSel) {
+        const old = flowRoot.querySelector('.tf-screen');
+        const insert = () => {
+            flowRoot.innerHTML = html;
+            updateFill();
+            transitioning = false;
+            if (focusSel) { const el = flowRoot.querySelector(focusSel); if (el) el.focus({ preventScroll: true }); }
+        };
+        if (old) {
+            transitioning = true;
+            old.classList.add('leaving');
+            setTimeout(insert, 210);
+        } else insert();
+    }
+
+    function backBtn(disabled) {
+        return `<button class="tf-back" ${disabled ? 'disabled' : ''} onclick="tfBack()"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M15 19l-7-7 7-7"/></svg> Back</button>`;
+    }
+
+    function renderFw() {
+        stage = 'fw';
+        const opts = FRAMEWORKS.map((f, i) =>
+            `<button class="tf-opt${fwId === f.id ? ' selected' : ''}" data-fw="${f.id}" onclick="pickFw(this)"><span class="tf-key">${i + 1}</span><span class="tf-opt-main">${f.name}<span class="tf-opt-sub">${f.sub}</span></span></button>`
+        ).join('');
+        swapTo(`<div class="tf-screen">
+            <div class="tf-eyebrow">Start</div>
+            <div class="tf-q">What are you preparing for?</div>
+            <p class="tf-desc">Pick the framework or obligation. The next 8 questions adapt to it.</p>
+            <div class="tf-opts">${opts}</div>
+            <div class="tf-foot">${backBtn(true)}<span class="tf-hint">Press 1 to ${FRAMEWORKS.length} to choose</span></div>
+        </div>`);
+    }
+
+    function renderQ() {
+        stage = 'q';
+        const q = QUESTIONS[fwId][qIndex];
+        const opts = RATINGS.map((r, i) =>
+            `<button class="tf-opt${answers[q.id] === i ? ' selected' : ''}" data-val="${i}" onclick="pickRating(this)"><span class="tf-key">${i + 1}</span><span class="tf-opt-main">${r.label}<span class="tf-opt-sub">${r.sub}</span></span></button>`
+        ).join('');
+        swapTo(`<div class="tf-screen">
+            <div class="tf-eyebrow">${FW_NAMES[fwId]} &middot; Question ${qIndex + 1} of 8</div>
+            <div class="tf-q">${q.label}</div>
+            <p class="tf-desc">${q.desc}</p>
+            <div class="tf-opts">${opts}</div>
+            <div class="tf-foot">${backBtn(false)}<span class="tf-hint">Press 1 to 5 to answer</span></div>
+        </div>`);
+    }
+
+    function renderGate() {
+        stage = 'gate';
+        swapTo(`<div class="tf-screen">
+            <div class="tf-eyebrow">${FW_NAMES[fwId]} &middot; Last step</div>
+            <div class="tf-q">Where should your readiness report go?</div>
+            <p class="tf-desc">Your projected score, gaps, and next steps appear right here; the report copy goes to your inbox.</p>
+            <div class="field-row">
+                <div class="field"><label for="aName">Name</label><input type="text" id="aName" placeholder="Your name" required></div>
+                <div class="field"><label for="aCompany">Company</label><input type="text" id="aCompany" placeholder="Company name"></div>
+            </div>
+            <div class="field"><label for="aEmail">Work email</label><input type="email" id="aEmail" placeholder="you@company.com" required><div class="field-err" id="emailErr">Please enter a valid email address</div></div>
+            <div class="field-row">
+                <div class="field"><label for="aIndustry">Industry</label><select id="aIndustry"><option value="" disabled selected>Select industry</option><option>Defence / Aerospace</option><option>Financial Services</option><option>Healthcare</option><option>Government / Public Sector</option><option>Technology / SaaS</option><option>Manufacturing</option><option>Energy / Utilities</option><option>Professional Services</option><option>Telecommunications</option><option>Retail / E-commerce</option><option>Education</option><option>Other</option></select></div>
+                <div class="field"><label for="aSize">Organization size</label><select id="aSize"><option value="" disabled selected>Select size</option><option>1-25 employees</option><option>26-100 employees</option><option>101-500 employees</option><option>500+ employees</option></select></div>
+            </div>
+            <p style="font-size:0.72rem;color:var(--text-muted);margin-top:0.25rem">Your information is used only to deliver your report and relevant follow up. We respect your privacy.</p>
+            <div class="tf-foot">${backBtn(false)}<button class="btn btn-next" id="submitBtn" onclick="submitAssessment()">Show my results <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></button></div>
+        </div>`, '#aName');
+    }
+
+    window.pickFw = function(el) {
+        if (transitioning) return;
+        fwId = el.dataset.fw;
+        el.parentElement.querySelectorAll('.tf-opt').forEach(o => o.classList.remove('selected'));
         el.classList.add('selected');
+        setTimeout(() => { qIndex = 0; renderQ(); }, 260);
     };
 
-    function getFramework() { return document.getElementById('aFramework').value; }
+    window.pickRating = function(el) {
+        if (transitioning) return;
+        const q = QUESTIONS[fwId][qIndex];
+        answers[q.id] = parseInt(el.dataset.val);
+        el.parentElement.querySelectorAll('.tf-opt').forEach(o => o.classList.remove('selected'));
+        el.classList.add('selected');
+        setTimeout(() => {
+            if (qIndex < 7) { qIndex++; renderQ(); }
+            else renderGate();
+        }, 260);
+    };
 
-    function updateQuestions() {
-        const fw = getFramework();
-        if (!fw || !QUESTIONS[fw]) return;
-        const q = QUESTIONS[fw];
-        renderQuestions('q1Container', q.governance);
-        renderQuestions('q2Container', q.controls);
-        renderQuestions('q3Container', q.evidence);
-    }
-
-    function updateProgress() {
-        const segs = document.querySelectorAll('.assess-prog-seg');
-        segs.forEach((seg, i) => {
-            seg.classList.remove('done', 'active');
-            if (i < currentStep) seg.classList.add('done');
-            else if (i === currentStep) seg.classList.add('active');
-        });
-    }
-
-    function showStep(step) {
-        document.querySelectorAll('.assess-step').forEach(el => el.classList.remove('active'));
-        const target = document.querySelector(`.assess-step[data-step="${step}"]`);
-        if (target) {
-            target.style.animation = 'none';
-            target.offsetHeight;
-            target.style.animation = '';
-            target.classList.add('active');
+    window.tfBack = function() {
+        if (transitioning) return;
+        if (stage === 'gate') { qIndex = 7; renderQ(); }
+        else if (stage === 'q') {
+            if (qIndex > 0) { qIndex--; renderQ(); }
+            else renderFw();
         }
-        currentStep = step;
-        updateProgress();
-    }
+    };
 
-    window.assessNext = function() {
-        if (currentStep === 0) {
-            const fw = document.getElementById('aFramework');
-            const ind = document.getElementById('aIndustry');
-            const sz = document.getElementById('aSize');
-            if (!fw.value) { fw.focus(); return; }
-            if (!ind.value || ind.selectedIndex === 0) { ind.focus(); return; }
-            if (!sz.value || sz.selectedIndex === 0) { sz.focus(); return; }
-            updateQuestions();
+    /* Keyboard */
+    document.addEventListener('keydown', e => {
+        if (document.getElementById('resultsSection').classList.contains('show')) return;
+        if (stage === 'gate') return;
+        const n = parseInt(e.key);
+        if (!isNaN(n) && n >= 1) {
+            const opts = flowRoot.querySelectorAll('.tf-opt');
+            if (n <= opts.length) { e.preventDefault(); opts[n - 1].click(); }
         }
-        if (currentStep < 4) showStep(currentStep + 1);
-    };
-
-    window.assessBack = function() {
-        if (currentStep > 0) showStep(currentStep - 1);
-    };
+        if (e.key === 'Backspace' || e.key === 'ArrowLeft') { e.preventDefault(); tfBack(); }
+    });
 
     window.submitAssessment = function() {
         const name = document.getElementById('aName').value.trim();
@@ -640,12 +540,11 @@
         }
         errEl.style.display = 'none';
 
-        const fw = getFramework();
-        const industry = document.getElementById('aIndustry').value;
-        const size = document.getElementById('aSize').value;
+        const industry = document.getElementById('aIndustry').value || 'Not specified';
+        const size = document.getElementById('aSize').value || 'Not specified';
 
-        /* POST lead to Vercel API → Dataverse */
-        const answersStr = Object.entries(answers).map(([k, v]) => `${k}:${RATINGS[v]}`).join(', ');
+        /* POST lead to Vercel API -> Dataverse */
+        const answersStr = Object.entries(answers).map(([k, v]) => `${k}:${RATING_NAMES[v]}`).join(', ');
         fetch('https://ascio-leads-api.vercel.app/api/lead', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -655,17 +554,42 @@
                 organization: company,
                 brand: 'ascio',
                 interest: 'Assessment',
-                message: `Assessment: ${fw} | Industry: ${industry} | Size: ${size} | Responses: ${answersStr}`
+                message: `Assessment: ${fwId} | Industry: ${industry} | Size: ${size} | Responses: ${answersStr}`
             })
         }).catch(function() {});
 
-        /* Calculate and show results */
-        calculateResults(fw, industry);
+        calculateResults(fwId);
     };
 
-    function calculateResults(framework, industry) {
-        const q = QUESTIONS[framework];
-        const allQs = [...q.governance, ...q.controls, ...q.evidence];
+    function nextSteps(framework, pct) {
+        const pkg = FW_PACKAGE[framework];
+        const steps = [];
+        if (pct < 50) {
+            if (framework === 'cpcsc-l1' || framework === 'cpcsc') {
+                steps.push({ t: 'Define your scope', d: 'Identify exactly which systems, people, and locations hold contract information. A small, defensible boundary makes every control that follows cheaper.' });
+            } else if (framework === 'ccspa') {
+                steps.push({ t: 'Build the critical cyber system inventory', d: 'Identify the systems whose compromise would affect the vital service you deliver. It anchors the program, the reporting duty, and the board conversation.' });
+            } else if (framework === 'iso42001') {
+                steps.push({ t: 'Build the AI inventory', d: 'Every system, model, and vendor feature in use or planned, including the ones nobody declared.' });
+            } else {
+                steps.push({ t: 'Define your scope', d: 'Decide which systems, people, and locations the management system covers. Scope decides the size and cost of everything that follows.' });
+            }
+            steps.push({ t: 'Work the gaps in priority order', d: 'The flagged gaps below are where an assessor, customer, or regulator would start asking questions. Close the high priority ones first.' });
+            steps.push({ t: 'Pick a delivery mode', d: `The ${pkg.name} runs the full route, self guided at your own pace or guided with ascio in the room.` });
+        } else if (pct < 75) {
+            steps.push({ t: 'Close the flagged gaps', d: 'A foundation is in place. The gaps below are the difference between describing readiness and proving it.' });
+            steps.push({ t: 'Put a record behind every answer', d: 'A policy, a configuration, a log, a screenshot. If it is not recorded, it did not happen.' });
+            steps.push({ t: 'Pick a delivery mode', d: `The ${pkg.name} closes exactly this kind of gap list, self guided or guided.` });
+        } else {
+            steps.push({ t: 'Assemble the evidence file', d: 'Your answers indicate strong alignment. The remaining work is the record behind each answer, organized so it can be handed over.' });
+            steps.push({ t: 'Validate before someone else does', d: 'A short review against the actual criteria catches what self assessment misses, before an assessor or customer does.' });
+            steps.push({ t: 'Keep it alive', d: 'Readiness decays. The Assurance Desk keeps evidence current between assessments: renewal calendars, drift checks, questionnaire support.' });
+        }
+        return steps;
+    }
+
+    function calculateResults(framework) {
+        const allQs = QUESTIONS[framework];
         const maxScore = allQs.length * 4;
 
         let totalScore = 0;
@@ -684,28 +608,25 @@
 
         const pct = Math.round((totalScore / maxScore) * 100);
 
-        /* Hide wizard, show results */
         document.getElementById('assessCard').style.display = 'none';
         const results = document.getElementById('resultsSection');
         results.classList.add('show');
 
-        /* Animate score ring */
-        const fill = document.getElementById('scoreFill');
+        const ringFill = document.getElementById('scoreFill');
         const circumference = 2 * Math.PI * 70;
-        fill.style.strokeDasharray = circumference;
-        fill.style.strokeDashoffset = circumference;
+        ringFill.style.strokeDasharray = circumference;
+        ringFill.style.strokeDashoffset = circumference;
 
         let color;
         if (pct >= 75) { color = 'var(--green)'; }
         else if (pct >= 50) { color = 'var(--amber)'; }
         else { color = 'var(--red)'; }
-        fill.style.stroke = color;
+        ringFill.style.stroke = color;
 
         setTimeout(() => {
-            fill.style.strokeDashoffset = circumference - (circumference * pct / 100);
+            ringFill.style.strokeDashoffset = circumference - (circumference * pct / 100);
         }, 100);
 
-        /* Animate number */
         const numEl = document.getElementById('scoreNum');
         let current = 0;
         const increment = Math.max(1, Math.floor(pct / 30));
@@ -715,8 +636,6 @@
             numEl.textContent = current + '%';
         }, 30);
 
-        /* Summary */
-        const fwNames = { 'cpcsc-l1': 'CPCSC Level 1', ccspa: 'CCSPA', iso27001: 'ISO/IEC 27001', iso42001: 'ISO/IEC 42001', cybersecure: 'CyberSecure Canada', cpcsc: 'CPCSC' };
         const summaryEl = document.getElementById('scoreSummary');
         const descEl = document.getElementById('scoreDesc');
 
@@ -750,19 +669,36 @@
             }
         } else if (pct >= 75) {
             summaryEl.textContent = 'High Readiness';
-            descEl.textContent = `Your organization shows strong alignment with ${fwNames[framework]} requirements. Focus on closing remaining gaps to achieve certification readiness.`;
+            descEl.textContent = `Your organization shows strong alignment with ${FW_NAMES[framework]} requirements. Focus on closing remaining gaps to achieve certification readiness.`;
         } else if (pct >= 50) {
             summaryEl.textContent = 'Moderate Readiness';
-            descEl.textContent = `Your organization has a foundation in place but significant gaps remain before ${fwNames[framework]} certification. A structured remediation program is recommended.`;
+            descEl.textContent = `Your organization has a foundation in place but significant gaps remain before ${FW_NAMES[framework]} certification. A structured remediation program is recommended.`;
         } else if (pct >= 25) {
             summaryEl.textContent = 'Early Stage';
-            descEl.textContent = `Your organization is in the early stages of ${fwNames[framework]} readiness. A phased approach to building your management system is recommended.`;
+            descEl.textContent = `Your organization is in the early stages of ${FW_NAMES[framework]} readiness. A phased approach to building your management system is recommended.`;
         } else {
             summaryEl.textContent = 'Getting Started';
-            descEl.textContent = `Your organization has not yet begun formal ${fwNames[framework]} readiness. We recommend starting with a discovery engagement to define scope and build a roadmap.`;
+            descEl.textContent = `Your organization has not yet begun formal ${FW_NAMES[framework]} readiness. Start with scope and a gap register; both are quick to produce and change the conversation immediately.`;
         }
 
-        /* Render gaps */
+        /* Next steps */
+        const nextList = document.getElementById('nextList');
+        nextList.innerHTML = '';
+        nextSteps(framework, pct).forEach(s => {
+            const li = document.createElement('li');
+            li.innerHTML = `<strong>${s.t}</strong><p>${s.d}</p>`;
+            nextList.appendChild(li);
+        });
+
+        /* Package CTA */
+        const pkg = FW_PACKAGE[framework];
+        document.getElementById('ctaTitle').textContent = 'Ready to close the gaps?';
+        document.getElementById('ctaDesc').textContent = `The ${pkg.name} runs self guided or guided, and ends in evidence you keep.`;
+        const ctaBtn = document.getElementById('ctaBtn');
+        ctaBtn.href = pkg.url;
+        ctaBtn.firstChild.textContent = 'View the package ';
+
+        /* Gaps */
         const gapsList = document.getElementById('gapsList');
         gapsList.innerHTML = '';
         gaps.sort((a, b) => a.score - b.score).forEach(gap => {
@@ -775,71 +711,41 @@
             gapsList.innerHTML = '<p style="color:var(--text-secondary);font-size:0.88rem">No critical gaps identified. Review moderate areas for optimization opportunities.</p>';
         }
 
-        /* Render strengths */
+        /* Strengths */
         const strengthsList = document.getElementById('strengthsList');
         strengthsList.innerHTML = '';
         strengths.forEach(s => {
             const item = document.createElement('div');
             item.className = 'gap-item';
-            item.innerHTML = `<div class="gap-title">${s.label}</div><div class="gap-desc">${s.desc}</div><div class="gap-priority low">${RATINGS[s.score]}</div>`;
+            item.innerHTML = `<div class="gap-title">${s.label}</div><div class="gap-priority low">${RATING_NAMES[s.score]}</div>`;
             strengthsList.appendChild(item);
         });
         if (strengths.length === 0) {
             strengthsList.innerHTML = '<p style="color:var(--text-secondary);font-size:0.88rem">No areas rated as fully implemented yet. This is common for organizations beginning their readiness journey.</p>';
         }
 
-        /* Scroll to results */
         window.scrollTo({ top: results.offsetTop - 80, behavior: 'smooth' });
     }
 
     window.resetAssessment = function() {
         answers = {};
-        currentStep = 0;
+        fwId = null;
+        qIndex = 0;
         document.getElementById('assessCard').style.display = '';
         document.getElementById('resultsSection').classList.remove('show');
-        showStep(0);
-        document.getElementById('aFramework').selectedIndex = 0;
-        document.getElementById('aIndustry').selectedIndex = 0;
-        document.getElementById('aSize').selectedIndex = 0;
-        document.getElementById('aName').value = '';
-        document.getElementById('aEmail').value = '';
-        document.getElementById('aCompany').value = '';
+        renderFw();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-
-    /* Framework-specific step titles */
-    const STEP_TITLES = {
-        'cpcsc-l1': [
-            ['Scope &amp; Access', 'Where your contract information lives, and who can reach it. Aligned to the Level 1 self assessment criteria; the official criteria in your CanadaBuys profile remains the authority.'],
-            ['Technical Controls', 'The safeguards the Level 1 criteria expect to be in place.'],
-            ['Evidence &amp; Attestation', 'What you can prove, and whether you are ready to affirm annually.']
-        ],
-        ccspa: [
-            ['Exposure &amp; Governance', 'Whether the Act will reach you, and who answers for it.'],
-            ['Program &amp; Duties', 'What a designated operator must operate, not just document.'],
-            ['Evidence &amp; Readiness', 'What you can prove, and how fast you can report.']
-        ]
-    };
-    const DEFAULT_TITLES = [
-        ['Governance &amp; Leadership', 'Rate your organization\'s current maturity in each area.'],
-        ['Controls &amp; Operations', 'Evaluate your control implementation and operational practices.'],
-        ['Evidence &amp; Audit Readiness', 'Assess your documentation and audit preparation.']
-    ];
-    document.getElementById('aFramework').addEventListener('change', function() {
-        const t = STEP_TITLES[this.value] || DEFAULT_TITLES;
-        for (let i = 0; i < 3; i++) {
-            document.getElementById('q' + (i + 1) + 'Title').innerHTML = t[i][0];
-            document.getElementById('q' + (i + 1) + 'Desc').textContent = t[i][1].replace('&amp;', '&');
-        }
-    });
 
     /* Preselect framework from query string, e.g. ?framework=cpcsc-l1 */
     (function() {
         const fw = new URLSearchParams(location.search).get('framework');
-        const sel = document.getElementById('aFramework');
         if (fw && QUESTIONS[fw]) {
-            sel.value = fw;
-            sel.dispatchEvent(new Event('change'));
+            fwId = fw;
+            qIndex = 0;
+            renderQ();
+        } else {
+            renderFw();
         }
     })();
     </script>
