@@ -205,7 +205,7 @@
             <a href="../" class="logo">ascio</a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="../#packages">Packages</a></li>
+                    <li><a href="../#packages">What we do</a></li>
                     <li><a href="../standards/">Standards</a></li>
                     <li><a href="../review/">Review</a></li>
                     <li><a href="./" class="active">Assessment</a></li>
@@ -218,7 +218,7 @@
         </div>
     </header>
     <div class="mobile-nav" id="mobileNav">
-        <a href="../#packages">Packages</a>
+        <a href="../#packages">What we do</a>
         <a href="../standards/">Standards</a>
         <a href="../review/">Review</a>
         <a href="./">Assessment</a>
@@ -275,8 +275,8 @@
 
                     <div class="result-cta">
                         <h3 id="ctaTitle">Ready to close the gaps?</h3>
-                        <p id="ctaDesc">The matching ascio package runs self guided or guided, and ends in evidence you keep.</p>
-                        <a href="../#contact" class="btn btn-next" id="ctaBtn">View the package <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a>
+                        <p id="ctaDesc">The matching ascio programme runs self guided or guided, and ends in evidence you keep.</p>
+                        <a href="../#contact" class="btn btn-next" id="ctaBtn"><span>See how we help</span> <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a>
                     </div>
 
                     <div style="text-align:center;margin-top:1.5rem">
@@ -316,12 +316,12 @@
     ];
     const FW_NAMES = { 'cpcsc-l1': 'CPCSC Level 1', ccspa: 'CCSPA', iso27001: 'ISO/IEC 27001', iso42001: 'ISO/IEC 42001', cybersecure: 'CyberSecure Canada', cpcsc: 'CPCSC' };
     const FW_PACKAGE = {
-        'cpcsc-l1': { name: 'CPCSC Readiness package', url: '../defence/' },
-        cpcsc: { name: 'CPCSC Readiness package', url: '../defence/' },
+        'cpcsc-l1': { name: 'CPCSC Readiness', url: '../defence/' },
+        cpcsc: { name: 'CPCSC Readiness', url: '../defence/' },
         ccspa: { name: 'Critical infrastructure readiness', url: '../critical-infrastructure/' },
-        iso27001: { name: 'ISO Readiness package', url: '../iso-readiness/' },
-        iso42001: { name: 'ISO Readiness package', url: '../iso-readiness/' },
-        cybersecure: { name: 'ISO Readiness package', url: '../iso-readiness/' }
+        iso27001: { name: 'ISO Readiness', url: '../iso-readiness/' },
+        iso42001: { name: 'ISO Readiness', url: '../iso-readiness/' },
+        cybersecure: { name: 'ISO Readiness', url: '../iso-readiness/' }
     };
 
     /* 8 questions per framework */
@@ -575,11 +575,11 @@
                 steps.push({ t: 'Define your scope', d: 'Decide which systems, people, and locations the management system covers. Scope decides the size and cost of everything that follows.' });
             }
             steps.push({ t: 'Work the gaps in priority order', d: 'The flagged gaps below are where an assessor, customer, or regulator would start asking questions. Close the high priority ones first.' });
-            steps.push({ t: 'Pick a delivery mode', d: `The ${pkg.name} runs the full route, self guided at your own pace or guided with ascio in the room.` });
+            steps.push({ t: 'Pick a delivery mode', d: `${pkg.name} runs the full route, self guided at your own pace or guided with ascio in the room.` });
         } else if (pct < 75) {
             steps.push({ t: 'Close the flagged gaps', d: 'A foundation is in place. The gaps below are the difference between describing readiness and proving it.' });
             steps.push({ t: 'Put a record behind every answer', d: 'A policy, a configuration, a log, a screenshot. If it is not recorded, it did not happen.' });
-            steps.push({ t: 'Pick a delivery mode', d: `The ${pkg.name} closes exactly this kind of gap list, self guided or guided.` });
+            steps.push({ t: 'Pick a delivery mode', d: `${pkg.name} closes exactly this kind of gap list, self guided or guided.` });
         } else {
             steps.push({ t: 'Assemble the evidence file', d: 'Your answers indicate strong alignment. The remaining work is the record behind each answer, organized so it can be handed over.' });
             steps.push({ t: 'Validate before someone else does', d: 'A short review against the actual criteria catches what self assessment misses, before an assessor or customer does.' });
@@ -693,10 +693,10 @@
         /* Package CTA */
         const pkg = FW_PACKAGE[framework];
         document.getElementById('ctaTitle').textContent = 'Ready to close the gaps?';
-        document.getElementById('ctaDesc').textContent = `The ${pkg.name} runs self guided or guided, and ends in evidence you keep.`;
+        document.getElementById('ctaDesc').textContent = `${pkg.name} runs self guided or guided, and ends in evidence you keep.`;
         const ctaBtn = document.getElementById('ctaBtn');
         ctaBtn.href = pkg.url;
-        ctaBtn.firstChild.textContent = 'View the package ';
+        ctaBtn.querySelector('span').textContent = 'See how we help';
 
         /* Gaps */
         const gapsList = document.getElementById('gapsList');
