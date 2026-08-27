@@ -256,6 +256,7 @@
                         </div>
                         <h2 id="scoreSummary" style="margin-bottom:0.5rem"></h2>
                         <p id="scoreDesc" style="color:var(--text-secondary);font-size:0.9rem"></p>
+                        <p id="followupNote" style="color:var(--accent);font-size:0.85rem;font-family:var(--mono);margin-top:0.9rem"></p>
                     </div>
 
                     <div class="result-section">
@@ -470,7 +471,7 @@
         swapTo(`<div class="tf-screen">
             <div class="tf-eyebrow">${FW_NAMES[fwId]} &middot; Last step</div>
             <div class="tf-q">Where should your readiness report go?</div>
-            <p class="tf-desc">Your projected score, gaps, and next steps appear right here; the report copy goes to your inbox.</p>
+            <p class="tf-desc">Your results appear right here, and we will follow up with you by email.</p>
             <div class="field-row">
                 <div class="field"><label for="aName">Name</label><input type="text" id="aName" placeholder="Your name" required></div>
                 <div class="field"><label for="aCompany">Company</label><input type="text" id="aCompany" placeholder="Company name"></div>
@@ -559,6 +560,8 @@
         }).catch(function() {});
 
         calculateResults(fwId);
+        const fn = document.getElementById('followupNote');
+        if (fn) fn.textContent = 'Thanks ' + name + '. We have your details and will be in touch.';
     };
 
     function nextSteps(framework, pct) {
