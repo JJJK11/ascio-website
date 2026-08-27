@@ -289,8 +289,8 @@
     <footer>
         <div class="w">
             <div class="ft">
-                <div class="ft-brand"><strong>ascio</strong> &#8212; Security, Risk &amp; Compliance / Canada</div>
-                <div class="ft-copy">&copy; 2017&#8211;2026 ascio</div>
+                <div class="ft-brand"><strong>ascio</strong>: Security, Risk &amp; Compliance / Canada</div>
+                <div class="ft-copy">&copy; 2017 to 2026 ascio</div>
             </div>
         </div>
     </footer>
@@ -703,7 +703,7 @@
         gaps.sort((a, b) => a.score - b.score).forEach(gap => {
             const item = document.createElement('div');
             item.className = 'gap-item';
-            item.innerHTML = `<div class="gap-title">${gap.label}</div><div class="gap-desc">${gap.desc}</div><div class="gap-priority ${gap.priority}">${gap.priority === 'high' ? 'HIGH PRIORITY' : 'MEDIUM PRIORITY'} &#8212; ${gap.score === 0 ? 'Not started' : 'Informal only'}</div>`;
+            item.innerHTML = `<div class="gap-title">${gap.label}</div><div class="gap-desc">${gap.desc}</div><div class="gap-priority ${gap.priority}">${gap.priority === 'high' ? 'HIGH PRIORITY' : 'MEDIUM PRIORITY'}: ${gap.score === 0 ? 'Not started' : 'Informal only'}</div>`;
             gapsList.appendChild(item);
         });
         if (gaps.length === 0) {
