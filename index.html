@@ -50,7 +50,7 @@
             --motion-slow: 0.24s;
         }
 
-        html { scroll-behavior: smooth; }
+        html.smooth-scroll { scroll-behavior: smooth; }
 
         /* ========================================
            ACCESSIBILITY
@@ -875,9 +875,11 @@
                 $$('.reveal').forEach(el => {
                     if (el.getBoundingClientRect().top + window.scrollY <= limit) el.classList.add('force-visible');
                 });
+                anchorTarget.scrollIntoView();
             }
         } catch (e) { /* invalid hash selector, animate normally */ }
     }
+    window.addEventListener('load', () => document.documentElement.classList.add('smooth-scroll'));
     const ro = new IntersectionObserver(es => {
         es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); ro.unobserve(e.target); } });
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
