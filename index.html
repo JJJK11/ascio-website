@@ -51,6 +51,7 @@
         }
 
         html.smooth-scroll { scroll-behavior: smooth; }
+        section[id], [id].section-anchor { scroll-margin-top: 80px; }
 
         /* ========================================
            ACCESSIBILITY
@@ -879,7 +880,15 @@
             }
         } catch (e) { /* invalid hash selector, animate normally */ }
     }
-    window.addEventListener('load', () => document.documentElement.classList.add('smooth-scroll'));
+    window.addEventListener('load', () => {
+        if (location.hash) {
+            try {
+                const t = document.querySelector(location.hash);
+                if (t) t.scrollIntoView();
+            } catch (e) { /* invalid hash selector */ }
+        }
+        document.documentElement.classList.add('smooth-scroll');
+    });
     const ro = new IntersectionObserver(es => {
         es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); ro.unobserve(e.target); } });
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
