@@ -296,6 +296,8 @@
     </footer>
 
     <script>
+    /* Time the page rendered; sent with the lead post so the API can drop instant submissions */
+    const PAGE_LOADED_AT = Date.now();
     /* Mobile nav */
     const mt = document.getElementById('mobileToggle');
     const mn = document.getElementById('mobileNav');
@@ -475,6 +477,7 @@
                 <div class="field"><label for="aCompany">Company</label><input type="text" id="aCompany" placeholder="Company name"></div>
             </div>
             <div class="field"><label for="aEmail">Work email</label><input type="email" id="aEmail" placeholder="you@company.com" required><div class="field-err" id="emailErr">Please enter a valid email address</div></div>
+            <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden"><label for="aWebsite">Website</label><input type="text" id="aWebsite" name="website" tabindex="-1" autocomplete="off"></div>
             <div class="field-row">
                 <div class="field"><label for="aIndustry">Industry</label><select id="aIndustry"><option value="" disabled selected>Select industry</option><option>Defence / Aerospace</option><option>Financial Services</option><option>Healthcare</option><option>Government / Public Sector</option><option>Technology / SaaS</option><option>Manufacturing</option><option>Energy / Utilities</option><option>Professional Services</option><option>Telecommunications</option><option>Retail / E-commerce</option><option>Education</option><option>Other</option></select></div>
                 <div class="field"><label for="aSize">Organization size</label><select id="aSize"><option value="" disabled selected>Select size</option><option>1-25 employees</option><option>26-100 employees</option><option>101-500 employees</option><option>500+ employees</option></select></div>
@@ -553,7 +556,9 @@
                 organization: company,
                 brand: 'ascio',
                 interest: 'Assessment',
-                message: `Assessment: ${fwId} | Industry: ${industry} | Size: ${size} | Responses: ${answersStr}`
+                message: `Assessment: ${fwId} | Industry: ${industry} | Size: ${size} | Responses: ${answersStr}`,
+                website: (document.getElementById('aWebsite') || {}).value || '',
+                ts: PAGE_LOADED_AT
             })
         }).catch(function() {});
 
@@ -584,7 +589,7 @@
         } else {
             steps.push({ t: 'Assemble the evidence file', d: 'Your answers indicate strong alignment. The remaining work is the record behind each answer, organized so it can be handed over.' });
             steps.push({ t: 'Validate before someone else does', d: 'A short review against the actual criteria catches what self assessment misses, before an assessor or customer does.' });
-            steps.push({ t: 'Ongoing support', d: 'Most clients keep us on: the Assurance Desk maintains evidence, manages renewals, and handles new questionnaires.' });
+            steps.push({ t: 'The Assurance Desk', d: 'We hold your evidence file, keep it mapped to your controls, track your renewal dates, and answer new questionnaires from it as they arrive.' });
         }
         return steps;
     }

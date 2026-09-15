@@ -439,18 +439,21 @@
             <p>Governance, compliance, and cybersecurity developments delivered to your inbox every Monday. No noise, just what matters.</p>
             <form class="newsletter-form" id="newsletterForm">
                 <input type="email" name="email" placeholder="Enter your email address" required>
+                <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden"><label for="nlWebsite">Website</label><input type="text" id="nlWebsite" name="website" tabindex="-1" autocomplete="off"></div>
                 <button type="submit">Subscribe</button>
             </form>
             <script>
+            window.PAGE_LOADED_AT = window.PAGE_LOADED_AT || Date.now();
             document.getElementById('newsletterForm').addEventListener('submit', function(e) {
                 e.preventDefault();
                 var email = this.querySelector('input[name="email"]').value;
+                var website = (this.querySelector('input[name="website"]') || {}).value || '';
                 var btn = this.querySelector('button');
                 btn.disabled = true; btn.textContent = 'Subscribing...';
                 fetch('https://ascio-leads-api.vercel.app/api/lead', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name: 'Newsletter Subscriber', email: email, brand: 'ascio', interest: 'Newsletter', message: 'Governance & Compliance Review subscriber' })
+                    body: JSON.stringify({ name: 'Newsletter Subscriber', email: email, brand: 'ascio', interest: 'Newsletter', message: 'Governance & Compliance Review subscriber', website: website, ts: window.PAGE_LOADED_AT })
                 }).then(function() {
                     btn.textContent = 'Subscribed!';
                 }).catch(function() {
